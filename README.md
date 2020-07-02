@@ -5,13 +5,12 @@
 <p>Note: Every folder has same file name as the folder. In which all the components are included.</P>
 
 
-
 <h3>Website:</h3>
-<a href="https://github.com/rajjubajra/react-base-theme/tree/master/src/components/Websites">[Website Template]</a>
+<a href="https://github.com/rajjubajra/react_base_theme/tree/master/src/components/Websites">[Website Template]</a>
 <div>Website Templates and Website with Shopping cart</div>
 
 
-<h3>Apps<a href="https://github.com/rajjubajra/react-base-theme/tree/master/src/components/Apps">Link</a></h3>
+<h3>Apps<a href="https://github.com/rajjubajra/react_base_theme/tree/master/src/components/Apps">Link</a></h3>
 <div>Worked on small apps in order to understand the Redux</div>
 
 <h3>Folders</h3>
