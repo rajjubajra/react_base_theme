@@ -1,0 +1,83 @@
+@keyframes fadeOut{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+.dropDownNav{
+  width: 100%;
+  height: auto;
+  
+  
+  *{
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  ul{
+    height: auto;
+    padding: 10px 10px 15px;
+
+    li{
+      list-style-type: none;
+      
+      &:hover{
+        div.submenu{
+          display: block !important;
+          animation: fadeOut 1s;
+        }
+      }
+
+      a{
+        color: $color_light;
+        text-decoration: none;
+        float: left;
+        margin-right: 15px;
+        padding: 10px 15px;
+        &:hover{
+          color: $color_black;
+        }
+      }
+
+
+
+      div.submenu{
+        position: absolute;
+        width: 100%;
+        margin-top: 35px;
+        margin-left: -10px;
+        padding: 10px;
+        min-height: 300px;
+        display: none;
+        border: 1px solid $border_lighter;
+        background-color: $background_white;
+        z-index: 10000;
+        
+        &:hover{
+          display: block !important;
+        }
+
+        ul.submenu-lists{
+          width: 25%;
+          float: left;
+          h4{
+            padding-left: 10px;
+          }
+          li{
+            a{
+              float: none;
+              display: block;
+              font-size: small;
+              font-weight: 100;
+              padding: 5px 10px;
+              &:hover{
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  
+}

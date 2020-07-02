@@ -1,0 +1,81 @@
+.apps{
+  width: 90%;
+  margin: 0px auto;
+  outline: 1px solid $border_lighter;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  nav{
+    a{
+      text-decoration: none;
+      margin: 10px 5px;
+      padding: 5px 10px;
+      font-size: $small;
+      border: 1px solid #ccc;
+      border-radius: 0px;
+      color: black;
+      letter-spacing: 1px;
+      &:hover{
+        background-color: $color_black;
+        color: $color_white;
+        border-radius: 5px;
+        transition: ease-in 0.5s;
+        border: 1px solid $border_white;
+        outline: none;
+      }
+    }
+  }
+
+  pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+
+  button{
+    margin: 5px;
+  }
+
+  ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+    li{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      width: 250px;
+      min-height: 100px;
+      text-align: center;
+      margin: 10px;
+      outline: 1px solid $border_lighter;
+        a{
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 3px 5px;
+        background-color: $background_lighter;
+        color: $color_black;
+        outline: 1px solid $border_white;
+        outline-offset: -5px;
+      }
+    }
+   
+  }
+
+  .btn{
+    max-width: 200px;
+    margin: 5px;
+  }
+
+  
+}

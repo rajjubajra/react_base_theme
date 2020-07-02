@@ -1,0 +1,42 @@
+@keyframes lanPasaafadeIn {
+  0% {opacity: 0.0;}
+  25%{opacity: 0.3;}
+  100% {opacity: 1;}
+}
+
+.lanpasaa{
+  width: 90%;
+  margin: 0px auto;
+  min-height: 100vh;
+
+  p{
+    font-size: $regular;
+    line-height: 1.5rem;
+  }
+
+ /** LANDING PAGE **/ 
+  .landing-page{
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
+
+@import "./LanPasaa/LanpasaaTitle";
+@import "./LanPasaa/NavShopLanPasaa";
+@import "./LanPasaa/Shop";
+@import "./LanPasaa/CartDetails";
+@import "./LanPasaa/CartSummary";
+@import "./LanPasaa/ShopUpDownArrow";
+@import "./LanPasaa/ContactLanPasaa";
+@import "./LanPasaa/LanPasaaPageContact";
+@import "./LanPasaa/LanPasaaAboutus";
+@import "./LanPasaa/SubscriptioinLanPasaa";
+@import "./LanPasaa/socialMediaLanPasaa";

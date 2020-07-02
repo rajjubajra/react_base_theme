@@ -1,0 +1,152 @@
+:root {
+  --h1-color: rgb(0, 0, 0);
+  --h1-color-trans:  rgba(3, 158, 247, 0.447);
+}
+
+@keyframes appear{
+  0% {top: 35%; color: var(--h1-color-trans) !important; text-shadow: none; z-index: 1;}
+  100% { top: 40%; color: var(--h1-color);}
+}
+@keyframes expand{
+  0% {letter-spacing: -1em; color: $color_white}
+  50% {letter-spacing: 0em;}
+  100%{letter-spacing: 1em;}
+}
+
+@mixin page-heading($font_size) {
+  font-size: $font_size;
+  font-family: serif;
+  font-weight: 800;
+  color: var(--h1-color) !important;
+  text-transform: capitalize;
+}
+@mixin small-title{
+    text-align: left !important;
+    font-size: $medium;
+    font-weight: 600;
+    text-shadow: none;
+    color: $color_dark;
+    letter-spacing: 1px;
+}
+@mixin paragraph {
+  line-height: 1.4rem;
+  font-weight: 100;
+  color: $color_dark;
+  font-family: sans-serif;
+  font-size: $regular;
+}
+
+
+.lotus{
+  width: 100%;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns:  1fr;
+  *{
+    box-sizing: border-box;
+  }
+
+/** MAIN - NAVIGATION **/
+  .lotus-nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid $border_lighter;
+    .nav-ul li a{
+      font-weight: 800;
+      color: $color_black;
+      &:hover{
+        color: $color_dark;
+      }
+    }
+  }
+
+/** GLOBAL FONT STYLE **/
+  p{
+    @include paragraph();
+  }
+
+  h1,
+  .lotuswhatwedo h1.title,
+  .forminbox h1,
+  .faq-page h1.title{
+    @media(max-width: $media_small){
+      @include page-heading($extra_large);
+    }
+      @include page-heading($megha_font);
+  }
+
+  .lotuswhatwedo h2,
+  .twocolumns h1,
+  .twocolumnlotus h1,
+  .twocolumnlotus .text h1,
+  .lotusaboutus h2,
+  .formdetails h2
+  {
+    @media(max-width: $media_small){
+      @include page-heading($large);
+    }
+      @include page-heading($extra_large);
+  }
+
+  .lotusaboutus h3,
+  .lotusaboutus .lotusteam h2,
+  .twocolumns h4,
+  .twocolumnlotus h3{
+    @include small-title();
+  }
+  
+  
+  .twocolumncontact h3{
+      @include page-heading($large);
+  }
+  
+  .faq-page h1{
+     @include page-heading($large);
+     font-weight: 100;
+  }
+  .faq-page .qns-ans h2{
+    @include page-heading($large);
+  }
+  h2.faq-form-title{
+    @include page-heading($large);
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .lotusteam{
+    .team-members{
+      section{
+        h1{
+          @include page-heading($regular);
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+
+  .forminbox h1,
+  .formdetails h2{
+      text-align: center;
+  }
+
+  
+  .b3lotus{
+    .boxes{
+      img{width: 100px; height: auto;}
+    }
+
+  }
+
+  .contact-page,
+  .lotuswhatwedo{
+    width: 80%;
+    margin: 0px auto;
+    @media(max-width: $media_small){
+      width: 95%;
+    }
+  }
+
+}

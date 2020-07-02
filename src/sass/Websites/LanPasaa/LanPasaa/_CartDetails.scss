@@ -1,0 +1,113 @@
+
+.shopping-cart{
+  /** CART **/
+  .cart-title{
+    text-align: center;
+    height: 100px;
+  }
+  .cart-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    position: relative;
+    button {
+      padding: 10px;
+      background-color: #000000;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #ffffff;
+      cursor: pointer;
+      @media(max-width: $media_small){
+        padding: 4px;
+        font-weight: 500;
+        letter-spacing: 0px;
+      }
+    }
+    .cart-header{
+      display: flex;
+      div{
+        border-bottom: 1px solid $border_lighter;
+      }
+    }
+    .cart-items{
+      .items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .cart-footer{
+      display: flex;
+      border-bottom: 1px solid $border_lighter;
+      padding-bottom: 20px;
+    }
+
+    .cart-header,
+    .cart-items .items,
+    .cart-footer{
+
+      @media(max-width: $media_small){
+        font-size: $small;
+      }
+
+      margin: 5px 0px;
+
+      div:nth-child(1){
+        width: 100px;
+        text-align: center;
+        @media(max-width: $media_small){
+          width: 40px;
+        }
+      }
+      div:nth-child(2){
+        width: 300px;
+        @media(max-width: $media_small){
+          width: 100px;
+        }
+      }
+      div:nth-child(3){
+        width: 100px;
+        @media(max-width: $media_small){
+          width: 25px;
+        }
+      }
+      div:nth-child(4){
+        width: 100px;
+        @media(max-width: $media_small){
+          width: 30px;
+        }
+      }
+      div:nth-child(5){
+        width: 100px;
+        text-align: right;
+        margin-right: 10px;
+        @media(max-width: $media_small){
+          width: 40px;
+        }
+      }
+      div:nth-child(6){
+        width: 100px;
+        @media(max-width: $media_small){
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+
+a.btn-cart-close{
+  position: absolute;
+  right: 30px;
+  text-decoration: none;
+  &:hover::before{
+    content: "Close";
+    font-size: $small;
+    position: relative;
+    top: -20px;
+    left: 24px;
+    animation: fadeIn 0.7s;
+  }   
+}
+
+

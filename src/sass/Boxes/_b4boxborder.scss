@@ -1,0 +1,100 @@
+.b4boxborder{
+  width: 100%;
+  max-width: 1150px;
+  margin: 100px 0px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  @media(max-width: $media_large){
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    max-width: 600px;
+  }
+  @media(max-width: $media_small){
+    grid-template-columns: 1fr;
+    max-width: 260px;
+  }
+  grid-gap: 40px 40px;
+  position: relative;
+  
+
+  .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: $media_large){
+      &:nth-child(1){ grid-column: 1/1; grid-row: 1/1;}
+      &:nth-child(2){ grid-column: 2/3; grid-row: 1/1;}
+      &:nth-child(3){ grid-column: 1/1; grid-row: 2/2;}
+      &:nth-child(4){ grid-column: 2/3; grid-row: 2/2;}
+    }
+    @media(max-width: $media_small){
+      &:nth-child(1){ grid-column: 1/1; grid-row: 1/1;}
+      &:nth-child(2){ grid-column: 1/1; grid-row: 2/2;}
+      &:nth-child(3){ grid-column: 1/1; grid-row: 3/3;}
+      &:nth-child(4){ grid-column: 1/1; grid-row: 4/4;}
+    }
+    
+
+
+
+    .container{
+      width: 100%;
+      height: 400px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: $background_dark;
+      color: $color_lighter;
+      outline: 1px solid $border_lighter;
+      outline-offset: -5px;
+      padding: 20px;
+
+      h3{
+        color: $color_lighter;
+        letter-spacing: 0px;
+        transition: 0.5s;
+        z-index: 2;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: $background_black;
+        z-index: -1;
+        transform: skew(2deg, 2deg);
+      }
+      &:hover{
+        h1{
+          top: -25px;
+        }  
+        h3{
+          letter-spacing: 2px;
+        }
+      }
+    
+      h1{
+        position: absolute;
+        top: 60px;
+        font-size: $extra_large;
+        font-weight: 800;
+        text-align: center;
+        transition: 1s ease-out;
+        z-index: 1;
+      }
+
+      button{
+        position: absolute;
+        bottom: 20px;
+      }
+    }
+  }
+
+
+  
+}
