@@ -11,9 +11,9 @@ const RouterPortfolio2020 = () => {
     *  IT EFFECTS IN ALL THE other components 
     *  This page is only for Switch / Route 
    */
-    <Switch>
-      <Route exact path="/portfolio2020" component={Page} />
-    </Switch>
+
+    <Route exact path="/portfolio2020" component={Page} />
+
   )
 }
 
