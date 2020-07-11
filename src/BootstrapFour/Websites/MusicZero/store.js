@@ -5,6 +5,7 @@ import { reducerSelectGroup } from './reducers/reducersSelectGroup';
 import { reducerSelectColourMode } from './reducers/reducerSelectColourMode';
 import { reducerPlayTheTrack } from './reducers/reducerPlayTheTrack';
 import { reducerPagination } from './reducers/reducerPagination';
+import { reducerFetchData } from './reducers/reducerFetchData';
 
 
 const reducer = combineReducers(
@@ -12,7 +13,8 @@ const reducer = combineReducers(
     reducerSelectGroup,
     reducerSelectColourMode,
     reducerPlayTheTrack,
-    reducerPagination
+    reducerPagination,
+    reducerFetchData
   }
 );
 

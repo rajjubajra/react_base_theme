@@ -13,7 +13,10 @@ import string from '../../../../../../src/images/Music/string00.jpg';
 import vinyl from '../../../../../../src/images/Music/vinyl00.jpg';
 import audio from '../../../../../../src/images/Music/audio00.jpg';
 
+import axios from 'axios';
 import ListItem from './ListItem';
+import { useRouteMatch } from 'react-router-dom';
+
 
 
 const data = [
@@ -52,33 +55,63 @@ const data = [
 
 
 
-function MusicCardDetail(props) {
+
+function MusicCardDetail() {
+
+  const match = useRouteMatch('music-zero-detail/:uuid');
+  console.log('Matched', match);
+
 
   /**Pagination */
   const [itemsInAPage, setItemInAPage] = useState(10)
-  //const [trackList, setTrackList] = useState([]);
+
+
+  // const trackUrl = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/1/top?limit=50';
+
+  const trackUrl = 'http://yellow-website.com/d8-react-base-theme-backend/music_zero?_format=json';
+
+
+
+  const [trackList, setTrackList] = useState([]);
   const [albumDetail, setAlbumDetail] = useState('');
   const [statusCode, setStatusCode] = useState(0);
   const [albumTitle, setAlbumTitle] = useState('');
-  //const [coverImage, setCoverImage] = useState('');
+  const [coverImage, setCoverImage] = useState('');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const coverImage = useSelector(state => state.reducerFetchData.coverImage);
-  const trackList = useSelector(state => state.reducerFetchData.tracks);
-
-  console.log("TRACK LIST", trackList);
-
-  //console.log(coverImage['url']);
+  //const id = useSelector(state => state.reducerPlayTheTrack.id);
 
 
+
+  useEffect(() => {
+    axios({
+      method: 'GET',
+      url: trackUrl,
+      headers: {
+        'Accept': 'application/vnd.api+json'
+      }
+    })
+      .then(res => {
+        console.log(res.data[0]);
+        setTrackList(res.data[0].field_track);
+        setAlbumTitle(res.data[0].field_album_title[0].value);
+        setCoverImage(res.data[0].field_image_medium[0].url)
+        setAlbumDetail(res.data[0]);
+      })
+      .catch(err => setStatusCode(err.response.status))
+  }, [])
+
+  //console.log(trackList);
+  console.log(albumTitle);
+  console.log(coverImage);
   return (
     <Container className="music-zero" fluid >
       <div className={colorMode}>
         <Headers />
         <ColourMode />
 
-        <h1>Album: <b>{coverImage['alt']}</b></h1>
-        <img src={coverImage['url']} alt='cover' />
+        <h1>Album: <b>{albumTitle}</b></h1>
+        <img src={coverImage} alt='cover' />
         <Row>
           <Col lg={8}>
             {
@@ -94,6 +127,7 @@ function MusicCardDetail(props) {
             }
           </Col>
         </Row>
+
       </div>
     </Container >
   )

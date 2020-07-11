@@ -3,6 +3,15 @@ export const baseUrl = {
   URL: "https://yellow-website.com"
 }
 
+export const corsAnyWhere = {
+  URL: 'https://cors-anywhere.herokuapp.com'
+}
+
+
+export const comingSoon = {
+  URL: `${corsAnyWhere.URL}/${baseUrl.URL}/d8-react-base-theme-backend/coming_soon?_format=json`
+}
+
 
 export const comingsoon_contents = {
   URL: `${baseUrl.URL}/d8.yellow-website.com/jsonapi/block_content/com/f78ba2b4-a388-40d8-ae68-6bdcee594b27?include=field_logo_square`,
@@ -18,10 +27,11 @@ export const contactFormUrl = {
 
 
 
+
+
 /**
  *
 http://example.com/jsonapi/node/article/{{article_uuid}}?include=field_image,field_image.image,field_image.image.file--file&fields[field_image]=image&fields[file--file]=uri,url
- *
  *
  *
  */

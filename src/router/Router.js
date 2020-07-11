@@ -6,6 +6,7 @@ import RouterWebsites from './RouterWebsites';
 import RouterWebsiteBootstrap4 from './RouterWebsiteBootstrap4';
 import MeghaMenu from '../components/Navigation/MeghaMenu';
 import ComingSoon from '../components/Websites/ComingSoon/ComingSoon';
+import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
 
 
 /**
@@ -23,13 +24,23 @@ const Router = () => {
     <>
       <BrowserRouter>
 
-        <Switch>
+        {/* <Switch>
           <Route exact path="/" >
             <div className={`App ${btnShowHide} ? 'with-menu' : 'without-menu'`}>
               <div className={btnShowHide ? 'show' : 'hide'}>
                 <MeghaMenu />
               </div>
               <ComingSoon />
+            </div>
+          </Route>
+        </Switch> */}
+
+        <Switch>
+          <Route exact path="/" >
+            <div>
+              <div>
+                <ComingSoonB4 />
+              </div>
             </div>
           </Route>
         </Switch>
