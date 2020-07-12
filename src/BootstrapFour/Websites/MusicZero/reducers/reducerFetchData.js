@@ -6,7 +6,8 @@ const initalState = {
   fetched: false,
   error: '',
   data: [],
-  tracks: []
+  tracks: [],
+  albumId: ''
 }
 
 export const reducerFetchData = (state = initalState, action) => {
@@ -35,6 +36,7 @@ export const reducerFetchData = (state = initalState, action) => {
     /** FETCH DATA FOR Music/Album Detail with tracks page  */
     case actionTypes.FETCH_ALBUM:
       return {
+        albumId: action.id,
         tracks: state.data[action.id].field_track,
         coverImage: state.data[action.id].field_image_medium[0]
       }

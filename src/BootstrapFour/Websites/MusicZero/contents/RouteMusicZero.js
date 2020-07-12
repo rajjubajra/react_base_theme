@@ -6,13 +6,7 @@ import Contact from './contact/Contact';
 import MusicCardDetail from './musicCards/MusicCardDetail';
 
 
-
-
 function RouteMusicZero() {
-
-
-
-
 
   return (
     <Switch>

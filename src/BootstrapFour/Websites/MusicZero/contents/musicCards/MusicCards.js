@@ -14,7 +14,6 @@ import { actionPaginationPrev, actionPaginationNext } from '../../actions/action
 import { actionFetchData } from '../../actions/actionFetchData';
 
 
-
 // const data = [
 //   {
 //     id: 1,
@@ -59,8 +58,8 @@ function MusicCards() {
     dispatch(actionFetchData());
   }, [dispatch])
 
-  console.log("fetched", fetched);
-  console.log("music card page", listOfAlbum);
+  //console.log("fetched", fetched);
+  //console.log("music card page", listOfAlbum);
 
   return (
     <Container>

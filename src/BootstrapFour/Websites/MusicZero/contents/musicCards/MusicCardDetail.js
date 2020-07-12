@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ColourMode from '../colourMode/ColourMode';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Headers from '../headers/Header';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -12,6 +12,7 @@ import sheet from '../../../../../../src/images/Music/sheet00.jpg';
 import string from '../../../../../../src/images/Music/string00.jpg';
 import vinyl from '../../../../../../src/images/Music/vinyl00.jpg';
 import audio from '../../../../../../src/images/Music/audio00.jpg';
+import { actionFetchAlbum } from '../../actions/actionFetchData';
 
 import ListItem from './ListItem';
 
@@ -54,19 +55,29 @@ const data = [
 
 function MusicCardDetail(props) {
 
+
+  // const dispatch = useDispatch();
+  // const [albumId, setAlbumId] = useState();
+
+
+  // useEffect(() => {
+  //   setAlbumId(props.id);
+  //   dispatch(actionFetchAlbum(albumId))
+  // }, [albumId, dispatch, props.id])
+
+
+
   /**Pagination */
   const [itemsInAPage, setItemInAPage] = useState(10)
-  //const [trackList, setTrackList] = useState([]);
-  const [albumDetail, setAlbumDetail] = useState('');
-  const [statusCode, setStatusCode] = useState(0);
-  const [albumTitle, setAlbumTitle] = useState('');
-  //const [coverImage, setCoverImage] = useState('');
+
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const coverImage = useSelector(state => state.reducerFetchData.coverImage);
   const trackList = useSelector(state => state.reducerFetchData.tracks);
 
   console.log("TRACK LIST", trackList);
+
+
 
   //console.log(coverImage['url']);
 

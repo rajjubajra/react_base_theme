@@ -8,9 +8,6 @@ import Text from './text/Text';
 
 
 
-
-
-
 function Page() {
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
