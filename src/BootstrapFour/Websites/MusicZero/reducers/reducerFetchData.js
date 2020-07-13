@@ -35,6 +35,7 @@ export const reducerFetchData = (state = initalState, action) => {
       }
     /** FETCH DATA FOR Music/Album Detail with tracks page  */
     case actionTypes.FETCH_ALBUM:
+      console.log("reducer id", action.id)
       return {
         albumId: action.id,
         tracks: state.data[action.id].field_track,

@@ -22,7 +22,7 @@ function ColourMode() {
         <li className="colour-icon-colour"
           onClick={() => dispatch(actionSelectColourMode('colour-theme', 'danger'))}></li>
         <li className="back-icon">
-          <IconBackspace linkRef={'websites-bootstrap'} />
+          <IconBackspace linkRef={'/websites-bootstrap'} />
         </li>
       </ul>
 

@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CopyRightFooter from '../components/CopyRightFooter/CopyRightFooter';
 import RouterComponents from './RouterComponents';
-import RouterWebsites from './RouterWebsites';
-import RouterWebsiteBootstrap4 from './RouterWebsiteBootstrap4';
-import MeghaMenu from '../components/Navigation/MeghaMenu';
-import ComingSoon from '../components/Websites/ComingSoon/ComingSoon';
+import RouterNonCssFramworkWebsites from './RouterNonCssFrameworkWebsites';
+import RouterBootstrapFour from './RouterBootstrapFour';
+// import MeghaMenu from '../components/Navigation/MeghaMenu';
+// import ComingSoon from '../components/Websites/ComingSoon/ComingSoon';
 import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
+import RouterComponentTest from './RouterComponentTest';
 
 
 /**
@@ -23,7 +24,6 @@ const Router = () => {
   return (
     <>
       <BrowserRouter>
-
         {/* <Switch>
           <Route exact path="/" >
             <div className={`App ${btnShowHide} ? 'with-menu' : 'without-menu'`}>
@@ -52,12 +52,16 @@ const Router = () => {
 
         {/** WEBSITES PAGE *************************************/}
         <Switch>
-          <RouterWebsites />
+          <RouterNonCssFramworkWebsites />
         </Switch>
 
         {/** WEBSITES WITH BOOTSTRAP-4  *************************************/}
         <Switch>
-          <RouterWebsiteBootstrap4 />
+          <RouterBootstrapFour />
+        </Switch>
+
+        <Switch>
+          <RouterComponentTest />
         </Switch>
 
 

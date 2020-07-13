@@ -1,19 +1,17 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
-import { actionFetchAlbum } from '../../actions/actionFetchData';
+//import { actionFetchAlbum } from '../../actions/actionFetchData';
 
 
 function MusicCard(props) {
 
-  const dispatch = useDispatch();
-
+  // const dispatch = useDispatch();
 
   return (
     <>
-      <Link to={`music-zero-detail`}
-        onClick={() => dispatch(actionFetchAlbum(props.id))}>
+      <Link to={`music-zero-detail/${props.id}`}>
         <Card className="bg-dark text-white mt-5">
           <Card.Img
             style={{

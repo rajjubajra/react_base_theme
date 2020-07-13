@@ -16,9 +16,9 @@ function NavigationBar(props) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         <Nav>
-          <Nav.Link href="music-zero">Music</Nav.Link>
-          <Nav.Link href="music-zero-about">About</Nav.Link>
-          <Nav.Link href="music-zero-contact">Contact</Nav.Link>
+          <Nav.Link href="/music-zero">Music</Nav.Link>
+          <Nav.Link href="/music-zero-about">About</Nav.Link>
+          <Nav.Link href="/music-zero-contact">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
