@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MusicCard from './MusicCard';
 // import concert from '../../../../../../src/images/Music/concert00.jpg';
@@ -59,7 +59,8 @@ function MusicCards() {
   }, [dispatch])
 
   //console.log("fetched", fetched);
-  //console.log("music card page", listOfAlbum);
+  console.log("music card page", listOfAlbum);
+
 
   return (
     <Container>
@@ -75,11 +76,6 @@ function MusicCards() {
             </Col>
           })
         }
-      </Row>
-
-      <Row>
-        <div onClick={() => dispatch(actionPaginationPrev(+10))}>Prev</div>
-        <div onClick={() => dispatch(actionPaginationNext(-10))}>Next</div>
       </Row>
     </Container>
   )

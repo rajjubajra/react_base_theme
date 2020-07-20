@@ -1,19 +1,23 @@
 import { actionTypes } from "../actions/actionType"
 
 const initalstate = {
-  prev: 0,
-  next: 0,
+  page: 0,
+  length: 0,
 }
 
 export const reducerPagination = (state = initalstate, action) => {
   switch (action.type) {
-    case actionTypes.PAGINATION_ITEM_NEXT:
+    case actionTypes.PAGINATION:
+      console.log("pagination reducer", action.page, action.length);
       return {
-        next: action.items
+        page: action.page === 'next'
+          ? (action.length - 1) > state.page ? state.page + 1 : state.page
+          : state.page > 0 ? state.page - 1 : state.page,
+        length: action.length
       }
-    case actionTypes.PAGINATION_ITEM_PREV:
+    case actionTypes.GOTOPAGE:
       return {
-        prev: action.items
+        page: action.page
       }
     default:
       return state;

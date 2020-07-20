@@ -6,6 +6,7 @@ import { reducerSelectColourMode } from './reducers/reducerSelectColourMode';
 import { reducerPlayTheTrack } from './reducers/reducerPlayTheTrack';
 import { reducerPagination } from './reducers/reducerPagination';
 import { reducerFetchData } from './reducers/reducerFetchData';
+import { reducerPlayAllTracks } from './reducers/reducerPlayAllTracks';
 
 
 const reducer = combineReducers(
@@ -14,7 +15,8 @@ const reducer = combineReducers(
     reducerSelectColourMode,
     reducerPlayTheTrack,
     reducerPagination,
-    reducerFetchData
+    reducerFetchData,
+    reducerPlayAllTracks
   }
 );
 

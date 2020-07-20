@@ -1,22 +1,16 @@
 import { actionTypes } from "./actionType";
 
-export const actionPaginationItemInAPage = (number) => (
+export const actionPagination = (page, length) => (
   {
-    type: actionTypes.PAGINATION_ITEMS_IN_A_PAGE,
-    items: number
+    type: actionTypes.PAGINATION,
+    page: page,
+    length: length
   }
 )
 
-export const actionPaginationPrev = (number) => (
+export const actionGoToPage = (page) => (
   {
-    type: actionTypes.PAGINATION_ITEM_PREV,
-    items: number
-  }
-)
-
-export const actionPaginationNext = (number) => (
-  {
-    type: actionTypes.PAGINATION_ITEM_NEXT,
-    items: number
+    type: actionTypes.GOTOPAGE,
+    page: page
   }
 )

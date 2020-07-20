@@ -7,9 +7,12 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useParams } from 'react-router-dom';
 import { actionFetchData } from '../../actions/actionFetchData';
+import Button from 'react-bootstrap/Button';
 
 
 import ListItem from './ListItem';
+import { actionPlayAllTracks } from '../../actions/actionPlayAllTracks';
+import PlayAll from './PlayAll';
 
 
 function MusicCardDetail(props) {
@@ -22,6 +25,7 @@ function MusicCardDetail(props) {
   /** Cover Image and Track list variables*/
   const [coverImage, setCoverImage] = useState([]);
   const [trackList, setTrackList] = useState([]);
+  const [allTracksId, setAllTracksId] = useState([]);
 
   /** Colour data from reducer */
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
@@ -29,7 +33,10 @@ function MusicCardDetail(props) {
   /** track data from the reducer */
   const fetched = useSelector(state => state.reducerFetchData.fetched);
   const data = useSelector(state => state.reducerFetchData.data);
-  //console.log("music card details", data);
+  console.log("music card details", trackList);
+
+  /** PLAY ALL TRACKS ON QUE */
+  const playAllTracks = useSelector(state => state.reducerPlayAllTracks.playAllTracks);
 
 
   useEffect(() => {
@@ -42,7 +49,21 @@ function MusicCardDetail(props) {
       setTrackList(data[id].field_track);
     }
 
-  }, [data, dispatch, fetched, id])
+    if (fetched) {
+      let trackIds = [];
+      trackList.map(item => {
+        return trackIds.push(
+          {
+            url: item.url,
+            alt: item.description,
+            id: item.target_id
+          }
+        )
+      })
+      setAllTracksId(trackIds);
+    }
+
+  }, [data, dispatch, fetched, id, trackList])
 
 
 
@@ -55,19 +76,33 @@ function MusicCardDetail(props) {
 
         <h1>Album: <b>{coverImage['alt']}</b></h1>
         <img src={coverImage['url']} alt='cover' />
+        <Row>
+          <Col lg={8}>
+            {
+              playAllTracks
+                ? <Button
+                  onClick={() => dispatch(actionPlayAllTracks(allTracksId, false))}>Back</Button>
+                : <Button
+                  onClick={() => dispatch(actionPlayAllTracks(allTracksId, true))}>
+                  Play All</Button>
+            }
+          </Col>
+        </Row>
 
         <Row>
           <Col lg={8}>
             {
-              trackList.map((item, index) => {
-                return <div key={index}>
-                  <ListItem
-                    title={item.description}
-                    track={item.url}
-                    id={item.target_id}
-                  />
-                </div>
-              })
+              playAllTracks
+                ? <PlayAll />
+                : trackList.map((item, index) => {
+                  return <div key={index}>
+                    <ListItem
+                      title={item.description}
+                      track={item.url}
+                      id={item.target_id}
+                    />
+                  </div>
+                })
             }
           </Col>
         </Row>

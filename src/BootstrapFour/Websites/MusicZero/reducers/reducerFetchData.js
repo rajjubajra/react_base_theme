@@ -7,7 +7,8 @@ const initalState = {
   error: '',
   data: [],
   tracks: [],
-  albumId: ''
+  albumId: '',
+  dataLength: 0,
 }
 
 export const reducerFetchData = (state = initalState, action) => {
@@ -31,7 +32,8 @@ export const reducerFetchData = (state = initalState, action) => {
       return {
         fetched: true,
         payload: arr,
-        data: action.data
+        data: action.data,
+        dataLength: action.data.length
       }
     /** FETCH DATA FOR Music/Album Detail with tracks page  */
     case actionTypes.FETCH_ALBUM:
