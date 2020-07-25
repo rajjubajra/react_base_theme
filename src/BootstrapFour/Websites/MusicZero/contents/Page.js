@@ -2,7 +2,6 @@ import React from 'react';
 import ColourMode from './colourMode/ColourMode';
 import { useSelector } from 'react-redux';
 import Headers from './headers/Header';
-import Container from 'react-bootstrap/Container';
 import MusicCards from './musicCards/MusicCards';
 import Text from './text/Text';
 
@@ -16,11 +15,10 @@ function Page() {
 
 
   return (
-    <Container className="music-zero" fluid >
+    <div className="music-zero" >
       <div className={colorMode}>
         <Headers />
-
-        <main>
+        <main className="mt-5">
           <ColourMode />
           <section className="mt-2">
             <MusicCards />
@@ -29,10 +27,9 @@ function Page() {
           <section className="mt-5">
             <Text />
           </section>
-
         </main>
       </div>
-    </Container>
+    </div>
 
   )
 }

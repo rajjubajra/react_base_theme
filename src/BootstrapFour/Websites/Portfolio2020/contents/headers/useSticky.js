@@ -31,15 +31,12 @@ function useSticky() {
     };
   };
 
-
-
   useEffect(() => {
     window.addEventListener("scroll", debounce(handleScroll))
     return () => {
       window.removeEventListener("scroll", () => handleScroll);
     }
   }, [debounce, handleScroll])
-
 
   return { isSticky, element }
 }

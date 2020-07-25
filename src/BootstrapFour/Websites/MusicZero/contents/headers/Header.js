@@ -20,10 +20,10 @@ function Header() {
       }
     });
   }, [])
-
+  console.log("SCROLL DOWN", scrollDown);
 
   return (
-    <header className="header_area">
+    <header className={`header_area ${scrollDown ? 'mb-10' : 'mb-5'}`}>
       <div className="main-menu">
         <NavigationBar css_class={scrollDown ? 'fixed-nav' : 'float-nav'} />
       </div>

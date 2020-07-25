@@ -14,12 +14,12 @@ function Aboutus() {
 
 
   return (
-    <Container fluid className="music-zero">
+    <div className="music-zero">
       <div className={colorMode}>
         <Headers />
         <ColourMode />
-        <Container className="music-zero" fluid >
-          <Row>
+        <Container fluid >
+          <Row className="mt-5">
             <Col lg={8}>
               <h1>About us</h1>
               <h3>Ipsum, dolor sit amet consectetur adipisicing elit. Odit esse autem officia. Repellat sed animi reprehenderit molestias blanditiis, amet perspiciatis dignissimos totam voluptatibus iure minima architecto rerum officiis asperiores quam. </h3>
@@ -38,7 +38,7 @@ function Aboutus() {
         </Container>
 
       </div>
-    </Container>
+    </div>
   )
 }
 

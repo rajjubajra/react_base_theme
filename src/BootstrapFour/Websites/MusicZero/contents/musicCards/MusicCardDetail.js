@@ -68,46 +68,53 @@ function MusicCardDetail(props) {
 
 
   return (
-    <Container className="music-zero" fluid >
+    <div className="music-zero" >
       <div className={colorMode}>
 
         <Headers />
         <ColourMode />
 
-        <h1>Album: <b>{coverImage['alt']}</b></h1>
-        <img src={coverImage['url']} alt='cover' />
-        <Row>
-          <Col lg={8}>
-            {
-              playAllTracks
-                ? <Button
-                  onClick={() => dispatch(actionPlayAllTracks(allTracksId, false))}>Back</Button>
-                : <Button
-                  onClick={() => dispatch(actionPlayAllTracks(allTracksId, true))}>
-                  Play All</Button>
-            }
-          </Col>
-        </Row>
+        <Container>
+          <Row>
+            <Col><h1>Album: <b>{coverImage['alt']}</b></h1></Col>
+          </Row>
+          <Row>
+            <Col><img src={coverImage['url']} alt='cover' /></Col>
+          </Row>
 
-        <Row>
-          <Col lg={8}>
-            {
-              playAllTracks
-                ? <PlayAll />
-                : trackList.map((item, index) => {
-                  return <div key={index}>
-                    <ListItem
-                      title={item.description}
-                      track={item.url}
-                      id={item.target_id}
-                    />
-                  </div>
-                })
-            }
-          </Col>
-        </Row>
+          <Row>
+            <Col lg={8}>
+              {
+                playAllTracks
+                  ? <Button
+                    onClick={() => dispatch(actionPlayAllTracks(allTracksId, false))}>Back</Button>
+                  : <Button
+                    onClick={() => dispatch(actionPlayAllTracks(allTracksId, true))}>
+                    Play All</Button>
+              }
+            </Col>
+          </Row>
+
+          <Row>
+            <Col lg={8}>
+              {
+                playAllTracks
+                  ? <PlayAll />
+                  : trackList.map((item, index) => {
+                    return <div key={index}>
+                      <ListItem
+                        title={item.description}
+                        track={item.url}
+                        id={item.target_id}
+                      />
+                    </div>
+                  })
+              }
+            </Col>
+          </Row>
+        </Container>
       </div>
-    </Container >
+    </div>
   )
 }
 

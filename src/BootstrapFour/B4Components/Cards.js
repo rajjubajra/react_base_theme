@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 function Cards(props) {
   return (
     <Card style={{
-      width: '18rem',
+      width: '22rem',
       height: '200px',
       position: 'relative',
       margin: "10px",

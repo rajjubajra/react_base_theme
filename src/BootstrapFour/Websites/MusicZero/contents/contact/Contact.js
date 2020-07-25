@@ -13,7 +13,7 @@ function Contact() {
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
 
   return (
-    <Container fluid className="music-zero">
+    <div className="music-zero">
       <div className={colorMode}>
         <Headers />
         <ColourMode />
@@ -32,9 +32,7 @@ function Contact() {
           </Row>
         </Container>
       </div>
-    </Container>
-
-
+    </div>
 
 
   )

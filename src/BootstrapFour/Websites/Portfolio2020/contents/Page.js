@@ -21,7 +21,6 @@ library.add(fab)
 
 function Page() {
 
-
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
 
   console.log(colorMode);

@@ -8,16 +8,24 @@ import PlayingTrackInProgress from './PlayingTrackInProgress';
 function PlayAll() {
 
 
-
+  /** array index  */
   const [nextSong, setNextSong] = useState(0);
+
+  /** set condition to change tracks index */
   const [autoPlayNext, setAutoPlayNext] = useState(false);
+
+  /** set to false after complited playing 
+   * all the tracks of the selected album*/
   const [autoPlayComplited, setAutoPlayComplited] = useState(false);
 
+  /** fetched from REDUCERS */
+  /** true or false : play all tracks */
   const playAllTracks = useSelector(state => state.reducerPlayAllTracks.playAllTracks);
+  /** array of the selected album tracks */
   const tracks = useSelector(state => state.reducerPlayAllTracks.tracks);
 
 
-
+  /** useAudio */
   const [audio, state, controls, ref] = useAudio(
     {
       src: tracks[nextSong].url,
@@ -25,11 +33,17 @@ function PlayAll() {
     }
   );
 
+  /** set next song index, 
+   *  after compliting playing all tracks
+   *  nextSong track set to 0 [plays loop back again]
+   */
   function nextsong() {
     autoPlayComplited ? setNextSong(0) : setNextSong(song => song + 1)
   }
 
+
   useEffect(() => {
+    /** tracks complited true or false */
     nextSong === (tracks.length - 1)
       ? setAutoPlayComplited(true)
       : setAutoPlayComplited(false);
@@ -45,6 +59,7 @@ function PlayAll() {
 
 
   useEffect(() => {
+    /** plays next track if autoPlayNext is true */
     if (autoPlayNext) {
       return nextsong()
     }
