@@ -1,13 +1,13 @@
-const { actionTypes } = require("../actions/actionType")
+const { actionTypes } = require('../action/ActionTypes');
 
 const initalState = {
-  payload: [],
-  payloadLength: 0,
-  fetching: false,
+  start_fetching: false,
   fetched: false,
-  error: '',
+  fetch_error: '',
   data: [],
   dataLength: 0,
+  payload: '',
+  payloadLength: 0
 }
 
 export const reducerFetchData = (state = initalState, action) => {
@@ -18,8 +18,8 @@ export const reducerFetchData = (state = initalState, action) => {
         fetching: true
       }
     /** FETCH DATA FOR Music main page */
-    case actionTypes.FETCHED:
-      console.log('reducer', action.data);
+    case actionTypes.FETCH_ABOUT:
+      console.log('reducer about', action.data);
       let arr = [];
       action.data.forEach(function (item) {
         arr.push({
@@ -32,11 +32,9 @@ export const reducerFetchData = (state = initalState, action) => {
       return {
         fetched: true,
         payload: arr,
-        payloadLength: arr.length,
         data: action.data,
         dataLength: action.data.length
       }
-    /** Error */
     case actionTypes.FETCH_ERROR:
       return {
         fetched: false,

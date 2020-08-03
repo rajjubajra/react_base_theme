@@ -1,10 +1,10 @@
 import { actionTypes } from "./actionType"
 import axios from "axios"
-import { photo_gallery } from '../config/Config';
+import { about } from '../config/Config';
 
-export const actionFetchData = () => {
+export const actionFetchAbout = () => {
 
-  const galleryURL = photo_gallery.URL;
+  const aboutURL = about.URL;
 
   return function (dispatch) {
     dispatch({
@@ -13,7 +13,7 @@ export const actionFetchData = () => {
 
     axios({
       method: 'GET',
-      url: galleryURL,
+      url: aboutURL,
       headers: {
         'Accept': 'application/vnd.api+json'
       }
@@ -22,7 +22,7 @@ export const actionFetchData = () => {
         console.log(res.data)
 
         dispatch({
-          type: actionTypes.FETCHED,
+          type: actionTypes.FETCH_ABOUT,
           data: res.data
         })
       })
