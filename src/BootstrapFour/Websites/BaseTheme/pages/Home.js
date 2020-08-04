@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Nav from '../components/header/Nav';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionFetchData } from '../redux/action/ActionFetchData';
+import { actionFetchData } from '../redux/actions/ActionFetchData';
 import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Home() {

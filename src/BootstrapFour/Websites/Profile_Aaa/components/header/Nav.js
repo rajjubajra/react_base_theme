@@ -5,7 +5,7 @@ function Nav() {
   return (
     <nav>
       <ul>
-        <li><Link to="/profile-aaa">Home</Link></li>
+        <li><Link to="profile-aaa">Home</Link></li>
         <li><Link to="profile-aaa-about">About</Link></li>
         <li><Link to="profile-aaa-contact">Contact</Link></li>
       </ul>

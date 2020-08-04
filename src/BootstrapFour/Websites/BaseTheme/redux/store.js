@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import { reducerFetchData } from './reducer/ReducerFetchData';
+import { reducerFetchData } from './reducers/ReducerFetchData';
 
 
 const reducer = combineReducers(

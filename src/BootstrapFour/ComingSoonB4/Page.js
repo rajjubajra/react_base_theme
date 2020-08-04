@@ -25,7 +25,7 @@ function Page(props) {
               borderRight: "1px solid #ccc"
             }}>
               <img
-                style={{ maxWidth: "40px" }}
+                style={{ maxWidth: "40px", width: "95%" }}
                 src={props.logoSquare.url} alt="logo" />
             </div>
             <div className='welcome' dangerouslySetInnerHTML={{ __html: props.bodyMsg }} />

@@ -1,4 +1,4 @@
-const { actionTypes } = require('../action/ActionTypes');
+const { actionTypes } = require('../actions/ActionTypes');
 
 const initalState = {
   start_fetching: false,
@@ -18,14 +18,14 @@ export const reducerFetchData = (state = initalState, action) => {
         fetching: true
       }
     /** FETCH DATA FOR Music main page */
-    case actionTypes.FETCH_ABOUT:
-      console.log('reducer about', action.data);
+    case actionTypes.FETCHED:
+      console.log('DATA REDUCER', action.data);
       let arr = [];
       action.data.forEach(function (item) {
         arr.push({
           title: item.title[0].value,
-          images: item.field_photography_gallery_image,
-          text: item.field_photography_gallery_text[0].value,
+          images: item.field_example_image,
+          text: item.field_example_text[0].value,
           uuid: item.uuid[0].value
         })
       })

@@ -47,6 +47,3 @@ export const reducerFetchData = (state = initalState, action) => {
   }
 
 }
-
-
-

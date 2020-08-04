@@ -7,7 +7,7 @@ import MeghaMenuBootstrap4 from '../components/Navigation/MeghaMenuBootstrap4';
 import RouteLanding from '../BootstrapFour/B4Components/B4LandingPage/RouteLanding';
 import MusicZero from '../BootstrapFour/Websites/MusicZero/MusicZero';
 import Photography from '../BootstrapFour/Websites/Photography/Photography';
-import Profile_Aaa from '../BootstrapFour/Websites/Profile_Aaa/ProfileAaa';
+
 
 
 
@@ -38,7 +38,7 @@ export default function RouterBootstrapFour() {
       <Portfolio2020 />
       <MusicZero />
       <Photography />
-      <Profile_Aaa />
+
 
 
 
