@@ -49,6 +49,13 @@ function Page(props) {
               style={{ fontWeight: "100" }}>
               {props.linkFreeImages.title}
             </Button>
+            <Button
+              variant="outline-dark"
+              className="mr-1"
+              onClick={() => window.open("/websites")}
+              style={{ fontWeight: "100" }}>
+              {props.linkFreeImages.title}
+            </Button>
           </div>
 
 

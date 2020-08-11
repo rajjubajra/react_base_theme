@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Cards from '../Cards';
-import TitleNNav from '../B4Header.sj/TitleNNav';
+import TitleNNav from '../B4Header/TitleNNav';
 
 function LandingPage() {
   return (

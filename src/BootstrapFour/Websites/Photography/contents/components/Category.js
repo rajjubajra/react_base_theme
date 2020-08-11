@@ -43,10 +43,12 @@ function Category(props) {
           categoryStatus ?
 
             categoryGallery.map((item, index) => {
-              return <>
+              return <div key={index}>
                 { /** Single Image Larger view */
                   index === categoryImageId
-                    ? <Col><ViewImage imageUrl={item.url} id={index} /></Col>
+                    ? <Col >
+                      <ViewImage imageUrl={item.url} id={index} />
+                    </Col>
                     : ''
                 }
                 {/** All images, 3 images at a time */}
@@ -61,9 +63,10 @@ function Category(props) {
                     id={index}
                     image={item.url}
                     alt={item.alt}
+                    key={index}
                   />
                 </Col>
-              </>
+              </div>
             })
             : <div>Data not found</div>
         }
@@ -77,7 +80,7 @@ function Category(props) {
       <Row>
         <div dangerouslySetInnerHTML={textContent()} />
       </Row>
-    </Container>
+    </Container >
   )
 }
 

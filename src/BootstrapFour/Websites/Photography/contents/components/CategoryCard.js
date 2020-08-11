@@ -17,7 +17,7 @@ function CategoryCard(props) {
       className={`bg-dark text-white ${props.show}`}
       onClick={() => dispatch(actionCategoryImageId(props.id))}
     >
-      <Card.Img src={props.image} alt={props.alt} fluid />
+      <Card.Img src={props.image} alt={props.alt} />
       <Card.ImgOverlay>
         <Card.Title>{props.id}{props.title}</Card.Title>
         <Card.Text>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Cards from './components/Cards';
-import TitleNNav from '../../../B4Components/B4Header.sj/TitleNNav';
+import TitleNNav from '../../../B4Components/B4Header/TitleNNav';
 import Header from './headers/Header';
 import { actionFetchData } from '../actions/actionFetchData';
 import Category from './components/Category';
@@ -61,7 +61,7 @@ function PageGallery() {
                 categoryStatus ? <Category id={categoryId} /> :
                   /** else view gallery */
                   gallery.map((item, index) => {
-                    return <Cards
+                    return <Cards key={index}
                       id={index}
                       image={item.images[0].url}
                       alt={item.images[0].alt}

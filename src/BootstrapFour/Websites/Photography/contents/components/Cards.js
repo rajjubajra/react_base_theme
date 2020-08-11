@@ -10,9 +10,9 @@ function Cards(props) {
   const dispatch = useDispatch();
 
   return (
-    <Card className="bg-dark text-white"
+    <Card className="bg-dark text-white" key={props.id}
       onClick={() => dispatch(actionFetchCategory(props.id))}>
-      <Card.Img src={props.image} alt={props.alt} fluid />
+      <Card.Img src={props.image} alt={props.alt} />
       <Card.ImgOverlay>
         <Card.Title>{props.id}{props.title}</Card.Title>
         <Card.Text>

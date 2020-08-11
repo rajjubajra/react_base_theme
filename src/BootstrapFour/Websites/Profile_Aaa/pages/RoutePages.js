@@ -1,16 +1,22 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
+import Page from './Page';
+// import Home from './Home';
+// import Project from './Project';
+// import Contact from './Contact';
+// import Work from './Work';
+import { pagelink } from '../PageLink';
+
+
 
 
 function RoutePages() {
   return (
     <>
-      <Route exact path="/profile-aaa" component={Home} />
-      <Route exact path="/profile-aaa-about" component={About} />
-      <Route exact path="/profile-aaa-contact" component={Contact} />
+      <Route exact path={`/${pagelink.home}`} component={Page} />
+      {/* <Route exact path={`/${pagelink.work}`} component={Work} />
+      <Route exact path={`/${pagelink.project}`} component={Project} />
+      <Route exact path={`/${pagelink.contact}`} component={Contact} /> */}
     </>
   )
 }

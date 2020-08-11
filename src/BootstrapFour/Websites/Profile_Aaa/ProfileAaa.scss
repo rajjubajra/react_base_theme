@@ -1,34 +1,47 @@
 .profile-aaa{
 
-  width: 100%;
-  height: 90vh;
-  background-color: #ccc;
-  
+  section{
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 100px;
+  }
+
+  /** FONT SIZE **/
+  /** clamp(MIN, VAL, MAX) **/
+  h1{
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+  h2{
+    font-size: clamp(2rem, 2.5vw, 4rem !important);
+  }
+  h1, h2, h3, h4, h5{
+    letter-spacing: -0.011em;
+    font-variation-settings: "opsz" 19.9949938964844;
+    font-weight: 77;
+    margin-bottom: 0.75em;
+  }
+  p{
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-weight: 117;
+    letter-spacing: 0.073em;
+    line-height: 24px;
+  }
 
   nav{
-    width: 100%;
-    height: 80px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ul{
-      display: flex;
-      margin: 15px 0px;
-      li{
-        margin: 0px 10px;
-        list-style: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        a{
-          text-decoration: none;
-          color: #000;
-          &:hover{
-            color: #eee;
-          }
-        }
+    ul li{
+      a{
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        color: #000;
+        font-weight: 97;
+        font-variation-settings: "opsz" 19.9999938964844;
+        letter-spacing: 1.71px;
       }
     }
   }
+
+
+
+
+
 
 }

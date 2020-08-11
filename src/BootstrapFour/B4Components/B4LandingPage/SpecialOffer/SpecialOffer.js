@@ -1,5 +1,5 @@
 import React from 'react'
-import TitleNNav from '../../B4Header.sj/TitleNNav';
+import TitleNNav from '../../B4Header/TitleNNav';
 import SpecialOfferA from './SpecialOfferA/SpecialOfferA';
 import SpecialOfferB from './SpecialOfferB/SpecialOfferB';
 import SpecialOfferC from './SpecialOfferC/SpecialOfferC';

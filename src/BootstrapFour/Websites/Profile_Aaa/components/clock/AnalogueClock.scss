@@ -1,0 +1,91 @@
+.analogue-clock{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  border: 1px solid #cfcfcf;
+
+  .clock-centre-point{
+    position: absolute;
+    top: 45%;
+    left: 47%;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #000;
+    z-index: 5;
+  }
+  
+
+  .hour-hand, .minute-hand, .seconds-hand{
+    position: absolute;
+    width: 0.2rem;
+    margin: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .hour-hand{
+    height: 30%;
+    top: -35%;
+    background: black;
+    transform: rotate(0deg);
+    z-index: 3;
+  }
+
+  .minute-hand{
+    height: 32%;
+    top: -38%;
+    background: #888;
+    transform: rotate(0deg);
+    z-index: 2;
+  }
+  .seconds-hand{
+    height: 35%;
+    top: -40%;
+    background: #ff0000;
+    transform: rotate(0deg);
+    z-index: 1;
+  }
+
+  .time-lines{
+    position: relative;
+    div{
+      position: absolute;
+      width: 20px;
+      height: 4px;
+      background-color: #000;
+    }
+
+
+    div:nth-child(1){
+      left: 45%;
+      top: 15px;
+      transform-origin: bottom center;
+      transform: rotate(90deg);
+    }
+    div:nth-child(4){
+      left: 80%;
+      top: 88px;
+      transform-origin: bottom center;
+      transform: rotate(180deg);
+    }
+    div:nth-child(6){
+      left: 45%;
+      top: 175px;
+      transform-origin: bottom center;
+      transform: rotate(90deg);
+    }
+    div:nth-child(10){
+      left: 10%;
+      top: 88px;
+      transform-origin: bottom center;
+      transform: rotate(180deg);
+    }
+  }
+
+
+}

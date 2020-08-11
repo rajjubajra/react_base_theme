@@ -20,8 +20,8 @@ const MeghaMenuBootstrap4 = () => {
             </div>
           </li>
 
-          <li><Link to="#">Landing Page</Link></li>
-
+          <li><Link to="/slides">Slides</Link></li>
+          <li><Link to="/form">Form</Link></li>
 
           <li className="submenu">
             <Link to="#">Page</Link>
