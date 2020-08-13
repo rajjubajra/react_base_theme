@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Cards from './B4Components/Cards';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

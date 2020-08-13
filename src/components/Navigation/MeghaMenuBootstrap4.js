@@ -20,8 +20,9 @@ const MeghaMenuBootstrap4 = () => {
             </div>
           </li>
 
-          <li><Link to="/slides">Slides</Link></li>
-          <li><Link to="/form">Form</Link></li>
+          <li><Link to="/b4slides">Slides</Link></li>
+          <li><Link to="/b4forms">Form</Link></li>
+          <li><Link to="/b4columns">Columns</Link></li>
 
           <li className="submenu">
             <Link to="#">Page</Link>
@@ -45,13 +46,10 @@ const MeghaMenuBootstrap4 = () => {
               </ul>
             </div>
           </li>
-
-
-          <li><Link to="#">Columns</Link></li>
-          <li><Link to="#">Boxes</Link></li>
-          <li><Link to="#">Carousel</Link></li>
-
-          <li><Link to="#">Navigation</Link></li>
+          <li><Link to="/b4boxes">Boxes</Link></li>
+          <li><Link to="/b4navigations">Navigation</Link></li>
+          <li><Link to="/b4blogs">Blogs</Link></li>
+          <li><Link to="/b4shops">Shops</Link></li>
           <li><Link to="#">Apps</Link></li>
 
           <li className="submenu">
@@ -107,38 +105,9 @@ const MeghaMenuBootstrap4 = () => {
               </ul>
             </div>
           </li>
-          <li className="submenu">
-            <Link to="#">Blog</Link>
 
-            <div className="submenu">
-              <ul className="submenu-lists" >
-                <li><Link to="#">Regular</Link></li>
-                <li><Link to="#">Timeline</Link></li>
-                <li><Link to="#">Photo</Link></li>
-                <li><Link to="#">Blockquote</Link></li>
-                <li><Link to="#">Post with Youtube</Link></li>
-                <li><Link to="#">Post with slidder</Link></li>
-                <li><Link to="#">Post with Photo</Link></li>
-              </ul>
-            </div>
 
-          </li>
-          <li className="submenu">
-            <Link to="#">Shop</Link>
 
-            <div className="submenu">
-              <ul className="submenu-lists" >
-                <li><Link to="#">1 Column Grid</Link></li>
-                <li><Link to="#">2 Column Grid</Link></li>
-                <li><Link to="#">4 Column Grid</Link></li>
-                <li><Link to="#">4 Column Grid</Link></li>
-                <li><Link to="#">Single Product</Link></li>
-                <li><Link to="#">Cart</Link></li>
-                <li><Link to="#">Checkout</Link></li>
-              </ul>
-            </div>
-
-          </li>
         </ul>
       </div>
     </div>

@@ -11,8 +11,14 @@ import ProfileAaa from '../BootstrapFour/Websites/Profile_Aaa/PofileAaa';
 import ProfileAab from '../BootstrapFour/Websites/Profile_Aab/ProfileAab';
 
 /** BootstrapFour Components */
-import Slide from '../BootstrapFour/Slide/Slide';
-import Form from '../BootstrapFour/Form/Form';
+import Slides from '../BootstrapFour/Slides/Slides';
+import Forms from '../BootstrapFour/Forms/Forms';
+import Columns from '../BootstrapFour/Columns/Columns';
+import Boxes from '../BootstrapFour/Boxes/Boxes';
+import Navigations from '../BootstrapFour/Navigations/Navigations';
+import Blogs from '../BootstrapFour/Blogs/Blogs';
+import Shops from '../BootstrapFour/Shops/Shops';
+
 
 
 
@@ -39,28 +45,22 @@ export default function RouterBootstrapFour() {
       {/** BOOTSTRAP 4 COMPONENTS ****************************/}
 
       {/** SLIDES */}
-      <Route path="/slides">
-        <div
-          style={{ display: 'flex', flexDirection: 'column' }}
-          className={`App ${btnShowHide} ? 'show' : 'hide'`}>
-          <MeghaMenuBootstrap4 />
-        </div>
-        <div>
-          <Slide />
-        </div>
-      </Route>
+      <Slides />
+      {/** FORMs */}
+      <Forms />
+      {/** COLUMNS */}
+      <Columns />
+      {/** BOXES */}
+      <Boxes />
+      {/** NAVIGATIONS */}
+      <Navigations />
+      {/** BLOGS */}
+      <Blogs />
+      {/** SHOPS */}
+      <Shops />
 
-      {/** FORM */}
-      <Route path="/form">
-        <div
-          style={{ display: 'flex', flexDirection: 'column' }}
-          className={`App ${btnShowHide} ? 'show' : 'hide'`}>
-          <MeghaMenuBootstrap4 />
-        </div>
-        <div>
-          <Form />
-        </div>
-      </Route>
+
+
 
 
 

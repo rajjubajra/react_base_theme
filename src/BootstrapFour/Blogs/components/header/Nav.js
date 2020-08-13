@@ -1,0 +1,26 @@
+import React, { useEffect, useState } from 'react'
+import './Nav.scss';
+import { Link } from 'react-router-dom';
+import { pagelink } from '../../PageLink';
+
+
+function Nav() {
+  const [mouseScroll, SetMouseScroll] = useState(false);
+
+  useEffect(() => {
+
+  })
+
+
+  return (
+    <nav>
+      <ul>
+        <li><Link to={`${pagelink.home}`}>Home</Link></li>
+        <li><Link to={`${pagelink.about}`}>About</Link></li>
+        <li><Link to={`${pagelink.contact}`}>Contact</Link></li>
+        <li><Link to={`${pagelink.pages}`}>Back</Link></li>
+      </ul>
+    </nav>
+  )
+}
+export default Nav
