@@ -13,6 +13,8 @@ function Pages() {
         <Cards title="Box - 1" linkref={pagelink.one} />
         <Cards title="Box - 2" linkref={pagelink.two} />
         <Cards title="Box - 3" linkref={pagelink.three} />
+        <Cards title="Box - 4" linkref={pagelink.four} />
+        <Cards title="Box - 5" linkref={pagelink.five} />
       </Row>
     </Container>
   )

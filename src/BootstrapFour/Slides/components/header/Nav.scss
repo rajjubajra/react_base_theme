@@ -15,7 +15,10 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         a, a:hover{
+          color: #333;
           text-decoration: none;
+          font-weight: 100;
+          letter-spacing: 1px;
         }
       }
     }

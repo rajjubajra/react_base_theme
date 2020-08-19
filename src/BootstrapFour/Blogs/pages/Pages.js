@@ -13,6 +13,7 @@ function Pages() {
         <Cards title="Blog - 1" linkref={pagelink.one} />
         <Cards title="Blog - 2" linkref={pagelink.two} />
         <Cards title="Blog - 3" linkref={pagelink.three} />
+        <Cards title="Blog - 4" linkref={pagelink.four} />
       </Row>
     </Container>
   )

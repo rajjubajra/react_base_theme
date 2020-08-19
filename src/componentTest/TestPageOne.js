@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header';
 import Button from 'react-bootstrap/Button';
 
 function TestPageOne() {
+
 
   const [page, setPage] = useState(0);
 
@@ -12,6 +13,11 @@ function TestPageOne() {
   const prevpage = () => (
     setPage(pagenum => pagenum - 1)
   )
+
+
+  useEffect(() => {
+    console.log(window.innerWidth)
+  })
 
   return (
     <div className="container">

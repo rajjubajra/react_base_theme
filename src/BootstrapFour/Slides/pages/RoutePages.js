@@ -17,5 +17,4 @@ function RoutePages() {
     </>
   )
 }
-
 export default RoutePages

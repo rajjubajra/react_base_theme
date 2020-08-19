@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import NavigationOne from './NavigationOne/NavigationOne';
-import NavigationTwo from './NavigationTwo';
+import NavigationTwo from './NavigationTwo/NavigationTwo';
 import NavigationThree from './NavigationThree';
 import { pagelink } from '../PageLink';
 import Pages from './Pages';

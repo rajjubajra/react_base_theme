@@ -1,31 +1,21 @@
 import React from 'react';
-import Nav from 'react-bootstrap/Nav';
+import NavMobile from './NavMobile';
+import NavDesktop from './NavDesktop';
 
 function Navigation(props) {
   return (
     <>
-      {/** Tablet and Mobile */}
-      <Nav
-        className={`${props.view && props.windowSizeSmall ? 'flex-column' : 'd-none'}`}>
-        {
-          props.data.map(item => {
-            return <Nav.Item>
-              <Nav.Link eventKey={item.link}>{item.name}</Nav.Link>
-            </Nav.Item>
-          })
-        }
-      </Nav>
+      {/** MOBILE AND TABLET */}
+      <NavMobile
+        view={props.view}
+        windowSizeSmall={props.windowSizeSmall}
+        data={props.data}
+      />
       {/** disktop */}
-      <Nav
-        className={`${props.windowSizeSmall ? 'd-none' : ''}`}>
-        {
-          props.data.map(item => {
-            return <Nav.Item>
-              <Nav.Link eventKey={item.link}>{item.name}</Nav.Link>
-            </Nav.Item>
-          })
-        }
-      </Nav>
+      <NavDesktop
+        windowSizeSmall={props.windowSizeSmall}
+        data={props.data}
+      />
     </>
   )
 }

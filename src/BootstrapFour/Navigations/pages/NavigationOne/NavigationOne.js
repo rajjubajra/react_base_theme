@@ -4,6 +4,7 @@ import { cssclass } from '../../CssClass';
 import Navigation from './Navigation';
 import NavIconThreeLines from './NavIconThreeLines';
 import TitleNNav from '../../../B4Components/B4Header/TitleNNav';
+import NavMobile from './NavMobile';
 
 
 const data = [
@@ -26,20 +27,39 @@ const data = [
 
 export const NavigationOne = () => {
 
-  const [windowSizeSmall, setWindowSizeSmall] = useState(false);
+  /** Window Breakpoint for mobile and tablet display */
+  const mobileBreakPoint = 768;
+
+  /** state "true" if browser size is less than "mobileBreakPoint" */
+  const [windowSizeSmall, setWindowSizeSmall] = useState('');
+
+  /** OnClick "Mobile Menu Icon[Three-lines], Veiw mobile menu" */
   const [view, setView] = useState(false);
 
+
+  /** Runs Onload */
+  useEffect(() => {
+    console.log(window.innerWidth)
+    window.innerWidth <= mobileBreakPoint
+      ? setWindowSizeSmall(true)
+      : setWindowSizeSmall(false);
+  }, [])
+
+
+  /** Runs while resize */
   useEffect(() => {
     window.onresize = function () {
-      //console.log(window.innerWidth)
-      window.innerWidth <= 768 ? setWindowSizeSmall(true) : setWindowSizeSmall(false);
+      console.log(window.innerWidth)
+      window.innerWidth <= mobileBreakPoint
+        ? setWindowSizeSmall(true)
+        : setWindowSizeSmall(false);
     }
   })
 
   return (
     <div className={cssclass.base_classname}>
+      <TitleNNav title={'Navigation 1'} href="/b4navigations" />
       <Container>
-        <TitleNNav title={'Navigation 1'} href="/b4navigations" />
         {/** ICON FOR TABLET AND MOBILE */}
         <div
           className={`${windowSizeSmall ? '' : 'd-none'}`}
@@ -49,7 +69,12 @@ export const NavigationOne = () => {
         </div>
 
         {/** NAVIGATION MENU */}
-        <Navigation data={data} windowSizeSmall={windowSizeSmall} view={view} />
+        <div>
+          {windowSizeSmall === ''
+            ? ''
+            : <Navigation data={data} windowSizeSmall={windowSizeSmall} view={view} />}
+        </div>
+
         <Row className="mt-5">
           <Col><h1>Navigation 1</h1></Col>
         </Row>

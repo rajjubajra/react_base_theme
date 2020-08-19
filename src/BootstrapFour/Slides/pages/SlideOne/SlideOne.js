@@ -1,19 +1,24 @@
-import React from 'react'
+import React from 'react';
+import './SlideOne.scss';
 import Nav from '../../components/header/Nav';
-import { Container, Row, Col } from 'react-bootstrap';
-import { cssclass } from '../../CssClass';
+import Slides from './Slides';
+import { Container, Row } from 'react-bootstrap';
+
+
 
 export const SlideOne = () => {
   return (
-    <div className={cssclass.base_classname}>
+    <div className='slide-one'>
       <Nav />
       <Container>
-        <Row>
-          <Col><h1>Slide One</h1></Col>
+        <Row className="justify-content-center">
+          <div className="slide">
+            <Slides />
+          </div>
         </Row>
       </Container>
+
     </div>
   )
 }
-
 export default SlideOne;

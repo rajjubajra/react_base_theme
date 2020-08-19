@@ -1,0 +1,84 @@
+@keyframes leftToRight {
+  from { opacity: 0; transform: translateX(-100%);}
+  to{ opacity: 1; transform: translateX(0%);}
+}
+
+@keyframes rightToLeft {
+  from {transform: translateX(100%);}
+  to{ transform: translateX(0%);}
+}
+
+
+@keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+.slide-three{
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0px auto;
+  min-height: 130vh;
+
+  .slide{
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    position: relative;
+    top: 90px;
+    
+    .caption{
+      position: absolute;
+      bottom: 40px;
+      width: 100%;
+      text-align: center;
+      color: #ddd;
+      
+      h1, h2, h3{
+        font-weight: 800;
+        opacity: 0;
+      }
+      p{
+        font-weight: 300;
+        letter-spacing: 1px; 
+        opacity: 0;
+      }
+    }
+  }
+
+  .Active{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    opacity: 1;
+    z-index: 10;
+    animation: leftToRight 0.5s linear;
+    .caption{
+      h1,h2,h3{
+        animation: fadeIn 3s linear; /** dont' know ? Delay not woring */
+        opacity: 1;
+      }
+      p{
+        animation: fadeIn 8s linear;/** dont' know ? Delay not woring */
+        opacity: 1;
+      }
+    }
+  }
+
+  .prev-slide{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 9;  
+  }
+  .next-slide{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 8;
+  }
+
+  background-color: #eee;  
+
+}

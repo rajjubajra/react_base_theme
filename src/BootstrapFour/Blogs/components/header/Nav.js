@@ -15,10 +15,11 @@ function Nav() {
   return (
     <nav>
       <ul>
-        <li><Link to={`${pagelink.home}`}>Home</Link></li>
-        <li><Link to={`${pagelink.about}`}>About</Link></li>
-        <li><Link to={`${pagelink.contact}`}>Contact</Link></li>
-        <li><Link to={`${pagelink.pages}`}>Back</Link></li>
+        <li><Link to={`${pagelink.one}`}>B1</Link></li>
+        <li><Link to={`${pagelink.two}`}>B2</Link></li>
+        <li><Link to={`${pagelink.three}`}>B3</Link></li>
+        <li><Link to={`${pagelink.four}`}>B4</Link></li>
+        <li><Link to={`${pagelink.pages}`}>Blogs</Link></li>
       </ul>
     </nav>
   )
