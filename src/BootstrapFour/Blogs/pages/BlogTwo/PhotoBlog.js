@@ -14,9 +14,7 @@ const boxOne = {
 }
 
 
-function PhotoBlog() {
-
-
+function PhotoBlog(props) {
 
   return (
     <div style={boxOne}>

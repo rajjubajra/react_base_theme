@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { pagelink } from '../../PageLink';
 
 const sectionStyle = {
   width: "100%",
@@ -25,9 +26,9 @@ const buttonStyle = {
   padding: "0px 20px 10px 20px",
   borderBottom: "1px solid #ccc",
   textDecoration: "none",
-  color: "#333"
+  color: "#333",
+  cursor: "pointer"
 }
-
 
 function Blog(props) {
 
@@ -37,11 +38,12 @@ function Blog(props) {
       <p style={dateStyle}>{props.day} {props.month}, {props.year}</p>
       <h1 style={titleStyle} >{props.title}</h1>
       <Link
-
-        onClick={() => props.readmore(props.id)}
-        style={buttonStyle}>Read More</Link>
+        to={`${pagelink.readmoreOne}/${props.id}`}
+        style={buttonStyle}>
+        Read More
+      </Link>
     </section>
   )
-}
 
+}
 export default Blog

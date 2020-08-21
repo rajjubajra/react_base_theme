@@ -11,8 +11,6 @@ function Blogs(props) {
   const pageGap = 10;
   const dataLength = props.dataLength;
 
-  //console.log("current page", currentPage, "last page", lastPage);
-
 
   function nextPage() {
     console.log("next");

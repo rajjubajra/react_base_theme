@@ -3,7 +3,7 @@ import Nav from '../../components/header/Nav';
 import Blogs from './Blogs';
 import { cssclass } from '../../CssClass';
 import axios from 'axios';
-import BlogReadMore from './BlogReadMore';
+
 
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -19,10 +19,6 @@ export const BlogOne = () => {
   const dataLength = posts.length;
 
 
-  const [readMore, setReadMore] = useState(false);
-  const [readMoreId, setReadMoreId] = useState(0);
-
-
   useEffect(() => {
     axios({
       method: 'GET',
@@ -36,36 +32,22 @@ export const BlogOne = () => {
         setPosts(res.data);
       })
       .catch(err => console.log(err))
-    setReadMore(false);
-    console.log(readMore);
+    //setReadMore(false);
+    console.log("useEffect 1");
 
   }, [dataUrl])
 
 
 
-
-
-  function readMoreVeiw(id) {
-    //console.log("read more", id);
-    setReadMore(true);
-    setReadMoreId(id);
-  }
-
-
   return (
     <div className={cssclass.base_classname}>
       <Nav />
-      {
-        readMore
-          ? <BlogReadMore posts={posts} id={Number(readMoreId)} />
-          : <Blogs
-            posts={posts}
-            dataLength={dataLength}
-            days={days[0]}
-            months={months[0]}
-            readmore={readMoreVeiw}
-          />
-      }
+      <Blogs
+        posts={posts}
+        dataLength={dataLength}
+        days={days[0]}
+        months={months[0]}
+      />
     </div>
   )
 }
