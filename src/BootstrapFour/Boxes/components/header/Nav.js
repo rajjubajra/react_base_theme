@@ -8,12 +8,15 @@ function Nav() {
   return (
     <nav>
       <ul>
-        <li><Link to={`${pagelink.one}`}>B-1</Link></li>
-        <li><Link to={`${pagelink.two}`}>B-2</Link></li>
-        <li><Link to={`${pagelink.three}`}>B-3</Link></li>
-        <li><Link to={`${pagelink.four}`}>B-4</Link></li>
-        <li><Link to={`${pagelink.five}`}>B-5</Link></li>
-        <li><Link to={`${pagelink.pages}`}>Back</Link></li>
+        <li><Link to={`/${pagelink.one}`}>B1</Link></li>
+        <li><Link to={`/${pagelink.seven}`}>B7</Link></li>
+        <li><Link to={`/${pagelink.two}`}>B2</Link></li>
+        <li><Link to={`/${pagelink.three}`}>B3</Link></li>
+        <li><Link to={`/${pagelink.four}`}>B4</Link></li>
+        <li><Link to={`/${pagelink.five}`}>B5</Link></li>
+        <li><Link to={`/${pagelink.six}`}>B6</Link></li>
+        <li><Link to={`/${pagelink.eight}`}>B8</Link></li>
+        <li><Link to={`/${pagelink.pages}`}>Back</Link></li>
       </ul>
     </nav>
   )

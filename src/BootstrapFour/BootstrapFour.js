@@ -10,7 +10,7 @@ const BootsrapFour = () => {
 
   return (
     <Container className='mt-5'>
-      <TitleNNav title={'Websites [Bootstrap]'} href="/websites" />
+      <TitleNNav title={'Websites'} subtitle="Bootstrap 4" href="/websites" />
       <Row>
         <Cards title="Profile 2020" linkref="/portfolio2020" />
         <Cards title="Music" linkref="/music-zero" />

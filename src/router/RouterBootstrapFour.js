@@ -18,6 +18,8 @@ import Boxes from '../BootstrapFour/Boxes/Boxes';
 import Navigations from '../BootstrapFour/Navigations/Navigations';
 import Blogs from '../BootstrapFour/Blogs/Blogs';
 import Shops from '../BootstrapFour/Shops/Shops';
+import Footers from '../BootstrapFour/Footers/Footers';
+import Templates from '../BootstrapFour/Templates/Templates';
 
 
 
@@ -54,11 +56,14 @@ export default function RouterBootstrapFour() {
       <Boxes />
       {/** NAVIGATIONS */}
       <Navigations />
+      {/** FOOTERS */}
+      <Footers />
       {/** BLOGS */}
       <Blogs />
       {/** SHOPS */}
       <Shops />
-
+      {/** TEMPLATES */}
+      <Templates />
 
 
 

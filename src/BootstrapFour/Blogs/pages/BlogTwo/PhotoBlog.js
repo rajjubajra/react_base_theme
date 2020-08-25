@@ -16,12 +16,18 @@ const boxOne = {
 
 function PhotoBlog(props) {
 
+
+
   return (
     <div style={boxOne}>
       <Container>
         <Row>
           <Col lg={4}><Photo /></Col>
-          <Col lg={8}><Text /></Col>
+          <Col lg={8}><Text
+            title={props.title}
+            body={props.body}
+            id={props.id}
+          /></Col>
         </Row>
       </Container>
     </div>

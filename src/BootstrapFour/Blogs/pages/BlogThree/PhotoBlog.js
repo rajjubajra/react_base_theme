@@ -13,14 +13,18 @@ const boxOne = {
 }
 
 
-function PhotoBlog() {
+function PhotoBlog(props) {
 
-  const date = new Date();
+  //const date = new Date();
 
   return (
     <div style={boxOne}>
       <Photo />
-      <Text />
+      <Text
+        title={props.title}
+        body={props.body}
+        id={props.id}
+      />
     </div>
   )
 }

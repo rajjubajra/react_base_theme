@@ -24,30 +24,10 @@ const MeghaMenuBootstrap4 = () => {
           <li><Link to="/b4forms">Form</Link></li>
           <li><Link to="/b4columns">Columns</Link></li>
 
-          <li className="submenu">
-            <Link to="#">Page</Link>
-            <div className="submenu">
-              <ul className="submenu-lists">
-                <li><Link to="#">Home Page</Link></li>
-                <li><Link to="#">About</Link></li>
-                <li><Link to="#">Contact</Link></li>
-                <li><Link to="#">FAQ</Link></li>
-                <li><Link to="#">Features</Link></li>
-                <li><Link to="#">About us</Link></li>
-                <li><Link to="#">Gallery</Link></li>
-                <li><Link to="#">Help</Link></li>
-                <li><Link to="#">Our Team</Link></li>
-                <li><Link to="#">News</Link></li>
-                <li><Link to="#">Error 404</Link></li>
-                <li><Link to="#">Pricing</Link></li>
-                <li><Link to="#">Under Construction</Link></li>
-                <li><Link to="#">Comming Soon</Link></li>
-                <li><Link to="#">Blank Page</Link></li>
-              </ul>
-            </div>
-          </li>
+          <li><Link to="/b4templates">Templates</Link></li>
           <li><Link to="/b4boxes">Boxes</Link></li>
           <li><Link to="/b4navigations">Navigation</Link></li>
+          <li><Link to="/b4footers">Footers</Link></li>
           <li><Link to="/b4blogs">Blogs</Link></li>
           <li><Link to="/b4shops">Shops</Link></li>
           <li><Link to="#">Apps</Link></li>

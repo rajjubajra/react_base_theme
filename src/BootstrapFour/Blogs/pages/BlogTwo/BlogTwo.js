@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Nav from '../../components/header/Nav';
 import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import PhotoBlog from './PhotoBlog';
+import Blogs from './Blogs';
 
 
 export const BlogTwo = () => {
@@ -41,7 +41,7 @@ export const BlogTwo = () => {
       <Container>
         <Row>
           <Col className="d-flex f-wrap" style={{ flexWrap: "wrap" }}>
-            <PhotoBlog
+            <Blogs
               posts={posts}
               dataLength={dataLength}
               days={days[0]}

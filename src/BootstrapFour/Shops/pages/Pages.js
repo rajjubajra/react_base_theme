@@ -8,7 +8,7 @@ import { cssclass } from '../CssClass';
 function Pages() {
   return (
     <Container className={`${cssclass.base_classname}`}>
-      <TitleNNav title={'Shops [Bootstrap Four]'} href="/websites-bootstrap" />
+      <TitleNNav title={'Shops'} subtitle="Bootstrap 4" href="/websites-bootstrap" />
       <Row>
         <Cards title="Shop - 1" linkref={pagelink.one} />
         <Cards title="Shop - 2" linkref={pagelink.two} />

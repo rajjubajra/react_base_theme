@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { pagelink } from '../../PageLink';
 
-const caption = {
+const captionStyle = {
   color: "#000",
   background: "rgb(248, 249, 250, 0.21)",
   width: "100%",
@@ -10,7 +11,7 @@ const caption = {
   marginTop: "5px",
 }
 
-const title = {
+const titleStyle = {
   fontSize: "1.2rem",
   fontWeight: "400"
 }
@@ -27,16 +28,20 @@ const buttonStyle = {
 const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 
-function Text() {
+function Text(props) {
   const date = new Date();
 
   return (
-    <section style={caption}>
-      <div><p>Date: {date.getDate()} {month[date.getMonth()]}, {date.getFullYear()}</p></div>
+    <section style={captionStyle}>
+      <div>
+        <p>Date: {date.getDate()} {month[date.getMonth()]}, {date.getFullYear()}
+        </p></div>
 
-      <div style={title}>Lorem ipsum dolor</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda asperiores voluptates quam aliquam aliquid nostrum facere numquam ipsum fugiat obcaecati ad, quibusdam ratione...</p>
-      <Link style={buttonStyle}>read more</Link>
+      <div style={titleStyle}>{props.title}</div>
+      <p>{props.body}...</p>
+      <Link
+        to={`${pagelink.readmoreThree}/${props.id}`}
+        style={buttonStyle}>read more</Link>
     </section>
   )
 }

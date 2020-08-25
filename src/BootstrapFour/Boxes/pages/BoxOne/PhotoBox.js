@@ -18,7 +18,8 @@ const caption = {
   color: "#fff",
   background: "rgb(248, 249, 250, 0.21)",
   width: "100%",
-  textAlign: "center"
+  textAlign: "center",
+  fontWeight: "200"
 }
 
 function PhotoBox() {

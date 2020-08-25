@@ -3,6 +3,7 @@ import Nav from '../../components/header/Nav';
 import Blogs from './Blogs';
 import { cssclass } from '../../CssClass';
 import axios from 'axios';
+import { dataSourceUrl } from '../../data/dataSourceUrl';
 
 
 
@@ -13,7 +14,7 @@ const days = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13
 
 export const BlogOne = () => {
 
-  const dataUrl = 'https://jsonplaceholder.typicode.com/posts';
+  const dataUrl = dataSourceUrl.DATAURL;
 
   const [posts, setPosts] = useState([]);
   const dataLength = posts.length;

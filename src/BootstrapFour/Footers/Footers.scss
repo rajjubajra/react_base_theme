@@ -1,0 +1,22 @@
+.footer{
+
+    a{
+      color: #000 !important;
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+
+    .social-media{
+      a{
+          img{
+            filter: grayscale(100%);
+            width: 70%;
+        }
+      }
+    }
+
+    
+
+}

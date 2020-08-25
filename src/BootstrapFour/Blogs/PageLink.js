@@ -4,6 +4,12 @@ export const pagelink = {
   two: "blog-2",
   three: "blog-3",
   four: "blog-4",
-  readmoreOne: "readmoreOne"
+  five: "blog-5",
+  readmoreOne: "readmoreOne",
+  readmoreTwo: "readmoreTwo",
+  readmoreThree: "readmoreThree",
+  readmoreFour: "readmoreFour",
+  readmoreFive: "readmoreFive",
+
 }
 

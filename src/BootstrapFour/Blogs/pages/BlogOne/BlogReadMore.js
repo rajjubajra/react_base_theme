@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import { dataSourceUrl } from '../../data/dataSourceUrl';
 import Nav from '../../components/header/Nav';
 import { Container, Col, Row } from 'react-bootstrap';
 
@@ -31,7 +31,7 @@ function BlogReadMore(props) {
   const [title, setTitle] = useState('');
 
   let { id } = useParams();
-  const dataUrl = `https://jsonplaceholder.typicode.com/posts/${id}`;
+  const dataUrl = `${dataSourceUrl.DATAURL}/${id}`;
 
   useEffect(() => {
     axios({

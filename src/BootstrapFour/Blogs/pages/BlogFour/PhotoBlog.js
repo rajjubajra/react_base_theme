@@ -14,7 +14,7 @@ const boxOne = {
 }
 
 
-function PhotoBlog() {
+function PhotoBlog(props) {
 
 
 
@@ -23,7 +23,11 @@ function PhotoBlog() {
       <Container>
         <Row>
           <Col lg={4}><Photo /></Col>
-          <Col lg={8}><Text /></Col>
+          <Col lg={8}><Text
+            title={props.title}
+            body={props.body}
+            id={props.id}
+          /></Col>
         </Row>
       </Container>
     </div>
