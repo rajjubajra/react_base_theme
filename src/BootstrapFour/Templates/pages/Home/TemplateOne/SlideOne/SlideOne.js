@@ -5,7 +5,7 @@ import Slides from './Slides';
 
 export const SlideOne = () => {
   return (
-    <div className='slide-one'>
+    <div className='slide-one-temp-one'>
       <div className="slide">
         <Slides />
       </div>

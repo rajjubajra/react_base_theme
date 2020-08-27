@@ -15,7 +15,6 @@ const caption = {
 }
 
 const title = {
-  fontSize: "2rem",
   fontWeight: "200",
   margin: "30px",
   letterSpacing: "0.2rem"
@@ -32,7 +31,7 @@ function Text() {
       <div>
         <p>Date: {date.getDate()} {month[date.getMonth()]}, {date.getFullYear()}</p>
       </div>
-      <div style={title}>Story: Box Five</div>
+      <div ><h3 style={title}>Story: Box Five</h3></div>
       <div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odit magnam. Trem ipsum dolor, sit amet consectetur adipisicing elit. Sed perspiciatis doloremque voluptatibus. Nihil nobis quia, suscipit accusantium cupiditate impedit nulla non iusto totam eos modi, pariatur, exercitationem fugiat aperiam minus!</p>
       </div>

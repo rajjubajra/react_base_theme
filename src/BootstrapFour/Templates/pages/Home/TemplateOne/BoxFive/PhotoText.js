@@ -9,23 +9,21 @@ const boxFour = {
 }
 
 
-function TextPhoto() {
+function PhotoText() {
 
 
   return (
     <div style={boxFour}>
       <Container>
         <Row>
-          <div className="col-lg-6">
-            <Text />
-          </div>
-          <div className="col-lg-6">
+          <Col>
             <Photo />
-          </div>
+            <Text />
+          </Col>
         </Row>
       </Container>
-    </div >
+    </div>
   )
 }
 
-export default TextPhoto
+export default PhotoText

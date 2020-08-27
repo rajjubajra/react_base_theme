@@ -16,15 +16,13 @@ function TextPhoto() {
     <div style={boxFour}>
       <Container>
         <Row>
-          <div className="col-lg-6">
+          <Col>
             <Text />
-          </div>
-          <div className="col-lg-6">
             <Photo />
-          </div>
+          </Col>
         </Row>
       </Container>
-    </div >
+    </div>
   )
 }
 

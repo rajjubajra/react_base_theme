@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
 import Navigation from './Navigation';
 import NavIconThreeLines from './NavIconThreeLines';
-import NavMobile from './NavMobile';
 
 
 const data = [
   {
     id: "1",
-    name: "Link 1",
-    link: "link-1"
+    name: "Home",
+    link: "#"
   },
   {
     id: 2,
-    name: "Link 2",
-    link: "link-2"
+    name: "About",
+    link: "#"
   },
   {
     id: 3,
-    name: "Link 3",
-    link: "link-3"
+    name: "Contact",
+    link: "#"
   }
 ]
 
@@ -34,7 +32,6 @@ export const NavigationOne = () => {
   /** OnClick "Mobile Menu Icon[Three-lines], Veiw mobile menu" */
   const [view, setView] = useState(false);
 
-
   /** Runs Onload */
   useEffect(() => {
     console.log(window.innerWidth)
@@ -42,7 +39,6 @@ export const NavigationOne = () => {
       ? setWindowSizeSmall(true)
       : setWindowSizeSmall(false);
   }, [])
-
 
   /** Runs while resize */
   useEffect(() => {
@@ -68,7 +64,10 @@ export const NavigationOne = () => {
       <div>
         {windowSizeSmall === ''
           ? ''
-          : <Navigation data={data} windowSizeSmall={windowSizeSmall} view={view} />}
+          : <Navigation
+            data={data}
+            windowSizeSmall={windowSizeSmall}
+            view={view} />}
       </div>
     </div >
   )

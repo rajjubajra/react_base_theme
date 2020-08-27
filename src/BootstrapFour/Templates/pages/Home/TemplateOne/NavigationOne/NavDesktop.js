@@ -9,7 +9,9 @@ function NavDesktop(props) {
         {
           props.data.map(item => {
             return <Nav.Item key={item.id}>
-              <Nav.Link eventKey={item.link}>{item.name}</Nav.Link>
+              <Nav.Link
+                style={props.linkStyle}
+                eventKey={item.link}>{item.name}</Nav.Link>
             </Nav.Item>
           })
         }

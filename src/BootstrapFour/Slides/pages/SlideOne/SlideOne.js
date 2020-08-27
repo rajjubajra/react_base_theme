@@ -8,7 +8,7 @@ import Slides from './Slides';
 export const SlideOne = () => {
   return (
     <div className='slide-one'>
-      <Nav />
+      <div style={{ position: "relative", zIndex: "50" }}><Nav /></div>
       <div className="slide">
         <Slides />
       </div>

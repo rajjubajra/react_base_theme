@@ -1,48 +1,62 @@
-import React from 'react'
+import React from 'react';
 import NavigationOne from './NavigationOne/NavigationOne';
 import SlideOne from './SlideOne/SlideOne';
 import BoxEight from './BoxEight/BoxEight';
 import BoxFour from './BoxFour/BoxFour';
+import BoxFive from './BoxFive/BoxFive';
 import FooterFour from './FooterFour/FooterFour';
 
 
+
+
 function TemplateOne() {
+
+
   return (
     <div style={{ position: "relative" }} >
 
       {/** NAVIGATION */}
-      <div style={{ position: "relative", zIndex: "20" }}>
+      <div style={{
+        position: "sticky",
+        top: "0px",
+        zIndex: "20",
+        backgroundColor: "rgba(255,255,255,0.23)"
+      }}>
         <NavigationOne />
       </div>
 
-
       {/** SLIDER */}
       <div style={{
-        position: "absolute",
-        top: "0px",
+        display: "block",
         width: "100%",
-        height: "100vh"
+        height: "auto",
+        marginTop: "-35px"
       }}>
         <SlideOne />
       </div>
 
+
       {/** TEXT ONLY BOX */}
-      <div style={{
-        position: "relative",
-        top: "0px",
-        marginTop: "100vh",
-        marginBottom: "100px"
-      }}>
+      <div>
         <BoxEight />
       </div>
 
-      {/** FOUR SQUARE BOXES */}
-      <div>
+      {/** BOX for DESKTOP */}
+      <div className={`d-none d-lg-block mt-5`}>
         <BoxFour />
+      </div>
+      {/** BOX for TABLETS */}
+      <div className="d-none d-sm-block d-md-block d-lg-none mt-5">
+        <BoxFive />
+      </div>
+
+      {/** BOX for MOBILE  */}
+      <div className="d-block d-sm-none mt-5">
+        <BoxFive />
       </div>
 
       {/** FOOTER */}
-      <div>
+      <div className="mt-5">
         <FooterFour />
       </div>
 

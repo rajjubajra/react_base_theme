@@ -13,7 +13,7 @@ function SideNav() {
   return (
     <>
       <div
-        style={{ position: "fixed", top: "0px", zIndex: "1000" }}
+        style={{ position: "absolute", top: "0px", zIndex: "1000" }}
         onClick={() => showHide ? setShowHide(false) : setShowHide(true)}
       >
         <NavIconThreeLines />

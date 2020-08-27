@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../../components/header/Nav';
 import { Container, Row, Col } from 'react-bootstrap';
-import { cssclass } from '../../CssClass';
+import { cssclass } from '../../config/CssClass';
 import SideNav from '../../components/SideNav/SideNav';
 
 

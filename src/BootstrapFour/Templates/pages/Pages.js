@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap'
 import TitleNNav from '../../B4Components/B4Header/TitleNNav';
 import Cards from '../../B4Components/Cards';
 import { pagelink } from '../PageLink';
-import { cssclass } from '../CssClass';
+import { cssclass } from '../config/CssClass';
 import SideNav from '../components/SideNav/SideNav';
 
 function Pages() {

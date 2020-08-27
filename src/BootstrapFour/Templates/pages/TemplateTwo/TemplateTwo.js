@@ -3,7 +3,7 @@ import Nav from '../../components/header/Nav';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionFetchData } from '../../redux/actions/ActionFetchData';
 import { Container, Row, Col } from 'react-bootstrap';
-import { cssclass } from '../../CssClass';
+import { cssclass } from '../../config/CssClass';
 import SideNav from '../../components/SideNav/SideNav';
 
 export const TemplateTwo = () => {

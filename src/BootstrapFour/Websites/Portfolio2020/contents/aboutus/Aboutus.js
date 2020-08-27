@@ -16,6 +16,8 @@ function Aboutus() {
     threshold: 0.5,
   })
 
+
+
   // console.log('ref', ref);
   console.log('inview', inView,);
   // console.log('entry', entry);

@@ -11,7 +11,6 @@ function Slide(props) {
         className="d-block w-100"
         width={800}
         height={400}
-        backgroundColor="#123456"
       />
 
       {/** SLIDE CAPTIONS */}

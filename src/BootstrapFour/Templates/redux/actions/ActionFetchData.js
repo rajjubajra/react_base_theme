@@ -1,6 +1,6 @@
 import { actionTypes } from "./ActionTypes"
 import axios from "axios"
-import { dataurl } from '../../data/dataurl';
+import { dataurl } from '../../config/dataurl';
 
 export const actionFetchData = () => {
 
