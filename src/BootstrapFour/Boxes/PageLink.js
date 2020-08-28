@@ -8,6 +8,7 @@ export const pagelink = {
   six: "box-6",
   viewSix: "viewSix",
   seven: "box-7",
-  eight: "box-8"
+  eight: "box-8",
+  nine: "box-9"
 }
 

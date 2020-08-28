@@ -1,7 +1,11 @@
 import React from 'react';
-import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 
 /** Tablet and Mobile */
+
+const ulStyle = {
+  listStyle: "none"
+}
 
 function NavMobile(props) {
   return (
@@ -15,16 +19,20 @@ function NavMobile(props) {
       width: "100%"
     }}>
       {/** view: true/false based on display size */}
-      <Nav className={`${props.view && props.windowSizeSmall ? 'flex-column' : 'd-none'}`}>
+      <ul style={ulStyle} className={`${props.view && props.windowSizeSmall ? 'flex-column' : 'd-none'}`}>
         {
           props.data.map(item => {
-            return <Nav.Item key={item.id}>
-              <Nav.Link style={props.linkStyle} eventKey={item.link}>    {item.name}
-              </Nav.Link>
-            </Nav.Item>
+            return <li key={item.id}>
+              <Link
+                style={props.linkStyle}
+                to={item.link}
+              >
+                {item.name}
+              </Link>
+            </li>
           })
         }
-      </Nav>
+      </ul>
     </div>
   )
 }

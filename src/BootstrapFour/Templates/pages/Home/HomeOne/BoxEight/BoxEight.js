@@ -11,7 +11,7 @@ const styleLight = {
   margin: "20px 0px",
   opacity: "1",
   transition: "opacity 2s",
-  transitionDelay: "1s"
+  transitionDelay: "0.5s"
 
 }
 

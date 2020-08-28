@@ -13,7 +13,8 @@ function Pages() {
       <Container className={`${cssclass.base_classname}`}>
         <TitleNNav title="Templates" subtitle="Bootstrap 4" href="/websites-bootstrap" />
         <Row>
-          <Cards title="Template - 1" text="Home" linkref={pagelink.home} />
+          <Cards title="Home One" text="Home" type="General slider" linkref={pagelink.homeOne} />
+          <Cards title="Home Two" text="Home" type="Full page menu" linkref={pagelink.homeTwo} />
           <Cards title="Template - 2" text="About" linkref={pagelink.about} />
           <Cards title="Template - 3" text="Contact" linkref={pagelink.contact} />
         </Row>

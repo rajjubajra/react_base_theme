@@ -18,7 +18,7 @@ const BootsrapFour = () => {
         <Cards title="Photography" linkref="/photography" />
         <Cards title="Profile Aaa" linkref="/profile-aaa" />
         <Cards title="Profile Aab" linkref="/profile-aab" />
-        <Cards title="Blank Card 5" linkref="#" />
+        <Cards title="Base Theme" text="Base Theme" type="Do not Work on this Theme" linkref="/basetheme" />
       </Row>
     </Container>
   )

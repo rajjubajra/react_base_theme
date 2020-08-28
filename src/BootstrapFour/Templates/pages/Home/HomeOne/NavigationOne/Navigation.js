@@ -2,6 +2,9 @@ import React from 'react';
 import NavMobile from './NavMobile';
 import NavDesktop from './NavDesktop';
 
+
+
+
 function Navigation(props) {
 
   const linkStyle = {
@@ -9,7 +12,10 @@ function Navigation(props) {
     color: "#000",
     letterSpace: "0.15rem",
     fontWeight: "300",
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    margin: "0px 10px",
+    textDecoration: "none",
+    listStyle: "none"
   }
 
   return (

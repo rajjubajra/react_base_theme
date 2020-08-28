@@ -6,12 +6,15 @@ import BoxThree from './BoxThree/BoxThree';
 import BoxFour from './BoxFour/BoxFour';
 import BoxFive from './BoxFive/BoxFive';
 import BoxSix from './BoxSix/BoxSix';
-import BoxEight from './BoxEight/BoxEight';
 import BigImageSix from './BoxSix/BigImageSix';
+
+import BoxSeven from './BoxSeven/BoxSeven';
+import BoxEight from './BoxEight/BoxEight';
+import BoxNine from './BoxNine/BoxNine';
+
 
 import { pagelink } from '../PageLink';
 import Pages from './Pages';
-import BoxSeven from './BoxSeven/BoxSeven';
 
 
 function RoutePages() {
@@ -27,6 +30,7 @@ function RoutePages() {
       <Route exact path={`/${pagelink.viewSix}/:id`} component={BigImageSix} />
       <Route exact path={`/${pagelink.seven}`} component={BoxSeven} />
       <Route exact path={`/${pagelink.eight}`} component={BoxEight} />
+      <Route exact path={`/${pagelink.nine}`} component={BoxNine} />
     </>
   )
 }

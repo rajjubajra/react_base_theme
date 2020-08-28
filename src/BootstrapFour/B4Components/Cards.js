@@ -15,7 +15,9 @@ function Cards(props) {
         <Card.Title style={{
           position: "absolute",
           top: "10%",
-          fontWeight: "200"
+          fontWeight: "200",
+          fontSize: "0.9rem",
+          letterSpacing: "0.05rem"
         }}>{props.title}</Card.Title>
 
         <Card.Text

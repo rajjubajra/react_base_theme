@@ -16,6 +16,7 @@ function Nav() {
         <li><Link to={`/${pagelink.five}`}>B5</Link></li>
         <li><Link to={`/${pagelink.six}`}>B6</Link></li>
         <li><Link to={`/${pagelink.eight}`}>B8</Link></li>
+        <li><Link to={`/${pagelink.nine}`}>B9</Link></li>
         <li><Link to={`/${pagelink.pages}`}>Back</Link></li>
       </ul>
     </nav>

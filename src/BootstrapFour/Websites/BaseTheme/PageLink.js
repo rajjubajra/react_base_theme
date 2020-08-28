@@ -1,5 +1,6 @@
 export const pagelink = {
   home: "basetheme",
   about: "basetheme-about",
-  contact: "basetheme-contact"
+  contact: "basetheme-contact",
+  back: "websites-bootstrap"
 }

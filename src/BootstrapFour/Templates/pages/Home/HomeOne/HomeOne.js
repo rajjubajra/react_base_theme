@@ -9,7 +9,7 @@ import FooterFour from './FooterFour/FooterFour';
 
 
 
-function TemplateOne() {
+function HomeOne() {
 
 
   return (
@@ -30,7 +30,7 @@ function TemplateOne() {
         display: "block",
         width: "100%",
         height: "auto",
-        marginTop: "-35px"
+        marginTop: "-56px"
       }}>
         <SlideOne />
       </div>
@@ -64,4 +64,4 @@ function TemplateOne() {
   )
 }
 
-export default TemplateOne
+export default HomeOne
