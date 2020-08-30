@@ -47,11 +47,11 @@ export const NavigationTwo = () => {
       </div>
       <div style={{
         position: "relative",
-        transitionProperty: "top",
+        transitionProperty: "margin",
         transitionDuration: "3s",
-        top: view ? 0 : -1000,
+        marginTop: view ? 0 : "-100vh",
         width: "100%",
-        height: "90vh",
+        height: "100vh",
         justifyContent: "center",
         display: "flex",
       }}>

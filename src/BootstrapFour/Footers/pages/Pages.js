@@ -8,7 +8,7 @@ import { cssclass } from '../CssClass';
 function Pages() {
   return (
     <Container className={`${cssclass.base_classname}`}>
-      <TitleNNav title={'Column'} subtitle="Bootstrap 4" href="/websites-bootstrap" />
+      <TitleNNav title="Footer" subtitle="Bootstrap 4" href="/websites-bootstrap" />
       <Row>
         <Cards title="Footer - 1" text="Four Column" type="Light" linkref={pagelink.one} />
         <Cards title="Footer - 2" text="Two Column LT" type="Light" linkref={pagelink.two} />
@@ -19,5 +19,4 @@ function Pages() {
     </Container>
   )
 }
-
 export default Pages

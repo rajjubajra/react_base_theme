@@ -1,15 +1,14 @@
 import React from 'react'
 import Nav from '../components/header/Nav';
 import { Container, Row, Col } from 'react-bootstrap';
-import { cssclass } from '../CssClass';
 
-export const ColumnThree = () => {
+export const Contact = () => {
   return (
-    <div className={cssclass.base_classname}>
+    <div className='base-theme'>
       <Nav />
       <Container>
         <Row>
-          <Col><h1>Column 3</h1></Col>
+          <Col><h1>Contact</h1></Col>
         </Row>
       </Container>
 
@@ -17,4 +16,4 @@ export const ColumnThree = () => {
   )
 }
 
-export default ColumnThree;
+export default Contact;

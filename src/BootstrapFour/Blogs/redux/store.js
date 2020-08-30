@@ -1,12 +1,14 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import { reducerFetchData } from './reducers/ReducerFetchData';
+//import { reducerFetchData } from './reducers/ReducerFetchData';
+import { reducerPassBlogId } from './reducers/ReducerPassBlogId';
 
 
 const reducer = combineReducers(
   {
-    reducerFetchData
+    //reducerFetchData,
+    reducerPassBlogId
   }
 );
 

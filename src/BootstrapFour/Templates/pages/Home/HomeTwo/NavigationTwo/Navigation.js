@@ -19,7 +19,8 @@ const ulStyle = {
 const linkStyle = {
   textDecoration: "none",
   margin: "5px 0px",
-  color: "#000"
+  color: "#000",
+  letterSpacing: "0.2rem"
 }
 
 function Navigation(props) {

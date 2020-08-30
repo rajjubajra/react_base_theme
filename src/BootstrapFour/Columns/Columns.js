@@ -5,7 +5,7 @@ import { store } from './redux/store';
 import RoutePages from './pages/RoutePages';
 
 
-function Form() {
+function Columns() {
   return (
     <Provider store={store}>
       <RoutePages />
@@ -13,4 +13,4 @@ function Form() {
   )
 }
 
-export default Form
+export default Columns

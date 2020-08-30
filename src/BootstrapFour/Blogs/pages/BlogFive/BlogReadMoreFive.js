@@ -30,7 +30,7 @@ const imageStyle = {
 }
 
 
-function BlogReadMoreFive(props) {
+function BlogReadMoreFive() {
 
   const [body, setBody] = useState('');
   const [title, setTitle] = useState('');
