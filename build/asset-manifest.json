@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.63d20be9.chunk.css",
-    "main.js": "/static/js/main.227888c2.chunk.js",
-    "main.js.map": "/static/js/main.227888c2.chunk.js.map",
+    "main.css": "/static/css/main.4530abde.chunk.css",
+    "main.js": "/static/js/main.987cc15b.chunk.js",
+    "main.js.map": "/static/js/main.987cc15b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.79b0a450.js",
     "runtime-main.js.map": "/static/js/runtime-main.79b0a450.js.map",
     "static/css/2.af3c1da9.chunk.css": "/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.05c50e7a.chunk.js": "/static/js/2.05c50e7a.chunk.js",
-    "static/js/2.05c50e7a.chunk.js.map": "/static/js/2.05c50e7a.chunk.js.map",
+    "static/js/2.40ca891c.chunk.js": "/static/js/2.40ca891c.chunk.js",
+    "static/js/2.40ca891c.chunk.js.map": "/static/js/2.40ca891c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f03e6e5029a0bb0618bb393d37ad7f35.js": "/precache-manifest.f03e6e5029a0bb0618bb393d37ad7f35.js",
+    "precache-manifest.05a79f45251342e07ccc9451e0de07e0.js": "/precache-manifest.05a79f45251342e07ccc9451e0de07e0.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.63d20be9.chunk.css.map": "/static/css/main.63d20be9.chunk.css.map",
-    "static/js/2.05c50e7a.chunk.js.LICENSE.txt": "/static/js/2.05c50e7a.chunk.js.LICENSE.txt",
+    "static/css/main.4530abde.chunk.css.map": "/static/css/main.4530abde.chunk.css.map",
+    "static/js/2.40ca891c.chunk.js.LICENSE.txt": "/static/js/2.40ca891c.chunk.js.LICENSE.txt",
     "static/media/Designer.svg": "/static/media/Designer.b4d0daa5.svg",
     "static/media/Pants01.jpg": "/static/media/Pants01.f007aaf0.jpg",
     "static/media/Pants02.jpg": "/static/media/Pants02.6235d72d.jpg",
@@ -51,6 +51,7 @@
     "static/media/drw-apple.png": "/static/media/drw-apple.469180dc.png",
     "static/media/drw-envelop.png": "/static/media/drw-envelop.22fa422a.png",
     "static/media/drw-facebook.png": "/static/media/drw-facebook.a6ecc58b.png",
+    "static/media/drw-instagram.png": "/static/media/drw-instagram.73a612b4.png",
     "static/media/drw-linkedIn.png": "/static/media/drw-linkedIn.26f72523.png",
     "static/media/drw-location.png": "/static/media/drw-location.88915fa4.png",
     "static/media/drw-microsoft.png": "/static/media/drw-microsoft.f2fa7c8b.png",
@@ -87,7 +88,6 @@
     "static/media/lotus-with-hands-188.png": "/static/media/lotus-with-hands-188.f19b0485.png",
     "static/media/mail-blue.png": "/static/media/mail-blue.afb7b413.png",
     "static/media/men-1979261_1920.jpg": "/static/media/men-1979261_1920.d8c3a1ac.jpg",
-    "static/media/music00.png": "/static/media/music00.28f82687.png",
     "static/media/note-1314939_640.png": "/static/media/note-1314939_640.de589ae3.png",
     "static/media/paint-1266212_640.png": "/static/media/paint-1266212_640.e55f2cde.png",
     "static/media/palette.png": "/static/media/palette.b2f2d2e0.png",
@@ -162,8 +162,8 @@
   "entrypoints": [
     "static/js/runtime-main.79b0a450.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.05c50e7a.chunk.js",
-    "static/css/main.63d20be9.chunk.css",
-    "static/js/main.227888c2.chunk.js"
+    "static/js/2.40ca891c.chunk.js",
+    "static/css/main.4530abde.chunk.css",
+    "static/js/main.987cc15b.chunk.js"
   ]
 }

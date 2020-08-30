@@ -27,6 +27,8 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! decimal.js-light v2.5.0 https://github.com/MikeMcl/decimal.js-light/LICENCE */
 
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+
 /** @license React v0.18.0
  * scheduler.production.min.js
  *
