@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoTravel from './PhotoPlaceholder/PhotoTravel';
 
 
 const photo = {
@@ -14,10 +14,10 @@ const photo = {
 function Photo() {
   return (
     <div style={photo}>
-      <PhotoPlaceholder
+      <PhotoTravel
         className="d-block w-100"
-        width={500}
-        height={600}
+        width="500px"
+        height="600px"
       />
     </div>
   )

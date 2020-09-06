@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoTravel from './PhotoPlaceholder/PhotoTravel';
 
 
 const boxOne = {
@@ -33,10 +33,10 @@ function PhotoBox() {
 
   return (
     <div style={boxOne}>
-      <PhotoPlaceholder
+      <PhotoTravel
         className="d-block w-100"
-        width={500}
-        height={400}
+        width="500px"
+        height="400px"
       />
       <section style={caption}>
         <div><p>Date: {date.getDate()} {month[date.getMonth()]}, {date.getFullYear()}</p></div>

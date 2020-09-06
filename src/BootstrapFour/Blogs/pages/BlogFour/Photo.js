@@ -1,12 +1,11 @@
 import React from 'react';
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoTravel from './PhotoPlaceholder/PhotoTravel';
 
 function Photo() {
   return (
-    <PhotoPlaceholder
-      className="d-block w-100"
-      width={500}
-      height={400}
+    <PhotoTravel
+      width="500px"
+      height="200px"
     />
   )
 }

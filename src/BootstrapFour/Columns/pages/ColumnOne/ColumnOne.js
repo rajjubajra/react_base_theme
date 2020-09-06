@@ -29,10 +29,28 @@ export const ColumnOne = () => {
         </div>
         <div className="row mt-2">
           <div className="col">
-            <div style={{ float: "left", margin: "0px 20px 0px 0px" }}>
+            <div className="d-none d-lg-block" style={{ float: "left", margin: "0px 20px 0px 0px" }}>
               <CustomPlaceholder
                 width="500px"
                 height="300px"
+              />
+            </div>
+            <div className="d-none d-md-block d-lg-none" style={{ float: "left", margin: "0px 20px 0px 0px" }}>
+              <CustomPlaceholder
+                width="500px"
+                height="300px"
+              />
+            </div>
+            <div className="d-none d-sm-block d-md-none" style={{ float: "left", margin: "0px 20px 0px 0px" }}>
+              <CustomPlaceholder
+                width="500px"
+                height="300px"
+              />
+            </div>
+            <div className="d-block d-sm-none" style={{ margin: "0px 20px 0px 0px" }}>
+              <CustomPlaceholder
+                width="100%"
+                height="200px"
               />
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maxime, animi iure, inventore, perferendis quidem dolore vero cumque impedit provident eaque itaque quaerat a harum et consequatur saepe quis facilis.</p>

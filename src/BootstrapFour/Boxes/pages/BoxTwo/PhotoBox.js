@@ -1,13 +1,13 @@
-import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import React from 'react';
+import PhotoTravel from './PhotoPlaceholder/PhotoTravel';
 
 
 const boxOne = {
   display: "block",
   maxWidth: "500px",
-  height: "400px",
+  maxHeight: "400px",
   margin: "27px",
-  border: "1px solid #eee",
+  border: "0px solid #eee",
   position: "relative",
 }
 const caption = {
@@ -19,13 +19,14 @@ const caption = {
   marginTop: "5px",
 }
 
-function PhotoBox() {
+function PhotoBox(props) {
   return (
+
     <div style={boxOne}>
-      <PhotoPlaceholder
+      <PhotoTravel
         className="d-block w-100"
-        width={500}
-        height={400}
+        width={props.width}
+        height={props.height}
       />
       <p style={caption}>Text Image</p>
     </div>

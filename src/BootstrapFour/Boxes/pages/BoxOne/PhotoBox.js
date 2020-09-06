@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoTravel from './PhotoPlaceholder/PhotoTravel';
 
 
 const boxTwo = {
@@ -25,10 +25,10 @@ const caption = {
 function PhotoBox() {
   return (
     <div style={boxTwo}>
-      <PhotoPlaceholder
+      <PhotoTravel
         className="d-block w-100"
-        width={230}
-        height={300}
+        width="230px"
+        height="275px"
       />
       <h2 style={caption}>Text Image</h2>
     </div>

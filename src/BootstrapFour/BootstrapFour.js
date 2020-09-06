@@ -12,13 +12,41 @@ const BootsrapFour = () => {
     <Container className='mt-5'>
       <TitleNNav title={'Websites'} subtitle="Bootstrap 4" href="/websites" />
       <Row>
-        <Cards title="Profile 2020" linkref="/portfolio2020" />
-        <Cards title="Music" linkref="/music-zero" />
-        <Cards title="Landing Page" linkref="/b4-landing-page" />
-        <Cards title="Photography" linkref="/photography" />
-        <Cards title="Profile Aaa" linkref="/profile-aaa" />
-        <Cards title="Profile Aab" linkref="/profile-aab" />
-        <Cards title="Base Theme" text="Base Theme" type="Do not Work on this Theme" linkref="/basetheme" />
+
+        <Cards
+          title="Profile 2020"
+          linkref="/portfolio2020" />
+
+        <Cards
+          title="Music Zero"
+          linkref="/music-zero" />
+
+        <Cards
+          title="Music One"
+          linkref="/b4MusicOne" />
+
+        <Cards
+          title="Landing Page"
+          linkref="/b4-landing-page" />
+
+        <Cards
+          title="Photography"
+          linkref="/photography" />
+
+        <Cards
+          title="Profile Aaa"
+          linkref="/profile-aaa" />
+
+        <Cards
+          title="Profile Aab"
+          linkref="/profile-aab" />
+
+        <Cards
+          title="Base Theme"
+          text="Base Theme"
+          type="Do not Work on this Theme"
+          linkref="/basetheme" />
+
       </Row>
     </Container>
   )

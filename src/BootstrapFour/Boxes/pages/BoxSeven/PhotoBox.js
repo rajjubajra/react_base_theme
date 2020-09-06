@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoFood from './PhotoPlaceholder/PhotoFood';
 
 
 const boxTwo = {
@@ -8,7 +8,7 @@ const boxTwo = {
   margin: "10px",
   padding: "10px",
   minWidth: "300px",
-  height: "295px",
+  height: "300px",
   border: "1px solid #eee",
   position: "relative",
 }
@@ -25,10 +25,10 @@ const caption = {
 function PhotoBox() {
   return (
     <div style={boxTwo}>
-      <PhotoPlaceholder
+      <PhotoFood
         className="d-block w-100"
-        width={300}
-        height={300}
+        width="300px"
+        height="280px"
       />
       <h2 style={caption}>Text Image</h2>
     </div>

@@ -1,29 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Nav from '../components/header/Nav';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
-import CustomPlaceholder from '../components/CustomPlaceholder';
+import PhotoPlaceholder from '../components/PhotoPlaceholder/PhotoPlaceholder';
+
 
 export default function Home() {
 
-  const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
-
-  const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
-  console.log(colorMode);
-
-  useEffect(() => {
-    setClassName(colorMode);
-    setColourVariant(variant);
-  }, [colorMode, variant])
+  const className = useSelector(state => state.reducerSelectColourMode.colourMode);
+  //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
 
 
   return (
     <div className={className}>
       <ColourMode />
       <Nav />
+
       <div className="container mt-5">
+        <div className="row">
+          <div className="col-lg-6">
+            <PhotoPlaceholder
+              width="400px"
+              height="300px"
+            />
+
+            <PhotoPlaceholder
+              width="200px"
+              height="300px"
+            />
+
+            <PhotoPlaceholder
+              width="500px"
+              height="300px"
+            />
+
+          </div>
+        </div>
         <div className="row mt-5">
           <div className="col-lg-4">
             <h1>h1 : Home</h1>
@@ -37,11 +49,13 @@ export default function Home() {
             </div>
 
           </div>
-          <div className="col-lg-8">
-            <CustomPlaceholder
+          <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <PhotoPlaceholder
               width="100%"
-              height="300px"
+              height="auto"
+              subjectId="0"
             />
+
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maxime, animi iure, inventore, perferendis quidem dolore vero cumque impedit provident eaque itaque quaerat a harum et consequatur saepe quis facilis.</p>
 

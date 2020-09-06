@@ -1,26 +1,28 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Cards(props) {
   return (
-    <Card style={{
+    <div style={{
       width: '22rem',
       height: '200px',
       position: 'relative',
       margin: "10px",
-      borderRadius: '0px'
+      borderRadius: '0px',
+      border: "1px solid #ccc",
+      padding: "20px"
     }} >
-      <Card.Body>
-        <Card.Title style={{
+      <div>
+        <h2 style={{
           position: "absolute",
           top: "10%",
           fontWeight: "200",
           fontSize: "0.9rem",
           letterSpacing: "0.05rem"
-        }}>{props.title}</Card.Title>
+        }}>{props.title}</h2>
 
-        <Card.Text
+        <div
           style={{
             position: "absolute",
             top: "40%",
@@ -38,19 +40,20 @@ function Cards(props) {
             <p>[ {props.text} ]</p>
             [ {props.type} ]
           </div>
-        </Card.Text>
+        </div>
 
-        <Card.Link
+        <Link
           style={{
             position: "absolute",
-            bottom: "10px",
+            bottom: "20px",
             color: "#000",
             fontWeight: "300",
-            letterSpacing: "0.07rem"
+            letterSpacing: "0.07rem",
+            textDecoration: "none"
           }}
-          href={props.linkref}>Preveiw</Card.Link>
-      </Card.Body>
-    </Card>
+          to={props.linkref}>Preveiw</Link>
+      </div>
+    </div>
   )
 }
 

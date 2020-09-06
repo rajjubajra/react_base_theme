@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoFood from './PhotoPlaceholder/PhotoFood';
 
 
 const photo = {
@@ -20,10 +20,10 @@ function Photo() {
   return (
     <section style={styleSection}>
       <div style={photo}>
-        <PhotoPlaceholder
+        <PhotoFood
           className="d-block w-100"
-          width={600}
-          height={400}
+          width="600px"
+          height="400px"
         />
       </div>
     </section>
