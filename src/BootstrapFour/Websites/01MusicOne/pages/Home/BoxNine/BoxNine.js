@@ -58,7 +58,6 @@ function BoxNine() {
         {/** Visible Extra Small device */}
         <div className="row">
           <div className="col-lg-8 d-block d-sm-none">
-            extra small device
             <PhotoMusic width="100%" height="300px" />
           </div>
           <div className="col-lg-8 d-block d-sm-none mt-5">

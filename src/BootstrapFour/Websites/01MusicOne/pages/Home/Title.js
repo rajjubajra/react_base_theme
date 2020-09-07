@@ -13,8 +13,8 @@ const titleStyleSM = {
   letterSpacing: "1rem"
 }
 const titleStyleXS = {
-
-
+  textAlign: "right",
+  letterSpacing: "1rem"
 }
 
 function Title() {
@@ -27,10 +27,7 @@ function Title() {
         <h1 style={titleStyleSM}>B4 MUSIC ONE</h1>
       </div>
       <div className="col-lg-4 col-md-6 d-block d-sm-none">
-        <h1 style={{
-          textAlign: "right",
-          letterSpacing: "1rem"
-        }}>B4 MUSIC ONE</h1>
+        <h1 style={titleStyleXS}>B4 MUSIC ONE</h1>
       </div>
     </>
   )

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ComingSoonB4.scss';
 import axios from 'axios';
-import { comingSoonForLocal } from './Config';
+import { comingSoonForLocal, comingSoonForRemote } from './Config';
 import Page from './Page';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,18 +9,17 @@ import Col from 'react-bootstrap/Col';
 import Loading from './Loading';
 
 
-
-
-
 function ComingSoonB4() {
   const [logoHorizontal, setLogoHorizontal] = useState('');
   const [logoSquare, setLogoSquare] = useState('');
-  const [bodyMsg, setBodyMsg] = useState('');
+  const [bodyMsg, setBodyMsg] = useState('Under Construction');
   const [linkWebHosting, setLinkWebHosting] = useState('');
   const [linkFreeImages, setLinkFreeImages] = useState('');
   const [linkContact, setLinkContact] = useState('');
 
-  const dataUrl = comingSoonForLocal.URL;
+
+  const dataUrl = comingSoonForLocal.URL
+
 
   useEffect(() => {
 
@@ -47,7 +46,6 @@ function ComingSoonB4() {
   return (
     <Container className="coming-soon-b4">
       <Row className="justify-content-center">
-
         {
           /** LOADING */
           logoHorizontal === '' && logoSquare === '' ?
@@ -62,11 +60,8 @@ function ComingSoonB4() {
               linkContact={linkContact}
             />
         }
-
       </Row>
     </Container>
-
-
   )
 }
 
