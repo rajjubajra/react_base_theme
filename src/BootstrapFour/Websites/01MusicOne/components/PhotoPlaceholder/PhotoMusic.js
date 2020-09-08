@@ -11,6 +11,7 @@ function PhotoMusic(props) {
   const tagId = 17; //Taxonomy target_id for "Music"
 
   useEffect(() => {
+
     axios({
       method: 'GET',
       url: dataUrl,

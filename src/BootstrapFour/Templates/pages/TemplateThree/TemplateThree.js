@@ -1,6 +1,5 @@
 import React from 'react'
 import Nav from '../../components/header/Nav';
-import { Container, Row, Col } from 'react-bootstrap';
 import { cssclass } from '../../config/CssClass';
 import SideNav from '../../components/SideNav/SideNav';
 
@@ -10,11 +9,11 @@ export const TemplateThree = () => {
     <div className={cssclass.base_classname}>
       <Nav />
       <SideNav />
-      <Container>
-        <Row>
-          <Col><h1>Column 3</h1></Col>
-        </Row>
-      </Container>
+      <div className="container">
+        <div className="row">
+          <div className="col"><h1>Column 3</h1></div>
+        </div>
+      </div>
 
     </div>
   )

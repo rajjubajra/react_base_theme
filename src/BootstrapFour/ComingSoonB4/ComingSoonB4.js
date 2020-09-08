@@ -5,7 +5,6 @@ import { comingSoonForLocal, comingSoonForRemote } from './Config';
 import Page from './Page';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Loading from './Loading';
 
 
@@ -18,10 +17,15 @@ function ComingSoonB4() {
   const [linkContact, setLinkContact] = useState('');
 
 
-  const dataUrl = comingSoonForLocal.URL
+  const currentUrl = window.location.href;
+  //const dataUrl = comingSoonForLocal.URL
 
 
   useEffect(() => {
+
+    let dataUrl = currentUrl === 'https://yellow-website.com/'
+      ? comingSoonForRemote.URL
+      : comingSoonForLocal.URL;
 
     axios({
       method: 'GET',
@@ -31,7 +35,7 @@ function ComingSoonB4() {
       }
     })
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         setLogoHorizontal(res.data[0].field_logo_horizontal[0]);
         setLogoSquare(res.data[0].field_logo_square[0]);
         setBodyMsg(res.data[0].body[0].value);
@@ -40,12 +44,18 @@ function ComingSoonB4() {
         setLinkContact(res.data[0].field_link_label[2]);
       })
       .catch(err => console.log(err))
-  }, [dataUrl])
+  }, [currentUrl])
+
+
+
+  console.log("CURENT URL", currentUrl,);
+
+
 
 
   return (
-    <Container className="coming-soon-b4">
-      <Row className="justify-content-center">
+    <div className="container coming-soon-b4">
+      <div className="row justify-content-center">
         {
           /** LOADING */
           logoHorizontal === '' && logoSquare === '' ?
@@ -60,8 +70,8 @@ function ComingSoonB4() {
               linkContact={linkContact}
             />
         }
-      </Row>
-    </Container>
+      </div>
+    </div>
   )
 }
 

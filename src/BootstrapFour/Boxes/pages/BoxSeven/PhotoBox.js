@@ -1,5 +1,5 @@
 import React from 'react'
-import PhotoFood from './PhotoPlaceholder/PhotoFood';
+import PhotoFood from '../../components/PhotoPlaceholder/PhotoFood';
 
 
 const boxTwo = {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoFood from '../../components/PhotoPlaceholder/PhotoFood';
 
 function Slide(props) {
 
@@ -22,10 +22,10 @@ function Slide(props) {
 
       {/** PLACEHOLDER FOR IMAGE */}
       {/** * SOURCE: https://www.npmjs.com/package/react-placeholder-image */}
-      <PhotoPlaceholder
+      <PhotoFood
         className="d-block w-100"
-        width={800}
-        height={400}
+        width="100%"
+        height="100vh"
         backgroundColor="#123456"
       />
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { CustomPlaceholder } from 'react-placeholder-image';
+import PhotoTravel from '../../components/PhotoPlaceholder/PhotoTravel';
 
 
 function Slide(props) {
@@ -7,10 +7,10 @@ function Slide(props) {
     <div className={`${props.index === props.activeSlide ? 'Active' : 'd-none'}`}>
       {/** PLACEHOLDER FOR IMAGE */}
       {/** SOURCE: https://www.npmjs.com/package/react-placeholder-image */}
-      <CustomPlaceholder
+      <PhotoTravel
         className="d-block w-100"
-        width={800}
-        height={400}
+        width="100%"
+        height="100vh"
         backgroundColor="#123456"
       />
 

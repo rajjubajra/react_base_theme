@@ -1,5 +1,5 @@
 export const comingSoonForRemote = {
-  URL: `https://yellow-website.com/d8-react-base-theme-backend/coming_soon?_format=json`
+  URL: `https://yellow-website.com/d8-react-base-theme-backend/coming_soon`
 }
 
 export const comingSoonForLocal = {

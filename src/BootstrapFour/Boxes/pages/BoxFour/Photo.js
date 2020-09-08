@@ -1,5 +1,5 @@
 import React from 'react'
-import PhotoTravel from './PhotoPlaceholder/PhotoTravel';
+import PhotoTravel from '../../components/PhotoPlaceholder/PhotoTravel';
 
 
 const photo = {

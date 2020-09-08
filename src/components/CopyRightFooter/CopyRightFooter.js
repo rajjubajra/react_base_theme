@@ -11,6 +11,7 @@ const CopyRightFooter = () => {
           All Right Reserved | Desinged and developed by
           <a href="http://yellow-website.com"  >Yellow-Website.com</a>
           <Link to="/">+</Link>
+          <Link to={{ pathname: "/https://yellow-website.com/d8-react-base-theme-backend/user/login" }}>Login</Link>
         </p>
       </div>
     </>

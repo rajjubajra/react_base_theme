@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoPlaceholder } from 'react-placeholder-image';
+import PhotoTravel from '../../../../components/PhotoPlaceholder/PhotoTravel';
 import { useInView } from 'react-intersection-observer';
 
 
@@ -33,7 +33,7 @@ function Photo() {
 
   return (
     <div ref={ref} style={inView ? photo : beforeView} >
-      <PhotoPlaceholder
+      <PhotoTravel
         className="d-block w-100"
         width={500}
         height={600}
