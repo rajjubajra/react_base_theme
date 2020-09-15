@@ -30,6 +30,10 @@ const BootsrapFour = () => {
           linkref="/b4-landing-page" />
 
         <Cards
+          title="Photo Gallery"
+          linkref="/photo-gallery" />
+
+        <Cards
           title="Photography"
           linkref="/photography" />
 
