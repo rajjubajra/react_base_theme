@@ -25,7 +25,6 @@ function Gallery() {
     <div className={className}>
       <ColourMode />
       <Nav />
-      <h1>id : {id}</h1>
       <BoxSix />
     </div>
   )

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Masonry.scss';
 import BoxArrowInLeft from './BoxArrowInLeft';
 import BoxArrowInRight from './BoxArrowInRight';
-import Photo from './Photo';
 import Masonry from 'react-masonry-css';
 import CustomPlaceholder from '../../components/PhotoPlaceholder/CustomPlaceholder';
+import PhotoPlaceholder from '../../components/PhotoPlaceholder/PhotoPlaceholder';
 
 
 function Boxes(props) {
@@ -47,14 +47,19 @@ function Boxes(props) {
           {/* array of JSX items */
 
             props.photos.length > 0
-              ? props.photos.map((item) => {
-                return <Photo imgSrc={item.url} />
+              ? props.photos.map((item, index) => {
+                return <PhotoPlaceholder
+                  className="d-block w-100"
+                  width="100%"
+                  height="400px"
+                  imgSrc={item.url}
+                  imgAlt={item.alt}
+                  imgIndex={index}
+                />
               })
               : <CustomPlaceholder />
 
           }
-
-
         </Masonry>
       </div>
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Photo from './Photo';
 import Nav from '../../components/header/Nav';
 
 
@@ -70,7 +69,7 @@ function BigImageSix(props) {
               <div style={bodyStyle}>
                 <p>Article: {id}</p>
                 <div style={imageStyle}>
-                  <Photo />
+                  PHOTO ???
                 </div>
               </div>
             </div>

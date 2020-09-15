@@ -12,7 +12,8 @@ function PhotoPlaceholder(props) {
 
   return (
     <div>
-      <img style={imgStyle} src={props.imgSrc} alt="Travel" />
+      <img style={imgStyle} src={props.imgSrc} alt={props.imgAlt} />
+      <p style={{ textAlign: "center" }}>Image Index: {props.imgIndex}</p>
     </div>
   )
 }

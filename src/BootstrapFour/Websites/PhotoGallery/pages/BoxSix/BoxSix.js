@@ -37,6 +37,7 @@ export const BoxSix = (props) => {
         })
         /** set the array in to the state */
         setPhotos(arr);
+
       })
       .catch(err => console.log(err))
   }, [dataUrl, tagId])
@@ -50,15 +51,19 @@ export const BoxSix = (props) => {
 
 
   return (
-    <div>
-      <Boxes
-        photos={photos}
-        dataLength={dataLength}
-        days={days[0]}
-        months={months[0]}
-      />
+    <div className="container">
+      <div className="row d-flex justify-content-center">
+        <h2>Tag Id: {tagId}</h2>
+      </div>
+      <div className="row">
+        <Boxes
+          photos={photos}
+          dataLength={dataLength}
+          days={days[0]}
+          months={months[0]}
+        />
+      </div>
     </div>
-
   )
 }
 
