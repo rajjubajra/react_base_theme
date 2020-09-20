@@ -14,8 +14,18 @@ const MeghaMenu = () => {
             <Link to="#">Websites</Link>
             <div className="submenu">
               <ul className="submenu-lists">
-                <li><Link to="/websites">Websites [Custom CSS]</Link></li>
-                <li><Link to="/websites-bootstrap">Websites [Bootstrap 4]</Link></li>
+                <li>
+                  <Link to="/websites">
+                    Websites [Custom CSS]</Link>
+                </li>
+                <li>
+                  <Link to="/websites-bootstrap">
+                    Websites [Bootstrap 4]</Link>
+                </li>
+                <li>
+                  <Link to="/applications">
+                    Applications</Link>
+                </li>
               </ul>
             </div>
           </li>

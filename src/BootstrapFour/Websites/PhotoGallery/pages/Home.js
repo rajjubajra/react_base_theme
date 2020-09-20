@@ -4,7 +4,7 @@ import Nav from '../components/header/Nav';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
 import Cards from './Cards/Cards';
-import PhotoPlaceholder from '../components/PhotoPlaceholder/PhotoPlaceholder';
+
 
 
 export default function Home() {

@@ -46,6 +46,12 @@ const BootsrapFour = () => {
           linkref="/profile-aab" />
 
         <Cards
+          title="Photography A"
+          text="Photography A"
+          type="Image scroll Horizontal"
+          linkref="/photography-A" />
+
+        <Cards
           title="Base Theme"
           text="Base Theme"
           type="Do not Work on this Theme"

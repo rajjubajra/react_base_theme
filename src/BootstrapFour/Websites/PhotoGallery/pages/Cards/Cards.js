@@ -12,7 +12,7 @@ function Cards() {
         <Card title="Food" linkref={`${pagelink.gallery}/16`} />
         <Card title="Music" linkref={`${pagelink.gallery}/17`} />
         <Card title="Garden" linkref={`${pagelink.gallery}/18`} />
-        <Card title="Blank Card 4" linkref="#" />
+        <Card title="Social Media" linkref={`${pagelink.gallery}/19`} />
         <Card title="Blank Card 5" linkref="#" />
       </Row>
     </Container>

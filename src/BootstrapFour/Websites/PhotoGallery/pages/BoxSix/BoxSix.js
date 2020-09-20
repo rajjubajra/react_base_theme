@@ -16,6 +16,10 @@ export const BoxSix = (props) => {
   console.log("TAG", typeof (tagId));
 
   useEffect(() => {
+
+    /** Empty photo array before new loading */
+    setPhotos('');
+
     axios({
       method: 'GET',
       url: dataUrl,

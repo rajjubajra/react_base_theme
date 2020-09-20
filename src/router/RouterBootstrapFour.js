@@ -14,6 +14,7 @@ import MusicZero from '../BootstrapFour/Websites/MusicZero/MusicZero';
 import MusicOne from '../BootstrapFour/Websites/01MusicOne/MusicOne';
 
 import Photography from '../BootstrapFour/Websites/Photography/Photography';
+import PhotographyA from '../BootstrapFour/Websites/PhotographyA/PhotographyA';
 import ProfileAaa from '../BootstrapFour/Websites/Profile_Aaa/PofileAaa';
 import ProfileAab from '../BootstrapFour/Websites/Profile_Aab/ProfileAab';
 
@@ -90,6 +91,7 @@ export default function RouterBootstrapFour() {
       <Photography />
       <ProfileAaa />
       <ProfileAab />
+      <PhotographyA />
 
 
 

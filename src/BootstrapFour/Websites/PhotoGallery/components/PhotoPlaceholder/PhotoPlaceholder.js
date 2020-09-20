@@ -11,10 +11,11 @@ function PhotoPlaceholder(props) {
   }
 
   return (
-    <div>
+    <>
       <img style={imgStyle} src={props.imgSrc} alt={props.imgAlt} />
-      <p style={{ textAlign: "center" }}>Image Index: {props.imgIndex}</p>
-    </div>
+      <p className="small-font" style={{ textAlign: "center" }}>Image Index: {props.imgIndex}</p>
+      <p className="extra-small-font">{props.imgSrc}</p>
+    </>
   )
 }
 

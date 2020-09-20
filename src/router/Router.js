@@ -4,6 +4,8 @@ import CopyRightFooter from '../components/CopyRightFooter/CopyRightFooter';
 import RouterComponents from './RouterComponents';
 import RouterNonCssFramworkWebsites from './RouterNonCssFrameworkWebsites';
 import RouterBootstrapFour from './RouterBootstrapFour';
+import RouterApplications from './RouterApplications';
+
 // import MeghaMenu from '../components/Navigation/MeghaMenu';
 // import ComingSoon from '../components/Websites/ComingSoon/ComingSoon';
 import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
@@ -66,6 +68,10 @@ const Router = () => {
 
         <Switch>
           <RouterComponentTest />
+        </Switch>
+
+        <Switch>
+          <RouterApplications />
         </Switch>
 
 
