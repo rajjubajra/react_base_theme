@@ -9,6 +9,8 @@ function Services() {
   const [refServices, inVeiwServices] = useInView({
     threshold: 0.3,
   })
+
+
   return (
     <Container ref={refServices}>
       <Row>

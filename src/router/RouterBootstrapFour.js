@@ -5,7 +5,7 @@ import BootsrapFour from '../BootstrapFour/BootstrapFour';
 /** Bootstrap-Four Website Templates */
 import BaseTheme from '../BootstrapFour/Websites/BaseTheme/Basetheme';
 
-
+import ArtNdesign from '../BootstrapFour/Websites/ArtNdesign/ArtNdesign';
 import Portfolio2020 from '../BootstrapFour/Websites/Portfolio2020/Portfolio2020';
 import MeghaMenuBootstrap4 from '../components/Navigation/MeghaMenuBootstrap4';
 import RouteLanding from '../BootstrapFour/B4Components/B4LandingPage/RouteLanding';
@@ -83,7 +83,7 @@ export default function RouterBootstrapFour() {
       <RouteLanding />
       {/** BOOTSTRAP 4 WEBSITES */}
       <BaseTheme />
-
+      <ArtNdesign />
       <Portfolio2020 />
       <MusicZero />
       <MusicOne />

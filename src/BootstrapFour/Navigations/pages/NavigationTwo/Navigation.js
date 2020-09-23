@@ -1,17 +1,17 @@
 import React from 'react';
-import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 
 function Navigation(props) {
   return (
-    <Nav className="justify-content-center flex-column" >
+    <div className="nav justify-content-center flex-column" >
       {
         props.data.map(item => {
-          return <Nav.Item>
-            <Nav.Link to={item.link}>{item.name}</Nav.Link>
-          </Nav.Item>
+          return <ul className="Item">
+            <li><Link to={item.link}>{item.name}</Link></li>
+          </ul>
         })
       }
-    </Nav>
+    </div>
   )
 }
 export default Navigation
