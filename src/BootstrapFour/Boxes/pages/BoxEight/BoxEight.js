@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../../components/header/Nav';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { Container, Row } from 'react-bootstrap';
 import Text from './Text';
 
@@ -22,8 +22,14 @@ const styleDark = {
 export const BoxEight = () => {
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
-      <Nav />
+      <NavigationOne />
+
       <Container>
+        <div className="row">
+          <div className="col">
+            <p className="small-font">[ Box - 8 ]</p>
+          </div>
+        </div>
         <Row>
           <section style={styleLight}>
             <Text />

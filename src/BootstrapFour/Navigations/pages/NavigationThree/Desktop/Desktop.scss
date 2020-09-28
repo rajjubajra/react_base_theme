@@ -1,0 +1,31 @@
+.menu-three{
+  .logo{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+      width: 100px;
+      height: 100px;
+      font-weight: 100;
+      border: 2px solid #999;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  a{
+    h3, h5{
+    padding: 20px 0px;
+    border-bottom: 2px solid rgba(165, 163, 163,0);
+    &:hover{
+      border-bottom: 2px solid #999;
+    }
+    transition: border 2s linear;
+  }
+  } 
+  
+
+  
+}

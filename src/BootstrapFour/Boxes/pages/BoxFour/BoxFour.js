@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../../components/header/Nav';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import PhotoText from './PhotoText';
@@ -23,9 +23,15 @@ const styleDark = {
 export const BoxFour = () => {
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
-      <Nav />
-      <Container>
-        <Row>
+      <NavigationOne />
+
+      <div className="container mb-5">
+        <div className="row">
+          <div className="col">
+            <p className="small-font">[ Box - 4 ]</p>
+          </div>
+        </div>
+        <div className="row">
           <section>
             <PhotoText />
           </section>
@@ -45,10 +51,8 @@ export const BoxFour = () => {
           <section style={styleDark}>
             <TextPhoto />
           </section>
-
-
-        </Row>
-      </Container>
+        </div>
+      </div>
     </div>
   )
 }

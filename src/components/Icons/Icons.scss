@@ -1,0 +1,22 @@
+.icons{
+  width: 85%;
+  margin: 0px auto;
+  height: 90vh;
+  padding: 40px 0px;
+  
+  .icon-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .icon-holder{
+    width: 250px;
+    height: 250px;
+    margin: 20px 20px 0px 0px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

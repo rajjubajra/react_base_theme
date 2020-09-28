@@ -14,16 +14,32 @@ function TextPhoto() {
 
   return (
     <div style={boxFour}>
-      <Container>
-        <Row>
-          <Col lg={6} >
-            <Text />
-          </Col>
-          <Col lg={6}>
-            <Photo />
-          </Col>
-        </Row>
-      </Container>
+      <div className="container">
+
+        <div className="row">
+          <div className="col-lg-6 col-md-6">
+            {/** desktop and tablet */}
+            <div className="d-none d-lg-block d-md-block d-sm-none d-xs-none">
+              <Text />
+            </div>
+            {/** Mobile device */}
+            <div className="d-block d-lg-none d-md-none d-sm-block   d-xs-block">
+              <Photo />
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-6">
+            {/** desktop and tablet */}
+            <div className="d-none d-lg-block d-md-block d-sm-none d-xs-none">
+              <Photo />
+            </div>
+            {/** Mobile device */}
+            <div className="d-block d-lg-none d-md-none d-sm-block d-xs-block">
+              <Text />
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

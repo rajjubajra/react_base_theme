@@ -35,7 +35,7 @@ h6{
   font-size: clamp(0.8rem, 4vw, 1rem) !important;
 }
 
-p, .btn{
+p, .btn, label{
   //font-size: 1rem;
   font-size: clamp(0.75rem, 3vw, 1rem) !important;
 }
@@ -45,7 +45,7 @@ p.extra-small-font {
 }
 
 p.small-font{
-  font-size: 0.65rem;
+  font-size: 0.65rem !important;
 }
 
 .display-1{
@@ -65,3 +65,19 @@ p.small-font{
   font-size: clamp(0.9rem, 10vw, 3.5rem) !important;
 }
 
+
+/** FORM **/
+input,
+textarea,
+input:focus, 
+textarea:focus,
+input.form-control:focus{
+  border-radius: 0px !important;
+  outline: none !important;
+  outline-style: none !important;
+}
+label{
+  font-weight: 100;
+  line-height: 0.1rem;
+  letter-spacing: 0.1rem;
+}

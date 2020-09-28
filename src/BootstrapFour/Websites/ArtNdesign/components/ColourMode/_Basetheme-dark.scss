@@ -4,8 +4,11 @@ h1, h2, h3, h4, h5, h6{
   color: #CED4DA !important;
 }
 
-p, a{
-  color: #E9ECEF !important;
+p, a, a.button, 
+a.nav-link,
+label
+{
+  color: #97999a !important;
 }
 
 

@@ -14,6 +14,8 @@ function Pages() {
         <Cards title="Form - 2" linkref={pagelink.two} />
         <Cards title="Form - 3" linkref={pagelink.three} />
         <Cards title="Form - 4" linkref={pagelink.four} />
+        <Cards title="Form - 5" linkref={pagelink.five} />
+        <Cards title="Form - 6" linkref={pagelink.six} />
       </Row>
     </Container>
   )

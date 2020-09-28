@@ -22,7 +22,7 @@ function Photo() {
       <div style={photo}>
         <PhotoFood
           className="d-block w-100"
-          width="600px"
+          width="100%"
           height="400px"
         />
       </div>

@@ -8,9 +8,12 @@ function Nav() {
   return (
     <nav>
       <ul>
-        <li><Link to={`${pagelink.home}`}>Home</Link></li>
-        <li><Link to={`${pagelink.about}`}>About</Link></li>
-        <li><Link to={`${pagelink.contact}`}>Contact</Link></li>
+        <li><Link to={`${pagelink.one}`}>F1</Link></li>
+        <li><Link to={`${pagelink.two}`}>F2</Link></li>
+        <li><Link to={`${pagelink.three}`}>F3</Link></li>
+        <li><Link to={`${pagelink.four}`}>F4</Link></li>
+        <li><Link to={`${pagelink.five}`}>F5</Link></li>
+        <li><Link to={`${pagelink.six}`}>F6</Link></li>
         <li><Link to={`${pagelink.pages}`}>Back</Link></li>
       </ul>
     </nav>

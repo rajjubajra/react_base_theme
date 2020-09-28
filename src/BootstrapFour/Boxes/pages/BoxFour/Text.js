@@ -33,7 +33,7 @@ function Text() {
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odit magnam.</p>
       </div>
       <div>
-        <Button variant="outline-light">Read More</Button>
+        <Button className="btn btn-light">Read More</Button>
       </div>
 
     </section>

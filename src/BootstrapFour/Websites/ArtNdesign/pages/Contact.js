@@ -1,5 +1,5 @@
 import React from 'react'
-import FormOne from './FormOne';
+import FormOne from './FormOne/FormOne';
 
 
 export const Contact = () => {

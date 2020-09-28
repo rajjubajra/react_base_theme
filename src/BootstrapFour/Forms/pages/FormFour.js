@@ -8,6 +8,8 @@ import Nav from '../components/header/Nav';
 const FormFour = () => {
 
   const { register, handleSubmit, watch, errors } = useForm();
+
+
   const onSubmit = data => {
     try {
       axios.post('https://reqres.in/api/users', {
@@ -24,14 +26,14 @@ const FormFour = () => {
   return (
     <div className="container">
       <Nav />
-      <div className="row">
-        <div className="col-3">
-          <h1>Form Four</h1>
-          <h2>Login: </h2>
+      <p>[ Form - 4 ]</p>
+      <div className="row mb-5 mt-5">
+        <div className="col-lg-3 col-sm-6 col-xs-12">
+          <h4>Login:</h4>
         </div>
       </div>
       <div className="row">
-        <div className="col-3">
+        <div className="col-lg-3 col-sm-6 col-xs-12">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label htmlFor="Email">Email</label>

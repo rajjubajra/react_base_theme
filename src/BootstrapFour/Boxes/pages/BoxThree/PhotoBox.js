@@ -35,7 +35,7 @@ function PhotoBox() {
     <div style={boxOne}>
       <PhotoTravel
         className="d-block w-100"
-        width="500px"
+        width="100%"
         height="400px"
       />
       <section style={caption}>

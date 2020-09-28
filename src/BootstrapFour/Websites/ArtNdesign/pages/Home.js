@@ -4,7 +4,7 @@ import SocialMedia from '../components/SocialMedia/SocialMedia';
 
 const blockStyle = {
   width: "100%",
-  height: "80vh",
+  height: "40vh",
   objectFit: "cover",
   display: "flex",
   flexDirection: "column",
@@ -14,15 +14,15 @@ const blockStyle = {
   color: "#eeee",
 }
 
-const pageStyle = {
-  position: "absolute",
-  top: "44px"
-}
+// const pageStyle = {
+//   position: "absolute",
+//   top: "44px"
+// }
 
 export default function Home() {
 
   return (
-    <div style={pageStyle} className="container-fluid">
+    <div className="container-fluid">
       <div className="row">
         <div className="col">
           <div style={blockStyle}>

@@ -16,7 +16,7 @@ function Photo() {
     <div style={photo}>
       <PhotoTravel
         className="d-block w-100"
-        width="500px"
+        width="100%"
         height="600px"
       />
     </div>

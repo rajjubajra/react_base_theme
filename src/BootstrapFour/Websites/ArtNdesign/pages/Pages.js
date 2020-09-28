@@ -34,9 +34,6 @@ function Pages() {
         <Home />
       </div>
 
-
-
-
       <section ref={ref} className="mt-5">
         <div className="mt-5" id="artNdesign-about">
           <About />
@@ -53,7 +50,6 @@ function Pages() {
         <div className="pb-5">
           <FooterFour />
         </div>
-
 
         <div
           style={{
@@ -80,7 +76,7 @@ function Pages() {
           }}>{inView ? "V" : ""}</p>
         </div>
       </section>
-    </div >
+    </div>
   )
 }
 

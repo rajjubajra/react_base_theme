@@ -18,6 +18,11 @@ const data = [
     link: pagelink.about
   },
   {
+    id: 4,
+    name: "Gallert",
+    link: pagelink.gallery
+  },
+  {
     id: 3,
     name: "Contact",
     link: pagelink.contact
@@ -41,6 +46,8 @@ export const NavigationTwo = () => {
         transitionProperty: "top",
         transitionDuration: "3s",
         top: view ? 0 : -1000,
+        margin: view ? 0 : '-90vh',
+        transition: "margin 2s linear",
         width: "100%",
         height: "90vh",
         justifyContent: "center",

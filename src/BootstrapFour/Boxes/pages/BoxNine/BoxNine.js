@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomPlacehoder from './CustomPlaceholder';
 import Text from './Text';
-import Nav from '../../components/header/Nav';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 
 
 const data = [
@@ -15,9 +15,15 @@ const data = [
 function BoxNine() {
   return (
     <div>
-      <Nav />
+      <NavigationOne />
+
       {/** desktop and tablet lg, md and xl */}
       <div className="container">
+        <div className="row">
+          <div className="col">
+            <p className="small-font">[ Box - 9 ]</p>
+          </div>
+        </div>
         <div className="row">
           <div className="col-lg-6 d-none d-lg-block">
             <CustomPlacehoder width="100%" height="100vh" />

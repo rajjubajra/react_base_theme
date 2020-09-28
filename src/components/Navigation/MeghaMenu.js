@@ -74,7 +74,7 @@ const MeghaMenu = () => {
                 <li><Link to="#">Pricing</Link></li>
                 <li><Link to="#">Photo</Link></li>
                 <li><Link to="#">Quick Fact</Link></li>
-                <li><Link to="#">Icon</Link></li>
+                <li><Link to="/icons">Icons</Link></li>
                 <li><Link to="#">Hover</Link></li>
                 <li><Link to="#">Quick Fact</Link></li>
                 <li><Link to="#">Features</Link></li>

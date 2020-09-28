@@ -1,0 +1,11 @@
+@keyframes animate{
+  0%{left: 0px; opacity: 1;}
+  25%{left: 5px; opacity: 0;}
+  50%{left: 5px; opacity: 0.3;}
+  100%{left: 0px; opacity: 1;}
+}
+
+.up-arrow{
+  position: relative;
+  animation: animate 2s linear infinite;
+}

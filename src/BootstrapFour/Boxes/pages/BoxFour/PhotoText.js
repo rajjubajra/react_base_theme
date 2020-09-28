@@ -14,16 +14,16 @@ function PhotoText() {
 
   return (
     <div style={boxFour}>
-      <Container>
-        <Row>
-          <Col lg={6} >
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6 col-md-6" >
             <Photo />
-          </Col>
-          <Col lg={6}>
+          </div>
+          <div className="col-lg-6 col-md-6">
             <Text />
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

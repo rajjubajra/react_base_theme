@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Nav from '../../components/header/Nav';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import axios from 'axios';
 import Boxes from './Boxes';
 
@@ -36,7 +36,15 @@ export const BoxSix = () => {
 
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
-      <Nav />
+      <NavigationOne />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <p className="small-font">[ Box - 6 ]</p>
+          </div>
+        </div>
+      </div>
+
       <div>
         <Boxes
           posts={posts}

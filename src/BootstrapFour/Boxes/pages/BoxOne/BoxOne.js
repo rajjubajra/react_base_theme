@@ -1,6 +1,5 @@
 import React from 'react'
-import Nav from '../../components/header/Nav';
-import { Container, Row, Col } from 'react-bootstrap';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { cssclass } from '../../CssClass';
 import PhotoBox from './PhotoBox';
 
@@ -8,10 +7,17 @@ import PhotoBox from './PhotoBox';
 export const BoxOne = () => {
   return (
     <div className={cssclass.base_classname}>
-      <Nav />
-      <Container>
-        <Row>
-          <Col className="d-flex f-wrap" style={{ flexWrap: "wrap" }}>
+      <NavigationOne />
+
+      <div className="container mb-5">
+        <div className="row">
+          <div className="col">
+            <p className="small-font">[ Box - 1 ]</p>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col d-flex f-wrap justify-content-center" style={{ flexWrap: "wrap" }}>
             <PhotoBox />
             <PhotoBox />
             <PhotoBox />
@@ -20,9 +26,9 @@ export const BoxOne = () => {
             <PhotoBox />
             <PhotoBox />
             <PhotoBox />
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

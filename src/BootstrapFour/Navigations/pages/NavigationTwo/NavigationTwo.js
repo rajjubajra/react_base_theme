@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { cssclass } from '../../CssClass';
 import Navigation from '../NavigationTwo/Navigation';
 import NavIconThreeLines from './NavIconThreeLines';
+
 import TitleNNav from '../../../B4Components/B4Header/TitleNNav';
 
 
@@ -31,6 +32,7 @@ export const NavigationTwo = () => {
 
   return (
     <div className={cssclass.base_classname}>
+
       <TitleNNav title={'Navigation 2'} href="/b4navigations" />
       <Container>
         {/** navigation icon */}

@@ -28,9 +28,10 @@ function Blogs(props) {
 
   const breakpointColumnsObj = {
     default: 3,
-    1100: 3,
-    700: 2,
-    500: 1
+    1200: 3,
+    992: 2,
+    768: 1,
+    576: 1
   };
 
   return (
