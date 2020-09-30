@@ -26,6 +26,16 @@ function Pages() {
           text="Menu & Description"
           type="with brief description"
           linkref={pagelink.three} />
+        <Cards
+          title="Navigation - 4"
+          text="Minimalist Vibe"
+          type="Minimalist"
+          linkref={pagelink.four} />
+        <Cards
+          title="Navigation - 5"
+          text="News and Magazine Menu"
+          type="Magazine/Nes"
+          linkref={pagelink.five} />
       </Row>
     </Container>
   )

@@ -1,0 +1,41 @@
+@keyframes appearIn{
+  0%{position: relative; left: -500px;}
+  100%{position: relative; left: 0px;}
+}
+.mobile-menu{
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+
+
+
+  .hide-in-mobile{
+    display: none !important;
+    margin-top: 100px;
+  }
+
+  .mobile-search{
+    .container{
+      .row{
+        div{
+          display: flex;
+          justify-content: center;
+            form{
+              input{
+                width: 100% !important;
+              } 
+              button{
+                width: 100% !important;
+              }
+            }
+        }
+      }
+    }
+  }
+
+  .mobile-login .container .row{
+    display: flex;
+    justify-content: center;
+  }
+  
+}

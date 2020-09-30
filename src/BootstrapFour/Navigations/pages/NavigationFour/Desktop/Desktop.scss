@@ -1,0 +1,65 @@
+@keyframes DropIn{
+  0%{ position: relative; top: -500px; opacity: 0;}
+  80%{opacity: 0;}
+  100%{position: relative; top: 0px; opacity: 1;}
+}
+
+@keyframes DropOut{
+  0%{ position: relative; top: 0px; opacity: 1;}
+  100%{position: relative; top: -500px; opacity: 0;}
+}
+
+.menu-four{
+  a{
+    .logo{
+      font-weight: 900;
+    }
+    
+    h3, h5{
+    padding: 20px 0px;
+    border-bottom: 2px solid rgba(165, 163, 163,0);
+    &:hover{
+      border-bottom: 2px solid #999;
+    }
+    transition: border 2s linear;
+  }
+  }   
+}
+
+.menu-user{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.animate-desktop{
+  .d-block{
+    animation: DropIn 0.5s ease-in;
+  }
+  
+}
+
+.desktop-login{
+  .container{
+    .row{
+      display: flex;
+    justify-content: flex-end;
+    }
+  }
+}
+
+.desktop-search{
+  .container{
+    .row{
+      div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+          form{
+            input{
+              width: 84% !important;
+            } 
+          }
+      }
+    }
+  }
+}

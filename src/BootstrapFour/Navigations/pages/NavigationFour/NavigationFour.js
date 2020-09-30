@@ -2,22 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { cssclass } from '../../CssClass';
 import TitleNNav from '../../../B4Components/B4Header/TitleNNav';
-import NavIconThreeLines from './NavIconThreeLines/NavIconThreeLines';
 import Navigation from './Navigation';
-import { actionFetchMenuThree } from './Redux/actionFetchMenuThree';
+import { actionFetchMenuFour } from './Redux/actionFetchMenuFour';
+import { actionFetchUserMenuFour } from './Redux/actionFetchUserMenuFour';
 
 
-export const NavigationThree = () => {
+export const NavigationFour = () => {
 
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(actionFetchMenuThree())
+    dispatch(actionFetchMenuFour());
+    dispatch(actionFetchUserMenuFour());
   }, [dispatch])
 
 
   /** Window Breakpoint for mobile and tablet display */
-  const mobileBreakPoint = 768;
+  const mobileBreakPoint = 968;
 
   /** state "true" if browser size is less than "mobileBreakPoint" */
   const [windowSizeSmall, setWindowSizeSmall] = useState('');
@@ -48,34 +49,26 @@ export const NavigationThree = () => {
 
   return (
     <div className={cssclass.base_classname}>
-      <TitleNNav title={'Navigation 3'} href="/b4navigations" />
 
-      <div className="container">
-        {/** ICON FOR TABLET AND MOBILE */}
-        <div
-          className={`${windowSizeSmall ? '' : 'd-none'}`}
-          onClick={() => view ? setView(false) : setView(true)}
-        >
-          <NavIconThreeLines />
-        </div>
+      <TitleNNav title={'Navigation 4'} href="/b4navigations" />
 
-        {/** NAVIGATION MENU */}
-        <div>
-          {windowSizeSmall === ''
-            ? ''
-            : <Navigation
-              windowSizeSmall={windowSizeSmall}
-              view={view} />
-          }
-        </div>
-
-        <div className="row mt-5">
-          <div className="col"><h1>Navigation 3</h1></div>
-        </div>
+      {/** NAVIGATION MENU */}
+      <div>
+        {windowSizeSmall === ''
+          ? ''
+          : <Navigation
+            windowSizeSmall={windowSizeSmall}
+            view={view} />
+        }
       </div>
+
+      <div className="row mt-5">
+        <div className="col"><h1>Navigation 4</h1></div>
+      </div>
+
     </div>
   )
 
 }
 
-export default NavigationThree;
+export default NavigationFour;
