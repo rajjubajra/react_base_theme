@@ -7,6 +7,7 @@ import { pagelink } from '../PageLink';
 import Pages from './Pages';
 import NavigationFour from './NavigationFour/NavigationFour';
 import NavigationFive from './NavigationFive/NavigationFive';
+import NavigationSix from './NavigationSix/NavigationSix';
 
 function RoutePages() {
   return (
@@ -17,6 +18,7 @@ function RoutePages() {
       <Route exact path={`/${pagelink.three}`} component={NavigationThree} />
       <Route exact path={`/${pagelink.four}`} component={NavigationFour} />
       <Route exact path={`/${pagelink.five}`} component={NavigationFive} />
+      <Route exact path={`/${pagelink.six}`} component={NavigationSix} />
     </>
   )
 }

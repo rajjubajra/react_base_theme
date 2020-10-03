@@ -65,6 +65,13 @@ p.small-font{
   font-size: clamp(0.9rem, 10vw, 3.5rem) !important;
 }
 
+.bold{
+  font-weight: 500 !important;
+}
+.bolder{
+  font-weight: 900 !important;
+}
+
 
 /** FORM **/
 input,

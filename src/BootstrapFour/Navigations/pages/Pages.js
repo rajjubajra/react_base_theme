@@ -36,6 +36,11 @@ function Pages() {
           text="News and Magazine Menu"
           type="Magazine/Nes"
           linkref={pagelink.five} />
+        <Cards
+          title="Navigation - 6"
+          text="Big & Bold Menu"
+          type="Big & Bold"
+          linkref={pagelink.six} />
       </Row>
     </Container>
   )
