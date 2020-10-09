@@ -17,6 +17,7 @@ function Pages() {
         <Cards title="Form - 5" text="Contact Form" type="contact" linkref={pagelink.five} />
         <Cards title="Form - 6" text="Contact Form" type="contact" linkref={pagelink.six} />
         <Cards title="Form - 7" text="Search Form" type="Search" linkref={pagelink.seven} />
+        <Cards title="Form - 8" text="Join Fan Club" type="Contact" linkref={pagelink.eight} />
       </Row>
     </Container>
   )

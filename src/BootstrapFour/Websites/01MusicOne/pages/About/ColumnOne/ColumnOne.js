@@ -23,7 +23,12 @@ export const ColumnOne = () => {
       <ColourMode />
       <div className="container mt-5">
         <div className="row">
-          <div className="col"><h1>Single Column Page</h1></div>
+          <div className="col">
+            <h1>Single Column Page</h1>
+            <h5 style={{ fontStyle: "italic", letterSpacing: "0.1rem" }}>
+              "Klias quisquam soluta vitae in magnam, molestiae explicabo, qui amet officia"
+            </h5>
+          </div>
         </div>
         <div className="row mt-4">
           <div className="col">
@@ -61,7 +66,7 @@ export const ColumnOne = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 export default ColumnOne;

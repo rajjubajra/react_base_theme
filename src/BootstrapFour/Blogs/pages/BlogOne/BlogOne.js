@@ -3,51 +3,48 @@ import Nav from '../../components/header/Nav';
 import Blogs from './Blogs';
 import { cssclass } from '../../CssClass';
 import axios from 'axios';
-import { dataSourceUrl } from '../../data/dataSourceUrl';
-
-
-
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const days = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"];
+import { d8develRESTAPI } from '../../data/dataSourceUrl';
 
 
 
 export const BlogOne = () => {
 
-  const dataUrl = dataSourceUrl.DATAURL;
 
-  const [posts, setPosts] = useState([]);
-  const dataLength = posts.length;
+  /** DATA FETCHING */
+  const develUrl = d8develRESTAPI.DATAURL;
 
+  const [d8devel, setD8Devel] = useState([]);
+  const dataLength = d8devel.length;
 
   useEffect(() => {
     axios({
       method: 'GET',
-      url: dataUrl,
+      url: develUrl,
       headers: {
         'Accept': 'application/vnd.api+json'
       }
     })
       .then(res => {
         //console.log(res.data);
-        setPosts(res.data);
+        setD8Devel(res.data);
       })
       .catch(err => console.log(err))
     //setReadMore(false);
-    console.log("useEffect 1");
+    console.log("useEffect 2");
 
-  }, [dataUrl])
+  }, [develUrl])
 
 
+
+
+  //console.log("BLog devel", d8devel.length > 0 && d8devel[0].nid[0]);
 
   return (
     <div className={cssclass.base_classname}>
       <Nav />
       <Blogs
-        posts={posts}
         dataLength={dataLength}
-        days={days[0]}
-        months={months[0]}
+        devel={d8devel}
       />
     </div>
   )

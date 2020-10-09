@@ -30,7 +30,7 @@ function Text() {
   return (
     <section style={caption}>
       <div><p>Date: {date.getDate()} {month[date.getMonth()]}, {date.getFullYear()}</p></div>
-      <div style={title}>Story: Box Five</div>
+      <div style={title}>Latest News</div>
       <div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odit magnam. Trem ipsum dolor, sit amet consectetur adipisicing elit. Sed perspiciatis doloremque voluptatibus. Nihil nobis quia, suscipit accusantium cupiditate impedit nulla non iusto totam eos modi, pariatur, exercitationem fugiat aperiam minus!</p>
       </div>

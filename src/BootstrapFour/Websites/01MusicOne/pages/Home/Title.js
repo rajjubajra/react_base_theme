@@ -21,13 +21,13 @@ function Title() {
   return (
     <>
       <div className="col-lg-4 col-md-6  d-none d-sm-none d-md-block">
-        <h1 style={titleStyle}>B4 MUSIC ONE</h1>
+        <h1 style={titleStyle}>YW4 MUSIC ONE</h1>
       </div>
       <div className="col-lg-4 col-md-6 d-none d-sm-block d-md-none">
-        <h1 style={titleStyleSM}>B4 MUSIC ONE</h1>
+        <h1 style={titleStyleSM}>YW4 MUSIC ONE</h1>
       </div>
       <div className="col-lg-4 col-md-6 d-block d-sm-none">
-        <h1 style={titleStyleXS}>B4 MUSIC ONE</h1>
+        <h1 style={titleStyleXS}>YW4 MUSIC ONE</h1>
       </div>
     </>
   )

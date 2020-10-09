@@ -1,5 +1,5 @@
 import React from 'react'
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+import PhotoTravel from '../../components/PhotoPlaceholder/PhotoTravel';
 
 
 const boxOne = {
@@ -11,6 +11,8 @@ const boxOne = {
   position: "relative",
 }
 const caption = {
+  color: "#000",
+  background: "rgb(248, 249, 250, 0.21)",
   width: "100%",
   fontWeight: "100",
   letterSpacing: "0.02rem",
@@ -31,13 +33,14 @@ function PhotoBox() {
 
   return (
     <div style={boxOne}>
-      <PhotoMusic
+      <PhotoTravel
+        className="d-block w-100"
         width="100%"
-        height={400}
+        height="400px"
       />
       <section style={caption}>
         <div><p>Date: {date.getDate()} {month[date.getMonth()]}, {date.getFullYear()}</p></div>
-        <div style={title}><h4>Story: Text Image</h4></div>
+        <div style={title}>Story: Text Image</div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odit magnam.</p>
       </section>
     </div>

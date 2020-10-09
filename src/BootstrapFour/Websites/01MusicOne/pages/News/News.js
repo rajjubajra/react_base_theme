@@ -28,5 +28,4 @@ export const News = () => {
     </div>
   )
 }
-
 export default News;

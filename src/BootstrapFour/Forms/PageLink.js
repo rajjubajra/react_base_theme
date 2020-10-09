@@ -6,7 +6,7 @@ export const pagelink = {
   four: "form-4",
   five: "form-5",
   six: "form-6",
-  seven: "form-7"
-
+  seven: "form-7",
+  eight: "form-8"
 }
 

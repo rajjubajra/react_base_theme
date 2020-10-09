@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import BoxNine from './BoxNine/BoxNine';
 import BoxEight from './BoxEight/BoxEight';
-import BoxThree from './BoxThree/BoxThree';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import Title from './Title';
+import SocialMedia from './socalMedia/SocialMedia';
+import FormEight from '../../components/FormEight/FormEight';
 
 
 
@@ -31,6 +32,7 @@ export default function Home() {
       <div className="container mt-5">
         <div className="row mt-5">
           <Title />
+          <SocialMedia />
           <div className="col-lg-8 col-md-6 col-sm-12">
             <BoxNine />
           </div>
@@ -39,7 +41,7 @@ export default function Home() {
           <BoxEight />
         </div>
         <div className="row">
-          <BoxThree />
+          <FormEight />
         </div>
       </div>
     </div>

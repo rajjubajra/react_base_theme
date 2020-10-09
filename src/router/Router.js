@@ -10,6 +10,7 @@ import RouterApplications from './RouterApplications';
 // import ComingSoon from '../components/Websites/ComingSoon/ComingSoon';
 import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
 import RouterComponentTest from './RouterComponentTest';
+import RouterEcommerce from './RouterEcommerce';
 
 
 /**
@@ -72,6 +73,10 @@ const Router = () => {
 
         <Switch>
           <RouterApplications />
+        </Switch>
+
+        <Switch>
+          <RouterEcommerce />
         </Switch>
 
 

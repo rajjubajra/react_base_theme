@@ -3,6 +3,9 @@ import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector } from 'react-redux';
 import ColumnOne from './ColumnOne/ColumnOne';
+import BoxThree from './BoxThree/BoxThree';
+
+
 
 
 export const About = () => {
@@ -25,6 +28,11 @@ export const About = () => {
       <ColourMode />
       <NavigationOne />
       <ColumnOne />
+      <div className="mt-5">
+        <h2 style={{ textAlign: "center" }}>Gear</h2>
+        <BoxThree />
+      </div>
+
 
     </div>
   )

@@ -53,9 +53,12 @@ function Page(props) {
               variant="outline-dark"
               className="mr-1"
               onClick={() => window.open("/websites")}
-              style={{ fontWeight: "100" }}>
-              W
-            </Button>
+              style={{ fontWeight: "100" }}>W</Button>
+            <Button
+              variant="outline-dark"
+              className="mr-1"
+              onClick={() => window.open("https://lan-pasaa.yellow-website.com")}
+              style={{ fontWeight: "100" }}>L</Button>
           </div>
 
 

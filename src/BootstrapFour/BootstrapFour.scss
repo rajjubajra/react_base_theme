@@ -1,6 +1,7 @@
 
 .card,
-.btn{
+.btn, 
+.list-group{
   border-radius: 0em !important;
 }
 
@@ -40,11 +41,11 @@ p, .btn, label{
   font-size: clamp(0.75rem, 3vw, 1rem) !important;
 }
 
-p.extra-small-font {
+.extra-small-font {
   font-size: 0.5rem !important;
 }
 
-p.small-font{
+.small-font{
   font-size: 0.65rem !important;
 }
 
@@ -70,6 +71,14 @@ p.small-font{
 }
 .bolder{
   font-weight: 900 !important;
+}
+
+ul {
+  font-weight: 100!important;
+}
+
+a, a:hover{
+  text-decoration: none !important;
 }
 
 

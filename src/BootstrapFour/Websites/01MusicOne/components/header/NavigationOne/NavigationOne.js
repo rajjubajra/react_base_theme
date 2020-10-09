@@ -11,36 +11,40 @@ const data = [
     link: pagelink.home
   },
   {
-    id: 2,
-    name: "About",
-    link: pagelink.about
+    id: "2",
+    name: "Tour",
+    link: pagelink.tour
   },
   {
     id: 3,
-    name: "Gallery",
-    link: pagelink.gallery
-  },
-  {
-    id: 4,
-    name: "Album",
-    link: pagelink.album
-  },
-  {
-    id: 5,
     name: "News",
     link: pagelink.news
   },
   {
+    id: 4,
+    name: "About",
+    link: pagelink.about
+  },
+  {
+    id: 5,
+    name: "Gallery",
+    link: pagelink.gallery
+  },
+  {
     id: 6,
+    name: "Music",
+    link: pagelink.albums
+  },
+  {
+    id: 8,
     name: "Contact",
     link: pagelink.contact
   },
   {
-    id: 7,
+    id: 9,
     name: "Back",
     link: pagelink.back
   },
-
 ]
 
 export const NavigationOne = () => {
@@ -73,7 +77,13 @@ export const NavigationOne = () => {
   })
 
   return (
-    <div>
+    <div style={{
+      height: "45px",
+      position: "sticky",
+      top: "0px",
+      zIndex: "20",
+      background: "#999"
+    }}>
       {/** ICON FOR TABLET AND MOBILE */}
       <div
         className={`${windowSizeSmall ? '' : 'd-none'}`}

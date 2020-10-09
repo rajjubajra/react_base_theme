@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
 import BoxArrowInLeft from '../../../B4Icons/BoxArrowInLeft';
 import BoxArrowInRight from '../../../B4Icons/BoxArrowInRight';
 import Blog from './Blog';
 
 function Blogs(props) {
 
+  const pageGap = 7;
   const [currentPage, setCurrentPage] = useState(0);
-  const [lastPage, setLastPage] = useState(10);
-  const pageGap = 10;
+  const [lastPage, setLastPage] = useState(pageGap);
   const dataLength = props.dataLength;
-
 
   function nextPage() {
     console.log("next");
@@ -21,38 +19,51 @@ function Blogs(props) {
     console.log("prev");
     setCurrentPage(currentPage - pageGap);
     setLastPage(lastPage - pageGap);
+    if (lastPage === (dataLength - 1)) {
+      setLastPage(dataLength - 1)
+    } else {
+      setLastPage(lastPage - pageGap);
+    }
   }
 
-  const date = new Date();
+  function Page(currentPage, lastPage, data, length) {
+    let last = lastPage - 1;
+    if (length > 0) {
+      return `${data[currentPage].nid[0].value}
+    - ${currentPage}  Page  ${lastPage} -
+      ${data[last].nid[0].value}`
+    }
+  }
 
+  console.log(lastPage)
 
+  console.log("DEVEL", dataLength > 0 && props.devel, dataLength);
 
   return (
-    <Container>
+
+    <div className="container">
       {/** PAGE CONTENT */}
-      <Row>
-        <Col>
+      <div className="row">
+        <div className="container">
           {
-            props.posts.length > 0
-              ? props.posts.slice(currentPage, lastPage).map((item) => {
-                return <Blog
-                  key={item.id}
-                  id={item.id}
-                  day={props.days}
-                  month={props.months}
-                  year={date.getUTCFullYear()}
-                  title={item.title}
-                  readmore={props.readmore}
-                />
-              })
-              : "Loading...."
+            props.devel.length > 0 &&
+            props.devel.slice(currentPage, lastPage).map(elm => {
+              return <Blog
+                key={elm.nid[0].value}
+                id={elm.nid[0].value}
+                uuid={elm.uuid[0].value}
+                date={elm.created[0].value}
+                title={elm.title[0].value}
+                body={elm.body[0].processed}
+              />
+            })
           }
-        </Col>
-      </Row>
+        </div>
+      </div>
 
       {/**NEXT AND PREVIOUSE PAGE ARROWS */}
-      <Row>
-        <Col>
+      <div className="row">
+        <div className="container">
           <div style={{
             display: "flex",
             width: "100%",
@@ -65,12 +76,15 @@ function Blogs(props) {
             }}
               onClick={() => prevPage()}
             ><BoxArrowInLeft /></i>
+
             <span style={{
               fontSize: "0.7rem",
               fontWeight: "100",
               position: "relative",
               top: "15px",
-            }}>Page</span>
+            }}>
+              Page
+            </span>
             <i style={{
               cursor: "pointer",
               margin: "10px",
@@ -78,9 +92,9 @@ function Blogs(props) {
             }}
               onClick={() => nextPage()}><BoxArrowInRight /></i>
           </div>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   )
 }
 

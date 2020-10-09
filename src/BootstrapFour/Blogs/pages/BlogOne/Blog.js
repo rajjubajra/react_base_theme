@@ -30,15 +30,38 @@ const buttonStyle = {
   cursor: "pointer"
 }
 
+
+const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+
 function Blog(props) {
+
+  const { id, title, body, date, uuid } = props;
+
+  let dt = new Date(date);
+  let formated_date = `${dt.getDate()} ${month[dt.getMonth()]} ,${dt.getFullYear()}`
+
+  let text = body;
+
+  function createMarkup(txt) {
+    return {
+      __html: txt
+    };
+  };
+
+
 
   return (
     <section style={sectionStyle}>
-      <p>{props.id}</p>
-      <p style={dateStyle}>{props.day} {props.month}, {props.year}</p>
-      <h1 style={titleStyle} >{props.title}</h1>
+      <p>{id}</p>
+      <p style={dateStyle}>{formated_date}</p>
+      <h1 style={titleStyle} >{title}</h1>
+      <div style={{ width: "65%", margin: "0px auto" }}>
+        <div dangerouslySetInnerHTML={createMarkup(text.substring(0, 150))} />
+      </div>
+
       <Link
-        to={`${pagelink.readmoreOne}/${props.id}`}
+        to={`${pagelink.readmoreOne}/${uuid}`}
         style={buttonStyle}>
         Read More
       </Link>

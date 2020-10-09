@@ -26,6 +26,10 @@ const MeghaMenuBootstrap4 = () => {
                   <Link to="/applications">
                     Web Applications</Link>
                 </li>
+                <li>
+                  <Link to="/ecommerce">
+                    Ecommerce Sites</Link>
+                </li>
               </ul>
             </div>
           </li>

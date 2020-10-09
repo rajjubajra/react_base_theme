@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 
 const CopyRightFooter = () => {
+
+
   return (
     <>
-      <div className="copyrightfooter">
+      <div className={`copyrightfooter`}>
         <p>
           &copy; {new Date().getFullYear()}
           All Right Reserved | Desinged and developed by

@@ -9,6 +9,7 @@ import FormSix from './FormSix';
 import { pagelink } from '../PageLink';
 import Pages from './Pages';
 import FormSeven from './FormSeven/FormSeven';
+import FormEight from './FormEight/FormEight';
 
 
 
@@ -23,6 +24,7 @@ function RoutePages() {
       <Route exact path={`/${pagelink.five}`} component={FormFive} />
       <Route exact path={`/${pagelink.six}`} component={FormSix} />
       <Route exact path={`/${pagelink.seven}`} component={FormSeven} />
+      <Route exact path={`/${pagelink.eight}`} component={FormEight} />
     </>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { dataSourceUrl } from '../../data/dataSourceUrl';
+import { d8develData, d8develJSONAPI, dataSourceUrl } from '../../data/dataSourceUrl';
 import Nav from '../../components/header/Nav';
 import { Container, Col, Row } from 'react-bootstrap';
 
@@ -27,27 +27,57 @@ const bodyStyle = {
 
 function BlogReadMore(props) {
 
-  const [body, setBody] = useState('');
-  const [title, setTitle] = useState('');
+  //const [body, setBody] = useState('');
+  //const [title, setTitle] = useState('');
 
   let { id } = useParams();
-  const dataUrl = `${dataSourceUrl.DATAURL}/${id}`;
+  //const dataUrl = `${dataSourceUrl.DATAURL}/${id}`;
+  const develUrl = `${d8develJSONAPI.DATAURL}/${id}`;
+
+  const [develBody, setDevelBody] = useState('');
+  const [develTitle, setDevelTitle] = useState('');
+  const [develCreated, setDevelCreated] = useState('');
+  const [nid, setNid] = useState(0);
+
+
 
   useEffect(() => {
     axios({
       method: 'GET',
-      url: dataUrl,
+      url: develUrl,
       headers: {
         'Accept': 'application/vnd.api+json'
       }
     })
       .then(res => {
-        console.log(res.data);
-        setTitle(res.data.title);
-        setBody(res.data.body);
+        console.log(res.data.data);
+        const { title, body, created, drupal_internal__nid } = res.data.data.attributes;
+        setDevelTitle(title);
+        setDevelBody(body.processed);
+        setDevelCreated(created);
+        setNid(drupal_internal__nid);
+
       })
       .catch(err => console.log(err))
-  }, [dataUrl])
+  }, [develUrl])
+
+
+
+  //console.log(develTitle);
+
+
+  function createMarkup(body) {
+    return {
+      __html: body
+    };
+  };
+
+
+  let dt = new Date(develCreated);
+
+  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+
 
 
   return (
@@ -58,16 +88,15 @@ function BlogReadMore(props) {
             <div>
               <Nav />
             </div>
-            <p style={datestyle}> 19 Aug, 2020</p>
+            <p style={datestyle}>
+              Date: {dt.getDate()} {month[dt.getMonth()]}, {dt.getFullYear()}
+            </p>
             <div>
 
-              <h1 style={titleStyle}>{title}</h1>
+              <h1 style={titleStyle}>{develTitle}</h1>
               <div style={bodyStyle}>
-                <p>Article: {id}</p>
-                <p>{body}</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus cumque quae, asperiores ipsa laborum iste voluptas saepe cum molestias quos laboriosam odio, ipsum quo eligendi sapiente atque fuga accusamus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum totam assumenda autem obcaecati distinctio accusantium earum fuga rerum. Ipsa velit nemo aliquid. Suscipit alias quasi totam omnis itaque porro perferendis!
-                </p>
-                <p>  Ipsum dolor sit amet consectetur adipisicing elit. Amet ab voluptate alias consequuntur minima quam maxime magnam, sequi nemo vitae enim? Officia unde vel itaque, exercitationem animi repellat excepturi mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore harum alias consectetur maxime minus praesentium ducimus est quasi reiciendis totam incidunt quisquam nesciunt, eos nulla velit, exercitationem optio molestias?</p>
+                <p>Article: {nid}</p>
+                <div dangerouslySetInnerHTML={createMarkup(develBody)} />
               </div>
             </div>
           </section>

@@ -41,6 +41,11 @@ function Pages() {
           text="Big & Bold Menu"
           type="Big & Bold"
           linkref={pagelink.six} />
+        <Cards
+          title="Navigation - 7"
+          text="Side Menu"
+          type="Side Menu"
+          linkref={pagelink.seven} />
       </Row>
     </Container>
   )

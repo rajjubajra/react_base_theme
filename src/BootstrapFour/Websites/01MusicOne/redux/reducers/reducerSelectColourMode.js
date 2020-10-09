@@ -2,7 +2,7 @@ import { actionTypes } from '../actions/ActionTypes';
 
 
 const initialState = {
-  colourMode: 'black-white-theme',
+  colourMode: 'basetheme-black-white',
   variant: 'dark'
 }
 

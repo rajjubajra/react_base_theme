@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ColourMode from '../../../components/ColourMode/ColourMode';
 import NavigationOne from '../../../components/header/NavigationOne/NavigationOne';
 import axios from 'axios';
 import { dataSourceUrl } from '../../../Config/dataurl';
+import IconClose from '../../../components/Icon/IconClose';
+import { pagelink } from '../../../PageLink';
 
-import { Container, Col, Row } from 'react-bootstrap';
 
 
 const sectionStyle = {
@@ -73,9 +75,12 @@ function BlogReadMore(props) {
     <div className={className}>
       <ColourMode />
       <NavigationOne />
-      <Container>
-        <Row>
-          <Col>
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-10">
+            <div className="d-flex justify-content-end">
+              <Link to={`/${pagelink.news}`}><IconClose /></Link>
+            </div>
             <section style={sectionStyle}>
               <p style={datestyle}> 19 Aug, 2020</p>
               <div>
@@ -89,9 +94,9 @@ function BlogReadMore(props) {
                 </div>
               </div>
             </section>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

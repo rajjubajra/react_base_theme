@@ -1,0 +1,29 @@
+.lan-pasaa{
+
+
+
+@import "./sass/websites/globalstyle/color";
+@import "./sass/websites/globalstyle/button";
+@import "./sass/websites/globalstyle/font";
+@import "./sass/websites/globalstyle/form";
+@import "./sass/websites/globalstyle/transition";
+@import "./sass/websites/globalstyle/media";
+
+
+@import "./sass/websites/LanPasaa/socialMediaLanPasaa";
+@import "./sass/websites/LanPasaa/ContactFormLanpasaa";
+@import "./sass/websites/LanPasaa/ContactLanPasaa";
+@import "./sass/websites/LanPasaa/SubscriptioinLanPasaa";
+@import "./sass/websites/LanPasaa/LanpasaaAboutus";
+@import "./sass/websites/LanPasaa/NavEcom";
+@import "./sass/websites/LanPasaa/NavShopLanPasaa";
+@import "./sass/websites/LanPasaa/NavMainLanPasaa";
+@import "./sass/websites/LanPasaa/LanpasaaTitle";
+@import "./sass/websites/LanPasaa/Shop";
+@import "./sass/websites/LanPasaa/ShopUpDownArrow";
+@import "./sass/websites/LanPasaa/LanPasaa";
+
+.no-link{
+  cursor: none !important;
+}
+}
