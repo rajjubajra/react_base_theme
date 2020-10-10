@@ -48,7 +48,8 @@ function PlayingTrack(props) {
           <span onClick={() => controls.volume(0.5)}><VolumeUp /></span>
           <span onClick={() => controls.volume(0.1)}><VolumeDown /></span>
           */}
-          {/**          <span onClick={() => controls.seek(state.time - 5)}><Backward /></span>
+          {/**         
+          <span onClick={() => controls.seek(state.time - 5)}><Backward /></span>
           <span onClick={() => controls.seek(state.time + 5)}><Forward /></span>
            */}
 

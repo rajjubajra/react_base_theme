@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { d8develData, d8develJSONAPI, dataSourceUrl } from '../../data/dataSourceUrl';
+import { baseUrl } from '../../data/dataSourceUrl';
 import Nav from '../../components/header/Nav';
-import { Container, Col, Row } from 'react-bootstrap';
-
+import IconClose from '../../components/Icon/IconClose';
+import { Link } from 'react-router-dom';
+import { pagelink } from '../../PageLink';
 
 const sectionStyle = {
   width: "100%",
@@ -21,51 +22,42 @@ const titleStyle = {
 }
 const bodyStyle = {
   fontWeight: "100",
-
 }
 
 
 function BlogReadMore(props) {
 
-  //const [body, setBody] = useState('');
-  //const [title, setTitle] = useState('');
 
-  let { id } = useParams();
-  //const dataUrl = `${dataSourceUrl.DATAURL}/${id}`;
-  const develUrl = `${d8develJSONAPI.DATAURL}/${id}`;
+  /** node id, in order to fetch specific article */
+  let { nid } = useParams();
+  const dataUrl = `${baseUrl.URL}/node/${nid}?_format=json`;
 
+
+  /** Set article to specific division */
   const [develBody, setDevelBody] = useState('');
   const [develTitle, setDevelTitle] = useState('');
   const [develCreated, setDevelCreated] = useState('');
-  const [nid, setNid] = useState(0);
 
-
-
+  /** FETCH ARTICLE OF node id */
   useEffect(() => {
     axios({
       method: 'GET',
-      url: develUrl,
+      url: dataUrl,
       headers: {
         'Accept': 'application/vnd.api+json'
       }
     })
       .then(res => {
-        console.log(res.data.data);
-        const { title, body, created, drupal_internal__nid } = res.data.data.attributes;
-        setDevelTitle(title);
-        setDevelBody(body.processed);
-        setDevelCreated(created);
-        setNid(drupal_internal__nid);
-
+        console.log(res.data);
+        const { title, body, created } = res.data;
+        setDevelTitle(title[0].value);
+        setDevelBody(body[0].processed);
+        setDevelCreated(created[0].value);
       })
       .catch(err => console.log(err))
-  }, [develUrl])
+  }, [dataUrl])
 
-
-
-  //console.log(develTitle);
-
-
+  /** VIEW HTML FORMAT */
   function createMarkup(body) {
     return {
       __html: body
@@ -73,37 +65,43 @@ function BlogReadMore(props) {
   };
 
 
+  /** FOR DATE FORMAT */
   let dt = new Date(develCreated);
-
   const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 
-
-
   return (
-    <Container>
-      <Row>
-        <Col>
-          <section style={sectionStyle}>
-            <div>
-              <Nav />
-            </div>
-            <p style={datestyle}>
-              Date: {dt.getDate()} {month[dt.getMonth()]}, {dt.getFullYear()}
-            </p>
-            <div>
+    <div>
+      <Nav />
+      <div className="container mt-5 pb-5">
+        <div className="row">
+          <div className="col">
 
-              <h1 style={titleStyle}>{develTitle}</h1>
-              <div style={bodyStyle}>
-                <p>Article: {nid}</p>
-                <div dangerouslySetInnerHTML={createMarkup(develBody)} />
-              </div>
+            <div className="d-flex justify-content-end">
+              <Link to={`/${pagelink.one}`}>
+                <IconClose />
+              </Link>
             </div>
-          </section>
-        </Col>
-      </Row>
-    </Container>
+
+            <section style={sectionStyle}>
+
+              <p style={datestyle}>
+                Date: {dt.getDate()} {month[dt.getMonth()]}, {dt.getFullYear()}
+              </p>
+
+              <div>
+                <h1 style={titleStyle}>{develTitle}</h1>
+                <div style={bodyStyle}>
+                  <p>Article: {nid}</p>
+                  <div dangerouslySetInnerHTML={createMarkup(develBody)} />
+                </div>
+              </div>
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
-
 export default BlogReadMore

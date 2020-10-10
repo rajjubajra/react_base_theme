@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import BoxArrowInLeft from '../../../B4Icons/BoxArrowInLeft';
-import BoxArrowInRight from '../../../B4Icons/BoxArrowInRight';
+import BoxArrowInLeft from '../../components/Icon/BoxArrowInLeft';
+import BoxArrowInRight from '../../components/Icon/BoxArrowInRight';
 import Blog from './Blog';
 
 function Blogs(props) {
 
-  const pageGap = 7;
+  const pageGap = 5;
   const [currentPage, setCurrentPage] = useState(0);
   const [lastPage, setLastPage] = useState(pageGap);
   const dataLength = props.dataLength;
@@ -26,18 +26,13 @@ function Blogs(props) {
     }
   }
 
-  function Page(currentPage, lastPage, data, length) {
-    let last = lastPage - 1;
-    if (length > 0) {
-      return `${data[currentPage].nid[0].value}
-    - ${currentPage}  Page  ${lastPage} -
-      ${data[last].nid[0].value}`
-    }
-  }
+  //console.log(currentPage, lastPage, "Pages");
 
-  console.log(lastPage)
+  //console.log("DEVEL", dataLength > 0 && props.devel, dataLength);
 
-  console.log("DEVEL", dataLength > 0 && props.devel, dataLength);
+  console.log(props.currentPage, props.lastPage, "heya");
+
+
 
   return (
 
@@ -51,7 +46,7 @@ function Blogs(props) {
               return <Blog
                 key={elm.nid[0].value}
                 id={elm.nid[0].value}
-                uuid={elm.uuid[0].value}
+                nid={elm.nid[0].value}
                 date={elm.created[0].value}
                 title={elm.title[0].value}
                 body={elm.body[0].processed}

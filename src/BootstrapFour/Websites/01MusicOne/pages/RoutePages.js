@@ -5,7 +5,6 @@ import About from './About/About';
 import Gallery from './Gallery/Gallery';
 import News from './News/News';
 import Contact from './Contact/Contact';
-
 import BlogReadMoreOne from './News/BlogOne/BlogReadMore';
 import { pagelink } from '../PageLink';
 import Tour from './Tour/Tour';
@@ -27,8 +26,7 @@ function RoutePages() {
       <Route exact path={`/${pagelink.news}`} component={News} />
       <Route exact path={`/${pagelink.contact}`} component={Contact} />
       <Route exact path={`/${pagelink.shop}`} component={Shop} />
-
-      <Route exact path={`/${pagelink.readmoreNews}/:id`} component={BlogReadMoreOne} />
+      <Route exact path={`/${pagelink.readmoreNews}/:nid`} component={BlogReadMoreOne} />
     </>
   )
 }

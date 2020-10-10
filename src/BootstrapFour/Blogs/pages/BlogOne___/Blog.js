@@ -36,7 +36,7 @@ const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'O
 
 function Blog(props) {
 
-  const { id, title, body, date, nid } = props;
+  const { id, title, body, date, uuid } = props;
 
   let dt = new Date(date);
   let formated_date = `${dt.getDate()} ${month[dt.getMonth()]} ,${dt.getFullYear()}`
@@ -50,6 +50,7 @@ function Blog(props) {
   };
 
 
+
   return (
     <section style={sectionStyle}>
       <p>{id}</p>
@@ -60,7 +61,7 @@ function Blog(props) {
       </div>
 
       <Link
-        to={`/${pagelink.readmoreOne}/${nid}`}
+        to={`${pagelink.readmoreOne}/${uuid}`}
         style={buttonStyle}>
         Read More
       </Link>

@@ -26,7 +26,7 @@ function RoutePages() {
         exact path={`/${pagelink.pages}`}
         component={Pages} />
       <Route
-        exact path={`/${pagelink.readmoreOne}/:id`}
+        exact path={`/${pagelink.readmoreOne}/:nid`}
         component={BlogReadMore} />
 
       <Route

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { baseUrl } from '../../../Config/dataurl';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import ColourMode from '../../../components/ColourMode/ColourMode';
 import NavigationOne from '../../../components/header/NavigationOne/NavigationOne';
-import axios from 'axios';
-import { dataSourceUrl } from '../../../Config/dataurl';
 import IconClose from '../../../components/Icon/IconClose';
+import { Link } from 'react-router-dom';
 import { pagelink } from '../../../PageLink';
-
-
 
 const sectionStyle = {
   width: "100%",
@@ -26,34 +24,37 @@ const titleStyle = {
 }
 const bodyStyle = {
   fontWeight: "100",
-
 }
 
 
 function BlogReadMore(props) {
 
-  /** COLOUR MODE  */
+  /** Dyanmic css change */
   const [className, setClassName] = useState('light');
   const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
-  console.log(colorMode);
+  //console.log(colorMode);
 
   useEffect(() => {
     setClassName(colorMode);
     setColourVariant(variant);
   }, [colorMode, variant])
-  /** COLOUR MODE CLOSED */
+  /** dyanic css change closed */
 
 
+  /** node id, in order to fetch specific article */
+  let { nid } = useParams();
+  const dataUrl = `${baseUrl.URL}/node/${nid}?_format=json`;
 
-  const [body, setBody] = useState('');
-  const [title, setTitle] = useState('');
 
-  let { id } = useParams();
-  const dataUrl = `${dataSourceUrl.DATAURL}/${id}`;
+  /** Set article to specific division */
+  const [develBody, setDevelBody] = useState('');
+  const [develTitle, setDevelTitle] = useState('');
+  const [develCreated, setDevelCreated] = useState('');
 
+  /** FETCH ARTICLE OF node id */
   useEffect(() => {
     axios({
       method: 'GET',
@@ -64,35 +65,55 @@ function BlogReadMore(props) {
     })
       .then(res => {
         console.log(res.data);
-        setTitle(res.data.title);
-        setBody(res.data.body);
+        const { title, body, created } = res.data;
+        setDevelTitle(title[0].value);
+        setDevelBody(body[0].processed);
+        setDevelCreated(created[0].value);
       })
       .catch(err => console.log(err))
   }, [dataUrl])
+
+  /** VIEW HTML FORMAT */
+  function createMarkup(body) {
+    return {
+      __html: body
+    };
+  };
+
+
+  /** FOR DATE FORMAT */
+  let dt = new Date(develCreated);
+  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 
   return (
     <div className={className}>
       <ColourMode />
       <NavigationOne />
-      <div className="container mt-5">
-        <div className="row justify-content-center">
-          <div className="col-10">
+      <div className="container mt-5 pb-5">
+        <div className="row">
+          <div className="col">
+
             <div className="d-flex justify-content-end">
-              <Link to={`/${pagelink.news}`}><IconClose /></Link>
+              <Link to={`/${pagelink.news}`}>
+                <IconClose />
+              </Link>
             </div>
+
             <section style={sectionStyle}>
-              <p style={datestyle}> 19 Aug, 2020</p>
+
+              <p style={datestyle}>
+                Date: {dt.getDate()} {month[dt.getMonth()]}, {dt.getFullYear()}
+              </p>
+
               <div>
-                <h1 style={titleStyle}>{title}</h1>
+                <h1 style={titleStyle}>{develTitle}</h1>
                 <div style={bodyStyle}>
-                  <p>Article: {id}</p>
-                  <p>{body}</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ducimus cumque quae, asperiores ipsa laborum iste voluptas saepe cum molestias quos laboriosam odio, ipsum quo eligendi sapiente atque fuga accusamus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum totam assumenda autem obcaecati distinctio accusantium earum fuga rerum. Ipsa velit nemo aliquid. Suscipit alias quasi totam omnis itaque porro perferendis!
-                </p>
-                  <p>  Ipsum dolor sit amet consectetur adipisicing elit. Amet ab voluptate alias consequuntur minima quam maxime magnam, sequi nemo vitae enim? Officia unde vel itaque, exercitationem animi repellat excepturi mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore harum alias consectetur maxime minus praesentium ducimus est quasi reiciendis totam incidunt quisquam nesciunt, eos nulla velit, exercitationem optio molestias?</p>
+                  <p>Article: {nid}</p>
+                  <div dangerouslySetInnerHTML={createMarkup(develBody)} />
                 </div>
               </div>
+
             </section>
           </div>
         </div>
@@ -100,5 +121,4 @@ function BlogReadMore(props) {
     </div>
   )
 }
-
 export default BlogReadMore

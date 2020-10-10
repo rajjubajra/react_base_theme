@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Nav from '../../components/header/Nav';
 import Blogs from './Blogs';
-import { cssclass } from '../../CssClass';
 import axios from 'axios';
 import { d8develRESTAPI } from '../../data/dataSourceUrl';
+import Nav from '../../components/header/Nav'
 
 
 
 export const BlogOne = () => {
-
 
   /** DATA FETCHING */
   const develUrl = d8develRESTAPI.DATAURL;
@@ -25,22 +23,18 @@ export const BlogOne = () => {
       }
     })
       .then(res => {
-        //console.log(res.data);
+        console.log(res.data);
         setD8Devel(res.data);
       })
       .catch(err => console.log(err))
     //setReadMore(false);
     console.log("useEffect 2");
-
   }, [develUrl])
-
-
-
 
   //console.log("BLog devel", d8devel.length > 0 && d8devel[0].nid[0]);
 
   return (
-    <div className={cssclass.base_classname}>
+    <div>
       <Nav />
       <Blogs
         dataLength={dataLength}
@@ -49,5 +43,4 @@ export const BlogOne = () => {
     </div>
   )
 }
-
 export default BlogOne;
