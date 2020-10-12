@@ -10,6 +10,7 @@ import BoxThree from './BoxThree/BoxThree';
 
 export const About = () => {
 
+  /** Dyanmic colour  */
   const [className, setClassName] = useState('light');
   //const [colourVariant, setColourVariant] = useState('light');
 
@@ -21,6 +22,8 @@ export const About = () => {
     setClassName(colorMode);
     //setColourVariant(variant);
   }, [colorMode, variant])
+  /** Dyanmic colour closed */
+
 
 
   return (
@@ -32,8 +35,6 @@ export const About = () => {
         <h2 style={{ textAlign: "center" }}>Gear</h2>
         <BoxThree />
       </div>
-
-
     </div>
   )
 }

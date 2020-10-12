@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react'
 import Blogs from './Blogs';
 import axios from 'axios';
 import { d8develRESTAPI } from '../../data/dataSourceUrl';
-import Nav from '../../components/header/Nav'
-
+import Nav from '../../components/header/Nav';
 
 
 export const BlogOne = () => {
 
   /** DATA FETCHING */
   const develUrl = d8develRESTAPI.DATAURL;
-
+  /** SET DATA INTO state */
   const [d8devel, setD8Devel] = useState([]);
   const dataLength = d8devel.length;
 
@@ -30,6 +29,7 @@ export const BlogOne = () => {
     //setReadMore(false);
     console.log("useEffect 2");
   }, [develUrl])
+
 
   //console.log("BLog devel", d8devel.length > 0 && d8devel[0].nid[0]);
 

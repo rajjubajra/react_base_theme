@@ -11,6 +11,7 @@ import Tour from './Tour/Tour';
 import Shop from './Shop/Shop';
 import Music from './Music/Music';
 import Album from './Music/Album';
+import TourDetails from './Tour/TourDetails';
 
 
 
@@ -19,6 +20,7 @@ function RoutePages() {
     <>
       <Route exact path={`/${pagelink.home}`} component={Home} />
       <Route exact path={`/${pagelink.tour}`} component={Tour} />
+      <Route exact path={`/${pagelink.tourDetails}/:nid`} component={TourDetails} />
       <Route exact path={`/${pagelink.about}`} component={About} />
       <Route exact path={`/${pagelink.gallery}`} component={Gallery} />
       <Route exact path={`/${pagelink.albums}`} component={Music} />
@@ -26,7 +28,7 @@ function RoutePages() {
       <Route exact path={`/${pagelink.news}`} component={News} />
       <Route exact path={`/${pagelink.contact}`} component={Contact} />
       <Route exact path={`/${pagelink.shop}`} component={Shop} />
-      <Route exact path={`/${pagelink.readmoreNews}/:nid`} component={BlogReadMoreOne} />
+      <Route exact path={`/${pagelink.newsReadMore}/:nid`} component={BlogReadMoreOne} />
     </>
   )
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector, useDispatch } from 'react-redux';
-import { actionFetchTracks } from '../../redux/actions/ActionFetchTracks';
+import { actionFetchTracks } from './Redux/ActionFetchTracks';
 import Albums from './Albums';
 import { pagelink } from '../../PageLink';
 

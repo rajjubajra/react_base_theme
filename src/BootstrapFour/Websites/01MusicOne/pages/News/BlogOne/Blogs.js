@@ -1,37 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import BoxArrowInLeft from '../../../components/Icon/BoxArrowInLeft';
 import BoxArrowInRight from '../../../components/Icon/BoxArrowInRight';
 import Blog from './Blog';
+import { useSelector, useDispatch } from 'react-redux';
+import { BlogOneActionNextPage, BlogOneActionPages, BlogOneActionPrevPage, BlogOneBackToPages } from './redux/BlogOneActionPages';
 
 function Blogs(props) {
 
-  const pageGap = 5;
-  const [currentPage, setCurrentPage] = useState(0);
-  const [lastPage, setLastPage] = useState(pageGap);
+  const disptache = useDispatch();
+
+  const pageGap = 5; /** number of page gap is number of article display in a page */
+  const currentPage = useSelector(state => state.reducerBlogOnePages.currentPage);
+  const lastPage = useSelector(state => state.reducerBlogOnePages.lastPage);
   const dataLength = props.dataLength;
 
-  function nextPage() {
-    console.log("next");
-    setCurrentPage(currentPage + pageGap);
-    setLastPage(pageGap + lastPage);
-  }
-  function prevPage() {
-    console.log("prev");
-    setCurrentPage(currentPage - pageGap);
-    setLastPage(lastPage - pageGap);
-    if (lastPage === (dataLength - 1)) {
-      setLastPage(dataLength - 1)
-    } else {
-      setLastPage(lastPage - pageGap);
-    }
-  }
-
-  //console.log(currentPage, lastPage, "Pages");
-
-  //console.log("DEVEL", dataLength > 0 && props.devel, dataLength);
-
-  console.log(props.currentPage, props.lastPage, "heya");
-
+  useEffect(() => {
+    currentPage === 0
+      /** Load fresh new page */
+      ? disptache(BlogOneActionPages(dataLength, pageGap))
+      /** Load with current and last page while back from readmore page */
+      : disptache(BlogOneBackToPages(currentPage, lastPage, pageGap))
+  }, [currentPage, dataLength, disptache, lastPage, pageGap])
 
 
   return (
@@ -69,7 +58,7 @@ function Blogs(props) {
               margin: "10px",
               display: currentPage === 0 ? "none" : "",
             }}
-              onClick={() => prevPage()}
+              onClick={() => disptache(BlogOneActionPrevPage(currentPage, lastPage, pageGap, dataLength))}
             ><BoxArrowInLeft /></i>
 
             <span style={{
@@ -85,7 +74,8 @@ function Blogs(props) {
               margin: "10px",
               display: lastPage >= dataLength ? "none" : ''
             }}
-              onClick={() => nextPage()}><BoxArrowInRight /></i>
+              onClick={() => disptache(BlogOneActionNextPage(currentPage, lastPage, pageGap, dataLength))}>
+              <BoxArrowInRight /></i>
           </div>
         </div>
       </div>

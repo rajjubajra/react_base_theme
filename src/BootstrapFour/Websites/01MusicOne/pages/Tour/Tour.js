@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import TourPlan from './TourPlan';
 
 function Tour() {
+  /** DYNAMIC THEME COLOUR */
   const [className, setClassName] = useState('light');
   const [colourVariant, setColourVariant] = useState('light');
 
@@ -17,6 +18,8 @@ function Tour() {
     setClassName(colorMode);
     setColourVariant(variant);
   }, [colorMode, variant])
+  /** DYNAMIC THEME COLOUR CLOSED */
+
   return (
     <div className={`${className} container-fulid min-vh-100`}>
       <ColourMode />

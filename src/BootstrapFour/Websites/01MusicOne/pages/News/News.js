@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 
 export const News = () => {
 
+  /** DYANMIC THAME COLOUR */
   const [className, setClassName] = useState('light');
   const [colourVariant, setColourVariant] = useState('light');
 
@@ -19,6 +20,7 @@ export const News = () => {
     setClassName(colorMode);
     setColourVariant(variant);
   }, [colorMode, variant])
+  /** DYNAMIC THEME COLOUR CLOSED */
 
   /** FOR back to same page from readmore-news page */
   const { currentPage } = useParams();

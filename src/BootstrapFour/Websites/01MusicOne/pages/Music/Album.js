@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector, useDispatch } from 'react-redux';
-import { actionFetchAlbum } from '../../redux/actions/ActionFetchAlbum';
+import { actionFetchAlbum } from './Redux/ActionFetchAlbum';
 import PlayingTrack from './PlayingTrack';
 import Play from './MusicPlayer/Play';
 
@@ -14,7 +14,6 @@ function Album() {
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
   /** COLOR MODE CLOSED */
-
 
   /** FETCH ALBUM DATA "JSONAPI/UUID" */
   let { id } = useParams();
@@ -32,7 +31,6 @@ function Album() {
   const fetched = useSelector(state => state.reducerFetchAlbum.fetched);
   const buyFrom = useSelector(state => state.reducerFetchAlbum.buyFrom);
   const listen = useSelector(state => state.reducerFetchAlbum.listen);
-
 
   console.log("ALBUM", fetched && title[0], body, coverImage, tracks);
 

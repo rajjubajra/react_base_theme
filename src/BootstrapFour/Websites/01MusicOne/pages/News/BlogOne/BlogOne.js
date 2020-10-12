@@ -4,12 +4,11 @@ import axios from 'axios';
 import { d8develRESTAPI } from '../../../Config/dataurl';
 
 
-
 export const BlogOne = () => {
 
   /** DATA FETCHING */
   const develUrl = d8develRESTAPI.DATAURL;
-
+  /** SET DATA INTO state */
   const [d8devel, setD8Devel] = useState([]);
   const dataLength = d8devel.length;
 
@@ -34,6 +33,7 @@ export const BlogOne = () => {
 
   return (
     <div>
+
       <Blogs
         dataLength={dataLength}
         devel={d8devel}

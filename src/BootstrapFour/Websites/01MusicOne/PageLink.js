@@ -8,7 +8,8 @@ export const pagelink = {
   contact: "b4MusicOne-contact",
   news: "b4MusicOne-news",
   //readmore: "b4MusicOne-readmore",
-  readmoreNews: "b4MusicOne-readmore-news",
+  newsReadMore: "b4MusicOne-readmore-news",
   shop: "b4MusicOne-shop",
+  tourDetails: "b4MusicOne-tour-details",
   back: "websites-bootstrap"
 }

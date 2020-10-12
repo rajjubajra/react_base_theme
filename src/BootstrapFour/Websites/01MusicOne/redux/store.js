@@ -4,8 +4,14 @@ import thunk from 'redux-thunk';
 //import { reducerFetchData } from './reducers/ReducerFetchData';
 import { reducerSelectColourMode } from './reducers/reducerSelectColourMode';
 import { reducerFetchPhoto } from './reducers/reducerFetchPhoto';
-import { reducerFetchTracks } from './reducers/reducerFetchTracks';
-import { reducerFetchAlbum } from './reducers/reducerFetchAlbum';
+
+import { reducerFetchTracks } from '../pages/Music/Redux/reducerFetchTracks';
+import { reducerFetchAlbum } from '../pages/Music/Redux/reducerFetchAlbum';
+
+import { reducerBlogOnePages } from '../pages/News/BlogOne/redux/reducerBlogOnePages';
+
+import { reducerFetchTour } from '../pages/Tour/Redux/reducerFetchTour';
+import { reducerFetchTourDetails } from '../pages/Tour/Redux/reducerFetchTourDetails';
 
 const reducer = combineReducers(
   {
@@ -13,7 +19,10 @@ const reducer = combineReducers(
     reducerSelectColourMode,
     reducerFetchPhoto,
     reducerFetchTracks,
-    reducerFetchAlbum
+    reducerFetchAlbum,
+    reducerBlogOnePages,
+    reducerFetchTour,
+    reducerFetchTourDetails,
   }
 );
 

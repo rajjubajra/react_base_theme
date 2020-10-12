@@ -25,13 +25,14 @@ function RoutePages() {
       <Route
         exact path={`/${pagelink.pages}`}
         component={Pages} />
-      <Route
-        exact path={`/${pagelink.readmoreOne}/:nid`}
-        component={BlogReadMore} />
+
 
       <Route
         exact path={`/${pagelink.one}`}
         component={BlogOne} />
+      <Route
+        exact path={`/${pagelink.readmoreOne}/:nid`}
+        component={BlogReadMore} />
 
 
       <Route
@@ -63,6 +64,7 @@ function RoutePages() {
       <Route
         exact path={`/${pagelink.readmoreFive}/:id`}
         component={BlogReadMoreFive} />
+
 
       <Route exact path={`/${pagelink.six}`}
         component={BlogSix} />

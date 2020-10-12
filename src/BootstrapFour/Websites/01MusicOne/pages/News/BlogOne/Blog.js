@@ -60,7 +60,7 @@ function Blog(props) {
       </div>
 
       <Link
-        to={`/${pagelink.readmoreNews}/${nid}`}
+        to={`/${pagelink.newsReadMore}/${nid}`}
         style={buttonStyle}>
         Read More
       </Link>

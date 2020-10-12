@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { baseUrl } from '../../../Config/dataurl';
-import { useSelector } from 'react-redux';
-import ColourMode from '../../../components/ColourMode/ColourMode';
-import NavigationOne from '../../../components/header/NavigationOne/NavigationOne';
 import IconClose from '../../../components/Icon/IconClose';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../../PageLink';
+import { useSelector } from 'react-redux';
+import ColourMode from '../../../components/ColourMode/ColourMode';
+import NavigationOne from '../../../components/header/NavigationOne/NavigationOne';
 
 const sectionStyle = {
   width: "100%",
@@ -27,27 +27,30 @@ const bodyStyle = {
 }
 
 
+
 function BlogReadMore(props) {
 
-  /** Dyanmic css change */
+  /** DYANMIC THAME COLOUR */
   const [className, setClassName] = useState('light');
   const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
-  //console.log(colorMode);
+  console.log(colorMode);
 
   useEffect(() => {
     setClassName(colorMode);
     setColourVariant(variant);
   }, [colorMode, variant])
-  /** dyanic css change closed */
+  /** DYNAMIC THEME COLOUR CLOSED */
 
+  const currentPage = useSelector(state => state.reducerBlogOnePages.currentPage);
+  const lastPage = useSelector(state => state.reducerBlogOnePages.lastPage);
+  console.log(currentPage, lastPage, "Readmore One")
 
   /** node id, in order to fetch specific article */
   let { nid } = useParams();
   const dataUrl = `${baseUrl.URL}/node/${nid}?_format=json`;
-
 
   /** Set article to specific division */
   const [develBody, setDevelBody] = useState('');
@@ -118,7 +121,7 @@ function BlogReadMore(props) {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 export default BlogReadMore

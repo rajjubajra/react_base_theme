@@ -28,7 +28,7 @@ function Text(props) {
       <h1>{props.data[0].title}</h1>
       <div dangerouslySetInnerHTML={createMarkup(props.data[0].body)} />
       <div>
-        <Link className="button" to={pagelink.album}>Listen</Link>
+        <Link className="button" to={pagelink.albums}>Listen</Link>
       </div>
     </div>
   )
