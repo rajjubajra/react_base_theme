@@ -14,7 +14,7 @@ function Form() {
   //console.log(name, email, state, country);
 
   /** d8-react-base-theeme-backend webform "Contact Form" rest api uri */
-  const formUrl = 'https://yellow-website.com/d8-react-base-theme-backend/entity/webform_submission?_format=json';
+  const formUrl = 'https://yellow-website.com/d8-react-base-theme-backend/webform_rest/submit?_format=json';
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,10 +27,11 @@ function Form() {
       "country": country
     },
       {
+        withCredentials: true,
         headers: {
-          'contetn-type': 'application/json',
+          'contetn-type': 'application/hal+json',
           /** auth token for same domain name submit via cookies  */
-          'x-csrf-token': 'https://yellow-website.com/d8-react-base-theme-backend/rest/session/token'
+          'X-CSRF-Token': 'https://yellow-website.com/d8-react-base-theme-backend/rest/session/token'
         }
       }
     )
