@@ -30,7 +30,7 @@ function FormOne() {
         headers: {
           'contetn-type': 'application/json',
           /** auth token for same domain name submit via cookies  */
-          'csrf_token': 'https://yellow-website.com/d8-react-base-theme-backend/rest/session/token'
+          'X-CSRF-Token': 'https://yellow-website.com/d8-react-base-theme-backend/rest/session/token'
         }
       }
     )
