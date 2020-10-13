@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
 import Text from './Text';
+import { useDispatch } from 'react-redux';
+import { actionFetchLandingPage } from '../Redux/ActionFetchLandingPage';
 
 
 
@@ -13,6 +15,17 @@ const data = [
 ]
 
 function BoxNine() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actionFetchLandingPage());
+  }, [dispatch]);
+
+
+
+
+
   return (
     <div>
       {/** desktop and tablet lg, md and xl */}

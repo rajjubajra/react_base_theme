@@ -20,7 +20,7 @@ function PhotoPlaceholder(props) {
   }, [])
 
 
-  console.log("placeholder", photo, "length", dataLength);
+  //console.log("placeholder", photo, "length", dataLength);
 
   const imgStyle = {
     width: props.width,

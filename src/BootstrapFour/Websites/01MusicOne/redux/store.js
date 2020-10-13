@@ -13,6 +13,10 @@ import { reducerBlogOnePages } from '../pages/News/BlogOne/redux/reducerBlogOneP
 import { reducerFetchTour } from '../pages/Tour/Redux/reducerFetchTour';
 import { reducerFetchTourDetails } from '../pages/Tour/Redux/reducerFetchTourDetails';
 
+import { reducerFetchLatestNews } from '../pages/Home/Redux/reducerFetchLatestNews';
+import { reducerFetchLandingPage } from '../pages/Home/Redux/reducerFetchLandingPage';
+import { reducerFetchAbout } from '../pages/About/Redux/reducerFetchAbout';
+
 const reducer = combineReducers(
   {
     // reducerFetchData,
@@ -23,6 +27,9 @@ const reducer = combineReducers(
     reducerBlogOnePages,
     reducerFetchTour,
     reducerFetchTourDetails,
+    reducerFetchLatestNews,
+    reducerFetchLandingPage,
+    reducerFetchAbout,
   }
 );
 

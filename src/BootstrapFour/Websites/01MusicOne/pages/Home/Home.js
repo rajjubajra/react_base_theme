@@ -9,9 +9,9 @@ import SocialMedia from './socalMedia/SocialMedia';
 import FormEight from '../../components/FormEight/FormEight';
 
 
+function Home() {
 
-export default function Home() {
-
+  /** dyanamic colour */
   const [className, setClassName] = useState('light');
   const [colourVariant, setColourVariant] = useState('light');
 
@@ -23,6 +23,9 @@ export default function Home() {
     setClassName(colorMode);
     setColourVariant(variant);
   }, [colorMode, variant])
+  /** dynamic colour closed */
+
+
 
 
   return (
@@ -47,3 +50,4 @@ export default function Home() {
     </div>
   )
 }
+export default Home;

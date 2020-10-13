@@ -4,28 +4,28 @@ import { country } from './country.json';
 function Form() {
   return (
     <form>
-      <div class="form-group">
+      <div className="form-group">
         <label>Name</label>
-        <input type="text" class="form-control" placeholder="name" />
+        <input type="text" className="form-control" placeholder="name" />
       </div>
-      <div class="form-group">
+      <div className="form-group">
         <label>Email address</label>
-        <input type="email" class="form-control" placeholder="email address" />
+        <input type="email" className="form-control" placeholder="email address" />
       </div>
-      <div class="form-group">
+      <div className="form-group">
         <label>State</label>
-        <input type="text" class="form-control" placeholder="State" />
+        <input type="text" className="form-control" placeholder="State" />
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect2">Country</label>
-        <select multiple class="form-control" id="exampleFormControlSelect2">
+      <div className="form-group">
+        <label>Country</label>
+        <select multiple className="form-control" id="exampleFormControlSelect2">
           {
-            country.map(item => {
-              return <option>{item.name}</option>
+            country.map((item, index) => {
+              return <option key={index}>{item.name}</option>
             })
           }
         </select>
-        <button type="submit" class="btn btn-light mb-2 mt-3">Submit</button>
+        <button type="submit" className="btn btn-light mb-2 mt-3">Submit</button>
       </div>
     </form>
   )

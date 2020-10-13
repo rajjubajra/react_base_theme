@@ -20,7 +20,7 @@ function PhotoMusic(props) {
       }
     })
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         let arr = [];
         /** multiple sub array in to one array */
         res.data.forEach(elem => {
@@ -51,7 +51,7 @@ function PhotoMusic(props) {
     }
   }, [photo.length])
 
-  console.log("Photo Travel", photo, 'Length', photo.length, 'index Id', indexId);
+  // console.log("Photo Travel", photo, 'Length', photo.length, 'index Id', indexId);
 
   const imgStyle = {
     width: props.width,

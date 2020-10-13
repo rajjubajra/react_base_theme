@@ -16,7 +16,24 @@ export const ColumnOne = () => {
     setClassName(colorMode);
     // setColourVariant(variant);
   }, [colorMode, variant])
+  /** COLOUR MODE CLOSED */
 
+
+
+  /** ABOUT DATA */
+  const state = useSelector(state => state.reducerFetchAbout.data);
+  const dataLength = useSelector(state => state.reducerFetchAbout.dataLength);
+
+
+  function createMarkup(news, rownum, length) {
+    /** body content 500 words only */
+    const body = length > 0
+      ? news[rownum].body[0].processed
+      : '<p>........</p>'
+    return {
+      __html: body
+    };
+  };
 
   return (
     <div className={className}>
@@ -24,7 +41,7 @@ export const ColumnOne = () => {
       <div className="container mt-5">
         <div className="row">
           <div className="col">
-            <h1>Single Column Page</h1>
+            <h1>{dataLength > 0 && state[0].title[0].value}</h1>
             <h5 style={{ fontStyle: "italic", letterSpacing: "0.1rem" }}>
               "Klias quisquam soluta vitae in magnam, molestiae explicabo, qui amet officia"
             </h5>
@@ -57,16 +74,12 @@ export const ColumnOne = () => {
               />
             </div>
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maxime, animi iure, inventore, perferendis quidem dolore vero cumque impedit provident eaque itaque quaerat a harum et consequatur saepe quis facilis.</p>
-
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio incidunt sequi ratione sapiente itaque, cumque enim dignissimos eius unde fuga cupiditate adipisci, culpa expedita impedit. Praesentium perferendis repudiandae iusto rem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis aliquid qui voluptate numquam placeat molestias cum architecto, dolore voluptates veritatis fugit atque omnis, dolor libero et labore eligendi alias aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maxime, animi iure, inventore, perferendis quidem dolore vero cumque impedit provident eaque itaque quaerat a harum et consequatur saepe quis facilis.</p>
-
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio incidunt sequi ratione sapiente itaque, cumque enim dignissimos eius unde fuga cupiditate adipisci, culpa expedita impedit. Praesentium perferendis repudiandae iusto rem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis aliquid qui voluptate numquam placeat molestias cum architecto, dolore voluptates veritatis fugit atque omnis, dolor libero et labore eligendi alias aliquam! Praesentium perferendis repudiandae iusto rem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis aliquid qui voluptate numquam placeat molestias cum architecto, dolore voluptates veritatis fugit atque omnis, dolor libero et labore eligendi alias aliquam!</p>
+              <div dangerouslySetInnerHTML={createMarkup(state, 0, dataLength)} />
             </div>
           </div>
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 export default ColumnOne;

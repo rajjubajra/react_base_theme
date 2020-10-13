@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ColumnOne from './ColumnOne/ColumnOne';
 import BoxThree from './BoxThree/BoxThree';
+import { actionFetchAbout } from './Redux/ActionFetchAbout';
 
 
 
@@ -23,6 +24,15 @@ export const About = () => {
     //setColourVariant(variant);
   }, [colorMode, variant])
   /** Dyanmic colour closed */
+
+
+  /** about data */
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(actionFetchAbout());
+  }, [dispatch])
+
+
 
 
 
