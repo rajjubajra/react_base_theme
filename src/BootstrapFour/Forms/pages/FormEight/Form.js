@@ -19,21 +19,24 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(name, email, state, country);
-    axios.post(formUrl, {
-      "webform_id": "fans_club",
-      "name": name,
-      "email": email,
-      "state": state,
-      "country": country
-    },
+    axios(
       {
+        method: 'post',
+        url: formUrl,
         withCredentials: true,
         headers: {
           'contetn-type': 'application/hal+json',
           /** auth token for same domain name submit via cookies  */
-          'X-CSRF-Token': 'https://yellow-website.com/d8-react-base-theme-backend/rest/session/token'
+          'XSRF-TOKEN': 'https://yellow-website.com/d8-react-base-theme-backend/rest/session/token'
+        },
+        data: {
+          "webform_id": "fans_club",
+          "name": name,
+          "email": email,
+          "state": state,
+          "country": country
         }
-      }
+      },
     )
       .then(function (res) {
         console.log("form res", res, "Status", res.status);
