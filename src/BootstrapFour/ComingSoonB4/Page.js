@@ -36,7 +36,7 @@ function Page(props) {
 
             <Button
               variant="outline-dark"
-              className="mr-1"
+              className="mr-1 mt-1"
               onClick={() => window.open(props.linkWebHosting.uri)}
               style={{ fontWeight: "100" }}>
               {props.linkWebHosting.title}
@@ -44,19 +44,19 @@ function Page(props) {
             </Button>
             <Button
               variant="outline-dark"
-              className="mr-1"
+              className="mr-1 mt-1"
               onClick={() => window.open(props.linkFreeImages.uri)}
               style={{ fontWeight: "100" }}>
               {props.linkFreeImages.title}
             </Button>
             <Button
-              variant="outline-dark"
+              variant="outline-dark mt-1"
               className="mr-1"
               onClick={() => window.open("/websites")}
               style={{ fontWeight: "100" }}>W</Button>
             <Button
               variant="outline-dark"
-              className="mr-1"
+              className="mr-1 mt-1"
               onClick={() => window.open("https://lan-pasaa.yellow-website.com")}
               style={{ fontWeight: "100" }}>L</Button>
           </div>

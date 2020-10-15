@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { actionFetchAlbum } from './Redux/ActionFetchAlbum';
 import PlayingTrack from './PlayingTrack';
 import Play from './MusicPlayer/Play';
+import IconClose from '../../components/Icon/IconClose';
+import { pagelink } from '../../PageLink';
 
 function Album() {
 
@@ -70,7 +72,12 @@ function Album() {
       <ColourMode />
       <NavigationOne />
       <div className="container">
-        <div className="row mt-5">
+        <div className="row">
+          <div className="col d-flex justify-content-end">
+            <Link to={`/${pagelink.albums}`}><IconClose /></Link>
+          </div>
+        </div>
+        <div className="row mt-1">
           <div className="col">
             <h1>{fetched && title[0].value}</h1>
           </div>

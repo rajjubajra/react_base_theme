@@ -5,6 +5,9 @@ import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { actionFetchTourDetails } from './Redux/ActionFetchTourDetails';
+import IconClose from '../../components/Icon/IconClose';
+import { Link } from 'react-router-dom';
+import { pagelink } from '../../PageLink';
 
 
 
@@ -53,6 +56,14 @@ function TourDetails() {
       <ColourMode />
       <NavigationOne />
       <div className="container mt-5 mb-5 tour-details">
+        <div className="row">
+          <div className="col">
+            <Link
+              to={`/${pagelink.tour}`}
+              className="d-flex justify-content-end">
+              <IconClose /></Link>
+          </div>
+        </div>
         {/** TITLE */}
         <div className="row">
           <div className="col">

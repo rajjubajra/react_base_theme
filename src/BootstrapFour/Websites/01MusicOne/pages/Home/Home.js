@@ -5,7 +5,7 @@ import BoxNine from './BoxNine/BoxNine';
 import BoxEight from './BoxEight/BoxEight';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import Title from './Title';
-import SocialMedia from './socalMedia/SocialMedia';
+import SocialMedia from '../../components/socalMedia/SocialMedia';
 import FormEight from '../../components/FormEight/FormEight';
 
 
@@ -26,7 +26,15 @@ function Home() {
   /** dynamic colour closed */
 
 
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [])
 
+  const sMediaStyle = {
+    position: 'absolute',
+    bottom: "15px",
+    left: "0px",
+  }
 
   return (
     <div className={className}>
@@ -35,8 +43,11 @@ function Home() {
       <div className="container mt-5">
         <div className="row mt-5">
           <Title />
-          <SocialMedia />
-          <div className="col-lg-8 col-md-6 col-sm-12">
+          <div
+            style={sMediaStyle}
+            className="d-none d-md-block">
+            <SocialMedia /></div>
+          <div className="col-lg-8 col-md-6 col-sm-12 mb-5">
             <BoxNine />
           </div>
         </div>

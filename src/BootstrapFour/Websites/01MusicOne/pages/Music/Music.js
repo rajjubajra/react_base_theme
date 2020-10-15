@@ -42,7 +42,7 @@ function Music() {
         <div className="row">
           {
             dataLength > 0 && tracksData.map((item, index) => {
-              return <div key={index} className="col-lg-4">
+              return <div key={index} className="col-lg-4 col-md-6">
                 <Link
                   className="custom-color" to={`${pagelink.album}/${item.nid[0].value}`}>
                   <Albums

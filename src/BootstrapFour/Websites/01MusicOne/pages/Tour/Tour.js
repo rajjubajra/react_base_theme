@@ -21,21 +21,18 @@ function Tour() {
   /** DYNAMIC THEME COLOUR CLOSED */
 
   return (
-    <div className={`${className} container-fulid min-vh-100`}>
+    <div className={`${className} min-vh-100`}>
       <ColourMode />
       <NavigationOne />
-      <div className="row justify-content-center mt-5">
-        <div className="col-8">
-          <div className="mb-5">
+      <div className="container-fluid">
+        <div className="row justify-content-center mt-5">
+          <div className="col-lg-8 col-md-8 col-sm-10">
             <h1>TOUR</h1>
+            <TourPlan />
           </div>
-          <TourPlan />
         </div>
-
       </div>
-
     </div>
-
   )
 }
 

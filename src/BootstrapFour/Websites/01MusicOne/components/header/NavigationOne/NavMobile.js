@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialMedia from '../../socalMedia/SocialMedia';
 
 /** Tablet and Mobile */
 
@@ -33,7 +34,20 @@ function NavMobile(props) {
           })
         }
       </ul>
-    </div>
+
+      <div
+        className="d-md-none d-lg-none d-xl-none"
+        style={{
+          position: "fixed",
+          right: "10px",
+          top: "8px",
+          Zindex: "100",
+          display: "flex",
+        }}>
+        <SocialMedia />
+      </div>
+
+    </div >
   )
 }
 

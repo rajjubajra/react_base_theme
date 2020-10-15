@@ -49,7 +49,7 @@ function ColourMode() {
 
 
   return (
-    <div>
+    <div className="d-none d-md-block">
       <ul style={ulStyle}>
         <li style={blackWhiteStyle}
           onClick={() =>

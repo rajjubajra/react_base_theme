@@ -46,6 +46,10 @@ function ComingSoonB4() {
       .catch(err => console.log(err))
   }, [currentUrl])
 
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
 
 
   console.log("CURENT URL", currentUrl,);
