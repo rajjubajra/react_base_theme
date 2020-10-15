@@ -5,7 +5,7 @@ import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
 const boxOne = {
   display: "block",
   maxWidth: "500px",
-  maxHeight: "400px",
+  height: "auto",
   margin: "27px",
   border: "0px solid #eee",
   position: "relative",

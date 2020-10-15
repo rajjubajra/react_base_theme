@@ -44,7 +44,7 @@ function TourPlan() {
             <li className="list-group-item">
 
               <h5>
-                <i><img style={{ width: "30px" }} src={field_location_icon.length > 0 && field_location_icon[0].value} alt="location" /></i> {title.length > 0 && title[0].value}</h5>
+                <i><img style={{ width: "30px", margin: "3px 6px 3px 0px" }} src={field_location_icon.length > 0 && field_location_icon[0].value} alt="location" /></i> {title.length > 0 && title[0].value}</h5>
               <p>{field_address_line_1.length > 0
                 && field_address_line_1[0].value}
                 - [{field_event_location.length > 0

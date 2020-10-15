@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Nav from '../../components/header/Nav';
-import Form from './Form';
 
 
 /** D8WebForm */
@@ -15,37 +14,36 @@ function FormOne() {
 
 
   const baseUrl = `https://yellow-website.com/d8-react-base-theme-backend`;
-  const formId = 'contact_message?_format=json';
 
 
-  console.log("???", name, email, message);
+  console.log("input", name, email, message);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log("HANDLE SUBMIT", name, email, message, submited);
-    axios.post(`${baseUrl}/${formId}`,
-      {
+    axios({
+      method: 'post',
+      url: `${baseUrl}/contact_message?_format=json`,
+      data: {
         "contact_form": [{ "target_id": "contact_form" }],
         "name": [{ "value": name }],
         "email": [{ "value": email }],
         "message": [{ "value": message }]
       },
-      {
-        headers: {
-          'Accept': 'application/vnd.api+json',
-          'Content-Type': 'application/json',
-          /** auth token for same domain name submit via cookies  */
-          'X-CSRF-Token': `${baseUrl}/rest/session/token`
-        }
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/json',
+        /** auth token for same domain name submit via cookies  */
+        'X-CSRF-Token': `${baseUrl}/rest/session/token`
       }
-    )
+    })
       .then(function (res) {
-        console.log("form res", res, "Status", res.status);
+        console.log("form res", res.data, "Status", res.status);
         res.status === 200 ? setSubmited(true) : setSubmited(false);
       })
       .catch(function (err) {
         console.log("form err", err)
       });
-
   }
 
   //console.log(watch("email"));
@@ -76,8 +74,8 @@ function FormOne() {
                 type="text"
                 name="name"
                 className="form-control"
-                onChange={(e) => setName(e.target.value)}
                 value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
@@ -87,8 +85,8 @@ function FormOne() {
                 type="email"
                 name="email"
                 className="form-control"
-                onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -97,8 +95,8 @@ function FormOne() {
               <textarea
                 name="message"
                 className="form-control"
-                onChange={(e) => setMessage(e.target.value)}
                 value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 rows="4"></textarea>
             </div>
             <button type="submit" className="btn btn-light">Submit</button>

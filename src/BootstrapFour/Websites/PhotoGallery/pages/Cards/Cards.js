@@ -8,12 +8,14 @@ function Cards() {
   return (
     <Container className='mt-5'>
       <Row>
-        <Card title="Travel" linkref={`${pagelink.gallery}/15`} />
-        <Card title="Food" linkref={`${pagelink.gallery}/16`} />
-        <Card title="Music" linkref={`${pagelink.gallery}/17`} />
-        <Card title="Garden" linkref={`${pagelink.gallery}/18`} />
-        <Card title="Social Media" linkref={`${pagelink.gallery}/19`} />
-        <Card title="Blank Card 5" linkref="#" />
+        <Card title="Travel" text="My Photo" type="jpeg" linkref={`${pagelink.gallery}/15`} />
+        <Card title="Food" text="My Photo" type="jpeg" linkref={`${pagelink.gallery}/16`} />
+        <Card title="Music" text="My Photo" type="jpeg" linkref={`${pagelink.gallery}/17`} />
+        <Card title="Garden" text="My Photo" type="jpeg" linkref={`${pagelink.gallery}/18`} />
+        <Card title="Social Media" text="Out sourced" type="png" linkref={`${pagelink.gallery}/19`} />
+        <Card title="Social Media SVG" text="Out sourced" type="svg" linkref={`${pagelink.gallery}/20`} />
+        <Card title="Icons Mis" text="Out sourced" type="svg" linkref={`${pagelink.gallery}/21`} />
+        <Card title="Blank Card 5" text="#" type="#" linkref="#" />
       </Row>
     </Container>
   )

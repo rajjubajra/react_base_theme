@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { countryList } from '../../data/country.json';
 import axios from 'axios';
+import ConfirmationMessage from './ConfirmationMessage';
 
 function Form() {
 
@@ -8,7 +9,8 @@ function Form() {
   const [email, setEmail] = useState('');
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
-  const [submited, setSubmited] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [confirmationMsg, setConfirmationMsg] = useState('');
 
   //console.log(name, email, state, country);
 
@@ -41,12 +43,12 @@ function Form() {
     )
       .then(function (res) {
         console.log("Post Status", res.status);
-        res.status === 200 ? setSubmited(true) : setSubmited(false);
+        res.status === 200 ? setSubmitted(true) : setSubmitted(false);
       })
       .catch(function (err) {
         console.log("Post Error message:", err)
       });
-    console.log("DATA submited", submited);
+    console.log("DATA submited", submitted);
 
 
     axios({
@@ -61,7 +63,8 @@ function Form() {
       }
     })
       .then(function (response) {
-        return console.log("WEBFORM GET", response);
+        //console.log("WEBFORM GET", response.data.settings.confirmation_message);
+        setConfirmationMsg(response.data.settings.confirmation_message);
       })
       .catch(function (err) {
         console.log("web form GET error", err);
@@ -71,24 +74,18 @@ function Form() {
     /** submited get closed */
   }
 
-
+  //  console.log("CNS MSG", confirmationMsg);
 
 
   return (
     <>
-      <div className={`${submited ? 'd-block' : 'd-none'}`}>
-        <div className="card">
-          <h5 className="card-header">Message</h5>
-          <div className="card-body">
-            <h5 className="card-title">Message Submited</h5>
-            <p className="card-text">Thank you. your message has been submited</p>
-            <span className="btn btn-light">Back</span>
-          </div>
-        </div>
+      <div className={`${submitted ? 'd-block' : 'd-none'}`}>
+        <ConfirmationMessage name={name} confirmationMsg={confirmationMsg} />
       </div>
 
-      <form onSubmit={handleSubmit} className={`${submited ? 'd-none' : 'd-block'}`}>
+      <form onSubmit={handleSubmit} className={`${submitted ? 'd-none' : 'd-block'}`}>
         <div className="form-group">
+          <p>Please fill out the form below to join Fan Club</p>
           <label>Name</label>
           <input
             required

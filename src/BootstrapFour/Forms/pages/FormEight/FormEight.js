@@ -40,13 +40,12 @@ function FormEight() {
   // console.log(watch("email"));
 
   return (
-    <div className="container">
+    <div className="container min-vh-100">
       <Nav />
       <p>[ form - 8]</p>
       <div className="row justify-content-center">
         <div className="col-8">
           <h1>Fans Club</h1>
-          <p>Please fill out the form below to join Fan Club</p>
           <Form />
         </div>
       </div>

@@ -83,6 +83,10 @@ function BlogReadMore(props) {
     };
   };
 
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [])
+
 
   /** FOR DATE FORMAT */
   let dt = new Date(develCreated);

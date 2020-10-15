@@ -51,7 +51,7 @@ function Boxes(props) {
                 return <PhotoPlaceholder
                   className="d-block w-100"
                   width="100%"
-                  height="400px"
+                  height="auto"
                   imgSrc={item.url}
                   imgAlt={item.alt}
                   imgIndex={index}
