@@ -8,6 +8,7 @@ import { pagelink } from '../../../PageLink';
 import { useSelector } from 'react-redux';
 import ColourMode from '../../../components/ColourMode/ColourMode';
 import NavigationOne from '../../../components/header/NavigationOne/NavigationOne';
+import CopyToClipBoard from './CopyToClipBoard';
 
 const sectionStyle = {
   width: "100%",
@@ -102,6 +103,7 @@ function BlogReadMore(props) {
           <div className="col">
 
             <div className="d-flex justify-content-end">
+              <CopyToClipBoard />
               <Link to={`/${pagelink.news}`}>
                 <IconClose />
               </Link>

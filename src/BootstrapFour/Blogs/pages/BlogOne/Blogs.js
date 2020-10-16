@@ -4,15 +4,19 @@ import BoxArrowInRight from '../../components/Icon/BoxArrowInRight';
 import Blog from './Blog';
 import { useSelector, useDispatch } from 'react-redux';
 import { BlogOneActionNextPage, BlogOneActionPages, BlogOneActionPrevPage, BlogOneBackToPages } from './redux/BlogOneActionPages';
+import BlogFilterForm from './BlogFilterForm';
 
 function Blogs(props) {
 
+  /** redux dispatch */
   const disptache = useDispatch();
 
+  /** Pagination */
   const pageGap = 5; /** number of page gap is number of article display in a page */
   const currentPage = useSelector(state => state.reducerBlogOnePages.currentPage);
   const lastPage = useSelector(state => state.reducerBlogOnePages.lastPage);
   const dataLength = props.dataLength;
+
 
   useEffect(() => {
     currentPage === 0
@@ -23,12 +27,15 @@ function Blogs(props) {
   }, [currentPage, dataLength, disptache, lastPage, pageGap])
 
 
-  return (
 
+  return (
     <div className="container">
       {/** PAGE CONTENT */}
       <div className="row">
         <div className="container">
+          <div className="row justify-content-center">
+            <BlogFilterForm year={props.year} month={props.month} />
+          </div>
           {
             props.devel.length > 0 &&
             props.devel.slice(currentPage, lastPage).map(elm => {

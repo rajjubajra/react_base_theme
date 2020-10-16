@@ -33,7 +33,6 @@ export const BlogOne = () => {
 
   return (
     <div>
-
       <Blogs
         dataLength={dataLength}
         devel={d8devel}

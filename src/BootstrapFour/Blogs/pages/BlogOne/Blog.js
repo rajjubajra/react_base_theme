@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
+import { DayMonthCommaYear } from './DateFormat';
+import DangerouslySetInnterHtml from './DangerouslySetInnterHtml';
 
 const sectionStyle = {
   width: "100%",
@@ -31,32 +33,18 @@ const buttonStyle = {
 }
 
 
-const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
 
 function Blog(props) {
 
   const { id, title, body, date, nid } = props;
 
-  let dt = new Date(date);
-  let formated_date = `${dt.getDate()} ${month[dt.getMonth()]} ,${dt.getFullYear()}`
-
-  let text = body;
-
-  function createMarkup(txt) {
-    return {
-      __html: txt
-    };
-  };
-
-
   return (
     <section style={sectionStyle}>
       <p>{id}</p>
-      <p style={dateStyle}>{formated_date}</p>
+      <p style={dateStyle}>{DayMonthCommaYear(date)}</p>
       <h1 style={titleStyle} >{title}</h1>
       <div style={{ width: "65%", margin: "0px auto" }}>
-        <div dangerouslySetInnerHTML={createMarkup(text.substring(0, 150))} />
+        <DangerouslySetInnterHtml text={body.substring(0, 150)} />
       </div>
 
       <Link

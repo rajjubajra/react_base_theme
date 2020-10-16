@@ -7,6 +7,7 @@ import IconClose from '../../components/Icon/IconClose';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
 import { useSelector } from 'react-redux';
+import CopyToClipBoard from './CopyToClipBoard';
 
 
 const sectionStyle = {
@@ -43,6 +44,10 @@ function BlogReadMore(props) {
   const [develTitle, setDevelTitle] = useState('');
   const [develCreated, setDevelCreated] = useState('');
 
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [])
+
   /** FETCH ARTICLE OF node id */
   useEffect(() => {
     axios({
@@ -61,6 +66,7 @@ function BlogReadMore(props) {
       })
       .catch(err => console.log(err))
   }, [dataUrl])
+
 
   /** VIEW HTML FORMAT */
   function createMarkup(body) {
@@ -83,6 +89,7 @@ function BlogReadMore(props) {
           <div className="col">
 
             <div className="d-flex justify-content-end">
+              <CopyToClipBoard />
               <Link to={`/${pagelink.one}`}>
                 <IconClose />
               </Link>
