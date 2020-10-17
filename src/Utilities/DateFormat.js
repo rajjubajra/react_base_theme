@@ -53,3 +53,17 @@ export const Day_Month_Year = (date) => {
 
 }
 
+export const Month_Year = (date) => {
+  /**
+   *  DATE: 01-2020
+   */
+
+  let dt = new Date(date);
+
+  let monthInNumber = dt.getMonth();
+  let year = dt.getFullYear();
+
+  return `${monthInNumber}-${year}`;
+
+}
+

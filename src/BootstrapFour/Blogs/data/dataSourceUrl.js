@@ -4,7 +4,7 @@ export const dataSourceUrl = {
 
 /** DRUPAL 8 BASE URL */
 export const baseUrl = {
-  URL: "https://yellow-website.com/d8-react-base-theme-backend/"
+  URL: "https://yellow-website.com/d8-react-base-theme-backend"
 }
 
 /** DRUPAL 8 DEVEL GENERATED DATA */

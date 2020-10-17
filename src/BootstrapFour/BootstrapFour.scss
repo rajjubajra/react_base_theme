@@ -36,7 +36,7 @@ h6{
   font-size: clamp(0.8rem, 4vw, 1rem) !important;
 }
 
-p, .btn, label{
+p, .btn, label, option{
   //font-size: 1rem;
   font-size: clamp(0.75rem, 3vw, 1rem) !important;
 }
@@ -85,6 +85,7 @@ a, a:hover{
 /** FORM **/
 input,
 textarea,
+select,
 input:focus, 
 textarea:focus,
 input.form-control:focus{

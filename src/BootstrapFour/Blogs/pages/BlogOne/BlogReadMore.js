@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
 import { useSelector } from 'react-redux';
 import CopyToClipBoard from './CopyToClipBoard';
+import { DayMonthCommaYear } from './DateFormat';
+import DangerouselySetInnerHtml from './DangerouslySetInnterHtml';
+
 
 
 const sectionStyle = {
@@ -26,7 +29,6 @@ const titleStyle = {
 const bodyStyle = {
   fontWeight: "100",
 }
-
 
 
 function BlogReadMore(props) {
@@ -68,19 +70,6 @@ function BlogReadMore(props) {
   }, [dataUrl])
 
 
-  /** VIEW HTML FORMAT */
-  function createMarkup(body) {
-    return {
-      __html: body
-    };
-  };
-
-
-  /** FOR DATE FORMAT */
-  let dt = new Date(develCreated);
-  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-
   return (
     <div>
       <Nav />
@@ -98,14 +87,14 @@ function BlogReadMore(props) {
             <section style={sectionStyle}>
 
               <p style={datestyle}>
-                Date: {dt.getDate()} {month[dt.getMonth()]}, {dt.getFullYear()}
+                Date: {DayMonthCommaYear(develCreated)}
               </p>
 
               <div>
                 <h1 style={titleStyle}>{develTitle}</h1>
                 <div style={bodyStyle}>
                   <p>Article: {nid}</p>
-                  <div dangerouslySetInnerHTML={createMarkup(develBody)} />
+                  <DangerouselySetInnerHtml text={develBody} />
                 </div>
               </div>
 
@@ -113,7 +102,7 @@ function BlogReadMore(props) {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 export default BlogReadMore

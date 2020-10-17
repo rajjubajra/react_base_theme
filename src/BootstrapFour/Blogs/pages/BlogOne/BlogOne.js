@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import Blogs from './Blogs';
 import axios from 'axios';
-import { d8develRESTAPI } from '../../data/dataSourceUrl';
+import { baseUrl } from '../../data/dataSourceUrl';
 import Nav from '../../components/header/Nav';
 import { ToUniqueArray } from './ToUniqueArray';
+import BlogFilterForm from './BlogFilterForm';
 
 
 export const BlogOne = () => {
 
   /** DATA FETCHING */
-  const develUrl = d8develRESTAPI.DATAURL;
+  const develUrl = `${baseUrl.URL}/devel-data?_format=json`
   /** SET DATA INTO state */
   const [d8devel, setD8Devel] = useState([]);
-  /** Available data for months */
+  const dataLength = d8devel.length;
+
+  /** Available data for Year and month array 
+   * FOR selected month data filter
+   */
   const [dateMonths, setDateMonths] = useState([]);
   const [dateYear, setDateYear] = useState([]);
   const [month, setMonth] = useState([]);
   const [year, setYear] = useState([]);
-  const dataLength = d8devel.length;
+  const [status, setStatus] = useState('');
+  const [dtLength, setDtLength] = useState(0);
 
 
   useEffect(() => {
@@ -29,7 +35,7 @@ export const BlogOne = () => {
       }
     })
       .then(res => {
-        console.log(res.data);
+        console.log(res);
         setD8Devel(res.data);
         let months = [];
         let years = [];
@@ -40,6 +46,9 @@ export const BlogOne = () => {
         })
         setDateYear(years);
         setDateMonths(months);
+        setStatus(res.status);
+        setDtLength(res.data.length);
+
       })
       .catch(err => console.log(err))
     //setReadMore(false);
@@ -52,17 +61,22 @@ export const BlogOne = () => {
     setYear(ToUniqueArray(dateYear))
   }, [dateMonths, dateYear])
 
-  // console.log("BLog devel", d8devel.length > 0 && d8devel);
-  // console.log("data months", dateMonths, "month", month, "year", year);
+  console.log("BLog devel", d8devel);
+  console.log("status", status);
+  console.log("Data Length On load", dtLength);
+  console.log("Data length from loaded data", dataLength);
+
+  console.log("data months", dateMonths, "month", month, "year", year);
 
   return (
     <div>
       <Nav />
+
+      <BlogFilterForm year={year} month={month} />
+
       <Blogs
         dataLength={dataLength}
         devel={d8devel}
-        month={month}
-        year={year}
       />
 
     </div>

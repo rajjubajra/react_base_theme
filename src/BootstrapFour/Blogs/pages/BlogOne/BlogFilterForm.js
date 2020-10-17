@@ -1,41 +1,52 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { BlogOneActionSelectedMonth, BlogOneActionSelectedYear } from './redux/BlogOneActionSelectedDate';
+
 
 function BlogFilterForm(props) {
-  const [selectedYear, setSelectedYear] = useState('');
-  const [selectedMonth, setSelectedMonth] = useState('');
-
 
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
+
+  const dispatch = useDispatch();
+  const selectedYear = useSelector(state => state.reducerBlogOneSelectedDate.year);
+  const selectedMonth = useSelector(state => state.reducerBlogOneSelectedDate.month);
+
+
   return (
-    <div className="form-row">
-      <div className="form-group col-md-6">
-        <label>Year</label>
-        <select className="form-control"
-          value={selectedYear}
-          onChange={(e) => setSelectedYear(e.target.value)}
-        >
-          <option defaultValue>Choose...</option>
-          {
-            props.year.map((item, index) => {
-              return <option key={index} value={item}>{item}</option>
-            })
-          }
-        </select>
-      </div>
-      <div className="form-group col-md-4">
-        <label>Month</label>
-        <select className="form-control"
-          value={selectedMonth}
-          onChange={(e) => setSelectedMonth(e.target.value)}
-        >
-          <option defaultValue>Choose...</option>
-          {
-            props.month.map((item, index) => {
-              return <option key={index} value={item}>{month[item]}</option>
-            })
-          }
-        </select>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="form-row">
+          <div className="form-group mr-1">
+            <label>Year</label>
+            <select className="form-control"
+              value={selectedYear}
+              onChange={(e) => dispatch(BlogOneActionSelectedYear(e.target.value))}
+            >
+              <option value="">Year</option>
+              {
+                props.year.map((item, index) => {
+                  return <option key={index} value={item}>{item}</option>
+                })
+              }
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Month</label>
+            <select className="form-control"
+              value={selectedMonth}
+              onChange={(e) => dispatch(BlogOneActionSelectedMonth(e.target.value))}
+            >
+              <option value="">Month</option>
+              {
+                props.month.map((item, index) => {
+                  return <option key={index} value={item}>{month[item]}</option>
+                })
+              }
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   )

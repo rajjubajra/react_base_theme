@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import BoxArrowInLeft from '../../components/Icon/BoxArrowInLeft';
 import BoxArrowInRight from '../../components/Icon/BoxArrowInRight';
 import Blog from './Blog';
 import { useSelector, useDispatch } from 'react-redux';
-import { BlogOneActionNextPage, BlogOneActionPages, BlogOneActionPrevPage, BlogOneBackToPages } from './redux/BlogOneActionPages';
-import BlogFilterForm from './BlogFilterForm';
+import { BlogOneActionNextPage, BlogOneActionPageReset, BlogOneActionPages, BlogOneActionPrevPage, BlogOneBackToPages } from './redux/BlogOneActionPages';
+import { Month_Year } from './DateFormat'
+
 
 function Blogs(props) {
 
   /** redux dispatch */
   const disptache = useDispatch();
 
-  /** Pagination */
+  /** Pagination ******************/
   const pageGap = 5; /** number of page gap is number of article display in a page */
   const currentPage = useSelector(state => state.reducerBlogOnePages.currentPage);
   const lastPage = useSelector(state => state.reducerBlogOnePages.lastPage);
   const dataLength = props.dataLength;
-
 
   useEffect(() => {
     currentPage === 0
@@ -25,32 +25,61 @@ function Blogs(props) {
       /** Load with current and last page while back from readmore page */
       : disptache(BlogOneBackToPages(currentPage, lastPage, pageGap))
   }, [currentPage, dataLength, disptache, lastPage, pageGap])
+  /** PAGINATION CLOSED *****************/
 
 
+  /** SELECTED  month */
+  const selectedMonth = useSelector(state => state.reducerBlogOneSelectedDate.month);
+  const selectedYear = useSelector(state => state.reducerBlogOneSelectedDate.year);
+  console.log("SELECTED MONTH AND YEAR", selectedMonth, selectedYear);
+
+
+  const [blogData, setBlogData] = useState([]);
+
+  useEffect(() => {
+    /** Selected Year and Month from FORM OPTION */
+    const showMonth = `${selectedMonth}-${selectedYear}`;
+    /** IF YEAR AND MONTH SELECTED FILTER DATA */
+    const filtered = props.devel.length > 0 && props.devel.filter(item => Month_Year(item.created[0].value) === showMonth);
+    selectedMonth === '' && selectedYear === ''
+      ? setBlogData(props.devel)
+      : setBlogData(filtered);
+  }, [selectedYear, selectedMonth, props.devel])
+
+
+  useEffect(() => {
+    /** while page refresh selecting Month
+     * Pagination set to first page and Page gape rest
+     */
+    disptache(BlogOneActionPageReset(blogData.length, pageGap))
+  }, [blogData.length, disptache, selectedYear, selectedMonth])
+
+
+  console.log("BLOG DATA", blogData);
+  console.log(currentPage, lastPage, blogData.length);
 
   return (
     <div className="container">
       {/** PAGE CONTENT */}
       <div className="row">
         <div className="container">
-          <div className="row justify-content-center">
-            <BlogFilterForm year={props.year} month={props.month} />
-          </div>
           {
-            props.devel.length > 0 &&
-            props.devel.slice(currentPage, lastPage).map(elm => {
-              return <Blog
-                key={elm.nid[0].value}
-                id={elm.nid[0].value}
-                nid={elm.nid[0].value}
-                date={elm.created[0].value}
-                title={elm.title[0].value}
-                body={elm.body[0].processed}
-              />
-            })
+            blogData.length > 0 ?
+              blogData.slice(currentPage, lastPage).map(elm => {
+                return <Blog
+                  key={elm.nid[0].value}
+                  id={elm.nid[0].value}
+                  nid={elm.nid[0].value}
+                  date={elm.created[0].value}
+                  title={elm.title[0].value}
+                  body={elm.body[0].processed}
+                />
+              })
+              : "----"
           }
         </div>
       </div>
+
 
       {/**NEXT AND PREVIOUSE PAGE ARROWS */}
       <div className="row">
@@ -79,15 +108,15 @@ function Blogs(props) {
             <i style={{
               cursor: "pointer",
               margin: "10px",
-              display: lastPage >= dataLength ? "none" : ''
+              display: lastPage >= blogData.length ? "none" : ''
             }}
               onClick={() => disptache(BlogOneActionNextPage(currentPage, lastPage, pageGap, dataLength))}>
               <BoxArrowInRight /></i>
           </div>
         </div>
       </div>
+
     </div>
   )
 }
-
 export default Blogs
