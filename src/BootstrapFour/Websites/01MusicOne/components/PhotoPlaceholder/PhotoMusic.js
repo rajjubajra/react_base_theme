@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { photoUrl } from './PhotoUrl'
 import axios from 'axios';
 import CustomPlaceholder from './CustomPlaceholder';
+import { faBalanceScale } from '@fortawesome/free-solid-svg-icons';
 
 function PhotoMusic(props) {
 
@@ -9,6 +10,9 @@ function PhotoMusic(props) {
   const [indexId, setIndexId] = useState(0);
   const dataUrl = photoUrl.URL;
   const tagId = 17; //Taxonomy target_id for "Music"
+
+  const [mouseIn, setMouseIn] = useState(false);
+  console.log("Mouse IN", mouseIn);
 
   useEffect(() => {
 
@@ -59,7 +63,7 @@ function PhotoMusic(props) {
     objectFit: "cover",
     border: "1px solid #000",
     outlineOffset: "-10px",
-    outline: "1px solid rgba(255,255,255,0.25)"
+    outline: "1px solid rgba(255,255,255,0.25)",
   }
 
   return (
@@ -68,6 +72,8 @@ function PhotoMusic(props) {
         photo.length > 0
           // eslint-disable-next-line jsx-a11y/img-redundant-alt
           ? <img
+            onMouseOver={() => setMouseIn(true)}
+            onMouseLeave={() => setMouseIn(false)}
             style={imgStyle}
             src={photo[indexId].url}
             alt="travel photo placeholder" />

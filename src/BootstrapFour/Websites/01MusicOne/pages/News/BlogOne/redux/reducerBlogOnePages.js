@@ -25,6 +25,12 @@ export const reducerBlogOnePages = (state = initialState, action) => {
         currentPage: action.currentPage,
         lastPage: action.lastPage
       }
+    case BlogOneActionTypes.BLOG_ONE_PAGE_RESET:
+      return state = {
+        currentPage: action.currentPage,
+        lastPage: action.lastPage,
+        dataLength: action.dataLength
+      }
     /** default state */
     default:
       return state;

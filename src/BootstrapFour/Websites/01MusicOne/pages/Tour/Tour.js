@@ -4,6 +4,7 @@ import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector } from 'react-redux';
 import TourPlan from './TourPlan';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
 function Tour() {
   /** DYNAMIC THEME COLOUR */
@@ -24,6 +25,7 @@ function Tour() {
     <div className={`${className} min-vh-100`}>
       <ColourMode />
       <NavigationOne />
+      <SocialMediaSticky />
       <div className="container-fluid">
         <div className="row justify-content-center mt-5">
           <div className="col-lg-8 col-md-8 col-sm-10">

@@ -5,7 +5,7 @@ import BoxNine from './BoxNine/BoxNine';
 import BoxEight from './BoxEight/BoxEight';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import Title from './Title';
-import SocialMedia from '../../components/socalMedia/SocialMedia';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 import FormEight from '../../components/FormEight/FormEight';
 
 
@@ -30,23 +30,17 @@ function Home() {
     window.scroll(0, 0);
   }, [])
 
-  const sMediaStyle = {
-    position: 'absolute',
-    bottom: "15px",
-    left: "0px",
-  }
+
+
 
   return (
     <div className={className}>
       <ColourMode />
       <NavigationOne />
-      <div className="container mt-5">
+      <SocialMediaSticky />
+      <div id="obs-here" className="container mt-5 music-one">
         <div className="row mt-5">
           <Title />
-          <div
-            style={sMediaStyle}
-            className="d-none d-md-block">
-            <SocialMedia /></div>
           <div className="col-lg-8 col-md-6 col-sm-12 mb-5">
             <BoxNine />
           </div>
@@ -54,10 +48,12 @@ function Home() {
         <div className="row">
           <BoxEight />
         </div>
+
         <div className="row">
           <FormEight />
         </div>
       </div>
+
     </div>
   )
 }

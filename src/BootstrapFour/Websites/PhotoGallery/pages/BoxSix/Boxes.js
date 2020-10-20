@@ -3,7 +3,6 @@ import './Masonry.scss';
 import BoxArrowInLeft from './BoxArrowInLeft';
 import BoxArrowInRight from './BoxArrowInRight';
 import Masonry from 'react-masonry-css';
-import CustomPlaceholder from '../../components/PhotoPlaceholder/CustomPlaceholder';
 import PhotoPlaceholder from '../../components/PhotoPlaceholder/PhotoPlaceholder';
 
 
@@ -49,6 +48,7 @@ function Boxes(props) {
             props.photos.length > 0
               ? props.photos.map((item, index) => {
                 return <PhotoPlaceholder
+                  key={index}
                   className="d-block w-100"
                   width="100%"
                   height="auto"
@@ -57,8 +57,8 @@ function Boxes(props) {
                   imgIndex={index}
                 />
               })
-              : <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
+              : <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
               </div>
 
           }

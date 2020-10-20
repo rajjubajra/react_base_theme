@@ -20,7 +20,7 @@
     "react-google-charts": "^3.0.15",
     "react-hook-clipboard": "^1.0.0",
     "react-hook-form": "^6.8.4",
-    "react-intersection-observer": "^8.26.2",
+    "react-intersection-observer": "^8.29.0",
     "react-masonry-css": "^1.0.14",
     "react-placeholder-image": "^0.1.8",
     "react-redux": "^7.1.3",

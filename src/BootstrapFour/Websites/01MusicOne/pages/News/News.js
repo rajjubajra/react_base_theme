@@ -4,6 +4,7 @@ import ColourMode from '../../components/ColourMode/ColourMode';
 import BlogOne from './BlogOne/BlogOne';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import SocialMeidiaSticky from '../../components/socalMedia/SocialMediaSticky';
 
 
 export const News = () => {
@@ -32,6 +33,7 @@ export const News = () => {
     <div className={className}>
       <ColourMode />
       <NavigationOne />
+      <SocialMeidiaSticky />
       <BlogOne currentPage={currentPage} lastPage={lastPage} />
     </div>
   )

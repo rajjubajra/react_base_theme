@@ -18,7 +18,7 @@ export const BlogOneBackToPages = (currentPage, lastPage, pageGap) => {
 }
 
 export const BlogOneActionNextPage = (currentPage, lastPage, pageGap, dataLength) => {
-  console.log(currentPage, lastPage, pageGap, dataLength, "action next");
+  //console.log(currentPage, lastPage, pageGap, dataLength, "action next");
   return function (dispatch) {
     dispatch({
       type: BlogOneActionTypes.BLOG_ONE_NEXT_PAGE,
@@ -37,3 +37,13 @@ export const BlogOneActionPrevPage = (currentPage, lastPage, pageGap, dataLength
     lastPage: lastPage - pageGap,
   }
 }
+
+export const BlogOneActionPageReset = (dataLength, pageGap) => (
+  {
+    type: BlogOneActionTypes.BLOG_ONE_PAGE_RESET,
+    currentPage: 0,
+    lastPage: pageGap,
+    dataLength: dataLength
+
+  }
+)

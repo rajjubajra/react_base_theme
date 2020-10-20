@@ -16,12 +16,14 @@ function NavDesktop(props) {
         style={ulStyle}
         className={`${props.windowSizeSmall ? 'd-none' : ''}`}>
         {
+          props.dataLength > 0 &&
           props.data.map(item => {
-            return <li key={item.id}>
+            const { id, path, name } = item
+            return <li key={id}>
               <Link
                 style={props.linkStyle}
-                to={`/${item.link}`}
-              >{item.name}</Link>
+                to={`/${path}`}
+              >{name}</Link>
             </li>
           })
         }

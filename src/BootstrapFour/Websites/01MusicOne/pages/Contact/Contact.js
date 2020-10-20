@@ -3,8 +3,8 @@ import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector } from 'react-redux';
 import FormEight from '../../components/FormEight/FormEight';
-
 import PhotoMusic from '../../components/PhotoPlaceholder/PhotoMusic';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
 
 export const Contact = () => {
@@ -26,6 +26,7 @@ export const Contact = () => {
     <div className={className}>
       <ColourMode />
       <NavigationOne />
+      <SocialMediaSticky />
       <div className="container min-vh-100">
         <div className="row justify-content-center mt-5">
           <div className="col"><h1>Contact</h1></div>

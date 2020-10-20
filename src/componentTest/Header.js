@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+
+
+
 function Header() {
   return (
     <div>
@@ -8,7 +11,9 @@ function Header() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="navbar-nav">
           <Link className="nav-item nav-link" to="/test">Page One</Link>
-          <Link className="nav-item nav-link/" to="/test-page-two/12">Page Two</Link>
+          <Link className="nav-item nav-link" to="/test-page-two/12">Page Two</Link>
+          <Link className="nav-item nav-link" to="/intersection-observer">InterSec Observer</Link>
+          <Link className="nav-item nav-link" to="/scroll-up-down">Scroll up down</Link>
         </div>
       </nav>
     </div>

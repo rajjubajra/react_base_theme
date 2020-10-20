@@ -77,6 +77,7 @@ export const BlogOne = () => {
       <Blogs
         dataLength={dataLength}
         devel={d8devel}
+        statu={status}
       />
 
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import CopyImageUriToClipBoard from './CopyImageUriToClipBoard';
 
 
 function PhotoPlaceholder(props) {
@@ -13,8 +14,9 @@ function PhotoPlaceholder(props) {
   return (
     <>
       <img style={imgStyle} src={props.imgSrc} alt={props.imgAlt} />
-      <p className="small-font" style={{ textAlign: "center" }}>Image Index: {props.imgIndex}</p>
-      <p className="extra-small-font">{props.imgSrc}</p>
+      <span className="small-font" style={{ textAlign: "center" }}>
+        Image Index: {props.imgIndex}</span>
+      <CopyImageUriToClipBoard image_uri={props.imgSrc} />
     </>
   )
 }

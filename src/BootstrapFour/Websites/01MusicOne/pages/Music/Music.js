@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { actionFetchTracks } from './Redux/ActionFetchTracks';
 import Albums from './Albums';
 import { pagelink } from '../../PageLink';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
 function Music() {
 
@@ -35,6 +36,7 @@ function Music() {
     <div className={colorMode}>
       <ColourMode />
       <NavigationOne />
+      <SocialMediaSticky />
       <div className="container mb-5">
         <div className="row mt-5 mb-2">
           <div className="col"><h1>Music</h1></div>

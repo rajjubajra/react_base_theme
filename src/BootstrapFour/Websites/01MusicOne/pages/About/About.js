@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import ColumnOne from './ColumnOne/ColumnOne';
 import BoxThree from './BoxThree/BoxThree';
 import { actionFetchAbout } from './Redux/ActionFetchAbout';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
+
 
 
 
@@ -40,7 +42,10 @@ export const About = () => {
     <div className={className}>
       <ColourMode />
       <NavigationOne />
+      <SocialMediaSticky />
+
       <ColumnOne />
+
       <div className="mt-5">
         <h2 style={{ textAlign: "center" }}>Gear</h2>
         <BoxThree />

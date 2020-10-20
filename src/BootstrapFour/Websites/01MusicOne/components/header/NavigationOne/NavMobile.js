@@ -22,13 +22,15 @@ function NavMobile(props) {
       {/** view: true/false based on display size */}
       <ul style={ulStyle} className={`${props.view && props.windowSizeSmall ? 'flex-column' : 'd-none'}`}>
         {
+          props.dataLength > 0 &&
           props.data.map(item => {
-            return <li key={item.id}>
+            const { id, path, name } = item;
+            return <li key={id}>
               <Link
                 style={props.linkStyle}
-                to={`/${item.link}`}
+                to={`/${path}`}
               >
-                {item.name}
+                {name}
               </Link>
             </li>
           })

@@ -9,6 +9,10 @@ import PlayingTrack from './PlayingTrack';
 import Play from './MusicPlayer/Play';
 import IconClose from '../../components/Icon/IconClose';
 import { pagelink } from '../../PageLink';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
+import CopyToClipBoard from '../../components/CopyToClipBoard';
+
+
 
 function Album() {
 
@@ -18,12 +22,12 @@ function Album() {
   /** COLOR MODE CLOSED */
 
   /** FETCH ALBUM DATA "JSONAPI/UUID" */
-  let { id } = useParams();
+  let { nid } = useParams();
   const dispatch = useDispatch();
   //console.log("uuid", id);
   useEffect(() => {
-    dispatch(actionFetchAlbum(id))
-  }, [dispatch, id])
+    dispatch(actionFetchAlbum(nid))
+  }, [dispatch, nid])
 
   /** fetch albul tracks */
   const title = useSelector(state => state.reducerFetchAlbum.title);
@@ -71,9 +75,11 @@ function Album() {
     <div className={colorMode}>
       <ColourMode />
       <NavigationOne />
+      <SocialMediaSticky />
       <div className="container">
         <div className="row">
           <div className="col d-flex justify-content-end">
+            <CopyToClipBoard />
             <Link to={`/${pagelink.albums}`}><IconClose /></Link>
           </div>
         </div>

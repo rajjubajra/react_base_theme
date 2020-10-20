@@ -65,9 +65,9 @@ function TourPlan() {
             <li className="list-group-item">
               {
                 field_buy_ticket.length > 0 &&
-                <Link to={{ pathname: field_buy_ticket[0].uri }}>{field_buy_ticket[0].title}</Link>
+                <Link to={{ pathname: field_buy_ticket[0].uri }}>
+                  {field_buy_ticket[0].title}</Link>
               }
-
             </li>
           </ul>
         })
@@ -76,34 +76,34 @@ function TourPlan() {
 
 
 
+      {/* <ul className="list-group list-group-horizontal-md mb-3">
+        <li className="list-group-item">02 Feb, 2021</li>
+        <li className="list-group-item">Dapibus ac facilisis in</li>
+        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
+        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
+      </ul>
+
       <ul className="list-group list-group-horizontal-md mb-3">
-        <li class="list-group-item">02 Feb, 2021</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li class="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
+        <li className="list-group-item">20 Feb, 2021</li>
+        <li className="list-group-item">Oibus ac facilisis in Thankds</li>
+        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
+        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
       </ul>
 
-      <ul class="list-group list-group-horizontal-md mb-3">
-        <li class="list-group-item">20 Feb, 2021</li>
-        <li class="list-group-item">Oibus ac facilisis in Thankds</li>
-        <li class="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li class="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
+      <ul className="list-group list-group-horizontal-md mb-3">
+        <li className="list-group-item">03 Mar, 2021</li>
+        <li className="list-group-item" >Facilisis in Oibus ac </li>
+        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
+        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
       </ul>
 
-      <ul class="list-group list-group-horizontal-md mb-3">
-        <li class="list-group-item">03 Mar, 2021</li>
-        <li class="list-group-item" >Facilisis in Oibus ac </li>
-        <li class="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li class="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
-      </ul>
-
-      <ul class="list-group list-group-horizontal-md mb-3">
-        <li class="list-group-item">13 Apr, 2021</li>
-        <li class="list-group-item">Facilisis in Oibus ac </li>
-        <li class="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li class="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
-      </ul>
-    </div >
+      <ul className="list-group list-group-horizontal-md mb-3">
+        <li className="list-group-item">13 Apr, 2021</li>
+        <li className="list-group-item">Facilisis in Oibus ac </li>
+        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
+        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
+      </ul> */}
+    </div>
 
   )
 }

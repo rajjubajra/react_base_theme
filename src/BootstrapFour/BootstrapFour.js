@@ -18,7 +18,7 @@ const BootsrapFour = () => {
 
         <Cards
           title="Music One"
-          linkref="/b4MusicOne" />
+          linkref="/b4MusicOne-home" />
 
 
         <Cards

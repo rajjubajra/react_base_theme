@@ -8,6 +8,8 @@ import { actionFetchTourDetails } from './Redux/ActionFetchTourDetails';
 import IconClose from '../../components/Icon/IconClose';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
+import CopyToClipBoard from '../../components/CopyToClipBoard';
 
 
 
@@ -55,13 +57,17 @@ function TourDetails() {
     <div className={`${className} container-fulid min-vh-100`}>
       <ColourMode />
       <NavigationOne />
+      <SocialMediaSticky />
       <div className="container mt-5 mb-5 tour-details">
         <div className="row">
           <div className="col">
-            <Link
-              to={`/${pagelink.tour}`}
-              className="d-flex justify-content-end">
-              <IconClose /></Link>
+            <div className="d-flex justify-content-end">
+              <CopyToClipBoard />
+              <Link
+                to={`/${pagelink.tour}`}
+                className="d-flex justify-content-end">
+                <IconClose /></Link>
+            </div>
           </div>
         </div>
         {/** TITLE */}

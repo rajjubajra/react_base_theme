@@ -55,6 +55,34 @@ function Blogs(props) {
   }, [blogData.length, disptache, selectedYear, selectedMonth])
 
 
+  /* DATA LOADING MESSAGE */
+  function LoadingStatusMessage(selectedMonth, selectedYear, status) {
+
+    return selectedMonth === '' || selectedYear === ''
+      ?
+      <div className="d-flex justify-content-center mt-5 mb-5">
+        <div className="card" style={{ width: "20rem" }}>
+          <div class="card-header">Message</div>
+          <div className="card-body">Please select month and year</div>
+        </div>
+      </div> :
+      props.status === 200 ?
+        <div className="d-flex justify-content-center mt-5 mb-5">
+          <div className="card" style={{ width: "20rem" }}>
+            <div class="card-header">Message</div>
+            <div className="card-body">Loading....</div>
+          </div>
+        </div>
+        :
+        <div className="d-flex justify-content-center mt-5 mb-5">
+          <div className="card" style={{ width: "20rem" }}>
+            <div class="card-header">Message</div>
+            <div className="card-body">Data not found</div>
+          </div>
+        </div>
+  }
+
+
   console.log("BLOG DATA", blogData);
   console.log(currentPage, lastPage, blogData.length);
 
@@ -75,7 +103,7 @@ function Blogs(props) {
                   body={elm.body[0].processed}
                 />
               })
-              : "----"
+              : LoadingStatusMessage(selectedMonth, selectedYear, props.status)
           }
         </div>
       </div>

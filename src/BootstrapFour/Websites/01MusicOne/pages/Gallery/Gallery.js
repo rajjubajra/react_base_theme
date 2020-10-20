@@ -3,6 +3,7 @@ import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import BoxTwo from './BoxTwo/BoxTwo';
 import { useSelector } from 'react-redux';
+import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
 
 export const Gallery = () => {
@@ -24,6 +25,7 @@ export const Gallery = () => {
     <div className={className}>
       <ColourMode />
       <NavigationOne />
+      <SocialMediaSticky />
       <div className="mt-5 mb-5">
         <BoxTwo />
       </div>

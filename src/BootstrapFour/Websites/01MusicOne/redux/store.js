@@ -16,6 +16,8 @@ import { reducerFetchTourDetails } from '../pages/Tour/Redux/reducerFetchTourDet
 import { reducerFetchLatestNews } from '../pages/Home/Redux/reducerFetchLatestNews';
 import { reducerFetchLandingPage } from '../pages/Home/Redux/reducerFetchLandingPage';
 import { reducerFetchAbout } from '../pages/About/Redux/reducerFetchAbout';
+import { reducerBlogOneSelectedDate } from '../pages/News/BlogOne/redux/reducerBlogOneSelectedDate';
+import { reducerFetchMenu } from '../components/header/NavigationOne/Redux/reducerFetchMenu';
 
 const reducer = combineReducers(
   {
@@ -30,6 +32,8 @@ const reducer = combineReducers(
     reducerFetchLatestNews,
     reducerFetchLandingPage,
     reducerFetchAbout,
+    reducerBlogOneSelectedDate,
+    reducerFetchMenu
   }
 );
 

@@ -13,14 +13,13 @@ function CopyToClipBoard() {
   /** copy current url */
   const copyContent = window.location;
 
-  function CbCopy(e) {
-    console.log("copy", e);
-    textAreaRef.current.select();
-    document.execCommand('copy');
-    e.target.focus();
+  function CbCopy() {
+    textAreaRef.current.select();//selectes from form input field
+
+    document.execCommand('copy');// copy to clipboard
     setCopied(true);
   }
-  function CBClear(e) {
+  function CBClear() {
     setCopied(false)
   }
 
