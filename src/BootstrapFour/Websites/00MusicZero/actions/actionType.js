@@ -9,7 +9,6 @@ export const actionTypes = {
 
   PLAY_ALL_TRACKS: 'PLAY_ALL_TRACKS',
 
-
   PAGINATION: 'PAGINATION',
   GOTOPAGE: 'GOTOPAGE',
 

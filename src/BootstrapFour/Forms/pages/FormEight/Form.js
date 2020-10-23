@@ -42,7 +42,7 @@ function Form() {
       },
     )
       .then(function (res) {
-        console.log("Post Status", res.status);
+        console.log(res, "Post Status", res.status);
         res.status === 200 ? setSubmitted(true) : setSubmitted(false);
       })
       .catch(function (err) {

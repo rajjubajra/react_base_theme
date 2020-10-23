@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Navigation from './Navigation';
 import NavIconThreeLines from './NavIconThreeLines';
 import { pagelink } from '../../../PageLink';
+import { useDispatch } from 'react-redux';
+import { actionFetchMenu } from './Redux/actionFetchMenu';
 
 
 const data = [
@@ -48,6 +50,14 @@ const data = [
 ]
 
 export const NavigationOne = () => {
+
+  const dispatch = useDispatch();
+
+  /** fetch menu data  */
+  useEffect(() => {
+    dispatch(actionFetchMenu());
+  }, [dispatch])
+  /**
 
   /** Window Breakpoint for mobile and tablet display */
   const mobileBreakPoint = 768;

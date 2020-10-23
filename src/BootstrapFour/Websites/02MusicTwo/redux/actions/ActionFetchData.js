@@ -1,18 +1,19 @@
-import { actionTypes } from "./actionTypes"
+import { actionTypes } from "./ActionTypes"
 import axios from "axios"
-import { baseUrl } from '../../../../Config/dataurl';
+import { dataurl } from '../../Config/dataurl';
 
-export const actionFetchMenu = () => {
+export const actionFetchData = () => {
 
+  const URL = dataurl.DATAURL;
 
   return function (dispatch) {
     dispatch({
-      type: actionTypes.START_FETCHING_MENU_MUSIC_ONE
+      type: actionTypes.START_FETCHING
     })
 
     axios({
       method: 'GET',
-      url: `${baseUrl.URL}/api/menu_items/music-website`,
+      url: URL,
       headers: {
         'Accept': 'application/vnd.api+json'
       }
@@ -21,16 +22,21 @@ export const actionFetchMenu = () => {
         console.log(res.data)
 
         dispatch({
-          type: actionTypes.FETCHED_MENU_MUSIC_ONE,
+          type: actionTypes.FETCHED,
           data: res.data
         })
       })
       .catch(err => {
         dispatch({
-          type: actionTypes.FETCH_ERROR_MENU_MUSIC_ONE,
+          type: actionTypes.FETCH_ERROR,
           fetched: false,
           error: err
         })
       })
   }
 }
+
+
+
+
+

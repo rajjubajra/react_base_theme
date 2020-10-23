@@ -38,7 +38,7 @@ function FormOne() {
       }
     })
       .then(function (res) {
-        console.log("form res", res.data, "Status", res.status);
+        console.log("form res", res, "Status", res.status);
         res.status === 200 ? setSubmited(true) : setSubmited(false);
       })
       .catch(function (err) {

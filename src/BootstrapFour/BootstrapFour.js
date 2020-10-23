@@ -14,11 +14,25 @@ const BootsrapFour = () => {
       <Row>
         <Cards
           title="Music Zero"
-          linkref="/music-zero" />
+          linkref="/music-zero"
+          text="Music"
+          type="Solo Artist / Band"
+
+        />
 
         <Cards
           title="Music One"
-          linkref="/b4MusicOne-home" />
+          linkref="/b4MusicOne-home"
+          text="Music"
+          type="Band / Solo Artist"
+        />
+
+        <Cards
+          title="Music Two"
+          linkref="/b4Music-two-home"
+          text="Music"
+          type="Band / Solo Artist"
+        />
 
 
         <Cards
