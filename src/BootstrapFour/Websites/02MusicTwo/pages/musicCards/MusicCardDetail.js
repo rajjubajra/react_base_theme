@@ -34,7 +34,6 @@ function MusicCardDetail(props) {
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
 
 
-
   /** track data from the reducer */
   const fetched = useSelector(state => state.reducerFetchData.fetched);
   const data = useSelector(state => state.reducerFetchData.data);
@@ -73,7 +72,6 @@ function MusicCardDetail(props) {
   }, [data, dispatch, fetched, id, trackList])
 
 
-  console.log(" cover image", bodyText);
 
   return (
     <div className={`music-zero ${className}`}>
@@ -82,18 +80,16 @@ function MusicCardDetail(props) {
       <NavigationBar />
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
-            <h1 className="mt-5">Album: <b>{coverImage['alt']}</b></h1>
-            <img src={coverImage['url']} alt='cover' />
+          <div className="col-lg-6 col-md-6">
+            <h1 className="mt-5"><b>{coverImage['alt']}</b></h1>
+            <img width="100%" src={coverImage['url']} alt='cover' />
             <div className="mt-4 mb-5">
               <DangerouslySetInnerHtml text={bodyText} />
             </div>
-
           </div>
 
-
           {/** Right column */}
-          <div className="col-lg-6 mb-2">
+          <div className="col-lg-6  col-md-6 mb-2">
             <div className="mt-5 mb-3">
               {
                 playAllTracks

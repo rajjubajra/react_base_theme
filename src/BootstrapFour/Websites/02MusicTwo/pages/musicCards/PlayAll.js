@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useAudio } from 'react-use';
+import Pause from './MusicPlayer/Pause';
+import Play from './MusicPlayer/Play';
+import Stop from './MusicPlayer/Stop';
 import PlayingTrackInProgress from './PlayingTrackInProgress';
-
+import { actionPlayAllTracks } from '../../pages/Redux/actions/actionPlayAllTracks';
 
 
 function PlayAll() {
 
-
-  /** array index  */
-  const [nextSong, setNextSong] = useState(0);
-
-  /** set condition to change tracks index */
-  const [autoPlayNext, setAutoPlayNext] = useState(false);
-
-  /** set to false after complited playing 
-   * all the tracks of the selected album*/
-  const [autoPlayComplited, setAutoPlayComplited] = useState(false);
+  const dispatch = useDispatch()
 
   /** fetched from REDUCERS */
   /** true or false : play all tracks */
@@ -25,6 +19,9 @@ function PlayAll() {
   const tracks = useSelector(state => state.reducerPlayAllTracks.tracks);
 
 
+  /** array index  */
+  const [nextSong, setNextSong] = useState(0);
+
   /** useAudio */
   const [audio, state, controls, ref] = useAudio(
     {
@@ -32,6 +29,15 @@ function PlayAll() {
       autoPlay: true
     }
   );
+
+
+  /** set condition to change tracks index */
+  const [autoPlayNext, setAutoPlayNext] = useState(false);
+
+  /** set to false after complited playing 
+   * all the tracks of the selected album*/
+  const [autoPlayComplited, setAutoPlayComplited] = useState(false);
+
 
   /** set next song index, 
    *  after compliting playing all tracks
@@ -57,7 +63,6 @@ function PlayAll() {
       : setAutoPlayNext(false)
   }, [state.duration, state.paused, state.time])
 
-
   useEffect(() => {
     /** plays next track if autoPlayNext is true */
     if (autoPlayNext) {
@@ -66,53 +71,42 @@ function PlayAll() {
   }, [autoPlayNext])// do not add "nextsong" here
 
 
-  // console.log("STATE", state);
-  // console.log("control", controls);
-  // console.log("ref", ref);
-  // console.log("audio", audio);
-  // console.log("track Ids", trackIds);
-  //console.log('NEXT SONG', nextSong, "|", tracks.length - 1);
-  //console.log('COMPLITED', autoPlayComplited);
+  console.log("NEXT SONG", nextSong);
+  console.log("autoPlaynext", autoPlayNext);
 
 
   return (
     <div className="playing-track mt-3">
-      <ul className="list-group mb-2">
 
-        <li>
-          {tracks[nextSong].alt}
-        </li>
+      <div>Number of Songs: {tracks.length}</div>
 
-        <li className="list-group-item">
-          <div>
-            song:{nextSong}: {tracks[nextSong].url}
-          </div>
-          <div>Number of Songs: {tracks.length}</div>
-          <pre> {JSON.stringify(tracks, null, 2)}</pre>
+      <div className="card mb-1">
+        <div className="card-body">
+          <p>{tracks[nextSong].alt}</p>
           <PlayingTrackInProgress now={(state.time / state.duration) * 100} />
-        </li>
-        <li>
-
-
           <div>
             {playAllTracks ? audio : ''}
-
-            <pre>{JSON.stringify(state, null, 2)}</pre>
-            <button onClick={controls.pause}>Pause</button>
-            <button onClick={controls.play}>Play</button>
-            <br />
-            <button onClick={controls.mute}>Mute</button>
-            <button onClick={controls.unmute}>Un-mute</button>
-            <br />
-            <button onClick={() => controls.volume(.1)}>Volume: 10%</button>
-            <button onClick={() => controls.volume(.5)}>Volume: 50%</button>
-            <button onClick={() => controls.volume(1)}>Volume: 100%</button>
-            <br />
-            <button onClick={() => controls.seek(state.time - 5)}>-5 sec</button>
-            <button onClick={() => controls.seek(state.time + 5)}>+5 sec</button>
+            <span onClick={controls.pause}><Pause /></span>
+            <span onClick={controls.play}><Play /></span>
+            <span onClick={() => dispatch(actionPlayAllTracks(tracks, false))}><Stop /></span>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <div>
+        {
+          tracks.length > 0 &&
+          tracks.map(item => {
+            const { alt, target_id } = item;
+            return <div key={target_id} className="card mb-1">
+              <div className={`card-body`}>
+                <span>{alt}</span>
+              </div>
+            </div>
+
+          })
+        }
+      </div>
+
     </div>
   )
 }
