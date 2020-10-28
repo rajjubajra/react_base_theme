@@ -10,7 +10,7 @@ function LandingPage() {
       <TitleNNav title={"LandingPage"} href={"websites-bootstrap"} />
       <Row>
         <Cards title="Special Offer" linkref="/special-Offer" />
-        <Cards title="Blank Card 1" linkref="#" />
+        <Cards title="Landing One" linkref="/landing-one-home" />
         <Cards title="Blank Card 2" linkref="#" />
         <Cards title="Blank Card 3" linkref="#" />
         <Cards title="Blank Card 4" linkref="#" />

@@ -34,6 +34,13 @@ const BootsrapFour = () => {
           type="Band / Solo Artist"
         />
 
+        <Cards
+          title="Music Three"
+          linkref="/b4Music-three-home"
+          text="Music"
+          type="Band / Solo Artist"
+        />
+
 
         <Cards
           title="Art & Design"

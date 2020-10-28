@@ -1,7 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import FormSix from './Contact/FormSix';
 import ColourMode from '../components/ColourMode/ColourMode';
-import NavigationBar from '../components/header/NavigationBar';
+import NavigationOne from '../components/header/NavigationOne/NavigationOne';
+import EmailNTel from './address/EmailNTel';
+
 
 
 export const Contact = () => {
@@ -15,11 +18,17 @@ export const Contact = () => {
   return (
     <div className={`music-zero ${className}`}>
       <ColourMode />
-      <NavigationBar />
+      <NavigationOne />
       <div className="container mt-5 min-vh-100">
+
         <div className="row">
           <div className="col">
-            <h1>Contact</h1>
+            <FormSix />
+          </div>
+        </div>
+        <div className="row d-flex justify-content-center">
+          <div className="col-10">
+            <EmailNTel />
           </div>
         </div>
       </div>

@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MusicCard from './MusicCard';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { actionFetchData } from '../Redux/actions/actionFetchData';
 
 
@@ -17,17 +14,17 @@ function MusicCards() {
     dispatch(actionFetchData());
   }, [dispatch])
 
-  console.log("Music Two Fetched", fetched);
-  console.log("music card page", listOfAlbum);
+  // console.log("Music Two Fetched", fetched);
+  // console.log("music card page", listOfAlbum);
 
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row d-flex justify-content-center">
         {
-          !fetched ? 'data not found' :
+          !fetched ? <div><h4>Loading...</h4></div> :
             listOfAlbum.map((item, index) => {
-              return <Col key={index} lg={4}>
+              return <div key={index} className="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-9">
                 <MusicCard
                   id={index}
                   img={item.url}
@@ -35,7 +32,7 @@ function MusicCards() {
                   title={item.alt}
                   text={item.body}
                 />
-              </Col>
+              </div>
             })
         }
       </div>

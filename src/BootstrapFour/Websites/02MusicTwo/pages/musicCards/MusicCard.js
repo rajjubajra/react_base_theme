@@ -1,31 +1,36 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
+
 
 
 
 function MusicCard(props) {
 
 
+
+
   return (
     <>
-      <Link to={`/${pagelink.playAll}/${props.id}`}>
-        <Card className="bg-dark text-white mt-5">
-          <Card.Img
-            style={{
-              width: "100%",
-              height: "auto",
-              border: "1px solid #000",
-              margin: "0px 2px"
-            }}
-            src={props.img}
-            alt={props.alt} />
-          <Card.ImgOverlay>
-            <Card.Text>{props.title}</Card.Text>
-          </Card.ImgOverlay>
-        </Card>
-      </Link>
+      {props.img !== '' &&
+        <Link to={`/${pagelink.playAll}/${props.id}`}>
+          <div className="card bg-dark text-white mt-5">
+            <img
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "0px 2px",
+                outline: "3px solid #fff"
+              }}
+              src={props.img}
+              alt={props.alt} />
+            <div className="card-img-overlay">
+              <p className="card-text">{props.title}</p>
+            </div>
+          </div>
+        </Link>
+      }
     </>
   )
 }

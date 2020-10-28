@@ -62,13 +62,13 @@ function RoutePages() {
         })
       */}
 
-      {
+      {/*
         <>
           <Route exact path={`/${pagelink.tourDetails}/:nid`} component={TourDetails} />
           <Route exact path={`/${pagelink.newsReadMore}/:nid`} component={BlogReadMoreOne} />
           <Route exact path={`/${pagelink.album}/:nid`} component={Album} />
         </>
-      }
+      */}
 
 
       <Route exact path={`/${pagelink.home}`} component={Home} />

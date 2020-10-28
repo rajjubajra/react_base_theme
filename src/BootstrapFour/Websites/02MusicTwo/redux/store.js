@@ -8,6 +8,7 @@ import { reducerFetchData } from '../pages/Redux/reducers/reducerFetchData';
 import { reducerPagination } from '../pages/Redux/reducers/reducerPagination';
 import { reducerPlayAllTracks } from '../pages/Redux/reducers/reducerPlayAllTracks';
 import { reducerPlayTheTrack } from '../pages/Redux/reducers/reducerPlayTheTrack';
+import { reducerFetchMenu } from '../components/header/NavigationOne/Redux/reducerFetchMenu';
 
 
 const reducer = combineReducers(
@@ -18,7 +19,8 @@ const reducer = combineReducers(
     reducerFetchData,
     reducerPagination,
     reducerPlayAllTracks,
-    reducerPlayTheTrack
+    reducerPlayTheTrack,
+    reducerFetchMenu
   }
 );
 

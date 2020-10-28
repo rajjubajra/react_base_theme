@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector, useDispatch } from 'react-redux';
-import NavigationBar from '../../components/header/NavigationBar';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { useParams } from 'react-router-dom';
 import { actionFetchData } from '../../pages/Redux/actions/actionFetchData';
 import ListItem from './ListItem';
@@ -75,9 +75,8 @@ function MusicCardDetail(props) {
 
   return (
     <div className={`music-zero ${className}`}>
-
       <ColourMode />
-      <NavigationBar />
+      <NavigationOne />
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-6">
@@ -89,7 +88,8 @@ function MusicCardDetail(props) {
           </div>
 
           {/** Right column */}
-          <div className="col-lg-6  col-md-6 mb-2">
+          <div className="col-lg-6  col-md-6 mb-5">
+
             <div className="mt-5 mb-3">
               {
                 playAllTracks
@@ -101,7 +101,7 @@ function MusicCardDetail(props) {
                     Play All</button>
               }
             </div>
-            <div>
+            <div className="mb-5">
               {
                 playAllTracks
                   ? <PlayAll />
@@ -116,6 +116,7 @@ function MusicCardDetail(props) {
                   })
               }
             </div>
+
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ function NavigationBar(props) {
   //console.log('variant', variant);
 
   return (
-    <Navbar className={props.css_class} collapseOnSelect expand="lg" bg={variant} variant={variant}>
+    <div className={`${props.css_class} navbar navbar-expand-lg`} collapseOnSelect expand="lg" >
       <Navbar.Brand href="#home">YW-Music-Theme</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
@@ -21,7 +21,7 @@ function NavigationBar(props) {
           <Nav.Link href={`/${pagelink.contact}`}>Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
-    </Navbar>
+    </div>
   )
 }
 

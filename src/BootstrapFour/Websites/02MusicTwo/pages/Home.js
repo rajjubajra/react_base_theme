@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
-import NavigationBar from '../components/header/NavigationBar';
+import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 import MusicCards from './musicCards/MusicCards';
 
 import Text from './text/Text'
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className={`music-zero ${className}`}>
       <ColourMode />
-      <NavigationBar />
+      <NavigationOne />
 
       <div className="container mt-5">
 

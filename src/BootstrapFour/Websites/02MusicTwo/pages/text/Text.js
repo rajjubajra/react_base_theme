@@ -55,27 +55,26 @@ function Text() {
 
 
   return (
-    <Container>
-
-      <Row>
-        <Col lg={6} style={bigFont}>
+    <div className="container mt-5">
+      <div className="row d-flex justify-content-center">
+        <div className="col-lg-6 col-11" style={bigFont}>
           <h1>{paraTitle}</h1>
           <div dangerouslySetInnerHTML={createParagraph()} />
-        </Col>
-        <Col lg={6}>
-          <img src={paraImage} alt="album cover" />
-        </Col>
-      </Row>
-      <Row>
-        <div className="col">
+        </div>
+        <div className="col-lg-6 col-sm-10 col-10">
+          <img style={{ width: "100%" }} src={paraImage} alt="album cover" />
+        </div>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col mt-5">
           <Pagination />
         </div>
-      </Row>
+      </div>
 
-      <Row>
+      <div>
         <EmailNTel />
-      </Row>
-    </Container >
+      </div>
+    </div>
   )
 }
 

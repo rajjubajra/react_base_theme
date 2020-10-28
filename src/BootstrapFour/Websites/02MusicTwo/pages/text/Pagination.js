@@ -11,8 +11,13 @@ function Pagination(props) {
   //console.log("PAGINATION LENGTH", pagelength);
 
   return (
-    <nav aria-label="Page navigation example">
-      <ul className="pagination">
+    <div>
+      <ul className="pagination d-flex 
+                      justify-content-center
+                      justify-content-md-center
+                      justify-content-lg-start
+                      justify-content-xl-start
+                      ">
         <li className="page-item">
           <Link
             onClick={() => dispatch(actionPagination("prev", pagelength))}
@@ -53,7 +58,7 @@ function Pagination(props) {
           </Link>
         </li>
       </ul>
-    </nav >
+    </div>
   )
 }
 
