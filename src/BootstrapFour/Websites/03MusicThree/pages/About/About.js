@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector, useDispatch } from 'react-redux';
-import ColumnOne from './ColumnOne/ColumnOne';
-import BoxThree from './BoxThree/BoxThree';
+import ColumnFour from './ColumnFour/ColumnFour';
 import { actionFetchAbout } from './Redux/ActionFetchAbout';
 import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
@@ -43,13 +42,7 @@ export const About = () => {
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />
-
-      <ColumnOne />
-
-      <div className="mt-5">
-        <h2 style={{ textAlign: "center" }}>Gear</h2>
-        <BoxThree />
-      </div>
+      <ColumnFour />
     </div>
   )
 }

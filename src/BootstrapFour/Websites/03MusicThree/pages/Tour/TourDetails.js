@@ -1,105 +1,104 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Tour.scss';
-import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
-import ColourMode from '../../components/ColourMode/ColourMode';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { actionFetchTourDetails } from './Redux/ActionFetchTourDetails';
-import IconClose from '../../components/Icon/IconClose';
 import { Link } from 'react-router-dom';
-import { pagelink } from '../../PageLink';
-import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
+import { useSelector } from 'react-redux';
 import CopyToClipBoard from '../../components/CopyToClipBoard';
-
-
+import { monthName } from './MonthName';
+import { DateDay } from '../../components/DateDay';
+import { DateYear } from '../../components/DateYear';
+import DangerouslySetInnerHtml from '../../components/DangerouslySetInnterHtml';
 
 
 function TourDetails() {
 
-  /** DYNAMIC THEME COLOUR */
-  const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+  const title = useSelector(state => state.reducerFetchTourDetails.title);
+  const eventDate = useSelector(state => state.reducerFetchTourDetails.eventDate);
+  const location = useSelector(state => state.reducerFetchTourDetails.location);
+  const addressOne = useSelector(state => state.reducerFetchTourDetails.addressLineOne);
+  const addressTwo = useSelector(state => state.reducerFetchTourDetails.addressLineTwo);
+  const nid = useSelector(state => state.reducerFetchTourDetails.nid);
+  const details = useSelector(state => state.reducerFetchTourDetails.details);
+  const ticketTitle = useSelector(state => state.reducerFetchTourDetails.ticket);
+  const buyTicketUri = useSelector(state => state.reducerFetchTourDetails.buyTicketUri);
+  //console.log("DETAILS ", fetched && data);
 
-  const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
-  console.log(colorMode);
+  const ticketStyle = {
+    width: "100%",
+    height: "200px",
+    display: "flex",
+    border: "1px solid #ccc",
+    justifyContent: "center",
+    alignItems: "center",
+    cursor: "pointer",
+  }
 
-  useEffect(() => {
-    setClassName(colorMode);
-    setColourVariant(variant);
-  }, [colorMode, variant])
-  /** DYNAMIC THEME COLOUR CLOSED */
+  const eventDateStyle = {
+    width: "100%",
+    height: "200px",
+    display: "flex",
+    flexDirection: "column",
+    border: "1px solid #ccc",
+    justifyContent: "center",
+    alignItems: "center",
+    cursor: "pointer",
+    marginBottom: "20px"
+  }
 
 
-
-  /** TOUR DETAILS DATA FECHING */
-  const dispatch = useDispatch();
-  const { nid } = useParams();
-
-  useEffect(() => {
-    dispatch(actionFetchTourDetails(nid));
-  }, [dispatch, nid])
-
-  const data = useSelector(state => state.reducerFetchTourDetails.data);
-  const fetched = useSelector(state => state.reducerFetchTourDetails.fetched);
-  console.log(fetched && data.title[0].value);
-
-  function createMarkup(txt) {
-    return {
-      __html: txt
-    };
-  };
 
 
 
   return (
 
-    <div className={`${className}`}>
+    <div>
       <div className="container-fluid tour-details">
-        <div className="row">
-          <div className="col">
-            <div className="d-flex justify-content-end">
-              <CopyToClipBoard />
-            </div>
-          </div>
-        </div>
         {/** TITLE */}
         <div className="row">
-          <div className="col">
-            <h1>{fetched && data.title[0].value}</h1>
+          <div className="col-md-10">
+            <h1>{title}</h1>
+          </div>
+          <div className="col-md-2">
+            <CopyToClipBoard />
           </div>
         </div>
-        {/** EVENT DATE */}
+
+        {/** EVENT DATE , TICKET BOOKING box */}
         <div className="row justify-content-center">
           <div className="col-lg-6 col-sm-12">
-            <h3>Event Date:
-              {fetched && data.field_event_date.length > 0
-                && data.field_event_date[0].value}</h3>
+            <section style={eventDateStyle}>
+              <h3>Date:</h3>
+              <h4>{DateDay(eventDate)} {monthName(eventDate)}, {DateYear(eventDate)}</h4>
+            </section>
+
           </div>
           <div className="col-lg-6 col-sm-12 d-flex justify-content-end">
-            <button>{fetched && data.field_buy_ticket[0].title}</button>
+            <Link
+              style={ticketStyle}
+              to={{ pathname: buyTicketUri }}>
+              <h1>{ticketTitle}</h1>
+            </Link>
           </div>
         </div>
+
+
         {/** LOCATION */}
         <div className="row mt-5">
           <div className="col">
             <div className="location">
               <h4>Location:</h4>
-              <p>{fetched && data.field_address_line_1[0].value}</p>
-              <p>{fetched && data.field_address_line_2[0].value}</p>
-              <p>{fetched && data.field_event_location[0].value}</p>
+              <p>{addressOne}, {addressTwo}, {location}</p>
             </div>
           </div>
         </div>
         {/** TOUR DETAILS */}
-        <div className="row mt-5">
-          <div className="col">
-            <div dangerouslySetInnerHTML={createMarkup(fetched && data.field_details[0].processed)} />
+        <div className="row mt-3">
+          <div className="col-11">
+            <DangerouslySetInnerHtml text={details} />
           </div>
         </div>
       </div>
 
-    </div>
+    </div >
   )
 }
 export default TourDetails

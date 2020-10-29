@@ -1,107 +1,87 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { actionFetchTour } from '../Tour/Redux/ActionFetchTour';
+import { actionFetchTour } from './Redux/ActionFetchTour';
+import { actionFetchTourDetails } from './Redux/ActionFetchTourDetails';
+import { actionHideTour } from './Redux/ActionHideTour';
 import { Link } from 'react-router-dom';
-import { pagelink } from '../../PageLink';
 import { monthName } from './MonthName';
+import { DateDay } from '../../components/DateDay';
+import { DateYear } from '../../components/DateYear';
 
 function TourPlan() {
 
   const dispatch = useDispatch();
-  const tour = useSelector(state => state.reducerFetchTour.data);
+  const tour = useSelector(state => state.reducerFetchTour.payload);
   const dataLength = useSelector(state => state.reducerFetchTour.dataLength);
 
-  //  console.log("TOUR", tour);
+  console.log("TOUR", dataLength > 0 && tour[0].nid);
 
   useEffect(() => {
     dispatch(actionFetchTour());
   }, [dispatch])
 
+  useEffect(() => {
+    dataLength > 0 &&
+      dispatch(actionFetchTourDetails(tour[0].nid))
+  }, [dataLength, dispatch, tour])
+
+
+
+  const rowStyle = {
+    border: "1px solid #eee",
+    padding: "15px 0px"
+  }
+
+
+
+
+
+
   return (
     <div className="tour-plan">
-      { dataLength > 0
-        ? tour.map((item, index) => {
-          const { title, field_event_date, field_address_line_1, field_address_line_2, field_buy_ticket, field_event_location, field_location_icon, nid } = item;
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col">
+            <h1>Tour</h1>
+          </div>
+        </div>
+        {
+          dataLength > 0 ?
+            tour.map(item => {
+              const { nid, date, title, addressLineOne, buyTicketTitle, buyTicketUri } = item;
+              return <div key={nid} style={rowStyle} className="row mt-4">
+                {/** DATE */}
+                <div className="col-lg-3 col-md-3 col-4">
+                  <h5>{DateYear(date)}</h5>
+                  <div className="d-flex">
+                    <p className="mr-2">{DateDay(date)}</p> <p>{monthName(date)}</p>
+                  </div>
+                </div>
+                {/** VANUE */}
+                <div className="col-lg-5 col-md-5 col-8">
+                  <h5>{title}</h5>
+                  <p>{addressLineOne}</p>
+                </div>
+                {/** DETAILS LINK */}
+                <div className="col-lg-2 col-md-2  col-6">
+                  <span style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      dispatch(actionFetchTourDetails(nid));
+                      dispatch(actionHideTour(true))
+                    }}
+                  >Details</span>
+                </div>
+                {/** buy ticket */}
+                <div className="col-lg-2 col-md-2  col-6">
+                  <Link to={{ pathname: buyTicketUri }}>{buyTicketTitle}</Link>
+                </div>
+              </div>
+            })
+            : 'Loading,...'
+        }
+      </div>
 
-          /** show date format */
-          const dt = new Date(field_event_date.length > 0 && field_event_date[0].value);
-
-          //  console.log("DATE", field_event_date[0]);
-          return <ul key={index} className="list-group list-group-horizontal-md mb-3">
-
-            <li className="list-group-item">
-              {field_event_date.length > 0
-                && <>
-                  <div>{dt.getFullYear()}</div>
-                  <div>{dt.getDate()}, {monthName(dt.getMonth())}</div>
-                </>
-
-              }
-            </li>
-            <li className="list-group-item">
-
-              <h5>
-                <i><img style={{ width: "30px", margin: "3px 6px 3px 0px" }} src={field_location_icon.length > 0 && field_location_icon[0].value} alt="location" /></i> {title.length > 0 && title[0].value}</h5>
-              <p>{field_address_line_1.length > 0
-                && field_address_line_1[0].value}
-                - [{field_event_location.length > 0
-                  && field_event_location[0].value}]
-              </p>
-              <p>{field_address_line_2.length > 0
-                && field_address_line_2[0].value}</p>
-            </li>
-            <li className="list-group-item">
-              {
-                nid.length > 0
-                && <Link
-                  to={`${pagelink.tourDetails}/${nid[0].value}`}>
-                  Details +
-                </Link>
-              }
-            </li>
-            <li className="list-group-item">
-              {
-                field_buy_ticket.length > 0 &&
-                <Link to={{ pathname: field_buy_ticket[0].uri }}>
-                  {field_buy_ticket[0].title}
-                </Link>
-              }
-            </li>
-          </ul>
-        })
-        : 'Loading....'
-      }
-
-
-
-      {/* <ul className="list-group list-group-horizontal-md mb-3">
-        <li className="list-group-item">02 Feb, 2021</li>
-        <li className="list-group-item">Dapibus ac facilisis in</li>
-        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
-      </ul>
-
-      <ul className="list-group list-group-horizontal-md mb-3">
-        <li className="list-group-item">20 Feb, 2021</li>
-        <li className="list-group-item">Oibus ac facilisis in Thankds</li>
-        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
-      </ul>
-
-      <ul className="list-group list-group-horizontal-md mb-3">
-        <li className="list-group-item">03 Mar, 2021</li>
-        <li className="list-group-item" >Facilisis in Oibus ac </li>
-        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
-      </ul>
-
-      <ul className="list-group list-group-horizontal-md mb-3">
-        <li className="list-group-item">13 Apr, 2021</li>
-        <li className="list-group-item">Facilisis in Oibus ac </li>
-        <li className="list-group-item detail" style={{ cursor: "pointer" }}>Detail +</li>
-        <li className="list-group-item ticket" style={{ cursor: "pointer" }}>Ticket</li>
-      </ul> */}
-    </div>
+    </div >
 
   )
 }

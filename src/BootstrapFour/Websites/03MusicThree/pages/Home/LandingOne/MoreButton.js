@@ -26,9 +26,9 @@ const squareStyle = {
   height: "10px",
   backgroundColor: backgroudline,
   position: "absolute",
-  left: "81px",
+  left: "91px",
   transform: "rotate(45deg)",
-  top: "0.91rem"
+  top: "0.92rem"
 }
 
 function MoreButton(props) {

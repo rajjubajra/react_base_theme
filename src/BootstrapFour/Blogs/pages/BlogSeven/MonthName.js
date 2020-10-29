@@ -8,7 +8,7 @@ export const monthName = (date) => {
 
   let monthInNumber = dt.getMonth();
 
-  return date === false ? ' - ' : month[monthInNumber];
+  return month[monthInNumber];
 
 
 }

@@ -19,9 +19,8 @@ export const actionFetchTourDetails = (nid) => {
       }
     })
       .then((res) => {
-        console.log("TOUR detail", res.data)
-        console.log("TOUR details DT length", res.data.length);
-
+        // console.log("TOUR detail", res.data)
+        // console.log("TOUR details DT length", res.data.length);
         dispatch({
           type: actionTypes.FETCHED_TOUR_DETAILS,
           data: res.data,
@@ -37,3 +36,4 @@ export const actionFetchTourDetails = (nid) => {
       })
   }
 }
+

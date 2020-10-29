@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
-import BlogOne from './BlogOne/BlogOne';
+//import BlogOne from './BlogOne/BlogOne';
+import BlogSeven from './BlogSeven/BlogSeven';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import SocialMeidiaSticky from '../../components/socalMedia/SocialMediaSticky';
@@ -34,7 +35,7 @@ export const News = () => {
       <ColourMode />
       <NavigationOne />
       <SocialMeidiaSticky />
-      <BlogOne currentPage={currentPage} lastPage={lastPage} />
+      <BlogSeven currentPage={currentPage} lastPage={lastPage} />
     </div>
   )
 }

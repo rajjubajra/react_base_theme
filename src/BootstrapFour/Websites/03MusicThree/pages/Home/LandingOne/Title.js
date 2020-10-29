@@ -10,12 +10,26 @@ const titleStyle = {
 }
 const titleStyleMD = {
   transform: "rotate(-90deg)",
-  letterSpacing: "1rem"
+  letterSpacing: "1rem",
+  position: "relative",
+  left: "17%",
 }
-const titleStyleXS = {
-  textAlign: "right",
-  letterSpacing: "1rem"
+const titleStyleSM = {
+  transform: "rotate(-90deg)",
+  width: "200px",
+  letterSpacing: "1rem",
+  margin: "42px 0px 0px -30px"
 }
+const titleStyleXSM = {
+  transform: "rotate(-90deg)",
+  transformOrigin: "left",
+  width: "200px",
+  letterSpacing: "1rem",
+  position: "relative",
+  top: "30px",
+  left: "30px"
+}
+
 
 const hOneStyle = {
   letterSpacing: "0.60rem"
@@ -33,7 +47,7 @@ function Title() {
         </div>
       </div>
       {/** TABLET */}
-      <div className="col-md-3 mt-5 d-md-block d-none d-sm-none d-lg-none order-last">
+      <div className="col-md-3 mt-5 d-md-block d-none d-lg-none">
         <div style={titleStyleMD}>
           <div>
             <h1 style={hOneStyle}>YW4</h1>
@@ -42,11 +56,28 @@ function Title() {
           </div>
         </div>
       </div>
-      {/** TABLET AND MOBILE 
-      <div className="col-lg-4 col-md-6 d-block d-sm-none">
-        <h1 style={titleStyleXS}>YW4 MUSIC ONE</h1>
+      {/** MOBILE and TABLET */}
+      <div className="col-sm-3  d-none d-sm-block d-md-none">
+        <div style={titleStyleSM}>
+          <div>
+            <h1 style={hOneStyle}>YW4</h1>
+            <h1 style={hOneStyle}>Music</h1>
+            <h5 style={hOneStyle}>THREE</h5>
+          </div>
+        </div>
       </div>
-      */}
+      {/** XS ONLY */}
+      <div className="w-100  d-block d-sm-none">
+        <div className="w-100 d-flex justify-content-end">
+          <div style={titleStyleXSM}>
+            <div>
+              <h1 style={hOneStyle}>YW4</h1>
+              <h1 style={hOneStyle}>Music</h1>
+              <p style={hOneStyle}>THREE</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

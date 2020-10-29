@@ -8,15 +8,17 @@ import { reducerFetchPhoto } from './reducers/reducerFetchPhoto';
 import { reducerFetchTracks } from '../pages/Music/Redux/reducerFetchTracks';
 import { reducerFetchAlbum } from '../pages/Music/Redux/reducerFetchAlbum';
 
-import { reducerBlogOnePages } from '../pages/News/BlogOne/redux/reducerBlogOnePages';
+import { reducerBlogSevenPages } from '../pages/News/BlogSeven/redux/reducerBlogSevenPages';
+import { reducerBlogSevenSelectedDate } from '../pages/News/BlogSeven/redux/reducerBlogSevenSelectedDate';
 
 import { reducerFetchTour } from '../pages/Tour/Redux/reducerFetchTour';
 import { reducerFetchTourDetails } from '../pages/Tour/Redux/reducerFetchTourDetails';
+import { reducerHideTour } from '../pages/Tour/Redux/reducerHideTour';
 
 import { reducerFetchLatestNews } from '../pages/Home/Redux/reducerFetchLatestNews';
 import { reducerFetchLandingPage } from '../pages/Home/Redux/reducerFetchLandingPage';
 import { reducerFetchAbout } from '../pages/About/Redux/reducerFetchAbout';
-import { reducerBlogOneSelectedDate } from '../pages/News/BlogOne/redux/reducerBlogOneSelectedDate';
+
 import { reducerFetchMenu } from '../components/header/NavigationOne/Redux/reducerFetchMenu';
 
 const reducer = combineReducers(
@@ -26,13 +28,14 @@ const reducer = combineReducers(
     reducerFetchPhoto,
     reducerFetchTracks,
     reducerFetchAlbum,
-    reducerBlogOnePages,
+    reducerBlogSevenPages,
+    reducerBlogSevenSelectedDate,
     reducerFetchTour,
     reducerFetchTourDetails,
+    reducerHideTour,
     reducerFetchLatestNews,
     reducerFetchLandingPage,
     reducerFetchAbout,
-    reducerBlogOneSelectedDate,
     reducerFetchMenu
   }
 );

@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import './Tour.scss';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import TourPlan from './TourPlan';
 import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 import TourDetails from './TourDetails';
+import IconClose from '../../components/Icon/IconClose';
+import { actionHideTour } from './Redux/ActionHideTour';
+
 
 function Tour() {
   /** DYNAMIC THEME COLOUR */
@@ -22,23 +25,40 @@ function Tour() {
   }, [colorMode, variant])
   /** DYNAMIC THEME COLOUR CLOSED */
 
+
+
+  /** HIDE TOUR PLAN ON SMALL SCREEN WHILE DETAIL IS CLICKED */
+  const dispatch = useDispatch();
+  const hideTourPlan = useSelector(state => state.reducerHideTour.hide);
+
+
+
   return (
     <div className={`${className} min-vh-100`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />
       <div className="container-fluid">
+
+        {/** TOUR PLAN */}
         <div className="row justify-content-center">
-          <div className="col-lg-5">
-            <h1>TOUR</h1>
-          </div>
-          <div className="col-lg-5"></div>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col-lg-5 col-md-6 col-sm-10">
+          {/** lg and md size  only*/}
+          <div className="col-lg-5 col-md-6 d-none d-lg-block d-md-block d-xl-block">
             <TourPlan />
           </div>
+          {/** sm size only */}
+          <div className={`${hideTourPlan ? 'd-none' : 'col-sm-10'} d-md-none d-lg-none d-xl-none`}>
+            <TourPlan />
+          </div>
+
+
+          {/** TOUR DETAILS */}
           <div className="col-lg-5 col-md-6 col-sm-10">
+            <span className={`${hideTourPlan ? 'd-flex' : 'd-none'}  justify-content-end`}
+              onClick={() => dispatch(actionHideTour(false))}
+            >
+              <IconClose />
+            </span>
             <TourDetails />
           </div>
         </div>

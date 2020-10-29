@@ -6,8 +6,8 @@ import Image from './Image';
 function LandingOne() {
 
   return (
-    <div className="container-fluid mt-5 mb-5">
-      <div className="row justify-content-center mr-5">
+    <div className="container-fluid mt-5 mb-5 min-vh-100">
+      <div className="row justify-content-center">
         <Title />
         <Text />
         <Image />
