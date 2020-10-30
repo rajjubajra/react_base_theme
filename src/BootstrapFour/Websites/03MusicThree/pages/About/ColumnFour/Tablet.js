@@ -23,8 +23,8 @@ function Tablet(props) {
 
 
   return (
-    <div className="container mt-5">
-      <div className="row mb-5">
+    <div className="container">
+      <div className="row mb-5 ml-3">
         <div className="col-md-6">
           <PhotoMusic width="100%" height="500px" />
         </div>
@@ -39,10 +39,13 @@ function Tablet(props) {
           </section>
         </div>
       </div>
-      <div className="row">
+      <div className="row ml-3">
         <div className="col-md-12">
-          <h1>{props.dataLength > 0 && props.state[0].title[0].value}</h1>
-          <div dangerouslySetInnerHTML={createMarkup(props.state, 0, props.dataLength)} />
+          <div>
+            <h1>{props.dataLength > 0 && props.state[0].title[0].value}</h1>
+            <div dangerouslySetInnerHTML={createMarkup(props.state, 0, props.dataLength)} />
+          </div>
+
         </div>
       </div>
     </div>

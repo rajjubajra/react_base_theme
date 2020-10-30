@@ -13,7 +13,7 @@ export const ColumnFour = () => {
 
 
   return (
-    <div className="container mt-5">
+    <div className="container-fluid mt-5">
       <div className="row">
         <div className="d-none d-lg-block d-xl-block">
           <Desktop dataLength={dataLength} state={state} />

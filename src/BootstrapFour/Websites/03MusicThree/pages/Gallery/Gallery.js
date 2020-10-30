@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
-import BoxTwo from './BoxTwo/BoxTwo';
+import BoxSeven from './BoxSeven/BoxSeven';
 import { useSelector } from 'react-redux';
 import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
@@ -26,8 +26,8 @@ export const Gallery = () => {
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />
-      <div className="mt-5 mb-5">
-        <BoxTwo />
+      <div className="mb-5">
+        <BoxSeven />
       </div>
 
     </div>
