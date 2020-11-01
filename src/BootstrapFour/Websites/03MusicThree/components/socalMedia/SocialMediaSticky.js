@@ -28,7 +28,7 @@ function SocialMediaSticky() {
 
         if (entry.isIntersecting) {
           //do your actions here
-          //   console.log('It works!')
+          console.log('It works!')
           setObs(true)
         }
       },
@@ -49,9 +49,7 @@ function SocialMediaSticky() {
 
   return (
     <div ref={ref} className="social-media-sticky d-none d-md-block">
-      <div className={`${obs
-        ? 'social-media-icon-bottom'
-        : 'social-media-icon-top'}`} >
+      <div className="social-media-icon-fixed" >
         <Link to="#"><IconSvgYoutube width="20px" height="auto" /></Link>
         <Link to="#"><IconSvgSpotify width="20px" height="auto" /></Link>
         <Link to="#"><IconSvgApple width="20px" height="auto" /></Link>

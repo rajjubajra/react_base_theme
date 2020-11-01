@@ -54,11 +54,13 @@ function Tour() {
 
           {/** TOUR DETAILS */}
           <div className="col-lg-5 col-md-6 col-sm-10">
-            <span className={`${hideTourPlan ? 'd-flex' : 'd-none'}  justify-content-end`}
+
+            <span className={`${hideTourPlan ? 'd-flex d-lg-none d-md-none d-xl-none' : 'd-none'}  justify-content-end`}
               onClick={() => dispatch(actionHideTour(false))}
             >
               <IconClose />
             </span>
+
             <TourDetails />
           </div>
         </div>

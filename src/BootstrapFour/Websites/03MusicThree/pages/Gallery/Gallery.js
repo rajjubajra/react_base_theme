@@ -22,7 +22,7 @@ export const Gallery = () => {
 
 
   return (
-    <div className={className}>
+    <div className={`${className} min-vh-100`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

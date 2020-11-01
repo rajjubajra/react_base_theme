@@ -15,7 +15,7 @@ function NavMobile(props) {
       position: "absolute",
       transitionProperty: "top",
       transitionDuration: "2s",
-      top: props.view ? 43 : -200,
+      top: props.view ? 85 : -200,
       background: "rgba(255,255,255,0.90)",
       width: "100%"
     }}>

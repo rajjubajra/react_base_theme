@@ -5,14 +5,15 @@ import Home from './Home/Home';
 import About from './About/About';
 import Gallery from './Gallery/Gallery';
 import News from './News/News';
+import PlayList from './Music/PlayList/PlayList';
+import Music from './Music/Music';
 import Contact from './Contact/Contact';
 import BlogReadMore from './News/BlogSeven/BlogReadMore';
 import { pagelink } from '../PageLink';
 import Tour from './Tour/Tour';
 import Shop from './Shop/Shop';
-import Music from './Music/Music';
-import Album from './Music/Album';
-import TourDetails from './Tour/TourDetails';
+
+
 
 
 
@@ -72,15 +73,19 @@ function RoutePages() {
 
       <Route exact path={`/${pagelink.home}`} component={Home} />
       <Route exact path={`/${pagelink.tour}`} component={Tour} />
-      <Route exact path={`/${pagelink.tourDetails}/:nid`} component={TourDetails} />
+
       <Route exact path={`/${pagelink.about}`} component={About} />
       <Route exact path={`/${pagelink.gallery}`} component={Gallery} />
-      <Route exact path={`/${pagelink.albums}`} component={Music} />
-      <Route exact path={`/${pagelink.album}/:nid`} component={Album} />
+
       <Route exact path={`/${pagelink.news}`} component={News} />
+      <Route exact path={`/${pagelink.newsReadMore}/:nid`} component={BlogReadMore} />
+
+      <Route exact path={`/${pagelink.music}`} component={Music} />
+      <Route exact path={`/${pagelink.playList}/:nid`} component={PlayList} />
+
+
       <Route exact path={`/${pagelink.contact}`} component={Contact} />
       <Route exact path={`/${pagelink.shop}`} component={Shop} />
-      <Route exact path={`/${pagelink.newsReadMore}/:nid`} component={BlogReadMore} />
 
 
     </>

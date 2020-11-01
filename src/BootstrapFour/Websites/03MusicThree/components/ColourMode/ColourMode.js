@@ -4,6 +4,8 @@ import { actionSelectColourMode } from '../../redux/actions/actionSelectColourMo
 import IconBackspace from '../Icon/IconBackspace';
 import { cssClassName } from '../../Config/cssClassName';
 
+
+/** STYLE FOR FIXED COLOUR SELECTION ICON ONLY */
 const ulStyle = {
   position: "fixed",
   right: "10px",

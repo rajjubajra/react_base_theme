@@ -1,53 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from './Navigation';
 import NavIconThreeLines from './NavIconThreeLines';
-import { pagelink } from '../../../PageLink';
 import { useDispatch } from 'react-redux';
 import { actionFetchMenu } from './Redux/actionFetchMenu';
 
 
-const data = [
-  {
-    id: "1",
-    name: "Home",
-    link: pagelink.home
-  },
-  {
-    id: "2",
-    name: "Tour",
-    link: pagelink.tour
-  },
-  {
-    id: 3,
-    name: "News",
-    link: pagelink.news
-  },
-  {
-    id: 4,
-    name: "About",
-    link: pagelink.about
-  },
-  {
-    id: 5,
-    name: "Gallery",
-    link: pagelink.gallery
-  },
-  {
-    id: 6,
-    name: "Music",
-    link: pagelink.albums
-  },
-  {
-    id: 8,
-    name: "Contact",
-    link: pagelink.contact
-  },
-  {
-    id: 9,
-    name: "Back",
-    link: pagelink.back
-  },
-]
+// const data = [
+//   {
+//     id: "1",
+//     name: "Home",
+//     link: pagelink.home
+//   },
+//   {
+//     id: "2",
+//     name: "Tour",
+//     link: pagelink.tour
+//   },
+//   {
+//     id: 3,
+//     name: "News",
+//     link: pagelink.news
+//   },
+//   {
+//     id: 4,
+//     name: "About",
+//     link: pagelink.about
+//   },
+//   {
+//     id: 5,
+//     name: "Gallery",
+//     link: pagelink.gallery
+//   },
+//   {
+//     id: 6,
+//     name: "Music",
+//     link: pagelink.albums
+//   },
+//   {
+//     id: 8,
+//     name: "Contact",
+//     link: pagelink.contact
+//   },
+//   {
+//     id: 9,
+//     name: "Back",
+//     link: pagelink.back
+//   },
+// ]
 
 export const NavigationOne = () => {
 
@@ -70,11 +69,11 @@ export const NavigationOne = () => {
 
   /** Runs Onload */
   useEffect(() => {
-    console.log(window.innerWidth)
+    //console.log(window.innerWidth)
     window.innerWidth <= mobileBreakPoint
       ? setWindowSizeSmall(true)
       : setWindowSizeSmall(false);
-  }, [])
+  }, []);
 
   /** Runs while resize */
   useEffect(() => {
@@ -97,11 +96,11 @@ export const NavigationOne = () => {
       var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
       if (st > lastScrollTop) {
         // downscroll code
-        // console.log('goind up');
+        console.log('goind up');
         setScrollDirection(1)
       } else {
         // upscroll code
-        // console.log("going down");
+        console.log("going down");
         setScrollDirection(-1)
       }
       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
@@ -110,40 +109,34 @@ export const NavigationOne = () => {
 
 
   return (
-    <div className="container-fluid">
-      <div className="row">
 
-        <div className="col">
-          <div style={{
-            height: "90px",
-            position: scrollDirection === -1 ? "sticky" : "relative",
-            top: "0px",
-            zIndex: "20",
-            display: "flex",
-            alignItems: "center",
-            padding: "0px 0px"
-          }}>
-            {/** ICON FOR TABLET AND MOBILE */}
-            <div
-              className={`${windowSizeSmall ? '' : 'd-none'}`}
-              onClick={() => view ? setView(false) : setView(true)}
-            >
-              <NavIconThreeLines />
-            </div>
-
-            {/** NAVIGATION MENU */}
-
-            {windowSizeSmall === ''
-              ? ''
-              : <Navigation
-                data={data}
-                windowSizeSmall={windowSizeSmall}
-                view={view} />}
-
-          </div>
-        </div>
+    <div style={{
+      height: "90px",
+      position: scrollDirection === -1 ? "sticky" : "relative",
+      top: "0px",
+      zIndex: "20",
+      display: "flex",
+      alignItems: "center",
+      padding: "0px 0px",
+      background: "rgba(255,255,255,0.95)"
+    }}>
+      {/** ICON FOR TABLET AND MOBILE */}
+      <div
+        className={`${windowSizeSmall ? '' : 'd-none'}`}
+        onClick={() => view ? setView(false) : setView(true)}
+      >
+        <NavIconThreeLines />
       </div>
+
+      {/** NAVIGATION MENU */}
+
+      {windowSizeSmall === ''
+        ? ''
+        : <Navigation
+          windowSizeSmall={windowSizeSmall}
+          view={view} />}
     </div>
+
   )
 }
 

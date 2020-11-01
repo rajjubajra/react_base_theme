@@ -5,9 +5,6 @@ import thunk from 'redux-thunk';
 import { reducerSelectColourMode } from './reducers/reducerSelectColourMode';
 import { reducerFetchPhoto } from './reducers/reducerFetchPhoto';
 
-import { reducerFetchTracks } from '../pages/Music/Redux/reducerFetchTracks';
-import { reducerFetchAlbum } from '../pages/Music/Redux/reducerFetchAlbum';
-
 import { reducerBlogSevenPages } from '../pages/News/BlogSeven/redux/reducerBlogSevenPages';
 import { reducerBlogSevenSelectedDate } from '../pages/News/BlogSeven/redux/reducerBlogSevenSelectedDate';
 
@@ -21,22 +18,38 @@ import { reducerFetchAbout } from '../pages/About/Redux/reducerFetchAbout';
 
 import { reducerFetchMenu } from '../components/header/NavigationOne/Redux/reducerFetchMenu';
 
+import { ReducerMusicThree } from '../pages/Music/Redux/ReducerMusicThree';
+import { ReducerMusicThreePlayList } from '../pages/Music/Redux/ReducerMusicThreePlayList';
+import { ReducerMusicThreePlayTrack } from '../pages/Music/Redux/ReducerMusicThreePlayTrack';
+
+
+
 const reducer = combineReducers(
   {
     // reducerFetchData,
     reducerSelectColourMode,
+
     reducerFetchPhoto,
-    reducerFetchTracks,
-    reducerFetchAlbum,
+
     reducerBlogSevenPages,
     reducerBlogSevenSelectedDate,
+
     reducerFetchTour,
     reducerFetchTourDetails,
     reducerHideTour,
+
     reducerFetchLatestNews,
     reducerFetchLandingPage,
+
     reducerFetchAbout,
-    reducerFetchMenu
+
+    reducerFetchMenu,
+
+    ReducerMusicThree,
+    ReducerMusicThreePlayList,
+    ReducerMusicThreePlayTrack,
+
+
   }
 );
 

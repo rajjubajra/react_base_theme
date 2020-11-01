@@ -8,7 +8,8 @@ import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
 function Desktop(props) {
 
   const longPhotoStyle = {
-    margin: "7px",
+    margin: "0px auto",
+    marginTop: "7px"
   }
   return (
     <>

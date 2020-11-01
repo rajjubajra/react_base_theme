@@ -6,7 +6,7 @@ import Mobile from './Mobile';
 
 export const BoxSeven = () => {
 
-  const title = "Music";
+  const title = "Gallery";
 
   return (
     <>
@@ -18,7 +18,7 @@ export const BoxSeven = () => {
       <div className="d-none d-md-block d-lg-none">
         <Tablet title={title} />
       </div>
-      <div className="d-non">
+      <div className="d-sm-block d-md-none d-lg-none d-xl-none">
         <Mobile title={title} />
       </div>
 

@@ -19,8 +19,11 @@ const FormSix = () => {
 
 
   function handleSubmit(e) {
+    console.log(e);
     e.preventDefault();
+
     //console.log(name, email, message);
+
     axios(
       {
         method: 'post',
@@ -109,7 +112,7 @@ const FormSix = () => {
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Name"
+                    placeholder='Name'
                   />
 
                 </div>

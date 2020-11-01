@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { pagelink } from '../../../PageLink';
 
 const backgroudline = "#ccc";
 
@@ -33,11 +35,14 @@ const squareStyle = {
 
 function MoreButton(props) {
   return (
-    <div style={btnStyle}>
-      <span>{props.text}</span>
-      <span style={lineStyle}></span>
-      <span style={squareStyle}></span>
-    </div>
+    <Link to={`/${pagelink.music}`}>
+      <div style={btnStyle}>
+        <span>{props.text}</span>
+        <span style={lineStyle}></span>
+        <span style={squareStyle}></span>
+      </div>
+    </Link>
+
   )
 }
 

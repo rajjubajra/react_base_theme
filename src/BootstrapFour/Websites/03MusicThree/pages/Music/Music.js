@@ -1,64 +1,49 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
-import ColourMode from '../../components/ColourMode/ColourMode';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { actionFetchTracks } from './Redux/ActionFetchTracks';
-import Albums from './Albums';
-import { pagelink } from '../../PageLink';
+import ColourMode from '../../components/ColourMode/ColourMode';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
+import { ActionMusicThree } from '../Music/Redux/ActionMusicThree';
+import BoxSeven from './BoxSeven/BoxSeven';
+
+
+
 
 function Music() {
 
-  const dispatch = useDispatch();
+  /** dyanamic colour */
+  const [className, setClassName] = useState('light');
+  const [colourVariant, setColourVariant] = useState('light');
 
-  /** COLOR MODE */
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
-  /** COLOR MODE CLOSED */
+  //console.log(colorMode);
 
-
-  /** RUN ACTON TO FETCH TRACKS */
   useEffect(() => {
-    dispatch(actionFetchTracks())
+    setClassName(colorMode);
+    setColourVariant(variant);
+  }, [colorMode, variant])
+  /** dynamic colour closed */
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [])
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(ActionMusicThree());
   }, [dispatch])
 
-
-  /** FETCHED DATA FROM reducer */
-  const tracksData = useSelector(state => state.reducerFetchTracks.data);
-  const dataLength = useSelector(state => state.reducerFetchTracks.dataLength);
-
-
-  //  console.log("TRACK DATA", tracksData);
-
-
   return (
-    <div className={colorMode}>
+    <div className={`${className} min-vh-100`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />
-      <div className="container mb-5">
-        <div className="row mt-5 mb-2">
-          <div className="col"><h1>Music</h1></div>
-        </div>
-        <div className="row">
-          {
-            dataLength > 0 && tracksData.map((item, index) => {
-              return <div key={index} className="col-lg-4 col-md-6">
-                <Link
-                  className="custom-color" to={`${pagelink.album}/${item.nid[0].value}`}>
-                  <Albums
-                    title={item.title[0].value}
-                    img={item.field_track_cover_image[0].url}
-                    alt={item.field_track_cover_image[0].alt}
-                    body={item.body[0].value}
-                  />
-                </Link>
-              </div>
-            })
-          }
-        </div>
+      <div className="d-flex justify-content-center w-100">
+        <BoxSeven />
       </div>
+
     </div>
   )
 }
