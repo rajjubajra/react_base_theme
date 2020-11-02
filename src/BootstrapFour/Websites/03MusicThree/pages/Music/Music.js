@@ -36,7 +36,7 @@ function Music() {
   }, [dispatch])
 
   return (
-    <div className={`${className} min-vh-100`}>
+    <div className={`${className} music-three min-vh-100`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

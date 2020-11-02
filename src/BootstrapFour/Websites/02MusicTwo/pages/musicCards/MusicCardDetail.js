@@ -31,7 +31,7 @@ function MusicCardDetail(props) {
   const [allTracksId, setAllTracksId] = useState([]);
 
   /** Colour data from reducer */
-  const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
+  //const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
 
 
   /** track data from the reducer */
@@ -74,13 +74,13 @@ function MusicCardDetail(props) {
 
 
   return (
-    <div className={`music-zero ${className}`}>
+    <div className={`music-two ${className}`}>
       <ColourMode />
       <NavigationOne />
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-6">
-            <h1 className="mt-5"><b>{coverImage['alt']}</b></h1>
+            <h1 className="mt-5">{coverImage['alt']}</h1>
             <img width="100%" src={coverImage['url']} alt='cover' />
             <div className="mt-4 mb-5">
               <DangerouslySetInnerHtml text={bodyText} />

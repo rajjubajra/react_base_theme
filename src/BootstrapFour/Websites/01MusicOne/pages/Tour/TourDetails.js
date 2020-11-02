@@ -54,7 +54,7 @@ function TourDetails() {
 
   return (
 
-    <div className={`${className} container-fulid min-vh-100`}>
+    <div className={`${className}  music-one container-fulid min-vh-100`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

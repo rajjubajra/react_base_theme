@@ -115,7 +115,7 @@ export const NavigationOne = () => {
       position: scrollDirection === -1 ? "sticky" : "relative",
       top: "0px",
       zIndex: "20",
-      background: "#999"
+      background: "rgba(233, 236, 239, 0.41)"
     }}>
       {/** ICON FOR TABLET AND MOBILE */}
       <div

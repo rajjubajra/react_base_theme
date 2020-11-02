@@ -17,7 +17,7 @@ export const About = () => {
 
 
   return (
-    <div className={`music-zero ${className}`}>
+    <div className={`music-two ${className}`}>
       <ColourMode />
       <NavigationOne />
       <div className="container mt-5 min-vh-100">

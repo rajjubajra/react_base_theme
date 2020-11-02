@@ -22,7 +22,7 @@ function Tour() {
   /** DYNAMIC THEME COLOUR CLOSED */
 
   return (
-    <div className={`${className} min-vh-100`}>
+    <div className={`${className}  music-one min-vh-100`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

@@ -16,7 +16,7 @@ function TourDetails() {
   const location = useSelector(state => state.reducerFetchTourDetails.location);
   const addressOne = useSelector(state => state.reducerFetchTourDetails.addressLineOne);
   const addressTwo = useSelector(state => state.reducerFetchTourDetails.addressLineTwo);
-  const nid = useSelector(state => state.reducerFetchTourDetails.nid);
+  //const nid = useSelector(state => state.reducerFetchTourDetails.nid);
   const details = useSelector(state => state.reducerFetchTourDetails.details);
   const ticketTitle = useSelector(state => state.reducerFetchTourDetails.ticket);
   const buyTicketUri = useSelector(state => state.reducerFetchTourDetails.buyTicketUri);
@@ -55,7 +55,7 @@ function TourDetails() {
   return (
 
     <div>
-      <div className="container-fluid tour-details">
+      <div className="container-fluid music-three tour-details">
         {/** TITLE */}
         <div className="row">
           <div className="col-md-10">

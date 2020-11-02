@@ -13,7 +13,7 @@ import { actionHideTour } from './Redux/ActionHideTour';
 function Tour() {
   /** DYNAMIC THEME COLOUR */
   const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+  //const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
@@ -21,7 +21,7 @@ function Tour() {
 
   useEffect(() => {
     setClassName(colorMode);
-    setColourVariant(variant);
+    //setColourVariant(variant);
   }, [colorMode, variant])
   /** DYNAMIC THEME COLOUR CLOSED */
 
@@ -34,7 +34,7 @@ function Tour() {
 
 
   return (
-    <div className={`${className} min-vh-100`}>
+    <div className={`${className} music-three min-vh-100`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

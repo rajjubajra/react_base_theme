@@ -72,7 +72,7 @@ function Album() {
   }
 
   return (
-    <div className={colorMode}>
+    <div className={`${colorMode}  music-one`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

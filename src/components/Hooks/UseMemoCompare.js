@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function UseMemoCompare() {
   const [state, setState] = useState();
@@ -6,12 +6,9 @@ function UseMemoCompare() {
 
   return (
     <div>
-
+      TEst
     </div>
   )
 }
 
 export default UseMemoCompare
-
-const [state, setState] = useState();
-

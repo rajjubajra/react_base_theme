@@ -10,7 +10,7 @@ import Text from './Text';
 export const Contact = () => {
 
   const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+  //const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
@@ -18,12 +18,12 @@ export const Contact = () => {
 
   useEffect(() => {
     setClassName(colorMode);
-    setColourVariant(variant);
+    //setColourVariant(variant);
   }, [colorMode, variant])
 
 
   return (
-    <div className={className}>
+    <div className={`${className} music-three`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

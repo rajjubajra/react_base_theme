@@ -10,7 +10,7 @@ export const BoxSeven = () => {
 
   return (
     <>
-      <div className="d-none d-lg-block d-xl-block">
+      <div className="music-three d-none d-lg-block d-xl-block">
         <div className="d-flex flex-column justify-content-center ml-5 mr-5">
           <Desktop title={title} />
         </div>

@@ -23,7 +23,7 @@ export const Contact = () => {
 
 
   return (
-    <div className={className}>
+    <div className={`${className}  music-one`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

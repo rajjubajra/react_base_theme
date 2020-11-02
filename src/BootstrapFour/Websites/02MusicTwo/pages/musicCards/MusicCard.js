@@ -1,5 +1,4 @@
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
 
@@ -25,8 +24,16 @@ function MusicCard(props) {
               }}
               src={props.img}
               alt={props.alt} />
-            <div className="card-img-overlay">
-              <p className="card-text">{props.title}</p>
+            <div style={{ padding: "0px" }} className="card-img-overlay">
+              <p className="card-text">
+                <div style={{
+                  color: "#000",
+                  backgroundColor: "rgba(255,255,255,0.5)",
+                  padding: "1px 10px",
+                  position: "absolute",
+                  bottom: "13px"
+                }}>{props.title}</div>
+              </p>
             </div>
           </div>
         </Link>

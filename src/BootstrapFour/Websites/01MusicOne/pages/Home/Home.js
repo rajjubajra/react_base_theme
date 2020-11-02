@@ -13,7 +13,7 @@ function Home() {
 
   /** dyanamic colour */
   const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+  //const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
@@ -21,7 +21,7 @@ function Home() {
 
   useEffect(() => {
     setClassName(colorMode);
-    setColourVariant(variant);
+    // setColourVariant(variant);
   }, [colorMode, variant])
   /** dynamic colour closed */
 
@@ -34,7 +34,7 @@ function Home() {
 
 
   return (
-    <div className={className}>
+    <div className={`${className} music-one`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />

@@ -1,35 +1,60 @@
-
-.basetheme-black-white{
-  @import './components/ColourMode/Basetheme-black-white';
-  background-color: #FFFFFF !important;
+@keyframes fadeTransition {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
-.basetheme-dark{
-  @import './components/ColourMode/Basetheme-dark';
-  background-color: #010b15 !important;
+@keyframes blurTransition{
+  0%{filter: blur(5px);}
+  100%{filter: blur(0px);}
 }
 
-.basetheme-light{
-  @import './components/ColourMode/Basetheme-light';
-  background-color: #E9ECEF !important;
-}
+.music-one{
 
-/**NOTE: Responsive FONT-SIZE is defined on 'Basetheme.scss' file **/
-h1, h2, h3, h4, h5, h6{
-  font-weight: 200 !important;
-  letter-spacing: 0.02rem;
-}
+  /** PAGE TRANSITION ANIMATION */
+  animation: fadeTransition 0.4s linear;
+  img{
+    animation-delay: 0.5s;
+    animation: blurTransition 0.5s linear;
+    filter: grayscale(100%);
+  }
 
-p, a{
-  font-weight: 100 !important;
-  letter-spacing: 0.02rem;
-}
 
-.button{
-  font-size: 1rem;
-  font-weight: 100;
-  text-decoration: none !important;
-  margin: 10px 0px;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc; 
+   /** DYANAMIC PAGE COLOUR */
+
+
+    .basetheme-black-white{
+      @import './components/ColourMode/Basetheme-black-white';
+      background-color: #FFFFFF !important;
+    }
+
+    .basetheme-dark{
+      @import './components/ColourMode/Basetheme-dark';
+      background-color: #010b15 !important;
+    }
+
+    .basetheme-light{
+      @import './components/ColourMode/Basetheme-light';
+      background-color: #E9ECEF !important;
+    }
+
+    /**NOTE: Responsive FONT-SIZE is defined on 'Basetheme.scss' file **/
+    h1, h2, h3, h4, h5, h6{
+      font-weight: 200 !important;
+      letter-spacing: 0.02rem;
+    }
+
+    p, a{
+      font-weight: 100 !important;
+      letter-spacing: 0.02rem;
+    }
+
+    .button{
+      font-size: 1rem;
+      font-weight: 100;
+      text-decoration: none !important;
+      margin: 10px 0px;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc; 
+    }
+
 }

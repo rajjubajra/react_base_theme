@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { useSelector } from 'react-redux';
 import EmailNTel from '../address/EmailNTel';
 import Pagination from './Pagination';
@@ -20,7 +17,7 @@ function Text() {
   const [paraImage, setParaImage] = useState('');
 
   /** Next Album onClick */
-  const [albumLength, setAlbumLength] = useState(0);
+  //const [albumLength, setAlbumLength] = useState(0);
   //const [currentAlbum, setCuttentAlbum] = useState(0);
 
 
@@ -41,7 +38,7 @@ function Text() {
       setParaTitle(textData[page].title[0].value);
       setParaImage(textData[page].field_image_medium[0].url)
       /** set Album length */
-      setAlbumLength(textData.length);
+      // setAlbumLength(textData.length);
     }
   }, [fetched, page, textData])
 
@@ -55,7 +52,7 @@ function Text() {
 
 
   return (
-    <div className="container mt-5">
+    <div className="container music-two mt-5">
       <div className="row d-flex justify-content-center">
         <div className="col-lg-6 col-11" style={bigFont}>
           <h1>{paraTitle}</h1>

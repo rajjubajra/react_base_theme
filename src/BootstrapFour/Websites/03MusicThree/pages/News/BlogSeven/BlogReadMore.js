@@ -89,7 +89,7 @@ function BlogReadMore(props) {
 
 
   return (
-    <div className={className}>
+    <div className={`${className} music-three`}>
       <ColourMode />
       <NavigationOne />
       <SocialMediaSticky />
