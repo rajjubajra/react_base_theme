@@ -5,62 +5,62 @@ import Column from './Column';
 import SocialMedia from './SocialMedia';
 
 
-const about = [
-  {
-    id: "1",
-    name: "About us",
-    nav: "about-us",
-  },
-  {
-    id: "2",
-    name: "Contact us",
-    nav: "contact-us",
-  },
-  {
-    id: "3",
-    name: "Newsroom",
-    nav: "newsroom",
-  },
-  {
-    id: "4",
-    name: "Careers",
-    nav: "careers",
-  },
-  {
-    id: "5",
-    name: "Go Shop",
-    nav: "go-shop",
-  },
-  {
-    id: "6",
-    name: "Legal",
-    nav: "legal",
-  },
-  {
-    id: "7",
-    name: "Blog",
-    nav: "blog",
-  }
-]
+// const about = [
+//   {
+//     id: "1",
+//     name: "About us",
+//     nav: "about-us",
+//   },
+//   {
+//     id: "2",
+//     name: "Contact us",
+//     nav: "contact-us",
+//   },
+//   {
+//     id: "3",
+//     name: "Newsroom",
+//     nav: "newsroom",
+//   },
+//   {
+//     id: "4",
+//     name: "Careers",
+//     nav: "careers",
+//   },
+//   {
+//     id: "5",
+//     name: "Go Shop",
+//     nav: "go-shop",
+//   },
+//   {
+//     id: "6",
+//     name: "Legal",
+//     nav: "legal",
+//   },
+//   {
+//     id: "7",
+//     name: "Blog",
+//     nav: "blog",
+//   }
+// ]
 
-const support = [
-  {
-    id: "1",
-    name: "Customer Support",
-    nav: "customer-support",
-  },
-  {
-    id: "2",
-    name: "Information",
-    nav: "information",
-  },
-  {
-    id: "3",
-    name: "FAQ",
-    nav: "faq",
-  },
+// const support = [
+//   {
+//     id: "1",
+//     name: "Customer Support",
+//     nav: "customer-support",
+//   },
+//   {
+//     id: "2",
+//     name: "Information",
+//     nav: "information",
+//   },
+//   {
+//     id: "3",
+//     name: "FAQ",
+//     nav: "faq",
+//   },
 
-]
+// ]
 
 const account = [
   {

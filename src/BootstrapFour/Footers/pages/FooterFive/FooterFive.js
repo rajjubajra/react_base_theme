@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../../components/header/Nav';
 import { Container, Row, Col } from 'react-bootstrap';
-import { cssclass } from '../../CssClass';
+//import { cssclass } from '../../CssClass';
 import Column from './Column';
 import SocialMedia from './SocialMedia';
 
@@ -44,93 +44,93 @@ const about = [
   }
 ]
 
-const support = [
-  {
-    id: "1",
-    name: "Customer Support",
-    nav: "customer-support",
-  },
-  {
-    id: "2",
-    name: "Information",
-    nav: "information",
-  },
-  {
-    id: "3",
-    name: "FAQ",
-    nav: "faq",
-  },
+// const support = [
+//   {
+//     id: "1",
+//     name: "Customer Support",
+//     nav: "customer-support",
+//   },
+//   {
+//     id: "2",
+//     name: "Information",
+//     nav: "information",
+//   },
+//   {
+//     id: "3",
+//     name: "FAQ",
+//     nav: "faq",
+//   },
 
-]
+// ]
 
-const account = [
-  {
-    id: "1",
-    name: "Login",
-    nav: "login",
-  },
-  {
-    id: "2",
-    name: "New Member",
-    nav: "new-member",
-  },
-  {
-    id: "3",
-    name: "My Account",
-    nav: "my-account",
-  },
-  {
-    id: "4",
-    name: "Terms & Conditions",
-    nav: "terms-condition",
-  },
-  {
-    id: "5",
-    name: "Create Account",
-    nav: "create-account",
-  },
+// const account = [
+//   {
+//     id: "1",
+//     name: "Login",
+//     nav: "login",
+//   },
+//   {
+//     id: "2",
+//     name: "New Member",
+//     nav: "new-member",
+//   },
+//   {
+//     id: "3",
+//     name: "My Account",
+//     nav: "my-account",
+//   },
+//   {
+//     id: "4",
+//     name: "Terms & Conditions",
+//     nav: "terms-condition",
+//   },
+//   {
+//     id: "5",
+//     name: "Create Account",
+//     nav: "create-account",
+//   },
 
-]
+// ]
 
-const shopping = [
-  {
-    id: "1",
-    name: "Brand",
-    nav: "brand",
-  },
-  {
-    id: "2",
-    name: "Product Type",
-    nav: "Product-type",
-  },
-  {
-    id: "3",
-    name: "Sale",
-    nav: "sale",
-  },
-  {
-    id: "4",
-    name: "Product Material",
-    nav: "product-material",
-  },
-  {
-    id: "5",
-    name: "Terms",
-    nav: "terms",
-  },
+// const shopping = [
+//   {
+//     id: "1",
+//     name: "Brand",
+//     nav: "brand",
+//   },
+//   {
+//     id: "2",
+//     name: "Product Type",
+//     nav: "Product-type",
+//   },
+//   {
+//     id: "3",
+//     name: "Sale",
+//     nav: "sale",
+//   },
+//   {
+//     id: "4",
+//     name: "Product Material",
+//     nav: "product-material",
+//   },
+//   {
+//     id: "5",
+//     name: "Terms",
+//     nav: "terms",
+//   },
 
-]
+// ]
 
 
 
 const sectionStyle = {
   margin: "50px 0px"
 }
-const titleStyle = {
-  fontWeight: "300",
-  letterSpacing: "0.1rem",
-  fontSize: "1.3rem"
-}
+// const titleStyle = {
+//   fontWeight: "300",
+//   letterSpacing: "0.1rem",
+//   fontSize: "1.3rem"
+// }
 
 
 export const FooterFive = () => {

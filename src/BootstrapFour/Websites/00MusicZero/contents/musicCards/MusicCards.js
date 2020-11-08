@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MusicCard from './MusicCard';
 // import concert from '../../../../../../src/images/Music/concert00.jpg';
@@ -10,7 +10,7 @@ import MusicCard from './MusicCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { actionPaginationPrev, actionPaginationNext } from '../../actions/actionPagination';
+//import { actionPaginationPrev, actionPaginationNext } from '../../actions/actionPagination';
 import { actionFetchData } from '../../actions/actionFetchData';
 
 

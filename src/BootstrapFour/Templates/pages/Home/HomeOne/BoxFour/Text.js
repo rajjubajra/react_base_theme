@@ -39,10 +39,10 @@ const title = {
 
 }
 
-const beforeTitle = {
-  opacity: 0,
-  tranistion: "opacity 1s"
-}
+// const beforeTitle = {
+//   opacity: 0,
+//   tranistion: "opacity 1s"
+// }
 
 const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 

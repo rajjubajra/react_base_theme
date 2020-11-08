@@ -41,6 +41,20 @@ const BootsrapFour = () => {
           type="Band / Solo Artist"
         />
 
+        <Cards
+          title="Blog One"
+          linkref="/b4Blog-one-"
+          text="Blog"
+          type="Blog"
+        />
+
+        <Cards
+          title="Photography One"
+          linkref="/b4Photography-one"
+          text="Photography"
+          type="Photographer"
+        />
+
 
         <Cards
           title="Art & Design"
@@ -57,9 +71,7 @@ const BootsrapFour = () => {
           title="Photo Gallery"
           linkref="/photo-gallery" />
 
-        <Cards
-          title="Photography"
-          linkref="/photography" />
+
 
         <Cards
           title="Profile Aaa"

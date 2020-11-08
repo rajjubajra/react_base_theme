@@ -1,7 +1,7 @@
 import React from 'react'
 import Photo from './Photo';
 import Text from './Text';
-import { Container, Row, Col } from 'react-bootstrap';
+
 
 
 const boxOne = {

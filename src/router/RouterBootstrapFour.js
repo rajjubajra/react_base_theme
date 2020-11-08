@@ -15,7 +15,9 @@ import MusicOne from '../BootstrapFour/Websites/01MusicOne/MusicOne';
 import MusicTwo from '../BootstrapFour/Websites/02MusicTwo/MusicTwo';
 import MusicThree from '../BootstrapFour/Websites/03MusicThree/MusicThree';
 
-import Photography from '../BootstrapFour/Websites/Photography/Photography';
+import BlogOne from '../BootstrapFour/Websites/Blog01/BlogOne';
+
+import PhotographyOne from '../BootstrapFour/Websites/Photography01/PhotographyOne';
 import PhotographyA from '../BootstrapFour/Websites/PhotographyA/PhotographyA';
 import ProfileAaa from '../BootstrapFour/Websites/Profile_Aaa/PofileAaa';
 import ProfileAab from '../BootstrapFour/Websites/Profile_Aab/ProfileAab';
@@ -91,8 +93,9 @@ export default function RouterBootstrapFour() {
       <MusicOne />
       <MusicTwo />
       <MusicThree />
+      <BlogOne />
       <PhotoGallery />
-      <Photography />
+      <PhotographyOne />
       <ProfileAaa />
       <ProfileAab />
       <PhotographyA />

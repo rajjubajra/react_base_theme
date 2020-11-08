@@ -26,22 +26,3 @@ function NavigationBar(props) {
 }
 
 export default NavigationBar
-
-
-
-{/* 
-    <Navbar className={props.css_class} expand="lg" bg="dark" variant={variant} >
-      <Navbar.Brand href="#home">YW-Template</Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#portfolio2020-home">Home</Nav.Link>
-          <Nav.Link href="#portfolio2020-about">About</Nav.Link>
-          <Nav.Link href="#portfolio2020-services">Services</Nav.Link>
-          <Nav.Link href="#portfolio2020-gallery">Gallery</Nav.Link>
-          <Nav.Link href="#portfolio2020-pages">Pages</Nav.Link>
-          <Nav.Link href="#portfolio2020-subscribe">Subscribe</Nav.Link>
-          <Nav.Link href="#portfolio2020-contact">Contact</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar> */}

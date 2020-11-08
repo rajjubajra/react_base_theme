@@ -25,8 +25,8 @@ function PlayAll() {
   const tracks = useSelector(state => state.reducerPlayAllTracks.tracks);
 
 
-  /** useAudio */
-  const [audio, state, controls, ref] = useAudio(
+  /** useAudio */ /** ref ? */
+  const [audio, state, controls] = useAudio(
     {
       src: tracks[nextSong].url,
       autoPlay: true

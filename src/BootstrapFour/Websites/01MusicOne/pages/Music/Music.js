@@ -14,7 +14,7 @@ function Music() {
 
   /** COLOR MODE */
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
   /** COLOR MODE CLOSED */
 
 

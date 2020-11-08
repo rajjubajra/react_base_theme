@@ -38,7 +38,7 @@ export const Slides = () => {
     return () => {
       clearInterval(interval);
     }
-  }, [])
+  }, [dataLength, slideDelay])
 
 
   // console.log(dataLength, activeSlide);

@@ -1,6 +1,5 @@
 import React from 'react'
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
-import { Container, Row, Col } from 'react-bootstrap';
 
 import PhotoText from './PhotoText';
 import TextPhoto from './TextPhoto';

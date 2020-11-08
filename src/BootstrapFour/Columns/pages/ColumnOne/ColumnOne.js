@@ -7,7 +7,7 @@ import CustomPlaceholder from '../../components/CustomPlaceholder';
 export const ColumnOne = () => {
 
   const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+  //const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
@@ -15,7 +15,7 @@ export const ColumnOne = () => {
 
   useEffect(() => {
     setClassName(colorMode);
-    setColourVariant(variant);
+    //  setColourVariant(variant);
   }, [colorMode, variant])
 
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
-import { Container, Row, Col } from 'react-bootstrap';
 import { cssclass } from '../../CssClass';
 import PhotoBox from './PhotoBox';
 

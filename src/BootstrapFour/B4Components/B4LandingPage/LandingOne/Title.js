@@ -8,14 +8,14 @@ const titleStyle = {
   letterSpacing: "2rem",
   textTransform: "uppercase",
 }
-const titleStyleSM = {
-  textAlign: "right",
-  letterSpacing: "1rem"
-}
-const titleStyleXS = {
-  textAlign: "right",
-  letterSpacing: "1rem"
-}
+// const titleStyleSM = {
+//   textAlign: "right",
+//   letterSpacing: "1rem"
+// }
+// const titleStyleXS = {
+//   textAlign: "right",
+//   letterSpacing: "1rem"
+// }
 
 const hOneStyle = {
   letterSpacing: "0.60rem"

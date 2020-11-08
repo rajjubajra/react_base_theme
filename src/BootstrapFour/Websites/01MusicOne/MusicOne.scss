@@ -4,8 +4,14 @@
 }
 
 @keyframes blurTransition{
-  0%{filter: blur(5px);}
-  100%{filter: blur(0px);}
+  0%{opacity: 0; filter: blur(5px);}
+  100%{opacity: 1; filter: blur(0px);}
+}
+
+@keyframes DropAnimation{
+  0%{opacity: 0; position: relative; top: -100px;}
+  50%{opacity: 0.5; position: relative; top: -60px;}
+  100%{opacity: 1; position: relative; top: 0px }
 }
 
 .music-one{
@@ -16,6 +22,20 @@
     animation-delay: 0.5s;
     animation: blurTransition 0.5s linear;
     filter: grayscale(100%);
+  }
+
+  .drop{
+    animation: DropAnimation 2s linear;
+  }
+
+  .animationDelayOne{
+    animation-delay: 2.5s;
+  }
+  .animationDelayTwo{
+    animation-delay: 3s;
+  }
+  .animationDelayThree{
+    animation-delay: 4s;
   }
 
 

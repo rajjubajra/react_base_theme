@@ -1,6 +1,6 @@
 import React from 'react'
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
-import { Container, Row, Col } from 'react-bootstrap';
+
 
 import PhotoBox from './PhotoBox';
 
@@ -17,14 +17,14 @@ export const BoxThree = () => {
           </div>
         </div>
         <div className="row">
-          <Col className="d-flex f-wrap" style={{ flexWrap: "wrap" }}>
+          <div className="col d-flex f-wrap" style={{ flexWrap: "wrap" }}>
             <PhotoBox />
             <PhotoBox />
             <PhotoBox />
             <PhotoBox />
             <PhotoBox />
             <PhotoBox />
-          </Col>
+          </div>
         </div>
       </div>
     </div>

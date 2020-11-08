@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { countryList } from '../../data/country.json';
 import axios from 'axios';
 import ConfirmationMessage from './ConfirmationMessage';

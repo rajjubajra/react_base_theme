@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row } from 'react-bootstrap';
 
 import PhotoText from './PhotoText';
-import TextPhoto from './TextPhoto';
+//import TextPhoto from './TextPhoto';
 
 const styleLight = {
   width: "100%",

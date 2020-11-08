@@ -33,7 +33,7 @@ function PhotoTravel(props) {
         setPhoto(arr);
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [dataUrl])
 
   function getRandomArbitrary(min, max) {
     let randomIndex = Math.floor(Math.random() * ((max - 1) - min) + min);

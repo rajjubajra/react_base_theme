@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Nav from '../../components/header/Nav';
 import axios from 'axios';
-import { Container, Row, Col } from 'react-bootstrap';
 import Blogs from './Blogs';
 
 

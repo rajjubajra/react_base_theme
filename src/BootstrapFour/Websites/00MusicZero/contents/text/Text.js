@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+
 
 import { useSelector } from 'react-redux';
 import EmailNTel from '../address/EmailNTel';
@@ -57,7 +57,7 @@ function Text() {
 
 
   return (
-    < Container >
+    <Container >
       <Row>
         <Pagination />
       </Row>

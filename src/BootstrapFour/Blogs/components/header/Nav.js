@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './Nav.scss';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
 
 
 function Nav() {
-  const [mouseScroll, SetMouseScroll] = useState(false);
+
 
   useEffect(() => {
 

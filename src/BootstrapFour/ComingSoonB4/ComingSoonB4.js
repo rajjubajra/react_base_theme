@@ -3,8 +3,6 @@ import './ComingSoonB4.scss';
 import axios from 'axios';
 import { comingSoonForLocal, comingSoonForRemote } from './Config';
 import Page from './Page';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Loading from './Loading';
 
 

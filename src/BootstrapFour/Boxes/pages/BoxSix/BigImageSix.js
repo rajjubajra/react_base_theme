@@ -32,11 +32,13 @@ const imageStyle = {
 
 function BigImageSix(props) {
 
-  const [body, setBody] = useState('');
+  //const [body, setBody] = useState('');
   const [title, setTitle] = useState('');
 
   let { id } = useParams();
   const dataUrl = `https://jsonplaceholder.typicode.com/posts/${id}`;
+
+
 
   useEffect(() => {
     axios({
@@ -49,7 +51,7 @@ function BigImageSix(props) {
       .then(res => {
         console.log(res.data);
         setTitle(res.data.title);
-        setBody(res.data.body);
+        //  setBody(res.data.body);
       })
       .catch(err => console.log(err))
   }, [dataUrl])
