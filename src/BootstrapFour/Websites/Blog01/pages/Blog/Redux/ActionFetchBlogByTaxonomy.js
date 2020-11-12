@@ -2,7 +2,14 @@ import { actionTypes } from "./ActionTypes"
 import axios from "axios"
 import { baseUrl } from '../../../Config/dataurl';
 
-export const ActionFetchBlogByTaxonomy = (tid, page) => {
+export const ActionFetchBlogByTaxonomy = (tid, year, month) => {
+
+
+  const byMonth = `${baseUrl.URL}/blog-by-taxonomy/${tid}/${year}${month}?_format=json`;
+  const all = `${baseUrl.URL}/blog-by-taxonomy/${tid}?_format=json`;
+  const url = year === '' && month === '' ? all : byMonth;
+
+  console.log("ACTION URL", url);
 
 
   return function (dispatch) {
@@ -12,7 +19,7 @@ export const ActionFetchBlogByTaxonomy = (tid, page) => {
 
     axios({
       method: 'GET',
-      url: `${baseUrl.URL}/blog-by-taxonomy/${tid}?_format=json&page=${page}`,
+      url: url,
       headers: {
         'Accept': 'application/vnd.api+json'
       }

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { DayMonthCommaYear } from '../../components/DateFormat';
 
 
+
 function NewsLetters() {
 
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ function NewsLetters() {
         fetched
           ? news.map(item => {
             const { title, body, nid, created } = item
-            return <section>
+            return <section key={nid} className="mt-5 mb-5">
               <h2>{title}</h2>
               <p>{DayMonthCommaYear(created)}</p>
               <DangerouslySetInnerHtml text={body} substr={250} />

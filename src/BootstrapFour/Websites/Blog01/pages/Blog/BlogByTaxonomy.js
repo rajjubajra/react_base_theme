@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ActionFetchBlogByTaxonomy } from './Redux/ActionFetchBlogByTaxonomy';
 import PopularBlog from '../PopularBlog/PopularBlog';
-import DangerouslySetInnerHtml from '../../components/DangerouslySetInnterHtml';
-import { pagelink } from '../../PageLink';
 import Taxonomy from '../Taxonomy/Taxonomy';
 import ColourMode from '../../components/ColourMode/ColourMode';
+import Title from '../../components/header/Titlte/Title';
+import ViewBox from './ViewBox';
+import YearMonthDrops from './Form/YearMonthDrops';
+
 
 
 function BlogByTaxonomy() {
@@ -18,15 +20,22 @@ function BlogByTaxonomy() {
 
 
 
+
   /** TAXONOMY ID [useParams()] */
   const { tid } = useParams();
 
-
+  /** BY YEAR AND MONTH TAXONOMY VIEW */
+  /**
+   * PASS Year and month [YYYYMM]
+   * Drupal view Contexual filter sorts data by month
+   */
+  const month = useSelector(state => state.ReducerBlogSelectedDate.month);
+  const year = useSelector(state => state.ReducerBlogSelectedDate.year);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(ActionFetchBlogByTaxonomy(tid));
-  }, [dispatch, tid])
+    dispatch(ActionFetchBlogByTaxonomy(tid, year, month));
+  }, [dispatch, month, tid, year])
 
   const data = useSelector(state => state.ReducerFetchBlogByTaxonomy.data);
   const fetched = useSelector(state => state.ReducerFetchBlogByTaxonomy.fetched);
@@ -40,7 +49,7 @@ function BlogByTaxonomy() {
   const [pager, setPager] = useState(initial);
 
   const nextPage = () => {
-    pageGap > (dataLength - pageGap) &&
+    pager < (dataLength - pageGap) &&
       setPager(prevState => prevState + pageGap)
   }
 
@@ -53,19 +62,55 @@ function BlogByTaxonomy() {
   /** PAGINATION closed**************/
 
 
+  /** LOADING MESSAGE */
+  /** IF Year/Month both are not selected following message is displyed */
+  const LoadingMessage = (year, month) => {
+    if (year === '' || month === '') {
+      return "Please select Year and Month";
+    } else {
+      return "Loading";
+    }
+  }
+
+  /** Get Taxonomy Name */
+  const taxonomy = useSelector(state => state.ReducerFetchTaxonomy.data);
+  const taxoFetched = useSelector(state => state.ReducerFetchTaxonomy.fetched);
+  const [taxoName, setTaxoName] = useState();
+
+  console.log("mmmm", taxoFetched, taxonomy, taxoName);
+
+  useEffect(() => {
+    const name = taxoFetched && taxonomy.find(function (item) {
+      return item.tid === tid && item.name
+    })
+    setTaxoName(name.name);
+  }, [taxoFetched, taxonomy, tid])
+
+
+
 
   return (
     <div className="blog-one">
       <ColourMode />
+      {/** MAIN NAVIGATION */}
       <NavigationOne />
-      <div className={`${className} container mt-5 mb-5`}>
 
-        {/** TAXONOMY */}
+
+      <div className={`${className} container mt-5 mb-5`}>
+        {/** MAIN TITLE AT TOP */}
+        <div className="row">
+          <div className="col">
+            <Title />
+          </div>
+        </div>
+
+        {/** LIST OF TAXONOMY TERMS WITH NAVIGATION */}
         <div className="row">
           <div className="col">
             <Taxonomy />
           </div>
         </div>
+
 
         {/** BLOG */}
         <div className="row">
@@ -74,26 +119,33 @@ function BlogByTaxonomy() {
             <PopularBlog />
           </div>
 
+
           <div className="col-lg-9">
-            {/** BLOG BY TAXONOMY */}
-            <h1>Blog : Taxanomy?</h1>
-            {
-              fetched
-                ? slicedData.map(item => {
-                  return <section key={item.nid}>
-                    <h2>{item.title}</h2>
-                    <p>{item.created}</p>
-                    <div>[
-                      <DangerouslySetInnerHtml text={item.term_node_tid} substr={0} />
-                      ]</div>
-                    <DangerouslySetInnerHtml text={item.body} substr={250} />
-                    <Link to={`/${pagelink.readMore}/${item.nid}`}>Read More</Link>
-                  </section>
 
-                })
-                : <div>LOADING....</div>
-            }
+            {/** COLUMN TITLE  AND YEAR MONTH SELECTION FORM */}
+            <div className="row justify-content-between">
+              <h1>Blog :{taxoName}</h1>
+              <YearMonthDrops />
+            </div>
 
+            {/** LIST OF SELECTED TAXONOMY BLOGS */}
+            <div className="row">
+              {
+                fetched
+                  ? slicedData.map(item => {
+                    return <section key={item.nid}>
+                      <ViewBox
+                        nid={item.nid}
+                        dateFormated={item.created}
+                        taxoName={item.term_node_tid}
+                        title={item.title}
+                        body={item.body}
+                      />
+                    </section>
+                  })
+                  : LoadingMessage(year, month)
+              }
+            </div>
           </div>
         </div>
 
@@ -103,7 +155,7 @@ function BlogByTaxonomy() {
             <span onClick={() => prevPage()}> Prev </span>
           }
 
-          <p> ---  Page {(pager + pageGap) / pageGap}  --- </p>
+          <p> ---  Page {(pager + pageGap) / pageGap}  [{dataLength} - {pager}]--- </p>
 
           { /** Page gap defined in drupal view is 10 */
             <span onClick={() => nextPage()}> Next </span>

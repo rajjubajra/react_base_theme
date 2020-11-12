@@ -38,6 +38,7 @@ function Blogs(props) {
   /** LOADs devel data filtered or without filtered */
   const [blogData, setBlogData] = useState([]);
 
+
   useEffect(() => {
     /** Selected Year and Month from FORM OPTION */
     const showMonth = `${selectedMonth}-${selectedYear}`;

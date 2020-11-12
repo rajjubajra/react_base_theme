@@ -9,6 +9,7 @@ import BlogFilterForm from './BlogFilterForm';
 
 export const BlogOne = () => {
 
+
   /** DATA FETCHING */
   const develUrl = `${baseUrl.URL}/devel-data?_format=json`
   /** SET DATA INTO state */

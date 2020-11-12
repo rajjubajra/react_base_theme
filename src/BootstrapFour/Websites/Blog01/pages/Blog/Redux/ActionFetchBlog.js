@@ -2,9 +2,13 @@ import { actionTypes } from "./ActionTypes"
 import axios from "axios"
 import { baseUrl } from '../../../Config/dataurl';
 
-export const ActionFetchBlog = (page) => {
+export const ActionFetchBlog = (year, month) => {
 
+  const url = year === '' && month === ''
+    ? `${baseUrl.URL}/blog`
+    : `${baseUrl.URL}/blog/${year}${month}`;
 
+  console.log("ACTION URL", url);
 
   return function (dispatch) {
     dispatch({
@@ -13,13 +17,13 @@ export const ActionFetchBlog = (page) => {
 
     axios({
       method: 'GET',
-      url: `${baseUrl.URL}/blog?page=${page}`, //PAGER IS SET IN TO THE DRUPAL VIEW
+      url: `${url}`,
       headers: {
         'Accept': 'application/vnd.api+json'
       }
     })
       .then((res) => {
-        console.log("FETCH ACTION", res.data)
+        //console.log("FETCH ACTION", res.data)
         dispatch({
           type: actionTypes.BLOG_ONE_BLOG_FETCHED,
           data: res.data

@@ -24,6 +24,10 @@ import { ReducerFetchTaxonomy } from '../pages/Taxonomy/Redux/ReducerFetchTaxono
 /** Blog by Taxonomy */
 import { ReducerFetchBlogByTaxonomy } from '../pages/Blog/Redux/ReducerFetchBlogByTaxonomy';
 
+import { ReducerBlogSelectedDate } from '../pages/Blog/Redux/ReducerBlogSelectedDate';
+
+import { ReducerSearchForm } from '../pages/Blog/Redux/ReducerSearchForm';
+
 const reducer = combineReducers(
   {
     // reducerFetchData,
@@ -36,6 +40,8 @@ const reducer = combineReducers(
     ReducerFetchBlogByTaxonomy,
     ReducerFetchReadMore,
     ReducerFetchTaxonomy,
+    ReducerBlogSelectedDate,
+    ReducerSearchForm,
   }
 );
 

@@ -5,6 +5,7 @@ import ColourMode from '../components/ColourMode/ColourMode';
 import NewsLetters from './NewsLetters/NewsLetters';
 import PopularBlog from './PopularBlog/PopularBlog';
 import Taxonomy from './Taxonomy/Taxonomy';
+import Title from '../components/header/Titlte/Title';
 
 
 
@@ -21,6 +22,14 @@ export default function Home() {
       <NavigationOne />
 
       <div className="container mt-5">
+        {/** Title */}
+        <div className="row">
+          <div className="col">
+            <Title />
+          </div>
+        </div>
+
+        {/** TAXONOMY */}
         <div className="row">
           <div className="col">
             <Taxonomy />

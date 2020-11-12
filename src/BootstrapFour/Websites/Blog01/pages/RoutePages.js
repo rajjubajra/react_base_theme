@@ -7,6 +7,7 @@ import Blog from './Blog/Blog';
 import BlogByTaxonomy from './Blog/BlogByTaxonomy';
 import ReadMore from './ReadMore/ReadMore';
 import { pagelink } from '../PageLink';
+import BlogSearch from './Blog/BlogSearch';
 
 
 function RoutePages() {
@@ -16,9 +17,10 @@ function RoutePages() {
       <Route exact path={`/${pagelink.about}`} component={About} />
       <Route exact path={`/${pagelink.blogs}`} component={Blog} />
       <Route exact path={`/${pagelink.blogByTaxonomy}/:tid`} component={BlogByTaxonomy} />
-
       <Route exact path={`/${pagelink.contact}`} component={Contact} />
+
       <Route exact path={`/${pagelink.readMore}/:nid`} component={ReadMore} />
+      <Route exact path={`/${pagelink.search}`} component={BlogSearch} />
     </>
   )
 }
