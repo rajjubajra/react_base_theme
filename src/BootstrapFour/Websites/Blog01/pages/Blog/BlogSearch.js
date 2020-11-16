@@ -4,7 +4,7 @@ import Title from '../../components/header/Titlte/Title';
 import SearchForm from './Form/SearchForm';
 import { useSelector, useDispatch } from 'react-redux';
 import { ActionFetchBlog } from './Redux/ActionFetchBlog';
-import ViewBox from './ViewBox';
+import ViewBox from '../ViewBox';
 
 
 function BlogSearch() {
@@ -27,7 +27,6 @@ function BlogSearch() {
   const payload = useSelector(state => state.ReducerFetchBlog.payload);
   const fetched = useSelector(state => state.ReducerFetchBlog.fetched);
   //console.log("DATA TO SEARCH", data);
-
 
 
   /** PAGINATION *******************************************/
@@ -69,6 +68,15 @@ function BlogSearch() {
   console.log("QUERY RESULT", queryResult);
 
 
+  /** HILIGHTs the SEARCH RESULT THAT MATCH QUERY */
+  function highlightQury(query, text) {
+    let term = query; // search query we want to highlight in results 
+    let results = text; // search results
+    // "g" for global, "i" for case-insensitive
+    return results.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
+  }
+
+
   return (
     <>
       {/** MAIN NAVIGATION */}
@@ -96,8 +104,8 @@ function BlogSearch() {
               queryResult && slicedQuery.map(item => {
                 return <section key={item.nid}>
                   <ViewBox
-                    title={item.title}
-                    body={item.body}
+                    title={highlightQury(query, item.title)}
+                    body={highlightQury(query, item.body)}
                     dateNonFormated={item.created}
                     nid={item.nid}
                   />

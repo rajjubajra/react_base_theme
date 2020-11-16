@@ -71,20 +71,20 @@ export const NavigationOne = () => {
   /** Runs Onload */
   useEffect(() => {
     console.log(window.innerWidth)
-    window.innerWidth <= mobileBreakPoint
+    return window.innerWidth <= mobileBreakPoint
       ? setWindowSizeSmall(true)
       : setWindowSizeSmall(false);
   }, [])
 
   /** Runs while resize */
   useEffect(() => {
-    window.onresize = function () {
+    return window.onresize = function () {
       console.log(window.innerWidth)
       window.innerWidth <= mobileBreakPoint
         ? setWindowSizeSmall(true)
         : setWindowSizeSmall(false);
     }
-  })
+  }, [])
 
 
   /** SCROLL UP / DOWN EVENT */

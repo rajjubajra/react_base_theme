@@ -6,8 +6,9 @@ import PopularBlog from '../PopularBlog/PopularBlog';
 import Taxonomy from '../Taxonomy/Taxonomy';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import Title from '../../components/header/Titlte/Title';
-import ViewBox from './ViewBox';
+import ViewBox from '../ViewBox';
 import YearMonthDrops from './Form/YearMonthDrops';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 function Blog() {
@@ -52,6 +53,8 @@ function Blog() {
 
   const dispatch = useDispatch();
 
+
+
   /** YEAR AND MONTH SELECTED FROM YearMonthDrops.js */
   const month = useSelector(state => state.ReducerBlogSelectedDate.month);
   const year = useSelector(state => state.ReducerBlogSelectedDate.year);
@@ -66,12 +69,23 @@ function Blog() {
   const fetched = useSelector(state => state.ReducerFetchBlog.fetched);
 
 
+
   /** PAGINATION *******************************************/
   const initial = 0;
   const pageGap = 8;
   const dataLength = fetched && payload.length;
 
   const [pager, setPager] = useState(initial);
+
+  /**This useEffect will be 
+   * implimented while back to the page 
+   * from ReadMore page. In order to set the
+   * existing page number
+   */
+  const pagerStored = useSelector(state => state.ReducerPager.pager);
+  useEffect(() => {
+    pagerStored > 0 && setPager(pagerStored);
+  }, [pagerStored])
 
   const nextPage = () => {
     pager < (dataLength - pageGap) &&
@@ -82,6 +96,11 @@ function Blog() {
     pager >= pageGap &&
       setPager(prevState => prevState - pageGap)
   }
+
+  const location = useLocation();
+  const history = useHistory();
+  console.log("location", location, "history", history);
+
 
   const slicedData = fetched && payload.slice(pager, pager + pageGap);
   /** PAGINATION closed ******************************/
@@ -149,6 +168,7 @@ function Blog() {
                         taxoName={item.term_node_tid}
                         title={item.title}
                         body={item.body}
+                        pager={pager}
                       />
                     </section>
                   })

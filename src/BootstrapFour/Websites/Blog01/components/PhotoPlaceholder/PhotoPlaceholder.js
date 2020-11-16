@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionFetchPhoto } from '../../redux/actions/ActionFetchPhoto';
 import CustomPlaceholder from './CustomPlaceholder';

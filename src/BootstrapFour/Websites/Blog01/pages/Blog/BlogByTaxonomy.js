@@ -7,7 +7,7 @@ import PopularBlog from '../PopularBlog/PopularBlog';
 import Taxonomy from '../Taxonomy/Taxonomy';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import Title from '../../components/header/Titlte/Title';
-import ViewBox from './ViewBox';
+import ViewBox from '../ViewBox';
 import YearMonthDrops from './Form/YearMonthDrops';
 
 
@@ -16,8 +16,6 @@ function BlogByTaxonomy() {
   /** dyanamic color */
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
   //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
-
-
 
 
 
@@ -47,6 +45,17 @@ function BlogByTaxonomy() {
   const dataLength = fetched && data.length;
 
   const [pager, setPager] = useState(initial);
+
+  /**This useEffect will be 
+   * implimented while back to the page 
+   * from ReadMore page. In order to set the
+   * existing page number
+   */
+  const pagerStored = useSelector(state => state.ReducerPager.pager);
+  useEffect(() => {
+    pagerStored > 0 && setPager(pagerStored);
+  }, [pagerStored])
+
 
   const nextPage = () => {
     pager < (dataLength - pageGap) &&
@@ -80,12 +89,11 @@ function BlogByTaxonomy() {
   console.log("mmmm", taxoFetched, taxonomy, taxoName);
 
   useEffect(() => {
-    const name = taxoFetched && taxonomy.find(function (item) {
+    const isTaxoName = taxoFetched && taxonomy.find(function (item) {
       return item.tid === tid && item.name
     })
-    setTaxoName(name.name);
+    taxoFetched && setTaxoName(isTaxoName.name);
   }, [taxoFetched, taxonomy, tid])
-
 
 
 
@@ -140,6 +148,7 @@ function BlogByTaxonomy() {
                         taxoName={item.term_node_tid}
                         title={item.title}
                         body={item.body}
+                        pager={pager}
                       />
                     </section>
                   })

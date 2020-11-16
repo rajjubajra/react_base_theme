@@ -28,9 +28,10 @@ import { ReducerBlogSelectedDate } from '../pages/Blog/Redux/ReducerBlogSelected
 
 import { ReducerSearchForm } from '../pages/Blog/Redux/ReducerSearchForm';
 
+import { ReducerPager } from './reducers/ReducerPager';
+
 const reducer = combineReducers(
   {
-    // reducerFetchData,
     reducerSelectColourMode,
     reducerFetchPhoto,
     reducerFetchMenu,
@@ -42,6 +43,7 @@ const reducer = combineReducers(
     ReducerFetchTaxonomy,
     ReducerBlogSelectedDate,
     ReducerSearchForm,
+    ReducerPager,
   }
 );
 

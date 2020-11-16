@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import DangerouslySetInnerHtml from '../../components/DangerouslySetInnterHtml';
-import { pagelink } from '../../PageLink';
 import { ActionFetchPopularBlog } from './Redux/ActionFetchPopularBlog';
+import ViewBox from '../ViewBox';
 
 
 function PopularBlog() {
+
 
   const dispatch = useDispatch();
 
@@ -24,14 +23,15 @@ function PopularBlog() {
       {
         fetched
           ? data.map(item => {
-            return <div key={item.nid}>
-              <h3>{item.title}</h3>
-              <section>
-                <DangerouslySetInnerHtml text={item.body} substr={200} />
-              </section>
-              <Link to={`/${pagelink.readMore}/${item.nid}`}>Read More</Link>
-            </div>
-
+            const { nid, title, body } = item;
+            return <section key={nid}>
+              <ViewBox
+                nid={nid}
+                title={title}
+                body={body}
+                substr="200"
+              />
+            </section>
           })
           : 'LOADING.....'
       }

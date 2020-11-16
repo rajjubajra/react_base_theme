@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { ActionFetchReadMore } from './Redux/ActionFetchReadMore';
 import DangerouslySetInnerHtml from '../../components/DangerouslySetInnterHtml';
 import IconClose from '../../components/Icon/IconClose';
-import { pagelink } from '../../PageLink';
-import { Link } from 'react-router-dom';
+import { ActionPager } from '../../redux/actions/ActionPager';
 
 
 
-function ReadMore() {
+
+function ReadMore(props) {
+
 
   /** daynamic colour */
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
@@ -39,6 +40,16 @@ function ReadMore() {
   }
 
 
+  /** GO BACK NAV */
+  //const location = useLocation();
+  const history = useHistory();
+  const location = useLocation();
+  useEffect(() => {
+    dispatch(ActionPager(location.state.pager))
+  }, [dispatch, location])
+
+
+
   return (
     <div className={`${className} mb-5`}>
       <ColourMode />
@@ -58,7 +69,9 @@ function ReadMore() {
                 <DangerouslySetInnerHtml text={data[0].term_node_tid} substr={0} />
               </div>
               <div className="col">
-                <Link to={`/${pagelink.blogs}`}><IconClose /></Link>
+                <span onClick={() => history.goBack()}> <IconClose /></span>
+
+
               </div>
             </div>
 
@@ -87,10 +100,7 @@ function ReadMore() {
           </div>
           : <div><h1>Loading...</h1></div>
       }
-
-
-    </div>
+    </div >
   )
 }
-
 export default ReadMore
