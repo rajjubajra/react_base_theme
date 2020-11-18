@@ -6,6 +6,7 @@ const initalState = {
   fetch_error: '',
   data: [],
   dataLength: 0,
+  taxoId: 0,
 }
 
 export const ReducerFetchBlogByTaxonomy = (state = initalState, action) => {
@@ -21,7 +22,8 @@ export const ReducerFetchBlogByTaxonomy = (state = initalState, action) => {
       return {
         fetched: true,
         data: action.data,
-        dataLength: action.data.length
+        dataLength: action.data.length,
+        taxoId: action.taxoId
       }
     case actionTypes.BLOG_ONE_BY_TAXONOMY_FETCH_ERROR:
       return {

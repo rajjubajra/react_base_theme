@@ -1,44 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SocialMedia from '../../socalMedia/SocialMedia';
+import NavIconThreeLines from './NavIconThreeLines';
+
+
+
 
 /** Tablet and Mobile */
-
-const ulStyle = {
-  listStyle: "none"
-}
-
 function NavMobile(props) {
+
+  const [view, setView] = useState(false);
+
+
+  const ulStyle = {
+    position: "absolute",
+    top: view ? 40 : -200,
+    listStyle: "none",
+    transition: "top 1s linear",
+    background: "#fff",
+    padding: "10px 40px"
+  }
+
+
+  function handleIcon() {
+    view ? setView(false) : setView(true);
+  }
+
+
   return (
-    <div style={{
-      /** some reason transition duration not working  */
-      position: "absolute",
-      transitionProperty: "top",
-      transitionDuration: "2s",
-      top: props.view ? 43 : -200,
-      background: "rgba(255,255,255,0.90)",
-      width: "100%"
-    }}>
+    <div className="d-flex justify-content-between">
       {/** view: true/false based on display size */}
-      <ul style={ulStyle} className={`${props.view && props.windowSizeSmall ? 'flex-column' : 'd-none'}`}>
-        {
-          props.dataLength > 0 &&
-          props.data.map(item => {
-            const { id, path, name } = item;
-            return <li key={id}>
-              <Link
-                style={props.linkStyle}
-                to={`/${path}`}
-              >
-                {name}
-              </Link>
-            </li>
-          })
-        }
-      </ul>
+      <div style={{ position: "relative", top: 0 }}>
+
+        <span onClick={() => handleIcon()}><NavIconThreeLines /></span>
+
+        <ul style={ulStyle} >
+          {
+            props.dataLength > 0 &&
+            props.data.map(item => {
+              const { id, path, name } = item;
+              return <li key={id}>
+                <Link to={`/${path}`} >
+                  {name}
+                </Link>
+              </li>
+            })
+          }
+        </ul>
+      </div>
 
       <div
-        className="d-md-none d-lg-none d-xl-none"
         style={{
           position: "fixed",
           right: "10px",

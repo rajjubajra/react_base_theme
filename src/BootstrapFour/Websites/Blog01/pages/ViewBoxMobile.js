@@ -52,28 +52,28 @@ function ViewBox(props) {
 
 
       {/** LINK TO READ MORE PAGE */}
-      <div className="d-flex w-100 justify-content-between mt-5">
-
-        <div className="small-font">
-          {/** FORMATED DATE  OR NOT FORMATTED DATE */}
-          {dateFormated
-            ? dateFormated
-            : IsDateNonFormated(dateNonFormated)}
-        </div>
-
-        {/** NAVIGATE TO READ MORE PAGE */}
-        <div>
-          <Link
-            className="small-font text-uppercase ml-4 mt-1 btn-read-more"
-            to={{
-              pathname: `/${pagelink.readMore}/${nid}`,
-              state: { pager: pager }
-            }}>
-            Read More</Link>
-        </div>
 
 
+      <div className="small-font">
+        {/** FORMATED DATE  OR NOT FORMATTED DATE */}
+        {dateFormated
+          ? dateFormated
+          : IsDateNonFormated(dateNonFormated)}
       </div>
+
+      {/** NAVIGATE TO READ MORE PAGE */}
+      <div className="mt-3 d-flex justify-content-end">
+        <Link
+          className="small-font text-uppercase btn-read-more"
+          to={{
+            pathname: `/${pagelink.readMore}/${nid}`,
+            state: { pager: pager }
+          }}>
+          Read More</Link>
+      </div>
+
+
+
 
 
     </div>

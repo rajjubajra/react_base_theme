@@ -5,6 +5,8 @@ import SearchForm from './Form/SearchForm';
 import { useSelector, useDispatch } from 'react-redux';
 import { ActionFetchBlog } from './Redux/ActionFetchBlog';
 import ViewBox from '../ViewBox';
+import IconClose from '../../components/Icon/IconClose';
+import { useHistory } from 'react-router-dom';
 
 
 function BlogSearch() {
@@ -76,6 +78,9 @@ function BlogSearch() {
     return results.replace(new RegExp(term, "gi"), (match) => `<mark>${match}</mark>`);
   }
 
+  /** GO BACK BUTTON  : REACT-ROUTER  */
+  const history = useHistory();
+
 
   return (
     <>
@@ -83,6 +88,9 @@ function BlogSearch() {
       <NavigationOne />
 
       <div className="container mb-5 mt-5 min-vh-100">
+        <div className="row justify-content-end">
+          <span onClick={() => history.goBack()}><IconClose /></span>
+        </div>
         {/** Title */}
         <div className="row">
           <div className="col">

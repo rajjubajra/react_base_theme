@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ActionFetchBlog } from './Redux/ActionFetchBlog';
-import PopularBlog from '../PopularBlog/PopularBlog';
-import Taxonomy from '../Taxonomy/Taxonomy';
+import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import Title from '../../components/header/Titlte/Title';
-import ViewBox from '../ViewBox';
-import YearMonthDrops from './Form/YearMonthDrops';
 import { useHistory, useLocation } from 'react-router-dom';
+import BlogDesktop from './BlogDesktop';
+import BlogTablet from './BlogTablet';
+import BlogMobile from './BlogMobile';
+
 
 
 function Blog() {
@@ -16,7 +16,6 @@ function Blog() {
   /** dyanamic color */
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
   //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
-
 
   /** HOW DOES IT WORK */
   /**
@@ -46,14 +45,10 @@ function Blog() {
    *   - PAGER
    *      - Item to display: full | Paged, 0 items
    *   - SAVE VIEW : BLOG 
-   * 
    */
 
 
-
   const dispatch = useDispatch();
-
-
 
   /** YEAR AND MONTH SELECTED FROM YearMonthDrops.js */
   const month = useSelector(state => state.ReducerBlogSelectedDate.month);
@@ -67,8 +62,6 @@ function Blog() {
   /**  FETCH DATA FROM REDUCER */
   const payload = useSelector(state => state.ReducerFetchBlog.payload);
   const fetched = useSelector(state => state.ReducerFetchBlog.fetched);
-
-
 
   /** PAGINATION *******************************************/
   const initial = 0;
@@ -101,12 +94,11 @@ function Blog() {
   const history = useHistory();
   console.log("location", location, "history", history);
 
-
   const slicedData = fetched && payload.slice(pager, pager + pageGap);
   /** PAGINATION closed ******************************/
 
 
-  /** LOADING MESSAGE */
+  /** LOADING MESSAGE while selecting Month and Year */
   /** IF Year/Month both are not selected following message is displyed */
   const LoadingMessage = (year, month) => {
     if (year === '' || month === '') {
@@ -117,83 +109,70 @@ function Blog() {
   }
 
 
+  const title = "Recent";
+
 
   return (
-    <div className="blog-one">
+    <div className={`${className} container-fluid`}>
       <ColourMode />
 
       {/** MAIN NAVIGATION */}
-      <NavigationOne />
+      <div className="row">
+        <NavigationOne />
+      </div>
 
-
-      <div className={`${className} container mt-5 mb-5`}>
-        <div className="row">
-          <div className="col">
-            <Title />
-          </div>
-        </div>
-        {/** TAXONOMY TERMS */}
-        <div className="row">
-          <div className="col">
-            <Taxonomy />
-          </div>
-        </div>
-
-
-        <div className="row">
-
-          {/** POPULAR BLOG */}
-          <div className="col-lg-3">
-            <PopularBlog />
-          </div>
-
-
-
-          {/** ALL BLOGS  LISTING */}
-          <div className="col-lg-9">
-            {/** Blog sub-title and Year Month drops */}
-            <div className="row justify-content-between">
-              <h1>Blog</h1>
-              <YearMonthDrops />
-            </div>
-            {/** BLOG LISTING */}
-            <div className="row">
-              {
-                fetched
-                  ? slicedData.map(item => {
-                    return <section key={item.nid}>
-                      <ViewBox
-                        nid={item.nid}
-                        dateNonFormated={item.created}
-                        taxoName={item.term_node_tid}
-                        title={item.title}
-                        body={item.body}
-                        pager={pager}
-                      />
-                    </section>
-                  })
-                  : LoadingMessage(year, month)
-              }
-            </div>
-
-
-          </div>
-        </div>
-
-        {/** PAGE NAVIGATIONS */}
-        <div className="row justify-content-center mt-4 mb-5">
-          {
-            <span onClick={() => prevPage()}> Prev </span>
-          }
-
-          <p> ---  Page {(pager + pageGap) / pageGap}  [{dataLength} - {pager}]--- </p>
-
-          { /** Page gap defined in drupal view is 10 */
-            <span onClick={() => nextPage()}> Next </span>
-          }
+      {/** TITLE */}
+      <div className="row">
+        <div className="col">
+          <Title />
         </div>
       </div>
+
+      <div className="row d-none d-lg-block d-xl-block">
+        <BlogDesktop
+          title={title}
+          nextPage={nextPage}
+          prevPage={prevPage}
+          fetched={fetched}
+          slicedData={slicedData}
+          LoadingMessage={LoadingMessage}
+          pager={pager}
+          pageGap={pageGap}
+          dataLength={dataLength}
+        />
+      </div>
+
+      <div className="row d-none d-md-block d-lg-none">
+        <BlogTablet
+          title={title}
+          nextPage={nextPage}
+          prevPage={prevPage}
+          fetched={fetched}
+          slicedData={slicedData}
+          LoadingMessage={LoadingMessage}
+          pager={pager}
+          pageGap={pageGap}
+          dataLength={dataLength}
+        />
+      </div>
+
+      <div className="row d-block d-md-none d-lg-none d-xl-none">
+        <BlogMobile
+          nextPage={nextPage}
+          prevPage={prevPage}
+          fetched={fetched}
+          slicedData={slicedData}
+          LoadingMessage={LoadingMessage}
+          pager={pager}
+          pageGap={pageGap}
+          dataLength={dataLength}
+        />
+      </div>
+
+
+
     </div>
+
   )
 }
 export default Blog

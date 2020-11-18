@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import './BlogByTaxonomy.scss';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ActionFetchBlogByTaxonomy } from './Redux/ActionFetchBlogByTaxonomy';
-import PopularBlog from '../PopularBlog/PopularBlog';
-import Taxonomy from '../Taxonomy/Taxonomy';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import Title from '../../components/header/Titlte/Title';
-import ViewBox from '../ViewBox';
-import YearMonthDrops from './Form/YearMonthDrops';
+import BlogByTaxonomyDesktop from './BlogByTaxonomyDesktop';
+import BlogByTaxonomyTablet from './BlogByTaxonomyTablet';
+import BlogByTaxonomyMobile from './BlogByTaxonomyMobile';
 
 
 
-function BlogByTaxonomy() {
+function BlogByTaxonomy(props) {
   /** dyanamic color */
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
   //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
@@ -98,13 +98,13 @@ function BlogByTaxonomy() {
 
 
   return (
-    <div className="blog-one">
+    <div className={`${className} blog-one`}>
       <ColourMode />
       {/** MAIN NAVIGATION */}
       <NavigationOne />
 
 
-      <div className={`${className} container mt-5 mb-5`}>
+      <div className={`container-fluid mt-5 mb-5`}>
         {/** MAIN TITLE AT TOP */}
         <div className="row">
           <div className="col">
@@ -112,65 +112,52 @@ function BlogByTaxonomy() {
           </div>
         </div>
 
-        {/** LIST OF TAXONOMY TERMS WITH NAVIGATION */}
-        <div className="row">
-          <div className="col">
-            <Taxonomy />
-          </div>
-        </div>
+
 
 
         {/** BLOG */}
-        <div className="row">
-          {/** POPULAR BLOG */}
-          <div className="col-lg-3">
-            <PopularBlog />
-          </div>
-
-
-          <div className="col-lg-9">
-
-            {/** COLUMN TITLE  AND YEAR MONTH SELECTION FORM */}
-            <div className="row justify-content-between">
-              <h1>Blog :{taxoName}</h1>
-              <YearMonthDrops />
-            </div>
-
-            {/** LIST OF SELECTED TAXONOMY BLOGS */}
-            <div className="row">
-              {
-                fetched
-                  ? slicedData.map(item => {
-                    return <section key={item.nid}>
-                      <ViewBox
-                        nid={item.nid}
-                        dateFormated={item.created}
-                        taxoName={item.term_node_tid}
-                        title={item.title}
-                        body={item.body}
-                        pager={pager}
-                      />
-                    </section>
-                  })
-                  : LoadingMessage(year, month)
-              }
-            </div>
-          </div>
+        {/** DESKTOP VIEW */}
+        <div className="row blog-by-taxonomy d-none d-lg-block d-xl-block">
+          <BlogByTaxonomyDesktop
+            taxoName={taxoName}
+            fetched={fetched}
+            slicedData={slicedData}
+            pager={pager}
+            pageGap={pageGap}
+            dataLength={dataLength}
+            prevPage={prevPage}
+            nextPage={nextPage}
+            LoadingMessage={LoadingMessage}
+          />
         </div>
-
-        {/** PAGE NAVIGATIONS */}
-        <div className="row justify-content-center mt-4 mb-5">
-          {
-            <span onClick={() => prevPage()}> Prev </span>
-          }
-
-          <p> ---  Page {(pager + pageGap) / pageGap}  [{dataLength} - {pager}]--- </p>
-
-          { /** Page gap defined in drupal view is 10 */
-            <span onClick={() => nextPage()}> Next </span>
-          }
+        {/** TABLET VIEW */}
+        <div className="row blog-by-taxonomy d-none d-md-block d-lg-none">
+          <BlogByTaxonomyTablet
+            taxoName={taxoName}
+            fetched={fetched}
+            slicedData={slicedData}
+            pager={pager}
+            pageGap={pageGap}
+            dataLength={dataLength}
+            prevPage={prevPage}
+            nextPage={nextPage}
+            LoadingMessage={LoadingMessage}
+          />
         </div>
-
+        {/** MOBILE VIEW */}
+        <div className="row blog-by-taxonomy d-block d-md-none d-lg-none d-xl-none">
+          <BlogByTaxonomyMobile
+            taxoName={taxoName}
+            fetched={fetched}
+            slicedData={slicedData}
+            pager={pager}
+            pageGap={pageGap}
+            dataLength={dataLength}
+            prevPage={prevPage}
+            nextPage={nextPage}
+            LoadingMessage={LoadingMessage}
+          />
+        </div>
 
       </div>
     </div>

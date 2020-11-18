@@ -28,7 +28,8 @@ export const ActionFetchBlogByTaxonomy = (tid, year, month) => {
         console.log("FETCH ACTION", res.data)
         dispatch({
           type: actionTypes.BLOG_ONE_BY_TAXONOMY_FETCHED,
-          data: res.data
+          data: res.data,
+          taxoId: tid
         })
       })
       .catch(err => {

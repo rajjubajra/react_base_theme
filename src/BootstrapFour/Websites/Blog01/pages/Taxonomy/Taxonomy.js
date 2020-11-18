@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ActionFetchTaxonomy } from './Redux/ActionFetchTaxonomy';
-import { pagelink } from '../../PageLink';
-import { Link } from 'react-router-dom';
+import TaxonomyDesktop from './TaxonomyDesktop';
+import TaxonomyMobile from './TaxonomyMobile';
 
 
 function Taxonomy() {
-
-
 
   const dispatch = useDispatch();
 
@@ -17,28 +15,14 @@ function Taxonomy() {
 
 
 
-
-  const data = useSelector(state => state.ReducerFetchTaxonomy.data);
-  const fetched = useSelector(state => state.ReducerFetchTaxonomy.fetched);
-
-
-
   return (
-    <div>
-      <ul className="list-group list-group-horizontal">
-        {
-          fetched
-            ? data.map(item => {
-              return <li key={item.tid} className="list-group-item">
-                <Link
-                  to={`/${pagelink.blogByTaxonomy}/${item.tid}`}>
-                  {item.name}
-                </Link>
-              </li>
-            })
-            : 'Loading...'
-        }
-      </ul>
+    <div className="container mb-5">
+      <div className="row d-none d-lg-block d-xl-block">
+        <TaxonomyDesktop />
+      </div>
+      <div className="row d-block d-sm-block d-md-block d-lg-none d-xl-none">
+        <TaxonomyMobile />
+      </div>
     </div>
   )
 }

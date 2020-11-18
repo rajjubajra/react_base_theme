@@ -18,7 +18,7 @@ const titleStyle = {
 }
 
 
-function NavDesktop(props) {
+function NavTablet(props) {
   return (
     <div className="d-flex justify-content-between w-100">
 
@@ -47,4 +47,4 @@ function NavDesktop(props) {
   )
 }
 
-export default NavDesktop
+export default NavTablet

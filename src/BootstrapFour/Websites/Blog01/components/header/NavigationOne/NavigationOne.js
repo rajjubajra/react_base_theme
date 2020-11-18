@@ -1,94 +1,74 @@
 import React, { useEffect, useState } from 'react';
-import Navigation from './Navigation';
-import NavIconThreeLines from './NavIconThreeLines';
-import { pagelink } from '../../../PageLink';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { actionFetchMenu } from './Redux/actionFetchMenu';
+import NavDesktop from './NavDesktop';
+import NavMobile from './NavMobile';
 
 
-const data = [
-  {
-    id: "1",
-    name: "Home",
-    link: pagelink.home
-  },
-  {
-    id: "2",
-    name: "Tour",
-    link: pagelink.tour
-  },
-  {
-    id: 3,
-    name: "News",
-    link: pagelink.news
-  },
-  {
-    id: 4,
-    name: "About",
-    link: pagelink.about
-  },
-  {
-    id: 5,
-    name: "Gallery",
-    link: pagelink.gallery
-  },
-  {
-    id: 6,
-    name: "Music",
-    link: pagelink.albums
-  },
-  {
-    id: 8,
-    name: "Contact",
-    link: pagelink.contact
-  },
-  {
-    id: 9,
-    name: "Back",
-    link: pagelink.back
-  },
-]
+// const data = [
+//   {
+//     id: "1",
+//     name: "Home",
+//     link: pagelink.home
+//   },
+//   {
+//     id: "2",
+//     name: "Tour",
+//     link: pagelink.tour
+//   },
+//   {
+//     id: 3,
+//     name: "News",
+//     link: pagelink.news
+//   },
+//   {
+//     id: 4,
+//     name: "About",
+//     link: pagelink.about
+//   },
+//   {
+//     id: 5,
+//     name: "Gallery",
+//     link: pagelink.gallery
+//   },
+//   {
+//     id: 6,
+//     name: "Music",
+//     link: pagelink.albums
+//   },
+//   {
+//     id: 8,
+//     name: "Contact",
+//     link: pagelink.contact
+//   },
+//   {
+//     id: 9,
+//     name: "Back",
+//     link: pagelink.back
+//   },
+// ]
+
 
 export const NavigationOne = () => {
 
-  const dispatch = useDispatch();
 
   /** fetch menu data  */
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actionFetchMenu());
   }, [dispatch])
-  /**
 
-  /** Window Breakpoint for mobile and tablet display */
-  const mobileBreakPoint = 768;
 
-  /** state "true" if browser size is less than "mobileBreakPoint" */
-  const [windowSizeSmall, setWindowSizeSmall] = useState('');
 
-  /** OnClick "Mobile Menu Icon[Three-lines], Veiw mobile menu" */
-  const [view, setView] = useState(false);
-
-  /** Runs Onload */
-  useEffect(() => {
-    console.log(window.innerWidth)
-    return window.innerWidth <= mobileBreakPoint
-      ? setWindowSizeSmall(true)
-      : setWindowSizeSmall(false);
-  }, [])
-
-  /** Runs while resize */
-  useEffect(() => {
-    return window.onresize = function () {
-      console.log(window.innerWidth)
-      window.innerWidth <= mobileBreakPoint
-        ? setWindowSizeSmall(true)
-        : setWindowSizeSmall(false);
-    }
-  }, [])
+  /** get data from reducer */
+  const data = useSelector(state => state.reducerFetchMenu.data);
+  const dataLength = useSelector(state => state.reducerFetchMenu.dataLength);
+  const linkPrefix = useSelector(state => state.reducerFetchMenu.linkPrefix);
 
 
   /** SCROLL UP / DOWN EVENT */
   const [scrollDirection, setScrollDirection] = useState(null);
+
 
   useEffect(() => {
     var lastScrollTop = 0;
@@ -109,30 +89,44 @@ export const NavigationOne = () => {
   }, [])
 
 
+  const linkStyle = {
+    fontSize: "clamp(0.7rem, 5vw, 0.8rem)",
+    color: "#000",
+    letterSpace: "0.15rem",
+    fontWeight: "300",
+    textTransform: "uppercase",
+    margin: "0px 10px",
+    textDecoration: "none",
+    listStyle: "none"
+  }
+
+
   return (
     <div style={{
       height: "45px",
       position: scrollDirection === -1 ? "sticky" : "relative",
       top: "0px",
       zIndex: "20",
-      background: "rgba(233, 236, 239, 0.41)"
+      background: "rgba(255, 255, 255, 0.90)",
+      width: "100%"
     }}>
-      {/** ICON FOR TABLET AND MOBILE */}
-      <div
-        className={`${windowSizeSmall ? '' : 'd-none'}`}
-        onClick={() => view ? setView(false) : setView(true)}
-      >
-        <NavIconThreeLines />
-      </div>
 
-      {/** NAVIGATION MENU */}
-      <div className="d-flex justify-content-between">
-        {windowSizeSmall === ''
-          ? ''
-          : <Navigation
-            data={data}
-            windowSizeSmall={windowSizeSmall}
-            view={view} />}
+      {/** NAVIGATION MENU DESKTOP */}
+      <div className="d-none d-lg-block d-xl-block w-100">
+        <NavDesktop
+          data={data}
+          dataLength={dataLength}
+          linkPrefix={linkPrefix}
+          linkStyle={linkStyle}
+        />
+      </div>
+      <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+        <NavMobile
+          data={data}
+          dataLength={dataLength}
+          linkPrefix={linkPrefix}
+          linkStyle={linkStyle}
+        />
       </div>
     </div>
   )

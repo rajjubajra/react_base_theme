@@ -41,11 +41,24 @@ function YearMonthDrops(props) {
 
   // console.log('month', props.month, 'year', props.year);
 
+  const selectStyle = {
+    fontSize: "clamp(0.75rem, 3vw, 1rem)",
+    fontWeight: "100",
+    border: "1px solid #ccc",
+    margin: "0px 3px",
+    padding: "3px 10px"
+  }
+
+  const optionStyle = {
+    fontSize: "clamp(0.75rem, 3vw, 1rem)",
+    fontWeight: "100",
+  }
 
 
   return (
     <div>
       <select
+        style={selectStyle}
         name="year"
         value={props.year}
         onChange={(e) => dispatch(ActionSelectedYear(e.target.value))}
@@ -61,6 +74,7 @@ function YearMonthDrops(props) {
         } */}
       </select>
       <select
+        style={selectStyle}
         name="month"
         value={props.month}
         onChange={(e) => dispatch(ActionSelectedMonth(e.target.value))}

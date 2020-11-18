@@ -13,7 +13,8 @@ function Navigation(props) {
   const data = useSelector(state => state.reducerFetchMenu.data);
   const dataLength = useSelector(state => state.reducerFetchMenu.dataLength);
   const linkPrefix = useSelector(state => state.reducerFetchMenu.linkPrefix);
-  //console.log("NAVIGATION PAGE", data);
+
+
 
 
   const linkStyle = {
