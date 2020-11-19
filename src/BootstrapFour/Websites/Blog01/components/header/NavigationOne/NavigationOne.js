@@ -103,7 +103,7 @@ export const NavigationOne = () => {
 
   return (
     <div style={{
-      height: "45px",
+      height: "70px",
       position: scrollDirection === -1 ? "sticky" : "relative",
       top: "0px",
       zIndex: "20",

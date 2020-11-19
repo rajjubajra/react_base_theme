@@ -114,62 +114,64 @@ function Blog() {
 
 
   return (
-    <div className={`${className} container-fluid`}>
+    <div className={`${className} blog-one`}>
       <ColourMode />
 
       {/** MAIN NAVIGATION */}
-      <div className="row">
-        <NavigationOne />
-      </div>
+      <NavigationOne />
+
 
       {/** TITLE */}
-      <div className="row">
-        <div className="col">
-          <Title title="Blogs" />
+      <div className="container-fluid mt-5 mb-5">
+
+        <div className="row">
+          <div className="col">
+            <Title title="Blogs" />
+          </div>
         </div>
-      </div>
 
-      <div className="row d-none d-lg-block d-xl-block">
-        <BlogDesktop
-          title={title}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          fetched={fetched}
-          slicedData={slicedData}
-          LoadingMessage={LoadingMessage}
-          pager={pager}
-          pageGap={pageGap}
-          dataLength={dataLength}
-        />
-      </div>
+        <div className="row d-none d-lg-block d-xl-block">
+          <BlogDesktop
+            title={title}
+            nextPage={nextPage}
+            prevPage={prevPage}
+            fetched={fetched}
+            slicedData={slicedData}
+            LoadingMessage={LoadingMessage}
+            pager={pager}
+            pageGap={pageGap}
+            dataLength={dataLength}
+          />
+        </div>
 
-      <div className="row d-none d-md-block d-lg-none">
-        <BlogTablet
-          title={title}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          fetched={fetched}
-          slicedData={slicedData}
-          LoadingMessage={LoadingMessage}
-          pager={pager}
-          pageGap={pageGap}
-          dataLength={dataLength}
-        />
-      </div>
+        <div className="row d-none d-md-block d-lg-none">
+          <BlogTablet
+            title={title}
+            nextPage={nextPage}
+            prevPage={prevPage}
+            fetched={fetched}
+            slicedData={slicedData}
+            LoadingMessage={LoadingMessage}
+            pager={pager}
+            pageGap={pageGap}
+            dataLength={dataLength}
+          />
+        </div>
 
-      <div className="row d-block d-md-none d-lg-none d-xl-none">
-        <BlogMobile
-          nextPage={nextPage}
-          prevPage={prevPage}
-          fetched={fetched}
-          slicedData={slicedData}
-          LoadingMessage={LoadingMessage}
-          pager={pager}
-          pageGap={pageGap}
-          dataLength={dataLength}
-        />
-      </div>
+        <div className="row d-block d-md-none d-lg-none d-xl-none">
+          <BlogMobile
+            nextPage={nextPage}
+            prevPage={prevPage}
+            fetched={fetched}
+            slicedData={slicedData}
+            LoadingMessage={LoadingMessage}
+            pager={pager}
+            pageGap={pageGap}
+            dataLength={dataLength}
+          />
+        </div>
 
+      </div>
 
       <Footer />
     </div>
