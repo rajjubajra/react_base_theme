@@ -5,10 +5,10 @@ function D8WebForm() {
     <iframe
       src="//yellow-website.com/d8-react-base-theme-backend/webform/contact_form/share"
       title="Contact form | D8 React Base Theme Backend" className="webform-share-iframe"
-      frameborder="0"
+      frameBorder="0"
       allow="geolocation; microphone; camera"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullscreen="true"
       style={{ width: "100%", minHeight: "600px", border: "none" }}></iframe>
   )
 }

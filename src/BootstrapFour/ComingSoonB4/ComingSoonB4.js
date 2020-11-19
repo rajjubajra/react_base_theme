@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './ComingSoonB4.scss';
 import axios from 'axios';
-import { comingSoonForLocal, comingSoonForRemote } from './Config';
+import { comingSoonForRemote } from './Config';
 import Page from './Page';
 import Loading from './Loading';
 
 
 function ComingSoonB4() {
+
+
   const [logoHorizontal, setLogoHorizontal] = useState('');
   const [logoSquare, setLogoSquare] = useState('');
   const [bodyMsg, setBodyMsg] = useState('Under Construction');
@@ -15,15 +17,12 @@ function ComingSoonB4() {
   const [linkContact, setLinkContact] = useState('');
 
 
-  const currentUrl = window.location.href;
-  //const dataUrl = comingSoonForLocal.URL
 
 
   useEffect(() => {
 
-    let dataUrl = currentUrl === 'https://yellow-website.com/'
-      ? comingSoonForRemote.URL
-      : comingSoonForLocal.URL;
+
+    const dataUrl = comingSoonForRemote.URL;
 
     axios({
       method: 'GET',
@@ -42,15 +41,11 @@ function ComingSoonB4() {
         setLinkContact(res.data[0].field_link_label[2]);
       })
       .catch(err => console.log(err))
-  }, [currentUrl])
+  }, [])
 
   useEffect(() => {
     window.scroll(0, 0)
   }, [])
-
-
-
-  console.log("CURENT URL", currentUrl,);
 
 
 
