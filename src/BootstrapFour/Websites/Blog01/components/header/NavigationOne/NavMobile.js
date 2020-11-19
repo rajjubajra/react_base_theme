@@ -18,7 +18,8 @@ function NavMobile(props) {
     listStyle: "none",
     transition: "top 1s linear",
     background: "#fff",
-    padding: "10px 40px"
+    padding: "10px 40px",
+    minWidth: "250px"
   }
 
 

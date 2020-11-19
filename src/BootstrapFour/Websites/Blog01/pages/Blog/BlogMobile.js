@@ -56,8 +56,11 @@ function BlogMobile(props) {
         <div className="row justify-content-center mt-5">
           <h2 className="text-uppercase">{titleArr[view]}</h2>
         </div>
+
         <div className="row justify-content-center">
-          <YearMonthDrops />
+          <div className={`${view === 0 ? 'd-block' : 'd-none'}`}>
+            <YearMonthDrops />
+          </div>
         </div>
 
 
@@ -95,7 +98,7 @@ function BlogMobile(props) {
 
 
         {/** PAGE NAVIGATIONS */}
-        <div className={`${view === 0 ? 'd-block' : 'd-none'} row justify-content-center mt-4 mb-5`}>
+        <div className={`${view === 0 ? 'flex' : 'd-none'} row justify-content-center mt-4 mb-5`}>
           {
             <span onClick={() => props.prevPage()}><BoxArrowInLeft /></span>
           }

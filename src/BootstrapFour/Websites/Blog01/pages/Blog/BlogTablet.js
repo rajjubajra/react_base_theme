@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PopularBlog from '../PopularBlog/PopularBlog';
 import Taxonomy from '../Taxonomy/Taxonomy';
 import ViewBox from '../ViewBox';
@@ -18,6 +18,13 @@ function BlogTablet(props) {
   const year = useSelector(state => state.ReducerBlogSelectedDate.year);
 
 
+
+
+  /** View Recent = 0, Popular = 1 */
+  const [view, setView] = useState(0)
+
+
+
   return (
     <>
 
@@ -25,24 +32,60 @@ function BlogTablet(props) {
 
         <div className="row">
 
-
+          {/** Taxonomy Nav */}
           <div className="col-md-4">
             <Taxonomy />
           </div>
 
+
           {/** ALL BLOGS  LISTING */}
           <div className="col-md-8">
+
             {/** Blog sub-title and Year Month drops */}
             <div className="row justify-content-between">
-              <div className="col-md-11 d-flex justify-content-between">
-                <h2 className="text-uppercase">{props.title}</h2>
-                <YearMonthDrops />
+              <div
+                style={{
+                  borderRight: view === 0 ? "1px solid #ccc" : "none",
+                  borderRadius: "0px 15px 0px 0px",
+                  borderBottom: view !== 0 ? "1px solid #ccc" : 'none',
+                }}
+                className="col-md-3">
+                <h4
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setView(0)}
+                  className="text-uppercase">Recent</h4>
               </div>
+              <div
+                style={{
+                  borderLeft: view === 1 ? "1px solid #ccc" : "none",
+                  borderRadius: "15px 0px 0px 0px",
+                  borderBottom: view !== 1 ? "1px solid #ccc" : 'none',
+                }}
+                className="col-md-3">
+                <h4
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setView(1)}
+                  className="text-uppercase">Popular</h4>
+              </div>
+
+              {/** DROPDOWN YEAR AND MONTH SELECTION */}
+              <div className="col-md-6 d-flex justify-content-end">
+                <div className={`${view === 1 ? 'd-none' : 'd-block'}`}>
+                  <YearMonthDrops />
+                </div>
+
+              </div>
+
+
+
             </div>
 
-            {/** BLOG LISTING */}
 
-            <div className="row">
+
+
+            {/** BLOG LISTING */}
+            {/** RECENT BLOG */}
+            <div className={`row ${view === 0 ? 'd-block' : 'd-none'}`}>
               <div className="col-md-11">
                 {
                   props.fetched
@@ -62,12 +105,18 @@ function BlogTablet(props) {
                 }
               </div>
             </div>
+
+            {/** POPULAR BLOG */}
+            <div className={`row ${view === 1 ? 'd-block' : 'd-none'}`}>
+              <PopularBlog hideTitle={true} />
+            </div>
           </div>
         </div>
 
 
         {/** PAGE NAVIGATIONS */}
-        <div className="row justify-content-center mt-4 mb-5">
+        <div className={`${view === 0 ? 'd-flex' : 'd-none'} row justify-content-center mt-4 mb-5`}>
+
           {
             <span onClick={() => props.prevPage()}><BoxArrowInLeft /></span>
           }
@@ -80,6 +129,7 @@ function BlogTablet(props) {
           { /** Page gap defined in drupal view is 10 */
             <span onClick={() => props.nextPage()}><BoxArrowInRight /></span>
           }
+
         </div>
 
       </div>

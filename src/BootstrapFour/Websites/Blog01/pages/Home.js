@@ -4,8 +4,10 @@ import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
 import NewsLetters from './NewsLetters/NewsLetters';
 import PopularBlog from './PopularBlog/PopularBlog';
-import Taxonomy from './Taxonomy/Taxonomy';
 import Title from '../components/header/Titlte/Title';
+import Footer from '../components/footer/Footer';
+import HomeDesktop from './HomeDesktop';
+import HomeTablet from './HomeTablet';
 
 
 
@@ -21,29 +23,22 @@ export default function Home() {
       <ColourMode />
       <NavigationOne />
 
-      <div className="container mt-5">
-        {/** Title */}
-        <div className="row">
-          <div className="col">
-            <Title />
-          </div>
-        </div>
+      {/** Title */}
+      <Title title="Blogs" />
 
-        {/** TAXONOMY */}
-        <div className="row">
-          <div className="col">
-            <Taxonomy />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-3">
-            <PopularBlog />
-          </div>
-          <div className="col-lg-9">
-            <NewsLetters />
-          </div>
-        </div>
+      {/** DESKTOP VIEW */}
+      <div className="d-none d-lg-block d-xl-block ">
+        <HomeDesktop />
       </div>
+
+      {/** TABLET VIEW */}
+      <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+        <HomeTablet />
+      </div>
+
+      {/** MOBILE VIEW */}
+
+      <Footer />
 
     </div>
   )

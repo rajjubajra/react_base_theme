@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ActionFetchNewsLetters } from '../NewsLetters/Redux/ActionFetchNewsLetters';
-import ViewBox from '../ViewBox';
+import NewsLetterView from './NewsLetterView';
 
 
 function NewsLetters() {
@@ -18,25 +18,17 @@ function NewsLetters() {
 
   console.log("NEWS LETTERS", news, fetched);
 
+  const title = 'News Letter';
+
 
   return (
     <div>
-      <h1>News letters</h1>
-      {
-        fetched
-          ? news.map(item => {
-            const { title, body, nid, created } = item
-            return <section key={nid} className="mt-5 mb-5">
-              <ViewBox
-                nid={nid}
-                dateNonFormated={created}
-                title={title}
-                body={body}
-              />
-            </section>
-          })
-          : "LOADING...."
-      }
+      <NewsLetterView
+        title={title}
+        fetched={fetched}
+        news={news}
+      />
+
     </div>
   )
 

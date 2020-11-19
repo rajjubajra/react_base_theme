@@ -19,7 +19,8 @@ function TaxonomyDesktop() {
   }
 
   const liStyle = {
-    margin: "0px 5px",
+    margin: "0px 8px",
+    textTransform: "uppercase"
   }
 
 
@@ -37,6 +38,7 @@ function TaxonomyDesktop() {
                       {item.name}
                     </Link></b>
                     : <Link
+                      className="medium-font"
                       to={`/${pagelink.blogByTaxonomy}/${item.tid}`}>
                       {item.name}
                     </Link>

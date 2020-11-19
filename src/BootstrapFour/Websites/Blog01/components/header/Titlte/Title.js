@@ -7,7 +7,7 @@ import TitleTablet from './TitleTablet';
 
 function Title(props) {
 
-  const title = 'Blogs';
+  //const title = 'Blogs';
   const searchIcon = "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Icon%20ionic-ios-search.png";
 
   const mainDivStyle = {
@@ -24,7 +24,7 @@ function Title(props) {
       <div className="d-none d-lg-block d-xl-block">
         <TitleDesktop
           mainDivStyle={mainDivStyle}
-          title={title}
+          title={props.title}
           searchIcon={searchIcon}
           hideLink={props.hideLink} /** ?? */
         />
@@ -32,7 +32,7 @@ function Title(props) {
       <div className="d-none d-md-block d-lg-none">
         <TitleTablet
           mainDivStyle={mainDivStyle}
-          title={title}
+          title={props.title}
           searchIcon={searchIcon}
           hideLink={props.hideLink} /** ?? */
         />
@@ -40,7 +40,7 @@ function Title(props) {
       <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <TitleMobile
           mainDivStyle={mainDivStyle}
-          title={title}
+          title={props.title}
           searchIcon={searchIcon}
           hideLink={props.hideLink} /** ?? */
         />

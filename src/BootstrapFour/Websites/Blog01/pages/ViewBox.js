@@ -54,7 +54,7 @@ function ViewBox(props) {
       {/** LINK TO READ MORE PAGE */}
       <div className="d-flex w-100 justify-content-between mt-5">
 
-        <div className="small-font">
+        <div className="medium-font">
           {/** FORMATED DATE  OR NOT FORMATTED DATE */}
           {dateFormated
             ? dateFormated

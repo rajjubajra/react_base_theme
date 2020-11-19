@@ -16,6 +16,7 @@ function Nav() {
         <li><Link to={`${pagelink.six}`}>F6</Link></li>
         <li><Link to={`${pagelink.seven}`}>F7</Link></li>
         <li><Link to={`${pagelink.eight}`}>F8</Link></li>
+        <li><Link to={`${pagelink.nine}`}>F9</Link></li>
         <li><Link to={`${pagelink.pages}`}>Back</Link></li>
       </ul>
     </nav>

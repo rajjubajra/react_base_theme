@@ -8,6 +8,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import BlogDesktop from './BlogDesktop';
 import BlogTablet from './BlogTablet';
 import BlogMobile from './BlogMobile';
+import Footer from '../../components/footer/Footer';
 
 
 
@@ -124,7 +125,7 @@ function Blog() {
       {/** TITLE */}
       <div className="row">
         <div className="col">
-          <Title />
+          <Title title="Blogs" />
         </div>
       </div>
 
@@ -170,7 +171,7 @@ function Blog() {
       </div>
 
 
-
+      <Footer />
     </div>
 
   )

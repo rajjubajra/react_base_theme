@@ -11,7 +11,7 @@ function SearchForm() {
   return (
     <>
       {`${query.length < 0 ? 'Please enter search' : ''}`}
-      <form className="form-inline w-100 mt-5 mb-5 d-flex">
+      <form className="form-inline w-100 mt-5 mb-5 d-flex justify-content-center">
         <input
           style={{ width: "84%" }}
           type="text"

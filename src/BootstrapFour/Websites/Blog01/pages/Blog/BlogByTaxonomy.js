@@ -9,6 +9,7 @@ import Title from '../../components/header/Titlte/Title';
 import BlogByTaxonomyDesktop from './BlogByTaxonomyDesktop';
 import BlogByTaxonomyTablet from './BlogByTaxonomyTablet';
 import BlogByTaxonomyMobile from './BlogByTaxonomyMobile';
+import Footer from '../../components/footer/Footer';
 
 
 
@@ -108,7 +109,7 @@ function BlogByTaxonomy(props) {
         {/** MAIN TITLE AT TOP */}
         <div className="row">
           <div className="col">
-            <Title />
+            <Title title="Blogs" />
           </div>
         </div>
 
@@ -158,8 +159,9 @@ function BlogByTaxonomy(props) {
             LoadingMessage={LoadingMessage}
           />
         </div>
-
       </div>
+
+      <Footer />
     </div>
   )
 }

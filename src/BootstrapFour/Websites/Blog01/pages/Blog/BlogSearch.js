@@ -7,6 +7,7 @@ import { ActionFetchBlog } from './Redux/ActionFetchBlog';
 import ViewBox from '../ViewBox';
 import IconClose from '../../components/Icon/IconClose';
 import { useHistory } from 'react-router-dom';
+import BlogSearchBg from './BlogSearchBg';
 
 
 function BlogSearch() {
@@ -81,33 +82,42 @@ function BlogSearch() {
   /** GO BACK BUTTON  : REACT-ROUTER  */
   const history = useHistory();
 
+  const textbg = {
+    position: 'relative',
+    background: "rgba(255,255,255,0.08)",
+    padding: "20px",
+    zIndex: "10",
+  }
+
 
   return (
     <>
       {/** MAIN NAVIGATION */}
       <NavigationOne />
 
-      <div className="container mb-5 mt-5 min-vh-100">
+      <div className="container-fluid mb-5 mt-5 min-vh-100">
         <div className="row justify-content-end">
           <span onClick={() => history.goBack()}><IconClose /></span>
         </div>
         {/** Title */}
         <div className="row">
           <div className="col">
-            <Title hideLink={true} />
+            <Title title="Blogs" hideLink={true} />
           </div>
         </div>
 
         {/** SEARCH FORM */}
         <div className="row justify-content-center">
-          <div className="col">
+          <div className="col-lg-8 col-md-8 col-sm-10">
             <SearchForm query={query} />
           </div>
         </div>
 
         {/** SEARCH RESULT */}
-        <div className="row">
-          <div className="col">
+        <div
+          style={textbg}
+          className="row justify-content-center">
+          <div className="col-lg-7  col-md-8 col-sm-10">
             {
               queryResult && slicedQuery.map(item => {
                 return <section key={item.nid}>
@@ -126,7 +136,7 @@ function BlogSearch() {
 
         {/** SEARCH NOT FOUND MESSAGE */}
         <div className="row">
-          <div className="col">
+          <div className="col d-flex justify-content-center">
             {
               query.length > 0
               && queryResult
@@ -149,6 +159,7 @@ function BlogSearch() {
           }
 
         </div>
+        <BlogSearchBg />
       </div>
     </>
   )
