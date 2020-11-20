@@ -19,27 +19,27 @@ export default function Home() {
   console.log("CSS CLASS", className);
 
   return (
-    <div className={`${className}`}>
-      <ColourMode />
-      <NavigationOne />
+    <div className="blog-one">
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
 
-      {/** Title */}
-      <Title title="Blogs" />
+        {/** Title */}
+        <Title title="Blogs" />
 
-      {/** DESKTOP VIEW */}
-      <div className="d-none d-lg-block d-xl-block ">
-        <HomeDesktop />
+        {/** DESKTOP VIEW */}
+        <div className="d-none d-lg-block d-xl-block ">
+          <HomeDesktop />
+        </div>
+
+        {/** TABLET VIEW */}
+        <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+          <HomeTablet />
+        </div>
+
+        {/** MOBILE VIEW */}
+        <Footer />
       </div>
-
-      {/** TABLET VIEW */}
-      <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
-        <HomeTablet />
-      </div>
-
-      {/** MOBILE VIEW */}
-
-      <Footer />
-
     </div>
   )
 }

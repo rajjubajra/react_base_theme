@@ -18,19 +18,21 @@ function Shop() {
   }, [colorMode, variant])
 
   return (
-    <div className={className}>
-      <ColourMode />
-      <NavigationOne />
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <h1>Shop</h1>
-            <NavigationSeven />
+    <div className="music-three">
+
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <h1>Shop</h1>
+              <NavigationSeven />
+            </div>
           </div>
         </div>
+
       </div>
-
-
     </div>
   )
 }

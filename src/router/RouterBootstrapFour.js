@@ -34,6 +34,7 @@ import Shops from '../BootstrapFour/Shops/Shops';
 import Footers from '../BootstrapFour/Footers/Footers';
 import Templates from '../BootstrapFour/Templates/Templates';
 import PhotoGallery from '../BootstrapFour/Websites/PhotoGallery/PhotoGallery';
+import ComingSoonZero from '../BootstrapFour/Websites/00ComingSoonZero/ComingSoonZero';
 
 
 

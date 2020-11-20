@@ -18,7 +18,7 @@ export default function Home() {
 
 
   return (
-    <div className={className}>
+    <div className={`${className} photo-gallery`}>
       <ColourMode />
       <Nav />
       <Cards />

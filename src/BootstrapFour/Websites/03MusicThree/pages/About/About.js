@@ -38,11 +38,13 @@ export const About = () => {
 
 
   return (
-    <div className={`${className} music-three`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <ColumnFour />
+    <div className="music-three">
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <ColumnFour />
+      </div>
     </div>
   )
 }

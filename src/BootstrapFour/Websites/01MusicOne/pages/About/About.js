@@ -39,16 +39,18 @@ export const About = () => {
 
 
   return (
-    <div className={`${className} music-one`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
+    <div className="music-one">
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
 
-      <ColumnOne />
+        <ColumnOne />
 
-      <div className="mt-5">
-        <h2 style={{ textAlign: "center" }}>Gear</h2>
-        <BoxThree />
+        <div className="mt-5">
+          <h2 style={{ textAlign: "center" }}>Gear</h2>
+          <BoxThree />
+        </div>
       </div>
     </div>
   )

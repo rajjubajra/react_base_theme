@@ -115,7 +115,7 @@ export const NavigationOne = () => {
       position: scrollDirection === -1 ? "sticky" : "relative",
       top: "0px",
       zIndex: "20",
-      background: "#999"
+      background: "#fff"
     }}>
       {/** ICON FOR TABLET AND MOBILE */}
       <div
@@ -126,7 +126,7 @@ export const NavigationOne = () => {
       </div>
 
       {/** NAVIGATION MENU */}
-      <div className="d-flex justify-content-center">
+      <div className="main-nav d-flex justify-content-center">
         {windowSizeSmall === ''
           ? ''
           : <Navigation

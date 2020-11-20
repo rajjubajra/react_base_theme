@@ -34,37 +34,41 @@ function Tour() {
 
 
   return (
-    <div className={`${className} music-three min-vh-100`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="container-fluid">
+    <div className="music-three">
 
-        {/** TOUR PLAN */}
-        <div className="row justify-content-center">
-          {/** lg and md size  only*/}
-          <div className="col-lg-5 col-md-6 d-none d-lg-block d-md-block d-xl-block">
-            <TourPlan />
-          </div>
-          {/** sm size only */}
-          <div className={`${hideTourPlan ? 'd-none' : 'col-sm-10'} d-md-none d-lg-none d-xl-none`}>
-            <TourPlan />
-          </div>
+      <div className={`${className}  min-vh-100`}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="container-fluid">
+
+          {/** TOUR PLAN */}
+          <div className="row justify-content-center">
+            {/** lg and md size  only*/}
+            <div className="col-lg-5 col-md-6 d-none d-lg-block d-md-block d-xl-block">
+              <TourPlan />
+            </div>
+            {/** sm size only */}
+            <div className={`${hideTourPlan ? 'd-none' : 'col-sm-10'} d-md-none d-lg-none d-xl-none`}>
+              <TourPlan />
+            </div>
 
 
-          {/** TOUR DETAILS */}
-          <div className="col-lg-5 col-md-6 col-sm-10">
+            {/** TOUR DETAILS */}
+            <div className="col-lg-5 col-md-6 col-sm-10">
 
-            <span className={`${hideTourPlan ? 'd-flex d-lg-none d-md-none d-xl-none' : 'd-none'}  justify-content-end`}
-              onClick={() => dispatch(actionHideTour(false))}
-            >
-              <IconClose />
-            </span>
+              <span className={`${hideTourPlan ? 'd-flex d-lg-none d-md-none d-xl-none' : 'd-none'}  justify-content-end`}
+                onClick={() => dispatch(actionHideTour(false))}
+              >
+                <IconClose />
+              </span>
 
-            <TourDetails />
+              <TourDetails />
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   )
 }

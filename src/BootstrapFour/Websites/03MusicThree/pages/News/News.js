@@ -31,11 +31,15 @@ export const News = () => {
 
 
   return (
-    <div className={`${className} music-three`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMeidiaSticky />
-      <BlogSeven currentPage={currentPage} lastPage={lastPage} />
+    <div className="music-three">
+
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMeidiaSticky />
+        <BlogSeven currentPage={currentPage} lastPage={lastPage} />
+      </div>
+
     </div>
   )
 }

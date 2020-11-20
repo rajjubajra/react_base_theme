@@ -74,53 +74,57 @@ function MusicCardDetail(props) {
 
 
   return (
-    <div className={`music-two ${className}`}>
-      <ColourMode />
-      <NavigationOne />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6 col-md-6">
-            <h1 className="mt-5">{coverImage['alt']}</h1>
-            <img width="100%" src={coverImage['url']} alt='cover' />
-            <div className="mt-4 mb-5">
-              <DangerouslySetInnerHtml text={bodyText} />
-            </div>
-          </div>
+    <div className="music-two">
 
-          {/** Right column */}
-          <div className="col-lg-6  col-md-6 mb-5">
 
-            <div className="mt-5 mb-3">
-              {
-                playAllTracks
-                  ? <button className="btn btn-light mt-5"
-                    onClick={() => dispatch(actionPlayAllTracks(allTracksId, false))}>
-                    Back</button>
-                  : <button className="btn btn-light mt-5"
-                    onClick={() => dispatch(actionPlayAllTracks(allTracksId, true))}>
-                    Play All</button>
-              }
-            </div>
-            <div className="mb-5">
-              {
-                playAllTracks
-                  ? <PlayAll />
-                  : trackList.map((item, index) => {
-                    return <div key={index}>
-                      <ListItem
-                        title={item.description}
-                        track={item.url}
-                        id={item.target_id}
-                      />
-                    </div>
-                  })
-              }
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-6">
+              <h1 className="mt-5">{coverImage['alt']}</h1>
+              <img width="100%" src={coverImage['url']} alt='cover' />
+              <div className="mt-4 mb-5">
+                <DangerouslySetInnerHtml text={bodyText} />
+              </div>
             </div>
 
+            {/** Right column */}
+            <div className="col-lg-6  col-md-6 mb-5">
+
+              <div className="mt-5 mb-3">
+                {
+                  playAllTracks
+                    ? <button className="btn btn-light mt-5"
+                      onClick={() => dispatch(actionPlayAllTracks(allTracksId, false))}>
+                      Back</button>
+                    : <button className="btn btn-light mt-5"
+                      onClick={() => dispatch(actionPlayAllTracks(allTracksId, true))}>
+                      Play All</button>
+                }
+              </div>
+              <div className="mb-5">
+                {
+                  playAllTracks
+                    ? <PlayAll />
+                    : trackList.map((item, index) => {
+                      return <div key={index}>
+                        <ListItem
+                          title={item.description}
+                          track={item.url}
+                          id={item.target_id}
+                        />
+                      </div>
+                    })
+                }
+              </div>
+
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   )
 }

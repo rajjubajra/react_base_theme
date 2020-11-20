@@ -13,22 +13,24 @@ export default function Home() {
 
 
   return (
-    <div className={`music-two ${className}`}>
-      <ColourMode />
-      <NavigationOne />
+    <div className="music-two">
 
-      <div className="container mt-5">
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
 
-        <section className="mt-2">
-          <MusicCards />
-        </section>
+        <div className="container mt-5">
 
-        <section className="mt-5">
-          <Text />
-        </section>
+          <section className="mt-2">
+            <MusicCards />
+          </section>
 
+          <section className="mt-5">
+            <Text />
+          </section>
+
+        </div>
       </div>
-
 
     </div>
   )

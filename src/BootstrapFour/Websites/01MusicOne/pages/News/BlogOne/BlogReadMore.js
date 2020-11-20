@@ -87,36 +87,39 @@ function BlogReadMore(props) {
 
 
   return (
-    <div className={`${className}  music-one`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="container mt-5 pb-5">
-        <div className="row">
-          <div className="col">
+    <div className="music-one">
 
-            <div className="d-flex justify-content-end">
-              <CopyToClipBoard />
-              <Link to={`/${pagelink.news}`}>
-                <IconClose />
-              </Link>
-            </div>
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="container mt-5 pb-5">
+          <div className="row">
+            <div className="col">
 
-            <section style={sectionStyle}>
-
-              <p style={datestyle}>
-                Date: {DayMonthCommaYear(develCreated)}
-              </p>
-
-              <div>
-                <h1 style={titleStyle}>{develTitle}</h1>
-                <div style={bodyStyle}>
-                  <p>Article: {nid}</p>
-                  <DangerouselySetInnerHtml text={develBody} />
-                </div>
+              <div className="d-flex justify-content-end">
+                <CopyToClipBoard />
+                <Link to={`/${pagelink.news}`}>
+                  <IconClose />
+                </Link>
               </div>
 
-            </section>
+              <section style={sectionStyle}>
+
+                <p style={datestyle}>
+                  Date: {DayMonthCommaYear(develCreated)}
+                </p>
+
+                <div>
+                  <h1 style={titleStyle}>{develTitle}</h1>
+                  <div style={bodyStyle}>
+                    <p>Article: {nid}</p>
+                    <DangerouselySetInnerHtml text={develBody} />
+                  </div>
+                </div>
+
+              </section>
+            </div>
           </div>
         </div>
       </div>

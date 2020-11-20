@@ -102,14 +102,16 @@ export const NavigationOne = () => {
 
 
   return (
-    <div style={{
-      height: "70px",
-      position: scrollDirection === -1 ? "sticky" : "relative",
-      top: "0px",
-      zIndex: "20",
-      background: "rgba(255, 255, 255, 0.90)",
-      width: "100%"
-    }}>
+    <div
+      className="blog-one"
+      style={{
+        height: "70px",
+        position: scrollDirection === -1 ? "sticky" : "relative",
+        top: "0px",
+        zIndex: "20",
+        background: "rgba(255, 255, 255, 0.90)",
+        width: "100%"
+      }}>
 
       {/** NAVIGATION MENU DESKTOP */}
       <div className="d-none d-lg-block d-xl-block w-100">

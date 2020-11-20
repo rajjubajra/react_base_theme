@@ -34,26 +34,28 @@ function Home() {
 
 
   return (
-    <div className={`${className} music-one`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div id="obs-here" className="container mt-5 music-one">
-        <div className="row mt-5">
-          <Title />
-          <div className="col-lg-8 col-md-6 col-sm-12 mb-5">
-            <BoxNine />
+    <div className="music-one">
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div id="obs-here" className="container mt-5 music-one">
+          <div className="row mt-5">
+            <Title />
+            <div className="col-lg-8 col-md-6 col-sm-12 mb-5">
+              <BoxNine />
+            </div>
+          </div>
+
+          <div className="row">
+            <BoxEight />
+          </div>
+
+          <div className="row">
+            <FormEight />
           </div>
         </div>
-        <div className="row">
-          <BoxEight />
-        </div>
-
-        <div className="row">
-          <FormEight />
-        </div>
       </div>
-
     </div>
   )
 }

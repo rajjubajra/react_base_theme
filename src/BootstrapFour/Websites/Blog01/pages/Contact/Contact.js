@@ -21,22 +21,25 @@ export const Contact = () => {
   }
 
   return (
-    <div className={`${className} blog-one`}>
-      <ColourMode />
-      <NavigationOne />
-      <Title title="Contact" hideLink={true} />
+    <div className="blog-one">
 
-      <div className="container mt-5 mb-5 min-vh-100">
-        <div className="row justify-content-center">
-          <div className="col-lg-8 col-md-10 col-sm-12">
-            <div style={textbg}>
-              <FormSix />
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <Title title="Contact" hideLink={true} />
+
+        <div className="container mt-5 mb-5 min-vh-100">
+          <div className="row justify-content-center">
+            <div className="col-lg-8 col-md-10 col-sm-12">
+              <div style={textbg}>
+                <FormSix />
+              </div>
             </div>
           </div>
         </div>
+        <Footer />
+        <ContactBg />
       </div>
-      <Footer />
-      <ContactBg />
     </div>
   )
 }

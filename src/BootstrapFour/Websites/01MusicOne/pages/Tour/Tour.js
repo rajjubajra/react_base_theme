@@ -22,18 +22,22 @@ function Tour() {
   /** DYNAMIC THEME COLOUR CLOSED */
 
   return (
-    <div className={`${className}  music-one min-vh-100`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="container-fluid">
-        <div className="row justify-content-center mt-5">
-          <div className="col-lg-8 col-md-8 col-sm-10">
-            <h1>TOUR</h1>
-            <TourPlan />
+    <div className="music-one">
+
+      <div className={`${className} min-vh-100`}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="container-fluid">
+          <div className="row justify-content-center mt-5">
+            <div className="col-lg-8 col-md-8 col-sm-10">
+              <h1>TOUR</h1>
+              <TourPlan />
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   )
 }

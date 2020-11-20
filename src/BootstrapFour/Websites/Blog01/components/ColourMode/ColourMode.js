@@ -1,14 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { actionSelectColourMode } from '../../redux/actions/actionSelectColourMode';
-import IconBackspace from './IconBackspace';
+import IconBackspace from '../Icon/IconBackspace';
+import IconXSquare from '../Icon/IconXSquare'
 import { cssClassName } from '../../Config/cssClassName';
 
 const ulStyle = {
   position: "fixed",
   right: "10px",
   top: "180px",
-  listStyle: "none"
+  listStyle: "none",
+  zIndex: "20"
 }
 
 const blackWhiteStyle = {
@@ -63,9 +65,12 @@ function ColourMode() {
           onClick={() =>
             dispatch(actionSelectColourMode(cssClassName.dark, 'dark'))}>
         </li>
-        <li style={backIconStyle}>
+        {/* <li style={backIconStyle}>
           <IconBackspace linkRef={'websites-bootstrap'} />
         </li>
+        <li style={backIconStyle}>
+          <IconXSquare linkRef={'for-sale'} />
+        </li> */}
       </ul>
     </div>
   )

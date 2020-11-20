@@ -51,56 +51,58 @@ function ReadMore(props) {
 
 
   return (
-    <div className={`${className} mb-5`}>
-      <ColourMode />
-      <NavigationOne />
-      {
-        fetched ?
-          <div className="container mt-5">
-            {/** created date */}
-            <div className="row">
-              <div className="col">
-                {data[0].created}
+    <div className="blog-one">
+      <div className={`${className} mb-5`}>
+        <ColourMode />
+        <NavigationOne />
+        {
+          fetched ?
+            <div className="container mt-5">
+              {/** created date */}
+              <div className="row">
+                <div className="col">
+                  {data[0].created}
+                </div>
               </div>
-            </div>
-            {/** taxonomy name & close icon */}
-            <div className="row">
-              <div className="col">
-                <DangerouslySetInnerHtml text={data[0].term_node_tid} substr={0} />
-              </div>
-              <div className="col">
-                <span onClick={() => history.goBack()}> <IconClose /></span>
+              {/** taxonomy name & close icon */}
+              <div className="row">
+                <div className="col">
+                  <DangerouslySetInnerHtml text={data[0].term_node_tid} substr={0} />
+                </div>
+                <div className="col">
+                  <span onClick={() => history.goBack()}> <IconClose /></span>
 
 
+                </div>
               </div>
-            </div>
 
-            {/** TITLE */}
-            <div className="row">
-              <div className="col">
-                <h2>{data[0].title}</h2>
+              {/** TITLE */}
+              <div className="row">
+                <div className="col">
+                  <h2>{data[0].title}</h2>
+                </div>
               </div>
-            </div>
 
-            {/** Image */}
-            <div className="row">
-              <div className="col">
-                <img style={imgStyle}
-                  src={data[0].field_image}
-                  alt={data[0].title} />
+              {/** Image */}
+              <div className="row">
+                <div className="col">
+                  <img style={imgStyle}
+                    src={data[0].field_image}
+                    alt={data[0].title} />
+                </div>
               </div>
-            </div>
 
-            {/** TEXT BODY */}
-            <div className="row">
-              <div className="col">
-                <DangerouslySetInnerHtml text={data[0].body} substr={0} />
+              {/** TEXT BODY */}
+              <div className="row">
+                <div className="col">
+                  <DangerouslySetInnerHtml text={data[0].body} substr={0} />
+                </div>
               </div>
             </div>
-          </div>
-          : <div><h1>Loading...</h1></div>
-      }
-    </div >
+            : <div><h1>Loading...</h1></div>
+        }
+      </div>
+    </div>
   )
 }
 export default ReadMore

@@ -53,59 +53,61 @@ function TourDetails() {
 
 
   return (
+    <div className="music-one">
 
-    <div className={`${className}  music-one container-fulid min-vh-100`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="container mt-5 mb-5 tour-details">
-        <div className="row">
-          <div className="col">
-            <div className="d-flex justify-content-end">
-              <CopyToClipBoard />
-              <Link
-                to={`/${pagelink.tour}`}
-                className="d-flex justify-content-end">
-                <IconClose /></Link>
+      <div className={`${className} container-fulid min-vh-100`}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="container mt-5 mb-5 tour-details">
+          <div className="row">
+            <div className="col">
+              <div className="d-flex justify-content-end">
+                <CopyToClipBoard />
+                <Link
+                  to={`/${pagelink.tour}`}
+                  className="d-flex justify-content-end">
+                  <IconClose /></Link>
+              </div>
             </div>
           </div>
-        </div>
-        {/** TITLE */}
-        <div className="row">
-          <div className="col">
-            <h1>{fetched && data.title[0].value}</h1>
+          {/** TITLE */}
+          <div className="row">
+            <div className="col">
+              <h1>{fetched && data.title[0].value}</h1>
+            </div>
           </div>
-        </div>
-        {/** EVENT DATE */}
-        <div className="row justify-content-center mt-3">
-          <div className="col-lg-6 col-sm-12">
-            <h3>Event Date:
+          {/** EVENT DATE */}
+          <div className="row justify-content-center mt-3">
+            <div className="col-lg-6 col-sm-12">
+              <h3>Event Date:
               {fetched && data.field_event_date.length > 0
-                && data.field_event_date[0].value}</h3>
+                  && data.field_event_date[0].value}</h3>
+            </div>
+            <div className="col-lg-6 col-sm-12 d-flex justify-content-end">
+              <button>{fetched && data.field_buy_ticket[0].title}</button>
+            </div>
           </div>
-          <div className="col-lg-6 col-sm-12 d-flex justify-content-end">
-            <button>{fetched && data.field_buy_ticket[0].title}</button>
+          {/** LOCATION */}
+          <div className="row mt-5">
+            <div className="col">
+              <div className="location">
+                <h4>Location:</h4>
+                <p>{fetched && data.field_address_line_1[0].value}</p>
+                <p>{fetched && data.field_address_line_2[0].value}</p>
+                <p>{fetched && data.field_event_location[0].value}</p>
+              </div>
+            </div>
           </div>
-        </div>
-        {/** LOCATION */}
-        <div className="row mt-5">
-          <div className="col">
-            <div className="location">
-              <h4>Location:</h4>
-              <p>{fetched && data.field_address_line_1[0].value}</p>
-              <p>{fetched && data.field_address_line_2[0].value}</p>
-              <p>{fetched && data.field_event_location[0].value}</p>
+          {/** TOUR DETAILS */}
+          <div className="row mt-5">
+            <div className="col">
+              <div dangerouslySetInnerHTML={createMarkup(fetched && data.field_details[0].processed)} />
             </div>
           </div>
         </div>
-        {/** TOUR DETAILS */}
-        <div className="row mt-5">
-          <div className="col">
-            <div dangerouslySetInnerHTML={createMarkup(fetched && data.field_details[0].processed)} />
-          </div>
-        </div>
-      </div>
 
+      </div>
     </div>
   )
 }

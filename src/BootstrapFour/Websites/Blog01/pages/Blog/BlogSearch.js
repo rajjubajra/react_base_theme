@@ -91,7 +91,7 @@ function BlogSearch() {
 
 
   return (
-    <>
+    <div className='blog-one'>
       {/** MAIN NAVIGATION */}
       <NavigationOne />
 
@@ -161,7 +161,7 @@ function BlogSearch() {
         </div>
         <BlogSearchBg />
       </div>
-    </>
+    </div>
   )
 }
 export default BlogSearch

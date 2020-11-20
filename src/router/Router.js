@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CopyRightFooter from '../components/CopyRightFooter/CopyRightFooter';
 import RouterComponents from './RouterComponents';
@@ -8,9 +8,11 @@ import RouterApplications from './RouterApplications';
 
 // import MeghaMenu from '../components/Navigation/MeghaMenu';
 // import ComingSoon from '../components/Websites/ComingSoon/ComingSoon';
-import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
+//  import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
 import RouterComponentTest from './RouterComponentTest';
 import RouterEcommerce from './RouterEcommerce';
+import ForSale from '../ForSale/ForSale';
+import ComingSoonZero from '../BootstrapFour/Websites/00ComingSoonZero/ComingSoonZero';
 
 
 /**
@@ -22,7 +24,7 @@ import RouterEcommerce from './RouterEcommerce';
 
 const Router = () => {
 
-  const [btnShowHide] = useState(true);
+  // const [btnShowHide] = useState(true);
 
   return (
     <>
@@ -42,13 +44,19 @@ const Router = () => {
           <Route exact path="/" >
             <div>
               <div>
-                <ComingSoonB4 />
+                <ComingSoonZero />
               </div>
             </div>
           </Route>
         </Switch>
 
 
+        {/** FOR SALE PAGE NAVIGATION */}
+        <Switch>
+          <Route exact path="/for-sale">
+            <ForSale />
+          </Route>
+        </Switch>
 
 
 
@@ -56,6 +64,8 @@ const Router = () => {
         <Switch>
           <RouterComponents />
         </Switch>
+
+
 
         {/** WEBSITES PAGE *************************************/}
         <Switch>

@@ -28,11 +28,15 @@ function Home() {
   }, [])
 
   return (
-    <div className={`${className} music-three min-vh-100`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <LandingOne />
+    <div className="music-three">
+
+      <div className={`${className}  min-vh-100`}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <LandingOne />
+      </div>
+
     </div>
   )
 }

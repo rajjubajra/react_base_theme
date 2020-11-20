@@ -29,6 +29,8 @@ const CopyRightFooter = () => {
             +</Link>
           <a style={linkStyle} href="https://yellow-website.com/d8-react-base-theme-backend/user/login">
             Login</a>
+          <Link style={linkStyle} to="/websites-bootstrap">.
+            </Link>
         </p>
       </div>
     </>

@@ -55,48 +55,50 @@ function PlayList() {
 
 
   return (
-    <div className={`${className} music-three min-vh-100`}>
-      <ColourMode />
-      {/** NAVIGATION */}
-      <NavigationOne />
-      {/** SOCIAL MEDIA */}
-      <SocialMediaSticky />
+    <div className="music-three">
+
+
+      <div className={`${className}  min-vh-100`}>
+        <ColourMode />
+        {/** NAVIGATION */}
+        <NavigationOne />
+        {/** SOCIAL MEDIA */}
+        <SocialMediaSticky />
 
 
 
-      {
-        fetched ?
-          <>
+        {
+          fetched ?
+            <>
 
-            {/**  PLAY SELECTED TRACK  */}
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-4 d-none d-lg-block d-xl-block">
-                  <div className="d-flex justify-content-center w-100">
-                    <Desktop />
+              {/**  PLAY SELECTED TRACK  */}
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-4 d-none d-lg-block d-xl-block">
+                    <div className="d-flex justify-content-center w-100">
+                      <Desktop />
+                    </div>
+                  </div>
+                  <div className="col-lg-8">
+                    <PlayTrack
+                      fetched={fetched}
+                      title={title}
+                      tracks={tracks}
+                      playAll={playAll}
+                    />
                   </div>
                 </div>
-                <div className="col-lg-8">
-                  <PlayTrack
-                    fetched={fetched}
-                    title={title}
-                    tracks={tracks}
-                    playAll={playAll}
-                  />
-                </div>
               </div>
-            </div>
 
 
 
-          </>
+            </>
 
-          : 'Loading...'
+            : 'Loading...'
 
+        }
 
-      }
-
-
+      </div>
 
     </div>
   )

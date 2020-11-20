@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { actionSelectColourMode } from '../../redux/actions/actionSelectColourMode';
 import IconBackspace from '../Icon/IconBackspace';
+import IconXSquare from '../Icon/IconXSquare';
 import { cssClassName } from '../../Config/cssClassName';
 
 const ulStyle = {
@@ -65,6 +66,9 @@ function ColourMode() {
         </li>
         <li style={backIconStyle}>
           <IconBackspace linkRef={'websites-bootstrap'} />
+        </li>
+        <li style={backIconStyle}>
+          <IconXSquare linkRef={'for-sale'} />
         </li>
       </ul>
     </div>

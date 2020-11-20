@@ -19,32 +19,35 @@ export const About = () => {
   }
 
   return (
-    <div className={`${className} blog-one`}>
-      <ColourMode />
-      <NavigationOne />
+    <div className="blog-one">
 
-      <Title title="About" hideLink={true} />
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
 
-      <div className="container mt-5 mb-5 min-vh-100">
-        <div className="row">
-          <div className="col-lg-3 col-md-3"></div>
+        <Title title="About" hideLink={true} />
 
-          <div className="col-lg-9 col-md-9">
+        <div className="container mt-5 mb-5 min-vh-100">
+          <div className="row">
+            <div className="col-lg-3 col-md-3"></div>
 
-            <div style={textbg} className="pr-4">
-              <h1>Introduction</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vel minus praesentium nihil veniam nostrum voluptatem illo? Delectus officiis laboriosam, doloremque molestias, reiciendis beatae mollitia laudantium perferendis blanditiis adipisci repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, enim eveniet pariatur voluptatum facere maiores ipsam id rerum quisquam, dolor saepe commodi sint voluptates accusantium suscipit adipisci optio, quaerat sit.</p>
+            <div className="col-lg-9 col-md-9">
 
-              <p>A ipsum dolor sit amet consectetur adipisicing elit. Incidunt enim rem dolorum! Et ullam necessitatibus laborum incidunt velit ducimus beatae soluta! Voluptatum, distinctio tempore quidem tenetur ab praesentium molestias commodi.</p>
+              <div style={textbg} className="pr-4">
+                <h1>Introduction</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vel minus praesentium nihil veniam nostrum voluptatem illo? Delectus officiis laboriosam, doloremque molestias, reiciendis beatae mollitia laudantium perferendis blanditiis adipisci repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, enim eveniet pariatur voluptatum facere maiores ipsam id rerum quisquam, dolor saepe commodi sint voluptates accusantium suscipit adipisci optio, quaerat sit.</p>
 
-              <p>Dolor sit amet, consectetur adipisicing elit. Laudantium laboriosam similique deserunt tenetur consectetur consequatur ex suscipit in sed doloribus necessitatibus cumque sit harum vitae fugiat, quisquam soluta modi ipsa?</p>
+                <p>A ipsum dolor sit amet consectetur adipisicing elit. Incidunt enim rem dolorum! Et ullam necessitatibus laborum incidunt velit ducimus beatae soluta! Voluptatum, distinctio tempore quidem tenetur ab praesentium molestias commodi.</p>
+
+                <p>Dolor sit amet, consectetur adipisicing elit. Laudantium laboriosam similique deserunt tenetur consectetur consequatur ex suscipit in sed doloribus necessitatibus cumque sit harum vitae fugiat, quisquam soluta modi ipsa?</p>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
+        <Footer />
+        <AboutBg />
       </div>
-      <Footer />
-      <AboutBg />
     </div>
   )
 }

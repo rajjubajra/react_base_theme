@@ -22,14 +22,15 @@ export const Gallery = () => {
 
 
   return (
-    <div className={`${className}  music-one`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="mt-5 mb-5">
-        <BoxTwo />
+    <div className="music-one">
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="mt-5 mb-5">
+          <BoxTwo />
+        </div>
       </div>
-
     </div>
   )
 }

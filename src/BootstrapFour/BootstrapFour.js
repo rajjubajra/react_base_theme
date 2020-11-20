@@ -13,6 +13,13 @@ const BootsrapFour = () => {
       <TitleNNav title={'Websites'} subtitle="Bootstrap 4" href="/websites" />
       <Row>
         <Cards
+          title="Coming Soon"
+          linkref="/coming-soon-zero"
+          text="Coming Soon"
+          type="Multipurpose"
+        />
+
+        <Cards
           title="Music Zero"
           linkref="/music-zero"
           text="Music"
@@ -59,6 +66,8 @@ const BootsrapFour = () => {
         <Cards
           title="Art & Design"
           linkref="/artNdesign" />
+
+
         <Cards
           title="Profile 2020"
           linkref="/portfolio2020" />

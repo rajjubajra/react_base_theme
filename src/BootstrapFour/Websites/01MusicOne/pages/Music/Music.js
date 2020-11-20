@@ -33,30 +33,32 @@ function Music() {
 
 
   return (
-    <div className={`${colorMode}  music-one`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="container mb-5">
-        <div className="row mt-5 mb-2">
-          <div className="col"><h1>Music</h1></div>
-        </div>
-        <div className="row">
-          {
-            dataLength > 0 && tracksData.map((item, index) => {
-              return <div key={index} className="col-lg-4 col-md-6">
-                <Link
-                  className="custom-color" to={`${pagelink.album}/${item.nid[0].value}`}>
-                  <Albums
-                    title={item.title[0].value}
-                    img={item.field_track_cover_image[0].url}
-                    alt={item.field_track_cover_image[0].alt}
-                    body={item.body[0].value}
-                  />
-                </Link>
-              </div>
-            })
-          }
+    <div className="music-one">
+      <div className={colorMode}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="container mb-5">
+          <div className="row mt-5 mb-2">
+            <div className="col"><h1>Music</h1></div>
+          </div>
+          <div className="row">
+            {
+              dataLength > 0 && tracksData.map((item, index) => {
+                return <div key={index} className="col-lg-4 col-md-6">
+                  <Link
+                    className="custom-color" to={`${pagelink.album}/${item.nid[0].value}`}>
+                    <Albums
+                      title={item.title[0].value}
+                      img={item.field_track_cover_image[0].url}
+                      alt={item.field_track_cover_image[0].alt}
+                      body={item.body[0].value}
+                    />
+                  </Link>
+                </div>
+              })
+            }
+          </div>
         </div>
       </div>
     </div>

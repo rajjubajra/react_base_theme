@@ -52,7 +52,7 @@ function Page(props) {
             <Button
               variant="outline-dark mt-1"
               className="mr-1"
-              onClick={() => window.open("/websites")}
+              onClick={() => window.open("/websites-bootstrap")}
               style={{ fontWeight: "100" }}>W</Button>
             <Button
               variant="outline-dark"

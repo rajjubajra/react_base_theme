@@ -72,86 +72,87 @@ function Album() {
   }
 
   return (
-    <div className={`${colorMode}  music-one`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="container">
-        <div className="row">
-          <div className="col d-flex justify-content-end">
-            <CopyToClipBoard />
-            <Link to={`/${pagelink.albums}`}><IconClose /></Link>
-          </div>
-        </div>
-        <div className="row mt-1">
-          <div className="col">
-            <h1>{fetched && title[0].value}</h1>
-          </div>
-        </div>
+    <div className="music-one">
 
-        <div className="row">
-          <div className="col-lg-6">
-            <div>
-              <img
-                style={{
-                  width: "100%",
-                  outline: "1px solid rgba(204,204,204,0.38)",
-                  outlineOffset: "-10px"
-                }}
-                src={fetched && coverImage[0].url}
-                alt={fetched && coverImage[0].alt} />
-            </div>
-            <div className="mt-4 mb-5">
-              <div dangerouslySetInnerHTML={createMarkup(fetched && body[0].value)} />
+
+      <div className={colorMode}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="container">
+          <div className="row">
+            <div className="col d-flex justify-content-end">
+              <CopyToClipBoard />
+              <Link to={`/${pagelink.albums}`}><IconClose /></Link>
             </div>
           </div>
-          <div className="col-lg-6">
-            <ul className="list-group">
-              {
-                fetched && buyFrom.map((item, index) => {
-                  return <li className="list-group-item" key={index}>
-                    <Link to={{ pathname: item.uri }} target="_blank">
-                      {item.title}</Link></li>
-                })
-              }
-            </ul>
-            <ul className="list-group mt-5 mb-2">
-              {
-                fetched && listen.map((item, index) => {
-                  return <li className="list-group-item" key={index}>
-                    <Link to={{ pathname: item.uri }} target="_blank">
-                      {item.title}</Link></li>
-                })
-              }
-            </ul>
-            {/** TRACK  PLAYING COMPONENT */}
-
-            <div style={playTrackStyle}>
-              <PlayingTrack
-                track={playTrack}
-                stopTrack={stopTrack}
-              />
+          <div className="row mt-1">
+            <div className="col">
+              <h1>{fetched && title[0].value}</h1>
             </div>
-
-            <ul className="list-group mb-5">
-              {
-                fetched && tracks.map((item, index) => {
-                  return <li
-                    style={{ cursor: "pointer" }}
-                    className="list-group-item d-flex"
-                    key={index}
-                    onClick={() => setPlayTrack(item.url)}>
-                    <span style={playButtonStyle}><Play /></span>{item.description}</li>
-                })
-              }
-            </ul>
           </div>
-        </div>
 
+          <div className="row">
+            <div className="col-lg-6">
+              <div>
+                <img
+                  style={{
+                    width: "100%",
+                    outline: "1px solid rgba(204,204,204,0.38)",
+                    outlineOffset: "-10px"
+                  }}
+                  src={fetched && coverImage[0].url}
+                  alt={fetched && coverImage[0].alt} />
+              </div>
+              <div className="mt-4 mb-5">
+                <div dangerouslySetInnerHTML={createMarkup(fetched && body[0].value)} />
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <ul className="list-group">
+                {
+                  fetched && buyFrom.map((item, index) => {
+                    return <li className="list-group-item" key={index}>
+                      <Link to={{ pathname: item.uri }} target="_blank">
+                        {item.title}</Link></li>
+                  })
+                }
+              </ul>
+              <ul className="list-group mt-5 mb-2">
+                {
+                  fetched && listen.map((item, index) => {
+                    return <li className="list-group-item" key={index}>
+                      <Link to={{ pathname: item.uri }} target="_blank">
+                        {item.title}</Link></li>
+                  })
+                }
+              </ul>
+              {/** TRACK  PLAYING COMPONENT */}
+
+              <div style={playTrackStyle}>
+                <PlayingTrack
+                  track={playTrack}
+                  stopTrack={stopTrack}
+                />
+              </div>
+
+              <ul className="list-group mb-5">
+                {
+                  fetched && tracks.map((item, index) => {
+                    return <li
+                      style={{ cursor: "pointer" }}
+                      className="list-group-item d-flex"
+                      key={index}
+                      onClick={() => setPlayTrack(item.url)}>
+                      <span style={playButtonStyle}><Play /></span>{item.description}</li>
+                  })
+                }
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </div>
-
-
-
     </div>
   )
 }

@@ -16,23 +16,27 @@ export const Contact = () => {
 
 
   return (
-    <div className={`music-two ${className}`}>
-      <ColourMode />
-      <NavigationOne />
-      <div className="container mt-5 min-vh-100">
+    <div className="music-two">
 
-        <div className="row">
-          <div className="col">
-            <FormSix />
+
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <div className="container mt-5 min-vh-100">
+
+          <div className="row">
+            <div className="col">
+              <FormSix />
+            </div>
+          </div>
+          <div className="row d-flex justify-content-center">
+            <div className="col-10">
+              <EmailNTel />
+            </div>
           </div>
         </div>
-        <div className="row d-flex justify-content-center">
-          <div className="col-10">
-            <EmailNTel />
-          </div>
-        </div>
+
       </div>
-
     </div>
   )
 }

@@ -23,17 +23,19 @@ export const Contact = () => {
 
 
   return (
-    <div className={`${className} music-three`}>
-      <ColourMode />
-      <NavigationOne />
-      <SocialMediaSticky />
-      <div className="container mt-5 min-vh-100">
-        <div className="row">
-          <div className="col-lg-4">
-            <Text />
-          </div>
-          <div className="col-lg-8">
-            <FormSix />
+    <div className="music-three">
+      <div className={className}>
+        <ColourMode />
+        <NavigationOne />
+        <SocialMediaSticky />
+        <div className="container mt-5 min-vh-100">
+          <div className="row">
+            <div className="col-lg-4">
+              <Text />
+            </div>
+            <div className="col-lg-8">
+              <FormSix />
+            </div>
           </div>
         </div>
       </div>

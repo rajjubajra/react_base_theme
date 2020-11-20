@@ -99,69 +99,73 @@ function BlogByTaxonomy(props) {
 
 
   return (
-    <div className={`${className} blog-one`}>
-      <ColourMode />
-      {/** MAIN NAVIGATION */}
-      <NavigationOne />
+    <div className="blog-one">
 
 
-      <div className={`container-fluid mt-5 mb-5`}>
-        {/** MAIN TITLE AT TOP */}
-        <div className="row">
-          <div className="col">
-            <Title title="Blogs" />
+      <div className={className}>
+        <ColourMode />
+        {/** MAIN NAVIGATION */}
+        <NavigationOne />
+
+
+        <div className={`container-fluid mt-5 mb-5`}>
+          {/** MAIN TITLE AT TOP */}
+          <div className="row">
+            <div className="col">
+              <Title title="Blogs" />
+            </div>
+          </div>
+
+
+
+
+          {/** BLOG */}
+          {/** DESKTOP VIEW */}
+          <div className="row blog-by-taxonomy d-none d-lg-block d-xl-block">
+            <BlogByTaxonomyDesktop
+              taxoName={taxoName}
+              fetched={fetched}
+              slicedData={slicedData}
+              pager={pager}
+              pageGap={pageGap}
+              dataLength={dataLength}
+              prevPage={prevPage}
+              nextPage={nextPage}
+              LoadingMessage={LoadingMessage}
+            />
+          </div>
+          {/** TABLET VIEW */}
+          <div className="row blog-by-taxonomy d-none d-md-block d-lg-none">
+            <BlogByTaxonomyTablet
+              taxoName={taxoName}
+              fetched={fetched}
+              slicedData={slicedData}
+              pager={pager}
+              pageGap={pageGap}
+              dataLength={dataLength}
+              prevPage={prevPage}
+              nextPage={nextPage}
+              LoadingMessage={LoadingMessage}
+            />
+          </div>
+          {/** MOBILE VIEW */}
+          <div className="row blog-by-taxonomy d-block d-md-none d-lg-none d-xl-none">
+            <BlogByTaxonomyMobile
+              taxoName={taxoName}
+              fetched={fetched}
+              slicedData={slicedData}
+              pager={pager}
+              pageGap={pageGap}
+              dataLength={dataLength}
+              prevPage={prevPage}
+              nextPage={nextPage}
+              LoadingMessage={LoadingMessage}
+            />
           </div>
         </div>
 
-
-
-
-        {/** BLOG */}
-        {/** DESKTOP VIEW */}
-        <div className="row blog-by-taxonomy d-none d-lg-block d-xl-block">
-          <BlogByTaxonomyDesktop
-            taxoName={taxoName}
-            fetched={fetched}
-            slicedData={slicedData}
-            pager={pager}
-            pageGap={pageGap}
-            dataLength={dataLength}
-            prevPage={prevPage}
-            nextPage={nextPage}
-            LoadingMessage={LoadingMessage}
-          />
-        </div>
-        {/** TABLET VIEW */}
-        <div className="row blog-by-taxonomy d-none d-md-block d-lg-none">
-          <BlogByTaxonomyTablet
-            taxoName={taxoName}
-            fetched={fetched}
-            slicedData={slicedData}
-            pager={pager}
-            pageGap={pageGap}
-            dataLength={dataLength}
-            prevPage={prevPage}
-            nextPage={nextPage}
-            LoadingMessage={LoadingMessage}
-          />
-        </div>
-        {/** MOBILE VIEW */}
-        <div className="row blog-by-taxonomy d-block d-md-none d-lg-none d-xl-none">
-          <BlogByTaxonomyMobile
-            taxoName={taxoName}
-            fetched={fetched}
-            slicedData={slicedData}
-            pager={pager}
-            pageGap={pageGap}
-            dataLength={dataLength}
-            prevPage={prevPage}
-            nextPage={nextPage}
-            LoadingMessage={LoadingMessage}
-          />
-        </div>
+        <Footer />
       </div>
-
-      <Footer />
     </div>
   )
 }
