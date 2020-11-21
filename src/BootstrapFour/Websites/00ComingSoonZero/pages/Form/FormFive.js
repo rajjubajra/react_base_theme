@@ -1,50 +1,90 @@
 import React, { useState } from 'react';
 import './FormFive.scss';
-import { useForm } from 'react-hook-form';
 import axios from 'axios';
-
 
 
 
 const FormFive = () => {
 
-  /** axios response.status = 200, submited set to true */
-  const [submited, setSubmited] = useState(false);
-
-  /** react-hook-form  elements */
-  const { register, handleSubmit, errors } = useForm(); /** watch */
-
-  /** d8-react-base-theeme-backend webform "Contact Form" rest api uri */
-  const formUrl = 'https://yellow-website.com/d8-react-base-theme-backend/webform_rest/submit?_format=json';
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [confirmationMsg, setConfirmationMsg] = useState('');
 
 
-  const onSubmit = (data) => {
 
-    axios.post(formUrl, {
-      "webform_id": "contact_form",
-      "name": data.name,
-      "email": data.email,
-      "message": data.message
-    },
+  const baseUrl = `https://yellow-website.com/d8-react-base-theme-backend`;
+  const formId = 'contact_form';
+
+
+  function handleSubmit(e) {
+
+    e.preventDefault();
+
+
+    axios(
       {
+        method: 'post',
+        url: `${baseUrl}/webform_rest/submit?_format=json`,
+        // withCredentials: true,
         headers: {
-          'contetn-type': 'application/json',
+          'Accept': 'application/vnd.api+json',
+          'Content-Type': 'application/json',
           /** auth token for same domain name submit via cookies  */
-          'csrf_token': 'https://yellow-website.com/d8-react-base-theme-backend/rest/session/token'
+          'X-CSRF-Token': `${baseUrl}/rest/session/token`
+        },
+        data: {
+          "webform_id": formId,
+          "name": name,
+          "email": email,
+          "message": message,
         }
-      }
+      },
     )
       .then(function (res) {
-        console.log("form res", res, "Status", res.status);
-        res.status === 200 ? setSubmited(true) : setSubmited(false);
+        // console.log(res, "Post Status", res.status);
+        res.status === 200 ? setSubmitted(true) : setSubmitted(false);
       })
       .catch(function (err) {
-        console.log("form err", err)
+        console.log("Post Error message:", err)
       });
-    console.log("DATA", data);
+    // console.log("DATA submited", submitted);
+
+
+
+
+    /** NOTE: In order to GET the webform message got to 
+     * /Settings/Access/ 
+     * -> "Access Webform Configuration" [Anonymouse - checked]
+     */
+    axios({
+      method: 'GET',
+      url: `${baseUrl}/webform/${formId}?_format=json`,
+      withCredentials: true,
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/json',
+        /** auth token for same domain name submit via cookies  */
+        'X-CSRF-Token': `${baseUrl}/rest/session/token`
+      }
+    })
+      .then(function (response) {
+        console.log("SUBMIT CONFIRM RES", response);
+        //console.log("WEBFORM GET", response.data.settings.confirmation_message);
+        setConfirmationMsg(response.data.settings.confirmation_message);
+      })
+      .catch(function (err) {
+        console.log("web form GET error", err);
+      })
+    console.log("GET SUBMITED")
+
+    /** submited get closed */
   }
 
-  //console.log(watch("email"));
+  console.log("CNS MSG", confirmationMsg);
+
 
   const inputStyle = {
     borderTop: "0px",
@@ -56,53 +96,73 @@ const FormFive = () => {
 
   return (
     <div className="container">
-      <div className="row justify-content-center mb-5 mt-5">
-        <div className="col-9">
-          <h3>Please send me your enqiury</h3>
-          <p className={`${submited ? '' : 'd-none'}`}>Thank you. Messaged submited.</p>
+
+      <div className="row justify-content-center mb-5">
+        <div className="col-10">
+          <p className={`${submitted ? '' : 'd-none'}`}>
+            {confirmationMsg}
+          </p>
         </div>
       </div>
-      <div className={`row ${submited ? 'd-none' : ''} justify-content-center`}>
+
+
+      <div className={`row ${submitted ? 'd-none' : ''} justify-content-center`}>
+
+
         <div className="col-9">
 
-          <form className="form-5" onSubmit={handleSubmit(onSubmit)}>
+          <div className="mb-5">
+            <h3>Please send your enquiry</h3>
+          </div>
+
+
+          <form className="form-5 mt-5" onSubmit={handleSubmit}>
 
             <div className="form-group">
 
               <input
+                required
                 style={inputStyle}
                 className="form-control"
                 type="text"
                 name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Name"
-                ref={register({ required: true })}
               />
-              {errors.name && <p className="small-font">Required field</p>}
+              {error && name.length < 2 &&
+                <p className="small-font">Required field</p>}
             </div>
 
             <div className="form-group">
 
               <input
+                required
                 style={inputStyle}
                 className="form-control"
                 type="email"
                 name="email"
-                placeholder="Email"
-                ref={register({ required: true })} />
-              {errors.email && <p className="small-font">required field</p>}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email" />
+              {error && email.length < 6 &&
+                <p className="small-font">required field</p>}
             </div>
 
             <div className="form-group">
 
               <textarea
+                required
                 style={inputStyle}
                 className="form-control"
                 name="message"
                 rows="4"
-                placeholder="Message"
-                ref={register({ required: true })} >
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Message" >
               </textarea>
-              {errors.message && <p className="small-font">required field</p>}
+              {error && message < 3 &&
+                <p className="small-font">required field</p>}
             </div>
 
             <div className="form-group">
@@ -112,7 +172,7 @@ const FormFive = () => {
           </form>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
