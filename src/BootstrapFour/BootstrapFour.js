@@ -14,7 +14,7 @@ const BootsrapFour = () => {
       <Row>
         <Cards
           title="Coming Soon"
-          linkref="/coming-soon-zero"
+          linkref="/"
           text="Coming Soon"
           type="Multipurpose"
         />
@@ -51,6 +51,13 @@ const BootsrapFour = () => {
         <Cards
           title="Blog One"
           linkref="/b4Blog-one-"
+          text="Blog"
+          type="Blog"
+        />
+
+        <Cards
+          title="Blog Two"
+          linkref="/b4Blog-two-"
           text="Blog"
           type="Blog"
         />

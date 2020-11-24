@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+import Image from '../../../components/Image';
 
 function Tablet(props) {
 
@@ -26,7 +26,7 @@ function Tablet(props) {
     <div className="container">
       <div className="row mb-5 ml-3">
         <div className="col-md-6">
-          <PhotoMusic width="100%" height="500px" />
+          <Image img={props.img} width="100%" height="500px" />
         </div>
         <div style={backgroundStyle} className="col-md-6">
           <section style={{

@@ -1,5 +1,5 @@
 import React from 'react'
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+import Image from '../../../components/Image';
 
 
 const boxOne = {
@@ -22,9 +22,10 @@ function PhotoBox(props) {
   return (
 
     <div style={boxOne}>
-      <PhotoMusic
+      <Image
         width={props.width}
         height={props.height}
+        img={props.img}
       />
       <p style={caption}>Text Image</p>
     </div>

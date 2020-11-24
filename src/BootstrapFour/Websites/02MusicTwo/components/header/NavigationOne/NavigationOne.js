@@ -1,53 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from './Navigation';
 import NavIconThreeLines from './NavIconThreeLines';
-import { pagelink } from '../../../PageLink';
 import { useDispatch } from 'react-redux';
 import { actionFetchMenu } from './Redux/actionFetchMenu';
 
 
-const data = [
-  {
-    id: "1",
-    name: "Home",
-    link: pagelink.home
-  },
-  {
-    id: "2",
-    name: "Tour",
-    link: pagelink.tour
-  },
-  {
-    id: 3,
-    name: "News",
-    link: pagelink.news
-  },
-  {
-    id: 4,
-    name: "About",
-    link: pagelink.about
-  },
-  {
-    id: 5,
-    name: "Gallery",
-    link: pagelink.gallery
-  },
-  {
-    id: 6,
-    name: "Music",
-    link: pagelink.albums
-  },
-  {
-    id: 8,
-    name: "Contact",
-    link: pagelink.contact
-  },
-  {
-    id: 9,
-    name: "Back",
-    link: pagelink.back
-  },
-]
+// const data = [
+//   {
+//     id: "1",
+//     name: "Home",
+//     link: pagelink.home
+//   },
+//   {
+//     id: "2",
+//     name: "Tour",
+//     link: pagelink.tour
+//   },
+//   {
+//     id: 3,
+//     name: "News",
+//     link: pagelink.news
+//   },
+//   {
+//     id: 4,
+//     name: "About",
+//     link: pagelink.about
+//   },
+//   {
+//     id: 5,
+//     name: "Gallery",
+//     link: pagelink.gallery
+//   },
+//   {
+//     id: 6,
+//     name: "Music",
+//     link: pagelink.albums
+//   },
+//   {
+//     id: 8,
+//     name: "Contact",
+//     link: pagelink.contact
+//   },
+//   {
+//     id: 9,
+//     name: "Back",
+//     link: pagelink.back
+//   },
+// ]
 
 export const NavigationOne = () => {
 
@@ -130,7 +129,6 @@ export const NavigationOne = () => {
         {windowSizeSmall === ''
           ? ''
           : <Navigation
-            data={data}
             windowSizeSmall={windowSizeSmall}
             view={view} />}
       </div>

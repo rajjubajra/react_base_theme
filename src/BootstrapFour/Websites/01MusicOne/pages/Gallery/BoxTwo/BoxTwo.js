@@ -4,24 +4,33 @@ import { Container, Row } from 'react-bootstrap';
 import PhotoBox from './PhotoBox';
 
 
+
+
 export const BoxTwo = () => {
+
+  const imgA = 'http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_3.JPG';
+  const imgB = 'http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_5.JPG';
+  const imgC = 'http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_10.JPG';
+  const imgD = 'http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_14.JPG';
+  const imgE = 'http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_7.JPG';
+
   return (
     <Container>
       <Row>
         <div className="col-lg-6 col-md-6 mt-1">
-          <PhotoBox width="100%" height="auto" />
+          <PhotoBox img={imgA} width="100%" height="auto" />
         </div>
         <div className="col-lg-6 col-md-6 mt-1">
-          <PhotoBox width="100%" height="auto" />
+          <PhotoBox img={imgB} width="100%" height="auto" />
         </div>
         <div className="col-lg-6 col-md-6 mt-1">
-          <PhotoBox width="100%" height="auto" />
+          <PhotoBox img={imgC} width="100%" height="auto" />
         </div>
         <div className="col-lg-6 col-md-6 mt-1">
-          <PhotoBox width="100%" height="auto" />
+          <PhotoBox img={imgD} width="100%" height="auto" />
         </div>
         <div className="col-lg-6 col-md-6 mt-1">
-          <PhotoBox width="100%" height="auto" />
+          <PhotoBox img={imgE} width="100%" height="auto" />
         </div>
       </Row>
     </Container>

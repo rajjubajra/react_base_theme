@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+import Image from '../../../components/Image';
 
 function Mobile(props) {
 
@@ -14,20 +14,20 @@ function Mobile(props) {
     };
   };
 
-  const backgroundStyle = {
-    width: "100%",
-    fontSize: "200px",
-    position: "fixed",
-    top: "30%",
-    color: "rgba(205,205,205,0.34)"
-  }
+  // const backgroundStyle = {
+  //   width: "100%",
+  //   fontSize: "200px",
+  //   position: "fixed",
+  //   top: "30%",
+  //   color: "rgba(205,205,205,0.34)"
+  // }
 
 
   return (
     <div className="container mb-5">
       <div className="row">
         <div className="col-sm-12 mb-5">
-          <PhotoMusic width="100%" height="300px" />
+          <Image img={props.img} width="100%" height="300px" />
         </div>
         <div className="col-sm-12">
           <h1>{props.dataLength > 0 && props.state[0].title[0].value}</h1>

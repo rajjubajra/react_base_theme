@@ -1,5 +1,6 @@
 import React from 'react';
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+import Image from '../../../components/Image';
+
 
 function Desktop(props) {
 
@@ -28,7 +29,7 @@ function Desktop(props) {
     <div className="container-fluid">
       <div className="row ml-4">
         <div className="col-lg-4">
-          <PhotoMusic width="100%" height="500px" />
+          <Image img={props.img} width="100%" height="500px" />
         </div>
         <div className="col-lg-8">
           <div style={{ margin: "0px 50px 100px 30px" }}>

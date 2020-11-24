@@ -3,7 +3,6 @@ import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
 import { actionFetchData } from '../redux/actions/ActionFetchData';
-import FormFive from './Form/FormFive';
 import HomeDesktop from './HomeDesktop';
 import HomeMobile from './HomeMobile';
 
@@ -60,10 +59,7 @@ export default function Home() {
         </div>
 
 
-        {/** contact form */}
-        <div className='contact-form'>
-          <FormFive />
-        </div>
+
 
       </div>
     </div>

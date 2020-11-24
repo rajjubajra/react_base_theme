@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { photoUrl } from '../../components/PhotoPlaceholder/PhotoUrl';
 import Boxes from './Boxes';
 
 
@@ -10,11 +8,16 @@ import Boxes from './Boxes';
 export const BoxSix = (props) => {
 
   const [photos, setPhotos] = useState([]);
-  const dataUrl = photoUrl.URL;
-  const dataLength = dataUrl.length
-  const tagId = useSelector(state => state.reducerFetchPhoto.tag_id.id)
-  console.log("TAG", typeof (tagId));
 
+
+  const baseUrl = 'http://yellow-website.com/d8-react-base-theme-backend';
+  const d8VeiwPath = 'photo-placeholder';
+  const d8ViewContextualFilter = props.id;
+  const dataUrl = `${baseUrl}/${d8VeiwPath}/${d8ViewContextualFilter}`
+
+
+
+  /** GET AND SET PHOTO */
   useEffect(() => {
 
     /** Empty photo array before new loading */
@@ -28,23 +31,11 @@ export const BoxSix = (props) => {
       }
     })
       .then(res => {
-        console.log(res.data);
-        let arr = [];
-        /** multiple sub array in to one array */
-        res.data.forEach(elem => {
-
-          if (elem.field_placeholder_photo_tag[0].target_id === parseInt(tagId)) {
-            elem.field_photo_placeholder.map(item => {
-              return arr.push(item)
-            })
-          }
-        })
         /** set the array in to the state */
-        setPhotos(arr);
-
+        setPhotos(res.data[0].field_photo_placeholder);
       })
       .catch(err => console.log(err))
-  }, [dataUrl, tagId])
+  }, [dataUrl])
 
 
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -57,12 +48,11 @@ export const BoxSix = (props) => {
   return (
     <div className="container">
       <div className="row d-flex justify-content-center">
-        <h2>Tag Id: {tagId}</h2>
+        <h2>Tag Id: {d8ViewContextualFilter}</h2>
       </div>
       <div className="row">
         <Boxes
           photos={photos}
-          dataLength={dataLength}
           days={days[0]}
           months={months[0]}
         />

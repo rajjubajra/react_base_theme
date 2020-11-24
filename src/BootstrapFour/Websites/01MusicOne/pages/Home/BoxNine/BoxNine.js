@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
 import Text from './Text';
 import { useDispatch } from 'react-redux';
 import { actionFetchLandingPage } from '../Redux/ActionFetchLandingPage';
+import Image from './Image';
 
 
 
@@ -33,7 +33,7 @@ function BoxNine() {
         <div className="row">
           <div className="col-lg-6 d-none d-lg-block">
             <div style={{ height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <PhotoMusic width="200px" height="400px" />
+              <Image width="200px" height="400px" />
             </div>
           </div>
           <div className="col-lg-6 d-none d-lg-block">
@@ -50,7 +50,7 @@ function BoxNine() {
         {/** Visible  Midium device */}
         <div className="row mt-5">
           <div className="col-lg-8 d-none d-md-block d-lg-none">
-            <PhotoMusic width="300px" height="400px" />
+            <Image width="300px" height="400px" />
           </div>
           <div className="col-lg-8 d-none d-md-block d-lg-none mt-5">
             <Text data={data} />
@@ -61,7 +61,7 @@ function BoxNine() {
         {/** Visible  Small device */}
         <div className="row">
           <div className="col-lg-8 d-none d-sm-block d-md-none">
-            <PhotoMusic width="100%" height="auto" />
+            <Image width="100%" height="200px" />
           </div>
           <div className="col-lg-8 d-none d-sm-block d-md-none mt-5">
             <Text data={data} />
@@ -71,7 +71,7 @@ function BoxNine() {
         {/** Visible Extra Small device */}
         <div className="row">
           <div className="col-lg-8 d-block d-sm-none">
-            <PhotoMusic width="100%" height="300px" />
+            <Image width="100%" height="300px" />
           </div>
           <div className="col-lg-8 d-block d-sm-none mt-5">
             <Text data={data} />

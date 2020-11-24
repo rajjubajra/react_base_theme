@@ -11,7 +11,7 @@ function Boxes(props) {
   const [currentPage, setCurrentPage] = useState(0);
   const [lastPage, setLastPage] = useState(10);
   const pageGap = 10;
-  const dataLength = props.dataLength;
+  const dataLength = props.photos.length;
 
   function nextPage() {
     console.log("next");
@@ -24,8 +24,8 @@ function Boxes(props) {
     setLastPage(lastPage - pageGap);
   }
 
-  const date = new Date();
 
+  /** MASONARY DISPLAY */
   const breakpointColumnsObj = {
     default: 3,
     1100: 3,
@@ -33,7 +33,7 @@ function Boxes(props) {
     500: 1
   };
 
-  console.log("POSTS", props.photos);
+  console.log("POSTS", props);
 
   return (
     <div className="container">
@@ -44,9 +44,9 @@ function Boxes(props) {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column">
           {/* array of JSX items */
-
             props.photos.length > 0
               ? props.photos.map((item, index) => {
+
                 return <PhotoPlaceholder
                   key={index}
                   className="d-block w-100"
@@ -56,11 +56,11 @@ function Boxes(props) {
                   imgAlt={item.alt}
                   imgIndex={index}
                 />
+
               })
               : <div className="spinner-border" role="status">
                 <span className="sr-only">Loading...</span>
               </div>
-
           }
         </Masonry>
       </div>

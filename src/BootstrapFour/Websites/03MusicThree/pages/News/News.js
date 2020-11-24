@@ -12,7 +12,7 @@ export const News = () => {
 
   /** DYANMIC THAME COLOUR */
   const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+  //const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
@@ -20,7 +20,7 @@ export const News = () => {
 
   useEffect(() => {
     setClassName(colorMode);
-    setColourVariant(variant);
+    // setColourVariant(variant);
   }, [colorMode, variant])
   /** DYNAMIC THEME COLOUR CLOSED */
 

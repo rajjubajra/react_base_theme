@@ -3,7 +3,7 @@ import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector } from 'react-redux';
 import FormEight from '../../components/FormEight/FormEight';
-import PhotoMusic from '../../components/PhotoPlaceholder/PhotoMusic';
+import Image from '../../components/Image';
 import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
 
@@ -21,6 +21,7 @@ export const Contact = () => {
     //setColourVariant(variant);
   }, [colorMode, variant])
 
+  const image = 'http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_4.JPG';
 
   return (
     <div className="music-one">
@@ -35,7 +36,7 @@ export const Contact = () => {
           </div>
           <div className="row justify-content-center">
             <div className="col-lg-4 mt-5">
-              <PhotoMusic width="200px" height="400px" />
+              <Image img={image} width="200px" height="400px" />
               <div className="mt-5">
                 <h2>General Enquiries</h2>
                 <p>Email: info@mymusicexample.com</p>

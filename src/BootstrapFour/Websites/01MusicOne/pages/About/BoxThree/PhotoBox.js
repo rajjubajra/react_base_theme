@@ -1,5 +1,5 @@
 import React from 'react'
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+import Image from '../../../components/Image';
 
 
 const boxOne = {
@@ -26,18 +26,20 @@ const title = {
 
 const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+const imgOne = '';
+const imgTwo = '';
+const imgThree = '';
+const imgFour = '';
+
+
 
 function PhotoBox() {
 
-  const date = new Date();
+
 
   return (
     <div style={boxOne}>
-      <PhotoMusic
-        className="d-block w-100"
-        width="100%"
-        height="400px"
-      />
+      <Image width="100%" height="400px" />
       <section style={caption}>
         <div style={title}>Text Image</div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odit magnam.</p>

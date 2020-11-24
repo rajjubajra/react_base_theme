@@ -25,7 +25,6 @@ export const BlogSeven = () => {
   const [status, setStatus] = useState('');
   const [dtLength, setDtLength] = useState(0);
 
-
   useEffect(() => {
     axios({
       method: 'GET',
@@ -43,6 +42,7 @@ export const BlogSeven = () => {
           let data = new Date(item.created[0].value);
           months.push(data.getMonth());
           years.push(data.getFullYear());
+          return data;
         })
         setDateYear(years);
         setDateMonths(months);

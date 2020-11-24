@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import ColourMode from '../../../components/ColourMode/ColourMode';
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+import Image from '../../../components/Image';
+
 
 export const ColumnOne = () => {
 
@@ -35,6 +36,8 @@ export const ColumnOne = () => {
     };
   };
 
+  const img = 'http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_14.JPG'
+
   return (
     <div className={className}>
       <ColourMode />
@@ -49,29 +52,21 @@ export const ColumnOne = () => {
         </div>
         <div className="row mt-4">
           <div className="col">
-            <div className="d-none d-lg-block" style={{ float: "left", margin: "0px 20px 0px 0px" }}>
-              <PhotoMusic
-                width="500px"
-                height="300px"
-              />
+            {/** desktop */}
+            <div className="d-none d-lg-block d-xl-block" style={{ float: "left", margin: "0px 20px 0px 0px" }}>
+              <Image img={img} width="500px" height="300px" />
             </div>
+            {/** tablet */}
             <div className="d-none d-md-block d-lg-none" style={{ float: "left", margin: "0px 20px 0px 0px" }}>
-              <PhotoMusic
-                width="500px"
-                height="300px"
-              />
+              <Image img={img} width="500px" height="300px" />
             </div>
+            {/** mobile */}
             <div className="d-none d-sm-block d-md-none" style={{ float: "left", margin: "0px 20px 20px 0px" }}>
-              <PhotoMusic
-                width="100%"
-                height="300px"
-              />
+              <Image img={img} width="100%" height="300px" />
             </div>
+            {/** extra small  */}
             <div className="d-block d-sm-none" style={{ margin: "0px 20px 20px 0px" }}>
-              <PhotoMusic
-                width="100%"
-                height="200px"
-              />
+              <Image img={img} width="100%" height="200px" />
             </div>
             <div>
               <div dangerouslySetInnerHTML={createMarkup(state, 0, dataLength)} />

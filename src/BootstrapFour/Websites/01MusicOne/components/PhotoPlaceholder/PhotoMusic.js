@@ -8,8 +8,10 @@ function PhotoMusic(props) {
 
   const [photo, setPhoto] = useState([]);
   const [indexId, setIndexId] = useState(0);
-  const dataUrl = photoUrl.URL;
+
   const tagId = 17; //Taxonomy target_id for "Music"
+  const dataUrl = `${photoUrl.URL}/${tagId}`;
+
 
   const [mouseIn, setMouseIn] = useState(false);
   console.log("Mouse IN", mouseIn);
@@ -24,18 +26,8 @@ function PhotoMusic(props) {
       }
     })
       .then(res => {
-        // console.log(res.data);
-        let arr = [];
-        /** multiple sub array in to one array */
-        res.data.forEach(elem => {
-          if (elem.field_placeholder_photo_tag[0].target_id === tagId) {
-            elem.field_photo_placeholder.map(item => {
-              return arr.push(item)
-            })
-          }
-        })
-        /** set the array in to the state */
-        setPhoto(arr);
+        console.log("PHOTO DATA :::", res.data);
+        setPhoto(res.data);
       })
       .catch(err => console.log(err))
   }, [dataUrl])
