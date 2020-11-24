@@ -99,7 +99,7 @@ const FormSix = () => {
           <form className="form-6 mt-5" onSubmit={handleSubmit}>
 
             <div className="row">
-              <div className="col-lg-6 col-md-6 co-xs-12">
+              <div className="col-lg-6 col-md-6 co-sm-11">
                 <div className="form-group">
 
                   <input
@@ -114,7 +114,7 @@ const FormSix = () => {
 
                 </div>
               </div>
-              <div className="col-lg-6 col-md-6 col-xs-12">
+              <div className="col-lg-6 col-md-6 col-sm-11">
                 <div className="form-group">
 
                   <input

@@ -4,6 +4,7 @@ import ColourMode from '../../components/ColourMode/ColourMode';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ContactDesktop from './ContactDesktop';
 import ContactMobile from './ContactMobile';
+import Footer from '../../components/footer/Footer';
 
 
 export const Contact = () => {
@@ -14,8 +15,10 @@ export const Contact = () => {
 
   return (
     <div className='blog-two min-vh-100'>
+      <ColourMode />
+
       <div className={className}>
-        <ColourMode />
+
         <NavigationOne />
 
         {/** DESKTOP AND TABLET */}
@@ -25,6 +28,10 @@ export const Contact = () => {
         {/** MOBILE */}
         <div className="d-block d-md-none d-lg-none d-xl-none">
           <ContactMobile />
+        </div>
+
+        <div className="mt-3 border-top">
+          <Footer />
         </div>
 
 

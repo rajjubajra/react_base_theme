@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import SocialMediaDesktop from '../../socalMedia/SocialMediaDesktop';
+
 
 
 const ulStyle = {
@@ -20,30 +22,35 @@ const titleStyle = {
 
 function NavDesktop(props) {
   return (
-    <div className="d-flex justify-content-between w-100">
-
-      <div style={titleStyle}>
-        <h1>YW Blog Two</h1>
+    <>
+      <div className="d-flex justify-content-end w-100">
+        <SocialMediaDesktop />
       </div>
+      <div className="d-flex justify-content-between w-100">
 
-      <div>
-        <ul style={ulStyle}>
-          {
-            props.dataLength > 0 &&
-            props.data.map(item => {
-              const { id, path, name } = item
-              return <li key={id}>
-                <Link
-                  style={props.linkStyle}
-                  to={`/${path}`}
-                >{name}</Link>
-              </li>
-            })
-          }
-        </ul>
+        <div style={titleStyle}>
+          <h1>YW Blog Two</h1>
+        </div>
+
+        <div>
+          <ul style={ulStyle}>
+            {
+              props.dataLength > 0 &&
+              props.data.map(item => {
+                const { id, path, name } = item
+                return <li key={id}>
+                  <Link
+                    style={props.linkStyle}
+                    to={`/${path}`}
+                  >{name}</Link>
+                </li>
+              })
+            }
+          </ul>
+        </div>
+
       </div>
-
-    </div>
+    </>
   )
 }
 

@@ -8,6 +8,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import BoxArrowInLeft from '../../components/Icon/BoxArrowInLeft';
 import BoxArrowInRight from '../../components/Icon/BoxArrowInRight';
 import YearMonthDrops from '../Form/YearMonthDrops';
+import Footer from '../../components/footer/Footer';
 
 
 
@@ -122,6 +123,8 @@ function Blog() {
             }
           </div>
         }
+
+        <Footer />
 
       </div>
     </div>
