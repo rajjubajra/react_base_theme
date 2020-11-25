@@ -63,8 +63,8 @@ function ReadMore(props) {
             fetched ?
               <>
                 {/** created date */}
-                < div className="row">
-                  <div className="col">
+                <div className="row mt-5">
+                  <div className="col mt-5">
                     {data[0].created}
                   </div>
                 </div>

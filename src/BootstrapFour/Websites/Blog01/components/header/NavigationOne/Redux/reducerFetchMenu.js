@@ -13,12 +13,12 @@ const initalState = {
 export const reducerFetchMenu = (state = initalState, action) => {
 
   switch (action.type) {
-    case actionTypes.START_FETCHING_MENU_MUSIC_TWO:
+    case actionTypes.START_FETCHING_MENU_BLOG_ONE:
       return {
         fetching: true
       }
     /** FETCH DATA FOR Music menu page */
-    case actionTypes.FETCHED_MENU_MUSIC_TWO:
+    case actionTypes.FETCHED_MENU_BLOG_ONE:
       //console.log('DATA REDUCER menu', action.data);
       let arr = [];
       action.data.forEach(function (item) {
@@ -37,7 +37,7 @@ export const reducerFetchMenu = (state = initalState, action) => {
         data: arr,
         dataLength: action.data.length
       }
-    case actionTypes.FETCH_ERROR_MENU_MUSIC_TWO:
+    case actionTypes.FETCH_ERROR_MENU_BLOG_ONE:
       return {
         fetched: false,
         fetching: false,

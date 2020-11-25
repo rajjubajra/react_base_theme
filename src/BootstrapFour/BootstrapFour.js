@@ -12,6 +12,7 @@ const BootsrapFour = () => {
     <Container className='mt-5'>
       <TitleNNav title={'Websites'} subtitle="Bootstrap 4" href="/websites" />
       <Row>
+
         <Cards
           title="Coming Soon"
           linkref="/"
@@ -24,7 +25,6 @@ const BootsrapFour = () => {
           linkref="/music-zero"
           text="Music"
           type="Solo Artist / Band"
-
         />
 
         <Cards
@@ -63,17 +63,22 @@ const BootsrapFour = () => {
         />
 
         <Cards
+          title="Blog Theree"
+          linkref="/b4Blog-three-"
+          text="Blog"
+          type="Blog"
+        />
+
+        <Cards
           title="Photography One"
           linkref="/b4Photography-one"
           text="Photography"
           type="Photographer"
         />
 
-
         <Cards
           title="Art & Design"
           linkref="/artNdesign" />
-
 
         <Cards
           title="Profile 2020"
@@ -86,8 +91,6 @@ const BootsrapFour = () => {
         <Cards
           title="Photo Gallery"
           linkref="/photo-gallery" />
-
-
 
         <Cards
           title="Profile Aaa"

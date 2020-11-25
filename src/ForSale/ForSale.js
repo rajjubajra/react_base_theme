@@ -20,13 +20,11 @@ const ForSale = () => {
 
         </div>
         <div className="col-6 d-flex justify-content-end">
-          <img style={
-            {
-              width: "100%",
-              maxWidth: "200px"
-            }
-          } src="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/yellow-website-logo-horizontal.png"
-            alt="Yellow website logo" />
+          <div style={{ maxWidth: "200px" }}>
+            <img style={{ width: "100%", height: "auto" }}
+              src="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/yellow-website-logo-horizontal.png"
+              alt="Yellow website logo" />
+          </div>
         </div>
 
       </div>

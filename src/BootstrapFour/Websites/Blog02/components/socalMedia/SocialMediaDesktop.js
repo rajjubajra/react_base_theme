@@ -11,7 +11,6 @@ import './SocialMediaDesktop.scss';
 
 function SocialMediaDesktop() {
 
-
   /**
    * IMPORTANT NOTE: PLACING MUST BE AFTER NAVIGATION
    */

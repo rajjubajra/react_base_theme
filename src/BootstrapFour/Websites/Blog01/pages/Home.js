@@ -2,8 +2,6 @@ import React from 'react';
 import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
-import NewsLetters from './NewsLetters/NewsLetters';
-import PopularBlog from './PopularBlog/PopularBlog';
 import Title from '../components/header/Titlte/Title';
 import Footer from '../components/footer/Footer';
 import HomeDesktop from './HomeDesktop';

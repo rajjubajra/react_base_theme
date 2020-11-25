@@ -10,7 +10,7 @@ export const BoxSix = (props) => {
   const [photos, setPhotos] = useState([]);
 
 
-  const baseUrl = 'http://yellow-website.com/d8-react-base-theme-backend';
+  const baseUrl = 'https://yellow-website.com/d8-react-base-theme-backend';
   const d8VeiwPath = 'photo-placeholder';
   const d8ViewContextualFilter = props.id;
   const dataUrl = `${baseUrl}/${d8VeiwPath}/${d8ViewContextualFilter}`

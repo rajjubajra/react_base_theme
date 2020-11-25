@@ -7,7 +7,7 @@ export const actionFetchMenu = () => {
 
   return function (dispatch) {
     dispatch({
-      type: actionTypes.START_FETCHING_MENU_MUSIC_TWO
+      type: actionTypes.START_FETCHING_MENU_BLOG_TWO
     })
 
     axios({
@@ -21,13 +21,13 @@ export const actionFetchMenu = () => {
         // console.log(res.data)
 
         dispatch({
-          type: actionTypes.FETCHED_MENU_MUSIC_TWO,
+          type: actionTypes.FETCHED_MENU_BLOG_TWO,
           data: res.data
         })
       })
       .catch(err => {
         dispatch({
-          type: actionTypes.FETCH_ERROR_MENU_MUSIC_TWO,
+          type: actionTypes.FETCH_ERROR_MENU_BLOG_TWO,
           fetched: false,
           error: err
         })

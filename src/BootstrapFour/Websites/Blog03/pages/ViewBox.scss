@@ -1,0 +1,12 @@
+.view-box{
+  .btn-read-more{
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+  }
+  .btn-read-more:hover{
+    background-color: #ccc;
+    color: #fff !important;
+    transition: background-color 0.2s linear;
+  }
+
+}
