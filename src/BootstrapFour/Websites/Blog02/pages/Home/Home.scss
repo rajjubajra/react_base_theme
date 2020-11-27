@@ -7,6 +7,15 @@
   }
 }
 
+.large-font-mobile {
+  div {
+    p {
+      font-size: 1.5rem !important;
+      letter-spacing: 1px;
+    }
+  }
+}
+
 .medium-font {
   div {
     font-size: 2rem !important;

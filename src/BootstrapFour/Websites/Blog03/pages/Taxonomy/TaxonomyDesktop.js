@@ -14,8 +14,10 @@ function TaxonomyDesktop() {
 
   const ulStyle = {
     display: "flex",
+    flexDirection: "column",
     listStyle: "none",
     marginBottom: "20px",
+    lineHeight: "1.8rem",
   }
 
   const liStyle = {

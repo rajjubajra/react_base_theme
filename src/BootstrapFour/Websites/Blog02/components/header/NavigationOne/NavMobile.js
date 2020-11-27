@@ -19,7 +19,8 @@ function NavMobile(props) {
     transition: "top 1s linear",
     background: "#fff",
     padding: "10px 40px",
-    minWidth: "250px"
+    minWidth: "250px",
+    lineHeight: "2.5rem"
   }
 
 

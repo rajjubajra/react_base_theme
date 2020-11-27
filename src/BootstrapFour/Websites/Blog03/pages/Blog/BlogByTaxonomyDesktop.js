@@ -29,19 +29,14 @@ function BlogByTaxonomyDesktop(props) {
   return (
     <>
 
-      <div className="container">
-        {/** LIST OF TAXONOMY TERMS WITH NAVIGATION */}
-        <div className="row">
-          <div className="col d-flex justify-content-center">
-            <Taxonomy />
-          </div>
-        </div>
+      <div className="container-fluid">
+
 
         {/** BLOG */}
         <div className="row  mt-5 mb-5">
-          {/** POPULAR BLOG */}
+          {/** LIST OF TAXONOMY TERMS WITH NAVIGATION */}
           <div className="col-lg-3">
-            <PopularBlog />
+            <Taxonomy />
           </div>
 
           <div className="col-lg-9">
@@ -60,7 +55,7 @@ function BlogByTaxonomyDesktop(props) {
                 props.fetched
                   ? props.slicedData.map(item => {
                     return <section
-                      style={{ margin: "0px 50px 0px 60px" }}
+                      style={{ margin: "0px 110px 0px 60px" }}
                       key={item.nid}>
                       <ViewBox
                         nid={item.nid}

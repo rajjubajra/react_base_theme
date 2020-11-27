@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NewsLetters from './NewsLetters/NewsLetters';
 import PopularBlog from './PopularBlog/PopularBlog';
-
+import Title from '../components/header/Titlte/Title'
 
 
 
@@ -13,6 +13,12 @@ export function HomeTablet() {
 
   return (
     <div className="container mt-5">
+
+      <div className="row">
+        <Title />
+      </div>
+
+      {/** TOGGLE NEWS LETTER AND POPULAR BLOG */}
       <div className="row mb-5">
         <div
           style={{
@@ -42,10 +48,13 @@ export function HomeTablet() {
           </div>
       </div>
 
+
       <div className="row mt-2">
+        {/** POPULAR BLOGS */}
         <div className={`col ${view === 1 ? 'd-block' : 'd-none'}`}>
           <PopularBlog />
         </div>
+        {/** NEWS LETTER */}
         <div className={`col ${view === 0 ? 'd-block' : 'd-none'}`}>
           <NewsLetters />
         </div>

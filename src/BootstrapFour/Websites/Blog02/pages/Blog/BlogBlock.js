@@ -37,7 +37,7 @@ function BlogBlock(props) {
         props.data.length > 0
           ? props.data.map(item => {
             const { nid, title, created, body } = item;
-            return <>
+            return <div key={nid}>
 
               <div className="d-none d-md-block d-lg-block d-xl-block">
                 <BlogBlockDesktop
@@ -55,7 +55,7 @@ function BlogBlock(props) {
                   body={body} />
               </div>
 
-            </>
+            </div>
           })
           : <div className="col d-flex justify-content-center mb-5">
             {loading}</div>

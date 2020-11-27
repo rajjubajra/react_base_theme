@@ -10,14 +10,20 @@ import Portfolio2020 from '../BootstrapFour/Websites/Portfolio2020/Portfolio2020
 import MeghaMenuBootstrap4 from '../components/Navigation/MeghaMenuBootstrap4';
 import RouteLanding from '../BootstrapFour/B4Components/B4LandingPage/RouteLanding';
 
+/** MUSIC */
 import MusicZero from '../BootstrapFour/Websites/00MusicZero/MusicZero';
 import MusicOne from '../BootstrapFour/Websites/01MusicOne/MusicOne';
 import MusicTwo from '../BootstrapFour/Websites/02MusicTwo/MusicTwo';
 import MusicThree from '../BootstrapFour/Websites/03MusicThree/MusicThree';
 
+/** BLOGS */
 import BlogOne from '../BootstrapFour/Websites/Blog01/BlogOne';
 import BlogTwo from '../BootstrapFour/Websites/Blog02/BlogTwo';
 import BlogThree from '../BootstrapFour/Websites/Blog03/BlogThree';
+
+/** BUSINESS [LOCAL BUSINESS AND PROFESSIONAL SERVICES] */
+import BusinessOne from '../BootstrapFour/Websites/Business01/BusinessOne'
+import BusinessTwo from '../BootstrapFour/Websites/Business02/BusinessTwo'
 
 import PhotographyOne from '../BootstrapFour/Websites/Photography01/PhotographyOne';
 import PhotographyA from '../BootstrapFour/Websites/PhotographyA/PhotographyA';
@@ -99,6 +105,8 @@ export default function RouterBootstrapFour() {
       <BlogOne />
       <BlogTwo />
       <BlogThree />
+      <BusinessOne />
+      <BusinessTwo />
       <PhotoGallery />
       <PhotographyOne />
       <ProfileAaa />

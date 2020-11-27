@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DangerouslySetInnerHtml from './DangerouslySetInnterHtml';
+import DangerouslySetInnerHtml from '../../components/DangerouslySetInnterHtml';
 
 function BigView(props) {
 
@@ -9,7 +9,6 @@ function BigView(props) {
   useEffect(() => {
     fetched && setBody(news[0].body.substring(0, 300))
   }, [fetched, news])
-
 
 
 
@@ -36,7 +35,6 @@ function BigView(props) {
           </section>
         </div>
       </div>
-
     </div>
   )
 }

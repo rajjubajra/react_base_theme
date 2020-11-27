@@ -3,6 +3,8 @@ import DangerouslySetInnerHtml from '../Utilities/DangerouslySetInnterHtml';
 import { DayMonthCommaYear } from '../Utilities/DateFormat';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
+import SecondBlockDesktop from './SecondBlockDesktop';
+import SecondBlockMobile from './SecondBlockMobile';
 
 
 
@@ -27,44 +29,32 @@ function SecondBlock(props) {
           <h1>Blogs</h1>
         </div>
       </div>
-      <div className='row'>
+      <div className='row mt-5'>
         {
           props.data.length > 0
             ? props.data.map(item => {
               const { nid, title, created, body } = item;
-              return <div key={nid} className="row mt-5 mb-5">
-                <div className="col-lg-6">
-                  <section style={{
-                    width: "100%",
-                    position: "absolute",
-                    bottom: "5px",
-                    display: "flex",
-                    flexDirection: "column"
-                  }}>
-                    <h3>{title}</h3>
-                    <p>{DayMonthCommaYear(created)}</p>
-                    <Link
-                      style={linkStyle}
-                      to={{
-                        pathname: `/${pagelink.readmore}/${nid}`,
-                        state: { pager: props.pager }
-                      }}
-                    >Read More</Link>
-                  </section>
+              return <div key={nid}>
+
+                <div className="d-none d-md-block d-lg-block d-xl-block">
+                  <SecondBlockDesktop
+                    nid={nid}
+                    title={title}
+                    created={created}
+                    body={body} />
                 </div>
-                <div className="col-lg-6">
-                  <section
-                    className="first-big-letter"
-                    style={{
-                      borderLeft: "1px solid #ccc",
-                      paddingLeft: "20px"
-                    }}>
-                    <DangerouslySetInnerHtml text={body} substr={300} />
-                  </section>
+
+                <div className="d-block d-md-none d-lg-none d-xl-none">
+                  <SecondBlockMobile
+                    nid={nid}
+                    title={title}
+                    created={created}
+                    body={body} />
                 </div>
               </div>
             })
-            : 'LOADING...'
+            : <div className="d-flex justify-content-center">
+              'LOADING...'</div>
         }
       </div>
     </>

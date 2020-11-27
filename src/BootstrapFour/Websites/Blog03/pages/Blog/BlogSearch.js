@@ -93,7 +93,7 @@ function BlogSearch() {
   return (
     <div className='blog-one'>
       {/** MAIN NAVIGATION */}
-      <NavigationOne />
+      <NavigationOne hideSearchIcon={true} />
 
       <div className="container-fluid mb-5 mt-5 min-vh-100">
         <div className="row justify-content-end">

@@ -1,5 +1,4 @@
 import React from 'react';
-import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
 import Title from '../components/header/Titlte/Title';
@@ -20,7 +19,7 @@ export default function Home() {
     <div className="blog-one">
       <div className={className}>
         <ColourMode />
-        <NavigationOne />
+
 
         {/** Title */}
         <Title title="Blogs" />

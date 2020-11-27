@@ -70,6 +70,19 @@ const BootsrapFour = () => {
         />
 
         <Cards
+          title="Business One"
+          text="Business"
+          type="Local Business/Professioan Services"
+          linkref="/b4-business-one-home" />
+
+        <Cards
+          title="Business Two"
+          text="Business"
+          type="Local Business/Professioan Services"
+          linkref="/b4-business-two" />
+
+
+        <Cards
           title="Photography One"
           linkref="/b4Photography-one"
           text="Photography"
@@ -106,11 +119,13 @@ const BootsrapFour = () => {
           type="Image scroll Horizontal"
           linkref="/photography-A" />
 
+
         <Cards
           title="Base Theme"
           text="Base Theme"
           type="Do not Work on this Theme"
           linkref="/basetheme" />
+
 
       </Row>
     </Container>

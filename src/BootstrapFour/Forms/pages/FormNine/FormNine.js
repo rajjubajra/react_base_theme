@@ -17,7 +17,7 @@ function FormNine() {
               type="text"
               className="form-control mb-2 mr-sm-2"
               placeholder="Email" />
-            <button type="submit" class="btn btn-light mb-2">Subscribe</button>
+            <button type="submit" className="btn btn-light mb-2">Subscribe</button>
           </form>
         </div>
 
@@ -34,7 +34,7 @@ function FormNine() {
             <button
               style={{ width: "95%" }}
               type="submit"
-              class="btn btn-light mb-2 w-100">Subscribe</button>
+              className="btn btn-light mb-2 w-100">Subscribe</button>
           </form>
         </div>
 

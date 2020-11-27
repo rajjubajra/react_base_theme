@@ -24,11 +24,10 @@ function BlogSearchBg() {
     width: "300px",
     height: "300px",
     background: "rgba(204,204,204,0.34)",
-    borderRadius: "55%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    transform: "rotate(-90deg)"
+    transform: "rotate(-45deg)"
   }
 
 

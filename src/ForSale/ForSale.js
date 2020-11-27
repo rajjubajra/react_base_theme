@@ -72,7 +72,13 @@ const ForSale = () => {
           bgImage="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail6.png"
         />
 
-
+        <Cards
+          title="Blog Three"
+          linkref="/b4Blog-three-"
+          text="Blog"
+          type="Blog"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail7.png"
+        />
 
 
       </div>

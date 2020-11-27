@@ -15,7 +15,7 @@ function TitlteDesktop(props) {
   return (
     <div style={props.mainDivStyle} className="d-flex justify-content-center">
       {/** TITLE  */}
-      <h1 className="display-1 text-uppercase">{props.title}</h1>
+      <h1 className="display-1">{props.title}</h1>
 
       {/** Navigate to Search Page */}
       <Link to={`/${pagelink.search}`}>

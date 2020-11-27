@@ -109,15 +109,15 @@ function BlogByTaxonomy(props) {
 
 
         <div className={`container-fluid mt-5 mb-5`}>
-          {/** MAIN TITLE AT TOP */}
-          <div className="row">
-            <div className="col">
-              <Title title="Blogs" />
+
+          {/** TITLE ON MOBILE ONLY */}
+          <div className="d-block d-md-none d-lg-none d-xl-none">
+            <div className="row">
+              <div className="col">
+                <Title title="Blogs" />
+              </div>
             </div>
           </div>
-
-
-
 
           {/** BLOG */}
           {/** DESKTOP VIEW */}

@@ -38,15 +38,15 @@ function ViewBox(props) {
 
       {/** TAXONOMY TERMS */}
       <div>
-        <p><DangerouslySetInnerHtml text={taxoName} substr={0} /></p>
+        <DangerouslySetInnerHtml text={taxoName} substr={0} />
       </div>
 
 
       {/** MAIN TEXT BODY */}
       <div>
-        <p><DangerouslySetInnerHtml
+        <DangerouslySetInnerHtml
           text={body}
-          substr={props.substr ? props.substr : 300} /></p>
+          substr={props.substr ? props.substr : 300} />
       </div>
 
 

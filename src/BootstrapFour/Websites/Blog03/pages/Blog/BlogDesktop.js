@@ -20,26 +20,17 @@ function BlogDesktop(props) {
   return (
     <div className="blog-one">
 
-      <div className={`container mb-5`}>
+      <div className={`container-fluid mb-5`}>
 
-        {/** TAXONOMY TERMS */}
         <div className="row">
-          <div className="col d-flex justify-content-center">
+
+          {/** TAXONOMY TERMS */}
+          <div className="col-lg-3">
             <Taxonomy />
           </div>
-        </div>
-
-
-        <div className="row">
-
-          {/** POPULAR BLOG */}
-          <div className="col-lg-3">
-            <PopularBlog />
-          </div>
-
 
           {/** ALL BLOGS  LISTING */}
-          <div className="col-lg-9">
+          <div className="col-lg-8">
             {/** Blog sub-title and Year Month drops */}
             <div className="row justify-content-center">
               <div className="col-lg-11 d-flex justify-content-between">
@@ -54,7 +45,7 @@ function BlogDesktop(props) {
                 props.fetched
                   ? props.slicedData.map(item => {
                     return <section
-                      style={{ margin: "0px 50px 0px 60px" }}
+                      style={{ margin: "0px 110px 0px 60px" }}
                       key={item.nid}>
                       <ViewBox
                         nid={item.nid}

@@ -54,11 +54,15 @@ function NavDesktop(props) {
       </div>
 
       <div style={titleStyle}>
-        <h1>YW Blog One</h1>
+        <h1>YW Blog Three</h1>
         {/** Navigate to Search Page */}
-        <Link to={`/${pagelink.search}`}>
-          <img style={iconStyle} src={props.searchIcon} alt="search" />
-        </Link>
+        {
+          props.hidSearchIcon
+            ? ''
+            : <Link to={`/${pagelink.search}`}>
+              <img style={iconStyle} src={props.searchIcon} alt="search" />
+            </Link>
+        }
       </div>
 
       <div>

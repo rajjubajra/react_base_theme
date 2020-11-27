@@ -50,7 +50,7 @@ import NavMobile from './NavMobile';
 
 
 
-export const NavigationOne = () => {
+export const NavigationOne = (props) => {
 
 
   /** fetch menu data  */
@@ -124,6 +124,7 @@ export const NavigationOne = () => {
           linkPrefix={linkPrefix}
           linkStyle={linkStyle}
           searchIcon={searchIcon}
+          hideSearchIcon={props.hideSearchIcon}
         />
       </div>
       <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
@@ -132,6 +133,7 @@ export const NavigationOne = () => {
           dataLength={dataLength}
           linkPrefix={linkPrefix}
           linkStyle={linkStyle}
+          hideSearchIcon={props.hideSearchIcon}
         />
       </div>
     </div>

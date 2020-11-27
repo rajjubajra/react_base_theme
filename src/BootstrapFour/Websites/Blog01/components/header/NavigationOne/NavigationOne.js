@@ -53,10 +53,10 @@ export const NavigationOne = () => {
 
 
   /** fetch menu data  */
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(actionFetchMenu());
-  }, [dispatch])
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(actionFetchMenu());
+  // }, [dispatch])
 
 
 
