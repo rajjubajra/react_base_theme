@@ -1,6 +1,4 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Tool from './Tool';
 import ToolsText from './ToolsText';
 import { useInView } from 'react-intersection-observer';
@@ -85,11 +83,11 @@ function Tools() {
   return (
     <div ref={refTool} className="tools mt-5">
       <div className="row justify-content-center">
-        <Title title="Client" />
+        <Title title="Clients" />
       </div>
       <div className="row justify-content-center">
         <div className="col-md-12 col-lg-12 col-xl-7">
-          <div className={`row ${refInView ? 'fade-in' : 'fade-out'}`}>
+          <div className={`row ${refInView ? 'fade-in' : 'fade-out'} justify-content-center`}>
             {
               data.map((item, index) => {
                 return <Tool key={index} logo={item.logo} alt={item.alt} text={item.text} />
@@ -99,10 +97,9 @@ function Tools() {
         </div>
 
         <div className="col-md-6 col-lg-6 col-xg-3">
-          <div className="row mt-5">
-            <div className={refInView ? 'fadeIn' : 'fadeOut'}>
-              <ToolsText />
-            </div>
+          <div className={`${refInView ? 'fadeIn' : 'fadeOut'} 
+          row mt-5 ml-4 justify-content-center`}>
+            <ToolsText />
           </div>
         </div>
       </div>

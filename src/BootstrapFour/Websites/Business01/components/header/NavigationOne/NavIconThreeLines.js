@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import './NavIconThreeLines.scss';
 
+
 const BtnThreelines = (props) => {
+
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   const [btnOpen, setBtnOpen] = useState(false);
 

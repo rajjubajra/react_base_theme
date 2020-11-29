@@ -29,7 +29,13 @@ function NavDesktop(props) {
     <div className="d-flex justify-content-between w-100">
 
       <div style={titleStyle}>
-        <h1>YW Blog One</h1>
+        <h1>
+          <img style={{
+            width: "50%",
+            maxWidth: "50px",
+            marginRight: "15px"
+          }} src={props.ywLogo} alt="yellow-webiste" />
+        Business One</h1>
       </div>
 
       <div>

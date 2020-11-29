@@ -1,6 +1,6 @@
 import React from 'react'
 import './Carousel.scss';
-import Media from 'react-bootstrap/Media';
+
 
 
 function CarouselItem(props) {
@@ -26,7 +26,7 @@ function CarouselItem(props) {
     set-position
     ${giveClassName(props.slide, props.id)}
     `} >
-      <Media>
+      <div className="media">
         <img
           style={{
             maxWidth: '100px',
@@ -34,18 +34,15 @@ function CarouselItem(props) {
             justifySelf: 'center',
             alignSelf: 'center'
           }}
-          width={74}
-          height={74}
-          className="mr-3"
           src={props.img}
           alt={props.alt}
         />
-        <Media.Body>
+        <div className="media-body">
           <h5>{props.clientName}</h5>
           <p>{props.reviewText} [ {props.slide} | {props.id} ]</p>
-        </Media.Body>
-      </Media>
-    </div >
+        </div>
+      </div>
+    </div>
 
 
   )

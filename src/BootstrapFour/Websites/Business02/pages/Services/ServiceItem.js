@@ -1,24 +1,31 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
 
 function ServiceItem(props) {
   return (
-    <Card
-      className={props.cssclass}
-      style={{ animationDelay: `${props.delay * 0.5}s` }}>
+    <div
+      className={`{
+        props.cssclass} card mt-5`}
+      style={{ animationDelay: `${props.delay * 0.5}s`, height: "550px", minWidth: "300px" }}>
 
-      <Card.Img variant="top" style={{ padding: "20px", maxHeight: "230px", objectFit: "cover" }} src={props.img} />
-      <Card.Body>
-        <Card.Title>{props.title}{props.delay}</Card.Title>
-        <Card.Text>
+      <img
+        className="card-img-top"
+        variant="top"
+        style={{ padding: "20px", height: "250px", objectFit: "cover" }}
+        src={props.img}
+        alt="cards"
+      />
+
+      <div className="card-body">
+        <div className="card-title">{props.title}{props.delay}</div>
+        <div className="card-text">
           {props.text}
-        </Card.Text>
-      </Card.Body>
-      <Card.Footer>
+        </div>
+      </div>
+      <div className="card-footer">
         <small className="text-muted">Last updated 3 mins ago</small>
-      </Card.Footer>
+      </div>
 
-    </Card>
+    </div>
   )
 }
 

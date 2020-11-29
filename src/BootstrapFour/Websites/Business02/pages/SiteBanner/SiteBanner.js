@@ -1,28 +1,19 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import SiteBannerTitle from './SiteBannerTitle';
-import SiteBannerImage from './SiteBannerImage';
+import SiteBannerDesktop from './SiteBannerDesktop';
+import SiteBannerMobile from './SiteBannerMobile';
 
 
 function SiteBanner() {
 
   return (
-    <Container>
-      <Row>
-        <Col lg={6} md={12} className="text-center">
-          <div>
-            <SiteBannerTitle />
-          </div>
-        </Col>
-        <Col lg={6} md={12}>
-          <div>
-            <SiteBannerImage />
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <div className="d-none d-md-block d-lg-block d-xl-block w-100">
+        <SiteBannerDesktop />
+      </div>
+      <div className="d-block d-md-none d-lg-none d-xl-none w-100">
+        <SiteBannerMobile />
+      </div>
+    </>
   )
 }
 

@@ -22,8 +22,12 @@ import BlogTwo from '../BootstrapFour/Websites/Blog02/BlogTwo';
 import BlogThree from '../BootstrapFour/Websites/Blog03/BlogThree';
 
 /** BUSINESS [LOCAL BUSINESS AND PROFESSIONAL SERVICES] */
-import BusinessOne from '../BootstrapFour/Websites/Business01/BusinessOne'
-import BusinessTwo from '../BootstrapFour/Websites/Business02/BusinessTwo'
+import BusinessOne from '../BootstrapFour/Websites/Business01/BusinessOne';
+import BusinessTwo from '../BootstrapFour/Websites/Business02/BusinessTwo';
+
+/** BAKERY */
+import BakeryOne from '../BootstrapFour/Websites/Bakery01/BakeryOne';
+
 
 import PhotographyOne from '../BootstrapFour/Websites/Photography01/PhotographyOne';
 import PhotographyA from '../BootstrapFour/Websites/PhotographyA/PhotographyA';
@@ -107,6 +111,7 @@ export default function RouterBootstrapFour() {
       <BlogThree />
       <BusinessOne />
       <BusinessTwo />
+      <BakeryOne />
       <PhotoGallery />
       <PhotographyOne />
       <ProfileAaa />

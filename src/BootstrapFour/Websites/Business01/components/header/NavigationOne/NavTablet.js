@@ -23,7 +23,7 @@ function NavTablet(props) {
     <div className="d-flex justify-content-between w-100">
 
       <div style={titleStyle}>
-        <h1>YW Blog One</h1>
+        <h1>YW Business One</h1>
       </div>
 
       <div>

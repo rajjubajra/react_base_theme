@@ -170,8 +170,8 @@ export const FooterTwo = (props) => {
           </div>
         </div>
         {/** SOCIAL MEDIA */}
-        <div className="row">
-          <div className="col">
+        <div className="row pb-5">
+          <div className="col pb-5">
             <SocialMedia />
           </div>
         </div>

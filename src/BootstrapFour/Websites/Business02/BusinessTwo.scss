@@ -4,11 +4,15 @@
   .basetheme-black-white {
     @import './components/ColourMode/Basetheme-black-white';
     background-color: #FFFFFF !important;
+
+    img {
+      filter: grayscale(100%);
+    }
   }
 
   .basetheme-dark {
     @import './components/ColourMode/Basetheme-dark';
-    background-color: #212529 !important;
+    background-color: #1c3044 !important;
   }
 
   .basetheme-light {
@@ -47,9 +51,7 @@
   @import './pages/scss/_animation.scss';
   @import './pages/scss/_custom.scss';
 
-  img {
-    filter: grayscale(100%);
-  }
+
 
   .btn {
     background-color: #212529 !important;

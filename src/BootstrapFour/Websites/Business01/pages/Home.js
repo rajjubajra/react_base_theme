@@ -22,6 +22,7 @@ export default function Home() {
     alignItems: "center",
   }
 
+  const wideImage = 'https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/japan3.jpg';
 
   return (
     <div className="business-one min-vh-100">
@@ -40,15 +41,15 @@ export default function Home() {
           </div>
 
 
-          {/** gap */}
-          <div className="row mt-5">
-          </div>
+          {/** gap onlyb */}
+          <div className="row mt-5"></div>
 
 
           {/** wide Image */}
           <div className="row">
             {/** properties 'src',  'alt' , width and height */}
-            <WideImage width="100%" height="500px" alt="Service" />
+            <WideImage width="100%" height="500px"
+              alt="Service" src={wideImage} />
           </div>
 
 
@@ -61,9 +62,6 @@ export default function Home() {
           <div style={styleVh} className="row mt-5 mb-5 min-vh-100">
             <BoxTen />
           </div>
-
-
-
 
           {/** FOOTER */}
           <div className="mb-5">

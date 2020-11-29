@@ -27,7 +27,7 @@ function Aboutus() {
         justifyContent: "center",
         alignItems: "center"
       }}>
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="col-sm-12 col-md-6 col-lg-6" >
           <div className={inView ? 'img-visible' : 'img-invisible'}>
             <AboutusImage />

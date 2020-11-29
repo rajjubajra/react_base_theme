@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import CarouselItem from './CarouselItem'
+import React, { useState, useEffect } from 'react';
+import CarouselItem from './CarouselItem';
 import Portrait01 from '../../../../../images/portrait/portrait01.jpg';
 import Portrait02 from '../../../../../images/portrait/portrait02.jpg';
 import Portrait03 from '../../../../../images/portrait/portrait03.jpg';
@@ -56,9 +54,10 @@ const data = [
 
 ]
 
-function Carousel() {
-  const [slide, setSlide] = useState(1);
 
+function Carousel() {
+
+  const [slide, setSlide] = useState(1);
 
   useEffect(() => {
 
@@ -85,13 +84,16 @@ function Carousel() {
 
 
   return (
-    <Container className="carousel py-lg-5">
-      <Row style={{
-        display: "flex",
-        justifyContent: "center",
-        position: "relative"
-      }}>
-        <span className="before" onClick={() => showPrevSlide(slide, data.length)}></span>
+    <div className="container carousel py-lg-5">
+      <div className="row"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          position: "relative"
+        }}>
+        <span
+          className="before"
+          onClick={() => showPrevSlide(slide, data.length)}></span>
         {
           data.map((item, index) => {
             return (
@@ -108,10 +110,10 @@ function Carousel() {
             )
           })
         }
-        <span className="after" onClick={() => showNextSlide(slide, data.length)}></span>
-      </Row>
-    </Container>
+        <span
+          n className="after" onClick={() => showNextSlide(slide, data.length)}></span>
+      </div>
+    </div>
   )
 }
-
 export default Carousel

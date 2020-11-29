@@ -1,12 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import Image from '../../components/Image';
 
 
 
-function BoxTenDesktop() {
+function BoxTenDesktop(props) {
 
-
-
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
 
   const boxPosition = {
@@ -16,17 +16,20 @@ function BoxTenDesktop() {
     justifyContent: "center",
     alignItems: 'center',
   }
+
   const boxStyle = {
     padding: "40px 40px",
     transform: "skewX(0deg) translateX(110px)",
     zIndex: "10",
     position: "relative",
-    background: "#fff",
+    background: variant === 'dark' ? "#999" : "#fff",
     borderBottom: "1px solid #ccc",
     borderRight: "1px solid #ccc",
     outline: "1px solid #ddd",
     outlineOffset: "-15px"
   }
+
+
 
 
 
@@ -44,7 +47,7 @@ function BoxTenDesktop() {
       </div>
       <div className="col-lg-5">
         <div style={{ maxWidth: "400px" }}>
-          <Image width="100%" height="500px" />
+          <Image width="100%" height="500px" image={props.image} />
         </div>
       </div>
       <div className="col-lg-2"></div>

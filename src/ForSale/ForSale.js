@@ -80,6 +80,23 @@ const ForSale = () => {
           bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail7.png"
         />
 
+        <Cards
+          title="Business One"
+          linkref="/b4-business-one-home"
+          text="Local Business / Professional service"
+          type="Business"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Business1.png"
+        />
+
+
+        <Cards
+          title="Business Two"
+          linkref="/b4-business-two"
+          text="Local Business / Professional service"
+          type="Business"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Business2.png"
+        />
+
 
       </div>
     </div>

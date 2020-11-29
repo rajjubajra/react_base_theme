@@ -19,7 +19,8 @@ function CardMobile(props) {
           <img
             style={{
               position: 'relative',
-              width: "100%"
+              width: "100%",
+              filter: "grayscale(100%)"
             }}
             src={props.bgImage} alt="background" />
         </div>

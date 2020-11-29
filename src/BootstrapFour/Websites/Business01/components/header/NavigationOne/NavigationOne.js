@@ -48,9 +48,12 @@ import NavMobile from './NavMobile';
 //   },
 // ]
 
+const ywLogo = 'https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/yellow-website-square240x240.png'
 
 export const NavigationOne = () => {
 
+  const basicTheme = useSelector(state => state.reducerSelectColourMode.colourMode);
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   /** fetch menu data  */
   const dispatch = useDispatch();
@@ -102,32 +105,35 @@ export const NavigationOne = () => {
 
   return (
     <div
-      className="blog-one"
+      className="business-one"
       style={{
-        height: "70px",
         position: scrollDirection === -1 ? "sticky" : "relative",
         top: "0px",
         zIndex: "20",
-        background: "rgba(255, 255, 255, 0.90)",
+        background: variant === 'dark' ? "#000" : "rgba(255, 255, 255, 0.90)",
         width: "100%"
       }}>
+      <div className={`${basicTheme} ${variant}`}>
 
-      {/** NAVIGATION MENU DESKTOP */}
-      <div className="d-none d-lg-block d-xl-block w-100">
-        <NavDesktop
-          data={data}
-          dataLength={dataLength}
-          linkPrefix={linkPrefix}
-          linkStyle={linkStyle}
-        />
-      </div>
-      <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
-        <NavMobile
-          data={data}
-          dataLength={dataLength}
-          linkPrefix={linkPrefix}
-          linkStyle={linkStyle}
-        />
+        {/** NAVIGATION MENU DESKTOP */}
+        <div className="d-none d-lg-block d-xl-block w-100">
+          <NavDesktop
+            ywLogo={ywLogo}
+            data={data}
+            dataLength={dataLength}
+            linkPrefix={linkPrefix}
+            linkStyle={linkStyle}
+          />
+        </div>
+        <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+          <NavMobile
+            ywLogo={ywLogo}
+            data={data}
+            dataLength={dataLength}
+            linkPrefix={linkPrefix}
+            linkStyle={linkStyle}
+          />
+        </div>
       </div>
     </div>
   )

@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import FooterTwo from '../../components/footer/FooterTwo/FooterTwo';
 import HalfImageBlock from './HalfImageBlock';
-import Team from '../Team/Team';
 import Cards from './Cards/Cards';
 
 
@@ -30,6 +29,18 @@ export const Service = () => {
             <HalfImageBlock />
 
 
+            {/** background image line */}
+            <div className="w-100">
+
+              <img
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover"
+                }}
+                src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/potery2.jpg" alt="background-borderimage" />
+
+            </div>
 
             {/** SERVICES BLOCK */}
             <div className="mt-5 mb-5">

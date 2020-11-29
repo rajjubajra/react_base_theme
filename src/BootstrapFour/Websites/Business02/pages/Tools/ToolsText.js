@@ -1,12 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 
 function ToolsText() {
-  const beforeContent = " Quam ollitia pariat";
+
+  const beforeContent = " Auam llitia pariat";
 
   return (
     <>
@@ -16,28 +16,33 @@ function ToolsText() {
           '  content: "' + beforeContent + '";',
           'font-size: 2em;',
           ' text-align: center;',
-          ' width: 100px;',
+          ' width: 150px;',
           ' height: 200px;',
-          ' border: 1px solid #ccc;',
           ' position: absolute;',
-          ' left: -30px;',
-          ' background: #ccc;',
-
+          ' left: -80px;',
+          'top: 60px;',
+          ' background: #666;',
+          'outline: 1px solid #ffffff70;',
+          'outline-offset: -10px;',
+          'padding: 15px;',
           '}'
         ].join('\n')
       }}></style>
-      <Card>
-        <Card.Body style={{ paddingLeft: "100px", position: "relative", minHeight: "350px" }} className="add-before">
-          <Card.Title>Tools</Card.Title>
-          <Card.Text>
+      <div className="card w-75">
+        <div
+          style={{ paddingLeft: "100px", position: "relative", minHeight: "350px" }}
+          className="card-body add-before">
+
+          <div className="card-title">Tools</div>
+          <div className="card-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus magni itaque, rerum nisi laboriosam eaque omnis! Sunt voluptates sint quam iusto mollitia pariatur, nisi possimus delectus quisquam aut quibusdam.
-          </Card.Text>
-          <Card.Text>
+          </div>
+          <div className="card-text">
             <FontAwesomeIcon icon={faPhone} /> 4444 5555 6666
-          </Card.Text>
+          </div>
           <Button variant="primary">Contact</Button>
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
     </>
   )
 }

@@ -11,12 +11,17 @@ function WideImage(props) {
     alignItems: "center",
     background: "#ddd",
   }
+  const imgStyle = {
+    width: props.width ? props.width : "100%",
+    height: props.height ? props.height : "auto",
+    objectFit: "cover"
+  }
 
   return (
     <>
       {
         props.src
-          ? <img src={props.src} alt={props.alt} />
+          ? <img style={imgStyle} src={props.src} alt={props.alt} />
           : <div style={blockStyle}>IMAGE - {props.alt}</div>
       }
     </>

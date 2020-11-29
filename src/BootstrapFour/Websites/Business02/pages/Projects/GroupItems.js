@@ -11,79 +11,79 @@ import './GroupItems.scss';
 const data = [
   {
     id: 0,
-    itemTitle: "Music Four",
+    itemTitle: "Orchid",
     itemBrief: "Style Hundred",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_14.JPG",
-    itemGroup: 'music'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/orchid-3097458_640.jpg",
+    itemGroup: 'orchid'
   },
   {
     id: 1,
-    itemTitle: "Food One",
+    itemTitle: "Tulip",
     itemBrief: "230UTSC",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Cake_0.jpeg",
-    itemGroup: 'food'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/pink-2254970_6.jpg",
+    itemGroup: 'tulip'
   },
   {
     id: 2,
-    itemTitle: "Food Two",
+    itemTitle: "Orchid",
     itemBrief: "900TGG",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/DSC_2374_0.jpeg",
-    itemGroup: 'food'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/flower-4725816_640.jpg",
+    itemGroup: 'orchid'
   },
   {
     id: 3,
-    itemTitle: "Music One",
+    itemTitle: "Tulip",
     itemBrief: "100TWZ",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_1.JPG",
-    itemGroup: 'music'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/tulips-1083572_640.jpg",
+    itemGroup: 'tulip'
   },
   {
     id: 4,
     itemTitle: "Coming soon",
     itemBrief: "300FTF",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail2_0.png",
-    itemGroup: 'upcoming'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/orchid-4876192_640.jpg",
+    itemGroup: 'orchid'
   },
   {
     id: 5,
     itemTitle: "Food Three",
     itemBrief: "Shirt 700",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/DSC_4944_0.jpeg",
-    itemGroup: 'food'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/tulips-3406530_640.jpg",
+    itemGroup: 'tulip'
   },
   {
     id: 6,
-    itemTitle: "Music Two",
+    itemTitle: "Japanese Garden",
     itemBrief: "SDF0090DF",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_5.JPG",
-    itemGroup: 'music'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/japanese-lamp-2243881_640.jpg",
+    itemGroup: 'japanese'
   },
   {
     id: 7,
     itemTitle: "Coming Soon",
     itemBrief: "Style 700",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail3_0.png",
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/water-1912606_640.jpg",
     itemGroup: 'upcoming'
   },
   {
     id: 8,
-    itemTitle: "Food Four",
+    itemTitle: "Japanese Garden",
     itemBrief: "Style 300HD",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/DSC_2379_0.jpeg",
-    itemGroup: 'food'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/feng-shui-167816_640.jpg",
+    itemGroup: 'japanese'
   },
   {
     id: 9,
-    itemTitle: "Music Three",
+    itemTitle: "Japanese Garden",
     itemBrief: "TZO 900",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Music2011_10.JPG",
-    itemGroup: 'music'
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/japanese-garden-437289_640.jpg",
+    itemGroup: 'japanese'
   },
   {
     id: 10,
     itemTitle: "Coming Soon",
     itemBrief: "Style Hundred",
-    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail4_0.png",
+    itemImg: "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/orchid-3178759_640.jpg",
     itemGroup: 'upcoming'
   },
 

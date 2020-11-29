@@ -7,8 +7,8 @@ function Image(props) {
 
 
   useEffect(() => {
-    typeof (props.img) === 'undefined' ? setIsImage(false) : setIsImage(true);
-  }, [props.img])
+    typeof (props.image) === 'undefined' ? setIsImage(false) : setIsImage(true);
+  }, [props.image])
 
   console.log(isImage);
 
@@ -23,7 +23,7 @@ function Image(props) {
               width: props.width && props.width,
               height: props.height && props.height
             }}
-            src={props.img}
+            src={props.image}
             alt="music"
           />
           : <div style={{

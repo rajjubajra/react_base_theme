@@ -1,15 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { actionSelectColourMode } from '../../redux/actions/actionSelectColourMode';
-import IconBackspace from '../Icon/IconBackspace';
-import IconXSquare from '../Icon/IconXSquare';
+// import IconBackspace from '../Icon/IconBackspace';
+// import IconXSquare from '../Icon/IconXSquare';
 import { cssClassName } from '../../Config/cssClassName';
 
 const ulStyle = {
   position: "fixed",
   right: "10px",
   top: "180px",
-  listStyle: "none"
+  listStyle: "none",
+  zIndex: "1001"
 }
 
 const blackWhiteStyle = {
@@ -39,9 +40,9 @@ const darkStyle = {
   cursor: "pointer"
 }
 
-const backIconStyle = {
-  position: "relative"
-}
+// const backIconStyle = {
+//   position: "relative"
+// }
 
 
 function ColourMode() {

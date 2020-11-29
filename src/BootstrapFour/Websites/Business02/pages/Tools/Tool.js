@@ -6,7 +6,10 @@ function Tool(props) {
   return (
     <div className="card m-2 p-2 text-white" style={{ justifyContent: "center" }}>
 
-      <img className="card-image" src={props.logo} style={{ width: '200px', minHieght: "206px", filter: 'grayscale(100%)' }} alt="Card" />
+      <img className="card-image"
+        src={props.logo}
+        style={{ width: '200px', minHieght: "206px" }}
+        alt="Card" />
 
       <div className="card-img-overlay" >
         <h5 className="card-title">Card title</h5>

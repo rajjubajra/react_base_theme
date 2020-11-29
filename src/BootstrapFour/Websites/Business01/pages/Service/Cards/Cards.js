@@ -4,7 +4,7 @@ import Card from './Card'
 function Cards(props) {
 
 
-  const title = "Service Titile"
+  const title = "Services"
   // const subTitle = "Sub Title"
   const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente non sed fugit voluptas tempora molestias, earum magnam. Quibusdam ab doloremque sed, necessitatibus quas, ipsa dolorem magni excepturi cupiditate aperiam iste";
 

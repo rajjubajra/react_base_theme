@@ -6,8 +6,9 @@ function ButtonGroup() {
   return (
     <div className="button-group">
       <Button name="All" datafilter="*" />
-      <Button name="Food" datafilter=".food" />
-      <Button name="Music" datafilter=".music" />
+      <Button name="Orchid" datafilter=".orchid" />
+      <Button name="Tulip" datafilter=".tulip" />
+      <Button name="Japanese" datafilter=".japanse" />
       <Button name="Upcoming" datafilter=".upcoming" />
     </div>
   )

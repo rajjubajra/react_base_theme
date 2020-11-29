@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SocialMedia from '../../socalMedia/SocialMedia';
 import NavIconThreeLines from './NavIconThreeLines';
@@ -9,6 +10,7 @@ import NavIconThreeLines from './NavIconThreeLines';
 /** Tablet and Mobile */
 function NavMobile(props) {
 
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
   const [view, setView] = useState(false);
 
 
@@ -17,7 +19,7 @@ function NavMobile(props) {
     top: view ? 40 : -200,
     listStyle: "none",
     transition: "top 1s linear",
-    background: "#fff",
+    background: variant === 'dark' ? "#333" : "#fff",
     padding: "10px 40px",
     minWidth: "250px",
     lineHeight: "2.5rem",

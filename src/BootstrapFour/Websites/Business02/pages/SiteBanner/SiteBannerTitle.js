@@ -8,16 +8,9 @@ import Button from 'react-bootstrap/Button';
 
 function SiteBannerTitle() {
 
-  const styleSiteTitle = {
-    minHeight: "90vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
-  }
-  return (
-    <div style={styleSiteTitle}>
 
+  return (
+    <>
       <h3 className="title-tex" style={{ animation: "fadeIn 2s" }}>
         Hello
       </h3>
@@ -26,7 +19,7 @@ function SiteBannerTitle() {
         animationDelay: "1s",
         animationFillMode: "both"
       }}>
-        <Title title="I am a Plan" />
+        <Title title="I am a Plant" />
       </div>
 
       <div style={{
@@ -48,7 +41,7 @@ function SiteBannerTitle() {
           <Button className="ml-1" variant="primary">Get Quote</Button>
         </div>
       </div>
-    </div >
+    </>
   )
 }
 

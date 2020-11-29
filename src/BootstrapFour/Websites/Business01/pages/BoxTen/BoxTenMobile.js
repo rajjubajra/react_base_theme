@@ -1,30 +1,36 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Image from '../../components/Image';
 
-const boxPosition = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: 'center',
-  margin: "0px 45px",
-  borderBottom: "1px solid #ccc",
-  borderRight: "1px solid #ccc"
-}
-const boxStyle = {
-  padding: "40px 40px",
-  width: "90%",
-  position: "relative",
-  background: "#fff",
-}
 
-function BoxTenMobile() {
+
+function BoxTenMobile(props) {
+
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
+  const boxPosition = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: 'center',
+    margin: "0px 45px",
+    borderBottom: "1px solid #ccc",
+    borderRight: "1px solid #ccc",
+    paddingBottom: "17px"
+  }
+  const boxStyle = {
+    padding: "40px 40px",
+    width: "90%",
+    position: "relative",
+
+  }
   return (
     <>
       <div className="col-sm-11">
         <div style={boxPosition}>
           <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
             <div style={{ maxWidth: "350px", width: "90%" }}>
-              <Image width="100%" height="450px" />
+              <Image width="100%" height="450px" image={props.image} />
             </div>
           </div>
 
