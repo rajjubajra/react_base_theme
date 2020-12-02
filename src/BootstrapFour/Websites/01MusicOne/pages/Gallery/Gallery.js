@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import BoxTwo from './BoxTwo/BoxTwo';
@@ -8,26 +8,22 @@ import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 
 export const Gallery = () => {
 
-  const [className, setClassName] = useState('light');
-  //const [colourVariant, setColourVariant] = useState('light');
+
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
   console.log(colorMode);
 
-  useEffect(() => {
-    setClassName(colorMode);
-    // setColourVariant(variant);
-  }, [colorMode, variant])
+
 
 
   return (
     <div className="music-one">
-      <div className={className}>
+      <div className={`${colorMode} pb-5`}>
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
-        <div className="mt-5 mb-5">
+        <div className="mt-5 pb-5">
           <BoxTwo />
         </div>
       </div>

@@ -11,7 +11,7 @@ function Navigation(props) {
   const usermenu = useSelector(state => state.reducerUserMenuFour.data);
   const userMenuLength = useSelector(state => state.reducerUserMenuFour.dataLength);
 
-  console.log("Menu", menu, props.view, props.windowSizeSmall)
+  console.log("Menu", menu, props.windowSizeSmall)
 
   return (
     <>

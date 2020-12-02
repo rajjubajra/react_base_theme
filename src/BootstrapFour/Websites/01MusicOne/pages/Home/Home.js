@@ -51,7 +51,7 @@ function Home() {
             <BoxEight />
           </div>
 
-          <div className="row">
+          <div className="row min-vh-100">
             <FormEight />
           </div>
         </div>

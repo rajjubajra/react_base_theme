@@ -1,6 +1,7 @@
 export const pagelink = {
-  home: "b4-bakery-one",
-  menu: "b4-bakery-one-menu",
-  location: "b4-bakery-one-location",
+  home: "b4-bakery-one-home",
+  about: "b4-bakery-one-about",
+  product: "b4-bakery-one-product",
+  contact: "b4-bakery-one-contact",
   back: "websites-bootstrap"
 }

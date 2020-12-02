@@ -85,7 +85,7 @@ const BootsrapFour = () => {
           title="Bakery One"
           text="Bakery"
           type="Bakery Business"
-          linkref="/b4-bakery-one" />
+          linkref="/b4-bakery-one-home" />
 
         <Cards
           title="Photography One"

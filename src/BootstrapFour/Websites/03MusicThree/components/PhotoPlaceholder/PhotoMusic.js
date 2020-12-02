@@ -63,8 +63,7 @@ function PhotoMusic(props) {
     objectFit: "cover",
     border: "1px solid #000",
     outlineOffset: "-10px",
-    outline: "1px solid rgba(255,255,255,0.25)",
-    filter: "grayscale(1)",
+    outline: "1px solid rgba(255,255,255,0.25)"
   }
   console.log("PHOTO INDEX", photo.length > 0 ? photo[indexId].url : photo);
 

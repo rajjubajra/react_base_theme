@@ -5,6 +5,7 @@ import Title from '../components/header/Titlte/Title';
 import Footer from '../components/footer/Footer';
 import HomeDesktop from './HomeDesktop';
 import HomeTablet from './HomeTablet';
+import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 
 
 
@@ -19,7 +20,7 @@ export default function Home() {
     <div className="blog-one">
       <div className={className}>
         <ColourMode />
-
+        <NavigationOne />
 
         {/** Title */}
         <Title title="Blogs" />

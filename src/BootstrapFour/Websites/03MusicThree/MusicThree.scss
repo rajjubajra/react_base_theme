@@ -26,7 +26,6 @@
   img {
     animation-delay: 0.5s;
     animation: blurTransition 0.5s linear;
-    filter: grayscale(100%);
   }
 
 
@@ -34,11 +33,15 @@
   .basetheme-black-white {
     @import './components/ColourMode/Basetheme-black-white';
     background-color: #FFFFFF !important;
+
+    img {
+      filter: grayscale(100%) !important;
+    }
   }
 
   .basetheme-dark {
     @import './components/ColourMode/Basetheme-dark';
-    background-color: #010b15 !important;
+    background-color: #102b46 !important;
   }
 
   .basetheme-light {

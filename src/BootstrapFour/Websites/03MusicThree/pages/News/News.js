@@ -33,7 +33,7 @@ export const News = () => {
   return (
     <div className="music-three">
 
-      <div className={className}>
+      <div className={`${className} pb-5 min-vh-100`}>
         <ColourMode />
         <NavigationOne />
         <SocialMeidiaSticky />

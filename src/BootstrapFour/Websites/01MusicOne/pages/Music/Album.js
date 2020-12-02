@@ -18,7 +18,7 @@ function Album() {
 
   /** COLOR MODE */
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  // const variant = useSelector(state => state.reducerSelectColourMode.variant);
   /** COLOR MODE CLOSED */
 
   /** FETCH ALBUM DATA "JSONAPI/UUID" */
@@ -79,7 +79,7 @@ function Album() {
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
-        <div className="container">
+        <div className="container pb-5">
           <div className="row">
             <div className="col d-flex justify-content-end">
               <CopyToClipBoard />
@@ -136,7 +136,7 @@ function Album() {
                 />
               </div>
 
-              <ul className="list-group mb-5">
+              <ul className="list-group mb-5 pb-5">
                 {
                   fetched && tracks.map((item, index) => {
                     return <li

@@ -54,7 +54,7 @@ function ColourMode() {
       <ul style={ulStyle}>
         <li style={blackWhiteStyle}
           onClick={() =>
-            dispatch(actionSelectColourMode(cssClassName.blackWhite, 'dark'))}>
+            dispatch(actionSelectColourMode(cssClassName.blackWhite, 'white'))}>
         </li>
         <li style={lightStyle}
           onClick={() =>

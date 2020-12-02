@@ -24,7 +24,7 @@ export const NavigationFour = () => {
   const [windowSizeSmall, setWindowSizeSmall] = useState('');
 
   /** OnClick "Mobile Menu Icon[Three-lines], Veiw mobile menu" */
-  const [view, setView] = useState(false);
+  //const [view, setView] = useState(false);
 
 
   /** Runs Onload */
@@ -58,7 +58,7 @@ export const NavigationFour = () => {
           ? ''
           : <Navigation
             windowSizeSmall={windowSizeSmall}
-            view={view} />
+          />
         }
       </div>
 

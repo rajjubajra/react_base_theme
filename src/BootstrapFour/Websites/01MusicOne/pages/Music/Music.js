@@ -34,12 +34,12 @@ function Music() {
 
   return (
     <div className="music-one">
-      <div className={colorMode}>
+      <div className={`${colorMode} pb-5`}>
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
-        <div className="container mb-5">
-          <div className="row mt-5 mb-2">
+        <div className="container pb-5">
+          <div className="row mt-5 pb-2">
             <div className="col"><h1>Music</h1></div>
           </div>
           <div className="row">

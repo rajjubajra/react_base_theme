@@ -1,10 +1,15 @@
 import React, { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+
 /** This Component  
  * displays share Icon
  * copies current url on click on share icon
  */
 
 function CopyToClipBoard() {
+
+  /** colour variant */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   const [isCopied, setCopied] = useState(false);
   const textAreaRef = useRef(null);
@@ -26,7 +31,8 @@ function CopyToClipBoard() {
 
   const btStyle = {
     margin: "14px",
-    cursor: "pointer"
+    cursor: "pointer",
+    color: variant === 'dark' ? '#fff' : ''
   }
 
 

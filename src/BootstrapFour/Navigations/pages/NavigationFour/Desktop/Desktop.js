@@ -18,7 +18,7 @@ function Desktop(props) {
   const [viewAbout, setViewAbout] = useState(false);
 
   /** CSS ClassName */
-  const [animate, setAnimate] = useState('');
+  //const [animate, setAnimate] = useState('');
 
   console.log("Collection", viewCollection);
 

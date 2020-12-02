@@ -1,6 +1,6 @@
 import { actionTypes } from "./ActionTypes"
 import axios from "axios"
-import { baseUrl, restAPITracks } from '../../../Config/dataurl';
+import { baseUrl } from '../../../Config/dataurl';
 
 export const actionFetchTracks = () => {
 

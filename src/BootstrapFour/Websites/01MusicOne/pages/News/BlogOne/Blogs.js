@@ -13,6 +13,11 @@ function Blogs(props) {
   /** redux dispatch */
   const disptache = useDispatch();
 
+  /** color variant */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
+
+
   /** Pagination ******************/
   const pageGap = 5; /** number of page gap is number of article display in a page */
   const currentPage = useSelector(state => state.reducerBlogOnePages.currentPage);
@@ -136,6 +141,7 @@ function Blogs(props) {
             fontWeight: "100",
             position: "relative",
             top: "15px",
+            color: variant === 'dark' ? "#fff" : "#000"
           }}>
             Page
             </span>

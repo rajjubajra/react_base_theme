@@ -7,7 +7,7 @@ const initalState = {
   data: [],
   payload: [],
   dataLength: 0,
-  linkPrefix: "#b4-business-two-"
+  linkPrefix: "#b4-bakery-two-"
 }
 
 export const reducerFetchMenu = (state = initalState, action) => {
@@ -25,7 +25,7 @@ export const reducerFetchMenu = (state = initalState, action) => {
         arr.push({
           id: item.key,
           name: item.title,
-          path: 'b4-business-two#b4-business-two-' + item.uri.replace('base:', ''),
+          path: 'b4-bakery-one-' + item.uri.replace('base:', ''),
           component: item.uri.replace('base:', ''),
           weight: item.weight,
           url: item.relative

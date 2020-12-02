@@ -109,14 +109,15 @@ export const NavigationOne = () => {
 
   return (
     <div
-      className="blog-one"
+      className="bakery-one"
       style={{
         position: scrollDirection === -1 ? "sticky" : "relative",
         top: "0px",
         zIndex: "1000",
-        background: variant === 'dark' ? "#333" : "rgba(255, 255, 255, 0.90)",
+        // background: variant === 'dark' ? "#333" : "rgba(255, 255, 255, 0.90)",
         width: "100%",
       }}>
+
 
       <div className={`${baseTheme} ${variant}`}>
 

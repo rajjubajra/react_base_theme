@@ -1,6 +1,5 @@
 import React from 'react'
 import Nav from '../../components/header/Nav';
-import { Container, Row, Col } from 'react-bootstrap';
 import Column from './Column';
 import SocialMedia from './SocialMedia';
 
@@ -143,40 +142,40 @@ export const FooterThree = () => {
     <div className='footer'>
       <Nav />
 
-      <Container>
-        <Row>
-          <Col lg={6} md={6} sm={12} xs={12}>
-            <Row>
-              <Col lg={6} md={6} sm={6} xs={12}>
+      <div className="container">
+        <div className='row'>
+          <div className='col-lg-6 col-md-6 col-sm-12' >
+            <div className='row'>
+              <div className='col-lg-6 col-md-6 col-sm-6' >
                 <section style={sectionStyle}>
                   <h4 style={titleStyle}>Account</h4>
                   <Column data={account} />
                 </section>
-              </Col>
-              <Col lg={6} md={6} sm={6} xs={12}>
+              </div>
+              <div className='col-lg-6 col-md-6 col-sm-6'>
                 <section style={sectionStyle}>
                   <h4 style={titleStyle}>Shopping</h4>
                   <Column data={shopping} />
                 </section>
-              </Col>
-            </Row>
-          </Col>
-          <Col lg={6} md={6} sm={12} xs={12}>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-6 col-md-6 col-sm-12' >
             <section style={sectionStyle}>
               <div style={footerAboutStyle}>
                 <h4 style={titleStyle}>About</h4>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis eos, sapiente molestias illum neque laudantium mollitia dignissimos explicabo doloribus quibusdam pariatur quia accusamus vel odio aspernatur doloremque qui reprehenderit sed.</p>
               </div>
             </section>
-          </Col>
-        </Row>
+          </div>
+        </div>
         {/** SOCIAL MEDIA */}
-        <Row>
-          <Col>
+        <div className="row">
+          <div className='col'>
             <SocialMedia />
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

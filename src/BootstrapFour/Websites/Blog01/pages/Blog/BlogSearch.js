@@ -95,6 +95,7 @@ function BlogSearch() {
       {/** MAIN NAVIGATION */}
       <NavigationOne />
 
+
       <div className="container-fluid mb-5 mt-5 min-vh-100">
         <div className="row justify-content-end">
           <span onClick={() => history.goBack()}><IconClose /></span>

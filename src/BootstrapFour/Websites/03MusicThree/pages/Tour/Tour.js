@@ -36,11 +36,11 @@ function Tour() {
   return (
     <div className="music-three">
 
-      <div className={`${className}  min-vh-100`}>
+      <div className={`${className} min-vh-100 pb-5`}>
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
-        <div className="container-fluid">
+        <div className="container-fluid mt-5 pb-5">
 
           {/** TOUR PLAN */}
           <div className="row justify-content-center">

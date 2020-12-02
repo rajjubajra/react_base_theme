@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector } from 'react-redux';
-import FormEight from '../../components/FormEight/FormEight';
-import Image from '../../components/Image';
+
 import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
+import ContactDesktop from './ContactDesktop';
+import ContactTablet from './ContactTablet';
+import ContactMobile from './ContactMobile';
 
 
 export const Contact = () => {
@@ -30,30 +32,25 @@ export const Contact = () => {
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
-        <div className="container min-vh-100">
+        <div className="container min-vh-100 pb-5">
+          {/** title */}
           <div className="row justify-content-center mt-5">
             <div className="col"><h1>Contact</h1></div>
           </div>
-          <div className="row justify-content-center">
-            <div className="col-lg-4 mt-5">
-              <Image img={image} width="200px" height="400px" />
-              <div className="mt-5">
-                <h2>General Enquiries</h2>
-                <p>Email: info@mymusicexample.com</p>
-              </div>
-              <div className="mt-5">
-                <h2>Booking Agencies</h2>
-                <p>America</p>
-                <p>Austreial</p>
-                <p>Asia</p>
-                <p>Europe</p>
-                <p>Africa</p>
-              </div>
-            </div>
-            <div className="col-lg-8">
-              <FormEight />
-            </div>
+
+          <div className="d-none d-lg-block d-xl-block">
+            <ContactDesktop image={image} />
           </div>
+
+          <div className="d-none d-md-block d-lg-none d-xl-none">
+            <ContactTablet image={image} />
+          </div>
+
+          <div className="d-block d-md-none d-lg-none d-xl-none">
+            <ContactMobile image={image} />
+          </div>
+
+
         </div>
       </div>
 

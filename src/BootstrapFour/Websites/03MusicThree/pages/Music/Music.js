@@ -38,11 +38,11 @@ function Music() {
   return (
     <div className="music-three">
 
-      <div className={`${className}  min-vh-100`}>
+      <div className={`${className}  min-vh-100 pb-5`}>
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
-        <div className="d-flex justify-content-center w-100">
+        <div className="d-flex justify-content-center w-100 pb-5">
           <BoxSeven />
         </div>
 

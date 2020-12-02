@@ -7,9 +7,11 @@ import Title from '../../components/header/Titlte/Title';
 import Footer from '../../components/footer/Footer';
 
 export const About = () => {
+
   /** dyanamic color */
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
   //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
+
 
   const textbg = {
     position: 'relative',

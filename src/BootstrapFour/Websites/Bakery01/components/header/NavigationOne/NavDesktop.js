@@ -35,7 +35,7 @@ function NavDesktop(props) {
             maxWidth: "50px",
             marginRight: "15px"
           }} src={props.ywLogo} alt="yellow-webiste" />
-          Business Two</h1>
+        </h1>
       </div>
 
       <div>

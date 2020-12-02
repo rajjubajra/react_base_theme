@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { pagelink } from '../../../PageLink';
 
 
-import PhotoBox from './PhotoBox';
-import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
+// import PhotoBox from './PhotoBox';
+// import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
 
 function Mobile(props) {
 

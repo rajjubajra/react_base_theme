@@ -37,7 +37,7 @@ const ForSale = () => {
           text="Music"
           type="Band / Solo Artist"
 
-          bgImage="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail2_0.png"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail2_0_0.png"
         />
 
         <Cards

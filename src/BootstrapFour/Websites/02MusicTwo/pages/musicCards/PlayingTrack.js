@@ -9,7 +9,7 @@ import Pause from './MusicPlayer/Pause';
 // import VolumeUp from './MusicPlayer/VolumeUp';
 // import VolumeDown from './MusicPlayer/VolumeDown';
 import Stop from './MusicPlayer/Stop';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { actionStopTheTrack } from '../Redux/actions/actionPlayTheTrack';
 
 
@@ -18,6 +18,7 @@ import { actionStopTheTrack } from '../Redux/actions/actionPlayTheTrack';
 function PlayingTrack(props) {
 
   const dispatch = useDispatch()
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   //const [track, setTrack] = useState('');
 
@@ -33,17 +34,22 @@ function PlayingTrack(props) {
 
 
   return (
+    <div
 
-    <div className="playing-track mt-3">
+      className="playing-track mt-3">
       <ul className="list-group mb-2">
 
-        <li className="list-group-item">
+        <li
+          style={{ background: variant === 'dark' ? "#66666687" : '' }}
+          className="list-group-item">
           {/* { <audio src={track} preload='auto' controls></audio>} */}
           {audio}
           <div>Time Left: {Math.floor(state.duration - state.time)}</div>
           <PlayingTrackInProgress now={(state.time / state.duration) * 100} />
         </li>
-        <li className="list-group-item d-flex justify-content-between">
+        <li
+          style={{ background: variant === 'dark' ? "#66666687" : '' }}
+          className="list-group-item d-flex justify-content-between">
           <section>
             <span onClick={controls.pause}><Pause /></span>
             <span onClick={controls.play}><Play /></span>

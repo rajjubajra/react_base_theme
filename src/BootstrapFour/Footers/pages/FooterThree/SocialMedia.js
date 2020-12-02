@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
 const linkStyle = {
@@ -9,10 +8,10 @@ const linkStyle = {
 
 function SocialMedia() {
   return (
-    <Container className="social-media">
-      <Row>
-        <Col lg={9} md={8} sm={6}></Col>
-        <Col lg={3} md={4} sm={6} style={linkStyle}>
+    <div className="container social-media">
+      <div className='row'>
+        <div className="col-lg-9 col-md-8 col-sm-6"></div>
+        <div className="col-lg-3 col-md-4 col-sm-6" style={linkStyle}>
           <Link to="#">
             <img className="img-fluid"
               src={`${require('../../../../images/social-media/drw-facebook.png')}`}
@@ -37,9 +36,9 @@ function SocialMedia() {
               alt="icon"
             />
           </Link>
-        </Col>
-      </Row>
-    </Container >
+        </div>
+      </div>
+    </div>
   )
 }
 

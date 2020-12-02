@@ -11,6 +11,7 @@ import BigImageSix from './BoxSix/BigImageSix';
 import BoxSeven from './BoxSeven/BoxSeven';
 import BoxEight from './BoxEight/BoxEight';
 import BoxNine from './BoxNine/BoxNine';
+import BoxTen from './BoxTen/BoxTen';
 
 
 import { pagelink } from '../PageLink';
@@ -31,6 +32,7 @@ function RoutePages() {
       <Route exact path={`/${pagelink.seven}`} component={BoxSeven} />
       <Route exact path={`/${pagelink.eight}`} component={BoxEight} />
       <Route exact path={`/${pagelink.nine}`} component={BoxNine} />
+      <Route exact path={`/${pagelink.ten}`} component={BoxTen} />
     </>
   )
 }

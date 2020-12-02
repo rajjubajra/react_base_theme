@@ -18,10 +18,6 @@
   .basetheme-light {
     @import './components/ColourMode/Basetheme-light';
     background-color: #E9ECEF !important;
-
-    img {
-      filter: grayscale(0%) !important;
-    }
   }
 
   /**NOTE: Responsive FONT-SIZE is defined on 'Basetheme.scss' file **/

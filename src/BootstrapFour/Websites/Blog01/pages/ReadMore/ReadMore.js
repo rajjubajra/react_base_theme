@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ColourMode from '../../components/ColourMode/ColourMode';
-import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
+//import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import { ActionFetchReadMore } from './Redux/ActionFetchReadMore';
 import DangerouslySetInnerHtml from '../../components/DangerouslySetInnterHtml';
 import IconClose from '../../components/Icon/IconClose';
@@ -54,7 +54,10 @@ function ReadMore(props) {
     <div className="blog-one">
       <div className={`${className} mb-5`}>
         <ColourMode />
-        <NavigationOne />
+        {/** NAVIGATION */}
+
+
+
         {
           fetched ?
             <div className="container mt-5">
@@ -71,8 +74,6 @@ function ReadMore(props) {
                 </div>
                 <div className="col">
                   <span onClick={() => history.goBack()}> <IconClose /></span>
-
-
                 </div>
               </div>
 

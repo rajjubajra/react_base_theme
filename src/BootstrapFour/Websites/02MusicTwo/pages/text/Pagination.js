@@ -4,11 +4,20 @@ import { Link } from 'react-router-dom';
 import { actionPagination, actionGoToPage } from '../Redux/actions/actionPagination';
 
 function Pagination(props) {
+
+
   const dispatch = useDispatch();
+
+  /** background colour */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   /** Page Length */
   const pagelength = useSelector(state => state.reducerFetchData.dataLength);
   //console.log("PAGINATION LENGTH", pagelength);
+
+  const stylePageItem = {
+    background: variant === 'dark' ? "#212529" : ''
+  }
 
   return (
     <div>
@@ -20,6 +29,7 @@ function Pagination(props) {
                       ">
         <li className="page-item">
           <Link
+            style={stylePageItem}
             onClick={() => dispatch(actionPagination("prev", pagelength))}
             className="page-link"
             to="#"
@@ -31,24 +41,28 @@ function Pagination(props) {
 
         <li className="page-item">
           <Link
+            style={stylePageItem}
             onClick={() => dispatch(actionGoToPage(0))}
             className="page-link"
             to="#">1</Link>
         </li>
         <li className="page-item">
           <Link
+            style={stylePageItem}
             onClick={() => dispatch(actionGoToPage(1))}
             className="page-link"
             to="#">2</Link>
         </li>
         <li className="page-item">
           <Link
+            style={stylePageItem}
             onClick={() => dispatch(actionGoToPage(2))}
             className="page-link"
             to="#">3</Link>
         </li>
         <li className="page-item">
           <Link
+            style={stylePageItem}
             onClick={() => dispatch(actionPagination("next", pagelength))}
             className="page-link"
             to="#"

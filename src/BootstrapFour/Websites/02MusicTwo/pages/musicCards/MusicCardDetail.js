@@ -15,7 +15,7 @@ function MusicCardDetail(props) {
 
 
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
-  //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
 
   /** Album Id */
@@ -72,12 +72,16 @@ function MusicCardDetail(props) {
   }, [data, dispatch, fetched, id, trackList])
 
 
+  const btnStyle = {
+    background: variant === 'dark' ? "#66666687" : '',
+    color: variant === 'dark' ? " #fff" : '',
+  }
 
   return (
     <div className="music-two">
 
 
-      <div className={className}>
+      <div className={`${className} pb-5`}>
         <ColourMode />
         <NavigationOne />
         <div className="container">
@@ -96,10 +100,14 @@ function MusicCardDetail(props) {
               <div className="mt-5 mb-3">
                 {
                   playAllTracks
-                    ? <button className="btn btn-light mt-5"
+                    ? <button
+                      style={btnStyle}
+                      className="btn btn-light mt-5"
                       onClick={() => dispatch(actionPlayAllTracks(allTracksId, false))}>
                       Back</button>
-                    : <button className="btn btn-light mt-5"
+                    : <button
+                      style={btnStyle}
+                      className="btn btn-light mt-5"
                       onClick={() => dispatch(actionPlayAllTracks(allTracksId, true))}>
                       Play All</button>
                 }

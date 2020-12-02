@@ -52,6 +52,11 @@ const data = [
   },
   {
     id: 10,
+    name: "B10",
+    link: pagelink.ten
+  },
+  {
+    id: 10,
     name: "Back",
     link: pagelink.pages
   }

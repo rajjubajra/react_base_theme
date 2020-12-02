@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { pagelink } from '../../PageLink';
-
+import { useSelector } from 'react-redux';
 
 
 
 function MusicCard(props) {
 
 
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
 
   return (
@@ -20,7 +21,7 @@ function MusicCard(props) {
                 width: "100%",
                 height: "auto",
                 margin: "0px 2px",
-                outline: "3px solid #fff"
+                outline: variant === 'dark' ? "3px solid #666" : "3px solid #fff",
               }}
               src={props.img}
               alt={props.alt} />

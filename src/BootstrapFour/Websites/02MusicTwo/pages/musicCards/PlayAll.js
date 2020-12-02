@@ -12,6 +12,9 @@ function PlayAll() {
 
   const dispatch = useDispatch()
 
+  /** background color */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
   /** fetched from REDUCERS */
   /** true or false : play all tracks */
   const playAllTracks = useSelector(state => state.reducerPlayAllTracks.playAllTracks);
@@ -81,7 +84,9 @@ function PlayAll() {
       <div>Number of Songs: {tracks.length}</div>
 
       <div className="card mb-1">
-        <div className="card-body">
+        <div
+          style={{ background: variant === 'dark' ? "#66666687" : '' }}
+          className="card-body">
           <p>{tracks[nextSong].alt}</p>
           <PlayingTrackInProgress now={(state.time / state.duration) * 100} />
           <div>
@@ -98,7 +103,9 @@ function PlayAll() {
           tracks.map(item => {
             const { alt, target_id } = item;
             return <div key={target_id} className="card mb-1">
-              <div className={`card-body`}>
+              <div
+                style={{ background: variant === 'dark' ? "#66666687" : '' }}
+                className={`card-body`}>
                 <span>{alt}</span>
               </div>
             </div>

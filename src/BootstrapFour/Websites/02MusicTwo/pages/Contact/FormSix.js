@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import './FormSix.scss';
 import axios from 'axios';
 
 
 
 const FormSix = () => {
+  /** colour variant */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -145,7 +148,8 @@ const FormSix = () => {
             </div>
 
             <div className="form-group">
-              <button type="submit" className="btn btn-light" >
+              <button type="submit"
+                className={`${variant === 'dark' ? 'btn btn-dark' : 'btn btn-light'}`}>
                 Submit</button>
             </div>
 

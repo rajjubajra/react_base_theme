@@ -10,6 +10,8 @@ function ListItem(props) {
 
   const dispatch = useDispatch();
 
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
   const id = useSelector(state => state.ReducerMusicThreePlayTrack.id);
 
   const { title, index, trackUrl } = props;
@@ -17,7 +19,9 @@ function ListItem(props) {
 
   return (
     <div className="card mb-1 w-100">
-      <div className={`card-body ${id === index ? '' : 'd-flex justify-content-between'}`}>
+      <div
+        style={{ background: variant === 'dark' ? "#99999957" : '' }}
+        className={`card-body ${id === index ? '' : 'd-flex justify-content-between'}`}>
 
         {id === index ?
           /** PLAYING TRACK */

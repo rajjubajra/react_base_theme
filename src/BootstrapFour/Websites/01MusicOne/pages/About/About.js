@@ -14,18 +14,13 @@ import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 export const About = () => {
 
   /** Dyanmic colour  */
-  const [className, setClassName] = useState('light');
+  //const [className, setClassName] = useState('light');
   //const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  // const variant = useSelector(state => state.reducerSelectColourMode.variant);
   console.log(colorMode);
 
-  useEffect(() => {
-    setClassName(colorMode);
-    //setColourVariant(variant);
-  }, [colorMode, variant])
-  /** Dyanmic colour closed */
 
 
   /** about data */
@@ -40,14 +35,14 @@ export const About = () => {
 
   return (
     <div className="music-one">
-      <div className={className}>
+      <div className={`${colorMode} pb-5`}>
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
 
         <ColumnOne />
 
-        <div className="mt-5">
+        <div className="mt-5 pb-5">
           <h2 style={{ textAlign: "center" }}>Gear</h2>
           <BoxThree />
         </div>

@@ -3,11 +3,11 @@ import { useAudio } from 'react-use';
 import PlayingTrackInProgress from './PlayingTrackInProgress';
 import Play from './MusicPlayer/Play';
 import Pause from './MusicPlayer/Pause';
-import Mute from './MusicPlayer/Mute';
-import Forward from './MusicPlayer/Forward';
-import Backward from './MusicPlayer/Backward';
-import VolumeUp from './MusicPlayer/VolumeUp';
-import VolumeDown from './MusicPlayer/VolumeDown';
+// import Mute from './MusicPlayer/Mute';
+// import Forward from './MusicPlayer/Forward';
+// import Backward from './MusicPlayer/Backward';
+// import VolumeUp from './MusicPlayer/VolumeUp';
+// import VolumeDown from './MusicPlayer/VolumeDown';
 import Stop from './MusicPlayer/Stop';
 
 

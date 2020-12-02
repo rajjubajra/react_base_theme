@@ -1,0 +1,43 @@
+@keyframes animate {
+  0% {
+    position: relative;
+    top: 0px;
+  }
+
+  25% {
+    position: relative;
+    top: -10px;
+  }
+
+  50% {
+    position: relative;
+    top: -20px;
+  }
+
+  75% {
+    position: relative;
+    top: -10px;
+  }
+
+  100% {
+    position: relative;
+    top: 0px
+  }
+}
+
+
+
+.bakery-one {
+  .big-nav {
+    a {
+      color: #fff !important;
+      font-weight: 900 !important;
+      padding: 0px;
+    }
+
+    a:hover {
+      animation: animate 1s linear;
+    }
+  }
+
+}

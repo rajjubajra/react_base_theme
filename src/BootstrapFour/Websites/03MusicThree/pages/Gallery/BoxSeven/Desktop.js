@@ -4,7 +4,6 @@ import PhotoMusic from '../../../components/PhotoPlaceholder/PhotoMusic';
 
 
 
-
 function Desktop(props) {
 
   const longPhotoStyle = {
@@ -23,6 +22,7 @@ function Desktop(props) {
             height="531px"
           />
         </div>
+
         <div className="container mb-5">
           <div className="row d-flex flex-wrap">
             <div><PhotoBox width="260px" height="260px" /></div>

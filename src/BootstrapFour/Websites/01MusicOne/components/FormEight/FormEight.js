@@ -6,9 +6,9 @@ function FormEight() {
 
 
   return (
-    <div className="container min-vh-100">
+    <div className="container">
       <div className="row justify-content-center">
-        <div className="col-8">
+        <div className="col-lg-8 col-md-8 col-sm-11">
           <h1>Fans Club</h1>
           <Form />
         </div>

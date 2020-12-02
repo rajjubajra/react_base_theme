@@ -1,26 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import NavigationSeven from './SideMenu/NavigationSeven/NavigationSeven';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import { useSelector } from 'react-redux';
 
 function Shop() {
-  const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  // const variant = useSelector(state => state.reducerSelectColourMode.variant);
   console.log(colorMode);
 
-  useEffect(() => {
-    setClassName(colorMode);
-    setColourVariant(variant);
-  }, [colorMode, variant])
+
 
   return (
     <div className="music-one">
 
-      <div className={className}>
+      <div className={colorMode}>
         <ColourMode />
         <NavigationOne />
         <div className="container">

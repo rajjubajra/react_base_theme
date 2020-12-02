@@ -1,67 +1,53 @@
 import React from 'react';
+import './Home/Home.scss';
 import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
-import PhotoPlaceholder from '../components/PhotoPlaceholder/PhotoPlaceholder';
+import HomeDesktop from './Home/HomeDesktop';
+
 
 
 export default function Home() {
 
-  const className = useSelector(state => state.reducerSelectColourMode.colourMode);
-  //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
+  const colourMode = useSelector(state => state.reducerSelectColourMode.colourMode);
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
+  const imageStyle = {
+    position: "absolute",
+    top: "0px",
+    width: "100%",
+    height: "100vh",
+    objectFit: "cover",
+    zIndex: -2,
+  }
+
+  const bgOverLay = {
+    background: "#5d3f0c5c",
+    position: "absolute",
+    top: 0,
+    zIndex: -1,
+    width: "100%",
+    height: "100vh"
+  }
+
 
 
   return (
-    <div className={className}>
-      <ColourMode />
-      <NavigationOne />
+    <div className="bakery-one">
+      {/** BACKGROUND IMAGE */}
+      <img
+        style={imageStyle}
+        src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/bread-2864703_1280.jpg"
+        alt="source-pixabay-2864703" />
+      <div style={bgOverLay}></div>
 
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-lg-6">
-            <PhotoPlaceholder
-              width="400px"
-              height="300px"
-            />
+      <div className={colourMode}>
+        <ColourMode />
+        <NavigationOne />
 
-            <PhotoPlaceholder
-              width="200px"
-              height="300px"
-            />
-
-            <PhotoPlaceholder
-              width="500px"
-              height="300px"
-            />
-
-          </div>
-        </div>
-        <div className="row mt-5">
-          <div className="col-lg-4">
-            <h1>h1 : Home</h1>
-            <h2>h2 : Home</h2>
-            <h3>h3 : Home</h3>
-            <h4>h4 : Home</h4>
-            <h5>h5 : Home</h5>
-            <h6>h6 : Home</h6>
-            <div className="mt-5">
-              <div className="btn btn-light">Button</div>
-            </div>
-
-          </div>
-          <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-            <PhotoPlaceholder
-              width="100%"
-              height="auto"
-              subjectId="0"
-            />
+        <HomeDesktop />
 
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maxime, animi iure, inventore, perferendis quidem dolore vero cumque impedit provident eaque itaque quaerat a harum et consequatur saepe quis facilis.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio incidunt sequi ratione sapiente itaque, cumque enim dignissimos eius unde fuga cupiditate adipisci, culpa expedita impedit. Praesentium perferendis repudiandae iusto rem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis aliquid qui voluptate numquam placeat molestias cum architecto, dolore voluptates veritatis fugit atque omnis, dolor libero et labore eligendi alias aliquam!</p>
-          </div>
-        </div>
       </div>
     </div>
   )

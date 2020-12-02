@@ -36,17 +36,13 @@ const bodyStyle = {
 function BlogReadMore(props) {
 
   /** DYANMIC THAME COLOUR */
-  const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
   console.log(colorMode);
 
-  useEffect(() => {
-    setClassName(colorMode);
-    setColourVariant(variant);
-  }, [colorMode, variant])
+
   /** DYNAMIC THEME COLOUR CLOSED */
 
   const currentPage = useSelector(state => state.reducerBlogOnePages.currentPage);
@@ -89,14 +85,16 @@ function BlogReadMore(props) {
   return (
     <div className="music-one">
 
-      <div className={className}>
+      <div className={colorMode}>
         <ColourMode />
         <NavigationOne />
         <SocialMediaSticky />
-        <div className="container mt-5 pb-5">
-          <div className="row">
-            <div className="col">
 
+
+        <div className="container mt-5 pb-5">
+
+          <div className="row pb-5">
+            <div className="col">
               <div className="d-flex justify-content-end">
                 <CopyToClipBoard />
                 <Link to={`/${pagelink.news}`}>
@@ -122,6 +120,7 @@ function BlogReadMore(props) {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   )

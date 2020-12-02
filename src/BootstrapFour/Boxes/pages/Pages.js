@@ -64,6 +64,12 @@ function Pages() {
           type=" - "
           linkref={pagelink.nine} />
 
+        <Cards
+          title="Box - 10"
+          text="Text/Image 50/50"
+          type=" - "
+          linkref={pagelink.ten} />
+
       </Row>
     </Container>
   )

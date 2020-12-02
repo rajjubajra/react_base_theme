@@ -118,9 +118,10 @@ function Blog() {
 
       <div className={className}>
         <ColourMode />
+        <NavigationOne />
 
         {/** MAIN NAVIGATION */}
-        <NavigationOne />
+
 
 
         {/** TITLE */}

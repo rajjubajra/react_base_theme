@@ -13,11 +13,11 @@ function CustomPlaceholder(props) {
     border: "1px solid #fff",
     margin: "20px 0px"
   }
-  const pStyle = {
-    fontSize: "0.6rem",
-    fontWeight: "200",
-    color: "#333"
-  }
+  // const pStyle = {
+  //   fontSize: "0.6rem",
+  //   fontWeight: "200",
+  //   color: "#333"
+  // }
 
   return (
     <div style={divStyle}></div>

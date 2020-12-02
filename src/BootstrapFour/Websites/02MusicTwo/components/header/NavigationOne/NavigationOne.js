@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from './Navigation';
 import NavIconThreeLines from './NavIconThreeLines';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { actionFetchMenu } from './Redux/actionFetchMenu';
 
 
@@ -49,6 +49,10 @@ import { actionFetchMenu } from './Redux/actionFetchMenu';
 // ]
 
 export const NavigationOne = () => {
+
+
+  /** backgroudn colour */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   const dispatch = useDispatch();
 
@@ -114,7 +118,7 @@ export const NavigationOne = () => {
       position: scrollDirection === -1 ? "sticky" : "relative",
       top: "0px",
       zIndex: "20",
-      background: "rgba(233, 236, 239, 0.41)"
+      background: variant === 'dark' ? "#212529" : "rgba(233, 236, 239, 0.41)"
     }}>
       {/** ICON FOR TABLET AND MOBILE */}
       <div

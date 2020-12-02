@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import ColourMode from '../../components/ColourMode/ColourMode';
 import BlogOne from './BlogOne/BlogOne';
@@ -10,17 +10,14 @@ import SocialMeidiaSticky from '../../components/socalMedia/SocialMediaSticky';
 export const News = () => {
 
   /** DYANMIC THAME COLOUR */
-  const [className, setClassName] = useState('light');
-  const [colourVariant, setColourVariant] = useState('light');
+  //const [className, setClassName] = useState('light');
+  //const [colourVariant, setColourVariant] = useState('light');
 
   const colorMode = useSelector(state => state.reducerSelectColourMode.colourMode);
-  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
   console.log(colorMode);
 
-  useEffect(() => {
-    setClassName(colorMode);
-    setColourVariant(variant);
-  }, [colorMode, variant])
+
   /** DYNAMIC THEME COLOUR CLOSED */
 
   /** FOR back to same page from readmore-news page */
@@ -31,7 +28,7 @@ export const News = () => {
 
   return (
     <div className="music-one">
-      <div className={className}>
+      <div className={`${colorMode} min-vh-100 pb-5`}>
         <ColourMode />
         <NavigationOne />
         <SocialMeidiaSticky />

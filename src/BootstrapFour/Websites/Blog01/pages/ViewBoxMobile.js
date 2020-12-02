@@ -31,7 +31,7 @@ function ViewBox(props) {
       <div className="d-flex justify-content-between mb-2">
         {/** TITLE */}
         <div>
-          <h4><DangerouslySetInnerHtml text={title} substr={0} /></h4>
+          <DangerouslySetInnerHtml text={title} substr={0} />
         </div>
       </div>
 

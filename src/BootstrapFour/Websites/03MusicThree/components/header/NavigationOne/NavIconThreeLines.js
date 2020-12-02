@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './NavIconThreeLines.scss';
+import { useSelector } from 'react-redux';
 
 const BtnThreelines = (props) => {
+
+  /** colour variant */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   const [btnOpen, setBtnOpen] = useState(false);
 
@@ -13,7 +17,7 @@ const BtnThreelines = (props) => {
     <button
       className={`nav-toggle ${btnOpen ? 'open' : ''}`}
       onClick={() => btnToggle()}>
-      <span className="threelines"></span>
+      <span className={`${variant === 'dark' ? 'threelines-dark' : 'threelines'}`}></span>
     </button>
   )
 }

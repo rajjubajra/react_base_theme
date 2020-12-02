@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionFetchPhoto } from '../../redux/actions/ActionFetchPhoto';
 import CustomPlaceholder from './CustomPlaceholder';
@@ -11,12 +11,12 @@ function PhotoPlaceholder(props) {
 
   const photo = useSelector(state => state.reducerFetchPhoto.photo);
   const dataLength = useSelector(state => state.reducerFetchPhoto.dataLength);
-  const [mouseEnterImage, setMouseEnterImage] = useState(false);
-  console.log("mouse enter", mouseEnterImage);
+  //const [mouseEnterImage, setMouseEnterImage] = useState(false);
+  //console.log("mouse enter", mouseEnterImage);
 
   useEffect(() => {
     dispach(actionFetchPhoto())
-  }, [])
+  }, [dispach])
 
 
   //console.log("placeholder", photo, "length", dataLength);

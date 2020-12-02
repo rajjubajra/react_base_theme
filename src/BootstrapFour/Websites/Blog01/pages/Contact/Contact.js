@@ -25,7 +25,11 @@ export const Contact = () => {
 
       <div className={className}>
         <ColourMode />
+        {/** NAVIGATION */}
         <NavigationOne />
+
+
+
         <Title title="Contact" hideLink={true} />
 
         <div className="container mt-5 mb-5 min-vh-100">

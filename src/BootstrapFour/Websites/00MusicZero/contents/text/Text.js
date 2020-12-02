@@ -22,7 +22,7 @@ function Text() {
   const [paraImage, setParaImage] = useState('');
 
   /** Next Album onClick */
-  const [albumLength, setAlbumLength] = useState(0);
+  //const [albumLength, setAlbumLength] = useState(0);
   //const [currentAlbum, setCuttentAlbum] = useState(0);
 
 
@@ -43,7 +43,7 @@ function Text() {
       setParaTitle(textData[page].title[0].value);
       setParaImage(textData[page].field_image_medium[0].url)
       /** set Album length */
-      setAlbumLength(textData.length);
+      // setAlbumLength(textData.length);
     }
   }, [fetched, page, textData])
 

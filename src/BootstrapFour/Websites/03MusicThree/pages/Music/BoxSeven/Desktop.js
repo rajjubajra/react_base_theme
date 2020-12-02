@@ -17,7 +17,6 @@ function Desktop(props) {
     border: "1px solid #000",
     outlineOffset: "-10px",
     outline: "1px solid rgba(255,255,255,0.25)",
-    filter: "grayscale(1)",
   }
 
   const { dtLength, data, title } = props;

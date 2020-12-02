@@ -1,5 +1,4 @@
 import React from 'react'
-import Alert from 'react-bootstrap/Alert';
 import { useSelector, useDispatch } from 'react-redux';
 import { actionPlayTheTrack } from '../../pages/Redux/actions/actionPlayTheTrack';
 import PlayingTrack from './PlayingTrack';
@@ -19,7 +18,9 @@ function ListItem(props) {
 
   return (
     <div className="card mb-1">
-      <div className={`card-body ${props.id === id ? '' : 'd-flex justify-content-between'}`}>
+      <div
+        style={{ background: variant === 'dark' ? '#66666687' : '' }}
+        className={`card-body ${props.id === id ? '' : 'd-flex justify-content-between'}`}>
         <span>{props.title}</span>
         <span>
           {props.id === id ? <PlayingTrack track={props.track} /> :

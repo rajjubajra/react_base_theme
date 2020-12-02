@@ -10,6 +10,9 @@ import { DateYear } from '../../components/DateYear';
 
 function TourPlan() {
 
+  /** colour variant */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
   const dispatch = useDispatch();
   const tour = useSelector(state => state.reducerFetchTour.payload);
   const dataLength = useSelector(state => state.reducerFetchTour.dataLength);
@@ -28,7 +31,7 @@ function TourPlan() {
 
 
   const rowStyle = {
-    border: "1px solid #eee",
+    border: variant === 'dark' ? "1px solid #eeeeee54" : "1px solid #9999999e",
     padding: "15px 0px"
   }
 
@@ -64,7 +67,11 @@ function TourPlan() {
                 </div>
                 {/** DETAILS LINK */}
                 <div className="col-lg-2 col-md-2  col-6">
-                  <span style={{ cursor: "pointer" }}
+                  <span
+                    style={{
+                      color: variant === 'dark' ? '#999' : '',
+                      cursor: "pointer"
+                    }}
                     onClick={() => {
                       dispatch(actionFetchTourDetails(nid));
                       dispatch(actionHideTour(true))
