@@ -1,0 +1,31 @@
+.blog-four {
+
+
+  .wide-image {
+    position: relative;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      background-color: #ffffff;
+      top: 420px;
+      bottom: 0;
+      right: 50%;
+      left: 0;
+      transform: skewY(10deg) scaleY(1.9);
+    }
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      background-color: #ffffff;
+      top: 420px;
+      bottom: 0;
+      right: 0%;
+      left: 50%;
+      transform: skewY(-10deg) scaleY(1.9);
+    }
+
+  }
+
+}

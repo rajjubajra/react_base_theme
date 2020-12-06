@@ -1,16 +1,23 @@
-.view-box {
+.blog-four {
 
-  a.btn-read-more {
-    border: 1px solid #cccccc87;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #ffffff !important;
-  }
 
-  a.btn-read-more:hover {
-    background-color: #ccc;
-    color: #000 !important;
-    transition: background-color 0.2s linear;
+  .view-box {
+    position: relative;
+    z-index: 10;
+
+    a.btn-read-more {
+      border: 1px solid #cccccc87;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #ffffff !important;
+    }
+
+    a.btn-read-more:hover {
+      background-color: #ccc;
+      color: #000 !important;
+      transition: background-color 0.2s linear;
+    }
+
   }
 
 }

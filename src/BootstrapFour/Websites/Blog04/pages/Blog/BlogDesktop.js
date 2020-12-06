@@ -34,7 +34,7 @@ function BlogDesktop(props) {
         <div className="row">
 
           {/** POPULAR BLOG */}
-          <div className="col-lg-3">
+          <div className="col-lg-3 bg-line-thick">
             <PopularBlog />
           </div>
 
@@ -60,7 +60,8 @@ function BlogDesktop(props) {
                 props.fetched
                   ? props.slicedData.map(item => {
                     return <section
-                      style={{ margin: "0px 50px 0px 60px" }}
+                      className="bg-line-narrow"
+                      style={{ margin: "0px 50px 30px 60px" }}
                       key={item.nid}>
                       <ViewBox
                         nid={item.nid}

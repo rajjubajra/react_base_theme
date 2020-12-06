@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Blog.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { ActionFetchBlog } from './Redux/ActionFetchBlog';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
