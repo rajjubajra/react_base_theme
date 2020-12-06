@@ -146,10 +146,7 @@ const FormSix = () => {
 
             <div className="form-group">
               <button
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "3px 18px"
-                }}
+                className="btn btn-light"
                 type="submit" >Submit</button>
             </div>
 

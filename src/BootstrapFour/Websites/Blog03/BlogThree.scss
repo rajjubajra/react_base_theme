@@ -50,6 +50,19 @@
   }
 
 
+  .btn-light {
+    background-color: #ccc !important;
+    color: #000000 !important;
+    border: 1px solid #ccc !important;
+  }
+
+  .btn-light:hover {
+    background-color: rgb(116, 115, 115) !important;
+    color: #fff !important;
+    transition: background-color 0.2s linear;
+  }
+
+
 
 
 

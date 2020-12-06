@@ -53,6 +53,7 @@ function PhotoTravel(props) {
   console.log("Photo Travel", photo, 'Length', photo.length, 'index Id', indexId);
 
   const imgStyle = {
+    maxWidth: "500px",
     width: props.width,
     height: props.height,
     objectFit: "cover"

@@ -125,7 +125,7 @@ function Blog() {
 
 
         {/** TITLE */}
-        <div className="container-fluid mt-5 mb-5">
+        <div className="container-fluid mt-5 mb-5 pb-5">
 
           <div className="row">
             <div className="col">
@@ -176,7 +176,11 @@ function Blog() {
 
         </div>
 
-        <Footer />
+
+        <div className="pb-5">
+          <Footer />
+        </div>
+
       </div>
     </div>
   )

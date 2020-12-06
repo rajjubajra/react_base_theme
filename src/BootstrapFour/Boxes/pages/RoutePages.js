@@ -12,6 +12,15 @@ import BoxSeven from './BoxSeven/BoxSeven';
 import BoxEight from './BoxEight/BoxEight';
 import BoxNine from './BoxNine/BoxNine';
 import BoxTen from './BoxTen/BoxTen';
+import BoxEleven from './BoxEleven/BoxEleven';
+import BoxTwelve from './BoxTwelve/BoxTwelve';
+import BoxThirteen from './BoxThirteen/BoxThirteen';
+import BoxFourteen from './BoxFourteen/BoxFourteen';
+import BoxFifteen from './BoxFifteen/BoxFifteen';
+import BoxSixteen from './BoxSixteen/BoxSixteen';
+import BoxSeventeen from './BoxSeventeen/BoxSeventeen';
+import BoxEighteen from './BoxEighteen/BoxEighteen';
+import BoxNineteen from './BoxNineteen/BoxNineteen';
 
 
 import { pagelink } from '../PageLink';
@@ -33,6 +42,15 @@ function RoutePages() {
       <Route exact path={`/${pagelink.eight}`} component={BoxEight} />
       <Route exact path={`/${pagelink.nine}`} component={BoxNine} />
       <Route exact path={`/${pagelink.ten}`} component={BoxTen} />
+      <Route exact path={`/${pagelink.eleven}`} component={BoxEleven} />
+      <Route exact path={`/${pagelink.twelve}`} component={BoxTwelve} />
+      <Route exact path={`/${pagelink.thirteen}`} component={BoxThirteen} />
+      <Route exact path={`/${pagelink.fourteen}`} component={BoxFourteen} />
+      <Route exact path={`/${pagelink.fifteen}`} component={BoxFifteen} />
+      <Route exact path={`/${pagelink.sixteen}`} component={BoxSixteen} />
+      <Route exact path={`/${pagelink.seventeen}`} component={BoxSeventeen} />
+      <Route exact path={`/${pagelink.eighteen}`} component={BoxEighteen} />
+      <Route exact path={`/${pagelink.nineteen}`} component={BoxNineteen} />
     </>
   )
 }

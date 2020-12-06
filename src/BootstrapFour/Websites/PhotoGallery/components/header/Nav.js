@@ -19,6 +19,7 @@ function Nav() {
         <li><Link to={`/${pagelink.gallery}/33`}>Tb</Link></li>
         <li><Link to={`/${pagelink.gallery}/34`}>Lg</Link></li>
         <li><Link to={`/${pagelink.gallery}/35`}>Pb</Link></li>
+        <li><Link to={`/${pagelink.gallery}/36`}>Pb</Link></li>
         <li><Link to={`/${pagelink.back}`}>Back</Link></li>
       </ul>
     </nav>

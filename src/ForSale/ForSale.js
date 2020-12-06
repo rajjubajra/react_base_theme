@@ -22,7 +22,7 @@ const ForSale = () => {
         <div className="col-6 d-flex justify-content-end">
           <div style={{ maxWidth: "200px" }}>
             <img style={{ width: "100%", height: "auto" }}
-              src="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/yellow-website-logo-horizontal.png"
+              src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/yellow-website-logo-horizontal.png"
               alt="Yellow website logo" />
           </div>
         </div>
@@ -45,7 +45,7 @@ const ForSale = () => {
           linkref="/b4Music-two-home"
           text="Music"
           type="Band / Solo Artist"
-          bgImage="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail3_0.png"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail3_0.png"
         />
 
         <Cards
@@ -53,7 +53,7 @@ const ForSale = () => {
           linkref="/b4Music-three-home"
           text="Music"
           type="Band / Solo Artist"
-          bgImage="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail4_0.png"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail4_0.png"
         />
 
         <Cards
@@ -61,7 +61,7 @@ const ForSale = () => {
           linkref="/b4Blog-one-"
           text="Blog"
           type="Blog"
-          bgImage="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail5.png"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail5.png"
         />
 
         <Cards
@@ -69,7 +69,7 @@ const ForSale = () => {
           linkref="/b4Blog-two-"
           text="Blog"
           type="Blog"
-          bgImage="http://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail6.png"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Thumbnail6.png"
         />
 
         <Cards

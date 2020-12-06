@@ -28,12 +28,12 @@ function FormNine() {
             <input
               style={{ width: "95%" }}
               type="text"
-              className="form-control mb-2 mr-sm-2 w-100"
+              className="form-control mb-2 mr-sm-2"
               placeholder="Email" />
             <button
               style={{ width: "95%" }}
               type="submit"
-              className="btn btn-light mb-2 w-100">Subscribe</button>
+              className="btn btn-light mb-2">Subscribe</button>
           </form>
         </div>
 

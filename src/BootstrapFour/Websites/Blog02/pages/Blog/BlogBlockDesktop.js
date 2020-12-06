@@ -14,7 +14,7 @@ function BlogBlockDesktop(props) {
     position: "absolute",
     bottom: "5px",
     right: "20px",
-    border: "1px solid #ccc",
+    border: "1px solid rgb(204 204 204 / 49%)",
     padding: "0px 18px",
     margin: "0px 20px"
 

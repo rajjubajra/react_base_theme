@@ -20,6 +20,7 @@ import MusicThree from '../BootstrapFour/Websites/03MusicThree/MusicThree';
 import BlogOne from '../BootstrapFour/Websites/Blog01/BlogOne';
 import BlogTwo from '../BootstrapFour/Websites/Blog02/BlogTwo';
 import BlogThree from '../BootstrapFour/Websites/Blog03/BlogThree';
+import BlogFour from '../BootstrapFour/Websites/Blog04/BlogFour';
 
 /** BUSINESS [LOCAL BUSINESS AND PROFESSIONAL SERVICES] */
 import BusinessOne from '../BootstrapFour/Websites/Business01/BusinessOne';
@@ -109,6 +110,7 @@ export default function RouterBootstrapFour() {
       <BlogOne />
       <BlogTwo />
       <BlogThree />
+      <BlogFour />
       <BusinessOne />
       <BusinessTwo />
       <BakeryOne />

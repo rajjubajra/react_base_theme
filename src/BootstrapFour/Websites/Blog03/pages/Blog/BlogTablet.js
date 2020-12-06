@@ -108,7 +108,9 @@ function BlogTablet(props) {
 
             {/** POPULAR BLOG */}
             <div className={`row ${view === 1 ? 'd-block' : 'd-none'}`}>
-              <PopularBlog hideTitle={true} />
+              <div className="col-11">
+                <PopularBlog hideTitle={true} />
+              </div>
             </div>
           </div>
         </div>

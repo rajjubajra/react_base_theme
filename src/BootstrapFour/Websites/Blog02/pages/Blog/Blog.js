@@ -86,7 +86,7 @@ function Blog() {
 
 
         {/** MAIN CONTENT */}
-        <div className="container">
+        <div className="container pd-5">
 
           {/** DROP DOWN OPTION TO SELECT BLOG MONTH */}
           <div className="row mt-5">
@@ -108,7 +108,7 @@ function Blog() {
           dataLength > 0 &&
           <div
             style={{ position: "relative", zIndex: 10 }}
-            className="row justify-content-center mt-4 mb-5">
+            className="row justify-content-center mt-4 pb-5">
             {
               <span onClick={() => prevPage()}><BoxArrowInLeft /></span>
             }

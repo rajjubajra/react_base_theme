@@ -51,8 +51,8 @@ function ReadMore(props) {
 
 
   return (
-    <div className="blog-one">
-      <div className={`${className} mb-5`}>
+    <div className="blog-three">
+      <div className={`${className} pb-5`}>
         <ColourMode />
         <NavigationOne />
         {
@@ -93,7 +93,7 @@ function ReadMore(props) {
               </div>
 
               {/** TEXT BODY */}
-              <div className="row">
+              <div className="row mb-5">
                 <div className="col">
                   <DangerouslySetInnerHtml text={data[0].body} substr={0} />
                 </div>

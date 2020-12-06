@@ -17,10 +17,10 @@ export function HomeTablet() {
         <div
           style={{
             cursor: "pointer",
-            borderTop: view === 0 ? "1px solid #ccc" : "1px solid #fff",
+            borderTop: view === 0 ? "1px solid #ccc" : "1px solid #ffffff00",
             borderRight: view === 0 ? "1px solid #ccc" : "none",
             borderRadius: "0px 15px 0px 0px",
-            borderBottom: view !== 0 ? "1px solid #ccc" : "1px solid #fff",
+            borderBottom: view !== 0 ? "1px solid #ccc" : "1px solid #ffffff00",
             padding: "10px 10px"
           }}
           onClick={() => setView(0)}
@@ -30,10 +30,10 @@ export function HomeTablet() {
         <div
           style={{
             cursor: "pointer",
-            borderTop: view === 1 ? "1px solid #ccc" : "1px solid #fff",
+            borderTop: view === 1 ? "1px solid #ccc" : "1px solid #ffffff00",
             borderLeft: view === 1 ? "1px solid #ccc" : "none",
             borderRadius: "15px 0px 0px 0px",
-            borderBottom: view !== 1 ? "1px solid #ccc" : "1px solid #fff",
+            borderBottom: view !== 1 ? "1px solid #ccc" : "1px solid #ffffff00",
             padding: "10px 20px"
           }}
           onClick={() => setView(1)}

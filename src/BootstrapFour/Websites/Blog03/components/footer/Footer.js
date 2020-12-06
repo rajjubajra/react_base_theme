@@ -7,7 +7,7 @@ function Footer() {
 
 
   return (
-    <footer className="mb-5">
+    <footer className="pb-5">
       <div className="container mt-5 mb-5">
         {/** SUBSCRIPTION FORM */}
         <div className="row mt-5 mb-5">

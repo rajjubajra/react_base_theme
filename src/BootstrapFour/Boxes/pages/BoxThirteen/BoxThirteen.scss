@@ -1,0 +1,23 @@
+.quote-unquote {
+  position: relative;
+  padding: 10px 0px;
+  margin: 0px 25px;
+
+  &::before {
+    content: ' " ';
+    font-size: 4.5rem;
+    float: left;
+    margin: -37px -35px;
+    font-family: cursive;
+    color: #888888;
+  }
+
+}
+
+.title-hyphen {
+  font-family: cursive;
+  font-size: 3rem;
+  line-height: 0.58;
+  margin-right: 10px;
+  color: #888888;
+}

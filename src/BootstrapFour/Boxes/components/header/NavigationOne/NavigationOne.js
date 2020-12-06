@@ -56,10 +56,55 @@ const data = [
     link: pagelink.ten
   },
   {
-    id: 10,
+    id: 11,
+    name: "B11",
+    link: pagelink.eleven
+  },
+  {
+    id: 12,
+    name: "B12",
+    link: pagelink.twelve
+  },
+  {
+    id: 13,
+    name: "B13",
+    link: pagelink.thirteen
+  },
+  {
+    id: 14,
+    name: "B14",
+    link: pagelink.fourteen
+  },
+  {
+    id: 15,
+    name: "B15",
+    link: pagelink.fifteen
+  },
+  {
+    id: 16,
+    name: "B16",
+    link: pagelink.sixteen
+  },
+  {
+    id: 17,
+    name: "B17",
+    link: pagelink.seventeen
+  },
+  {
+    id: 18,
+    name: "B18",
+    link: pagelink.eighteen
+  },
+  {
+    id: 19,
+    name: "B19",
+    link: pagelink.nineteen
+  },
+  {
+    id: 100,
     name: "Back",
     link: pagelink.pages
-  }
+  },
 ]
 
 export const NavigationOne = () => {

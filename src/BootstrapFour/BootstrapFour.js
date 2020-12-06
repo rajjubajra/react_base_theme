@@ -63,8 +63,15 @@ const BootsrapFour = () => {
         />
 
         <Cards
-          title="Blog Theree"
+          title="Blog Three"
           linkref="/b4Blog-three-"
+          text="Blog"
+          type="Blog"
+        />
+
+        <Cards
+          title="Blog Four"
+          linkref="/b4Blog-four-"
           text="Blog"
           type="Blog"
         />

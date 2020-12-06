@@ -114,7 +114,7 @@ function Blog() {
 
 
   return (
-    <div className="blog-one">
+    <div className="blog-three">
 
       <div className={className}>
         <ColourMode />

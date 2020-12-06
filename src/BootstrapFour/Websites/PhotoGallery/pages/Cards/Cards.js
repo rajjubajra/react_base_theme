@@ -69,6 +69,12 @@ function Cards() {
           linkref={`${pagelink.gallery}/35`} />
 
         <Card
+          title="Miscellanaouse"
+          text="My Images"
+          type="jpg/png"
+          linkref={`${pagelink.gallery}/36`} />
+
+        <Card
           title="Blank Card 5"
           text="#"
           type="#"

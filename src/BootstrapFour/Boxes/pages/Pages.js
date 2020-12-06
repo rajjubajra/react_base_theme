@@ -70,6 +70,60 @@ function Pages() {
           type=" - "
           linkref={pagelink.ten} />
 
+        <Cards
+          title="Box - 11"
+          text="Team member"
+          type="Square Image"
+          linkref={pagelink.eleven} />
+
+        <Cards
+          title="Box - 12"
+          text="Team member"
+          type="Circle Image"
+          linkref={pagelink.twelve} />
+
+        <Cards
+          title="Box - 13"
+          text="Text with Quote"
+          type="Quote"
+          linkref={pagelink.thirteen} />
+
+        <Cards
+          title="Box - 14"
+          text="Read More Block"
+          type="Block"
+          linkref={pagelink.fourteen} />
+
+        <Cards
+          title="Box - 15"
+          text="Read More Block"
+          type="Block"
+          linkref={pagelink.fifteen} />
+
+        <Cards
+          title="Box - 16"
+          text="Read More Block"
+          type="Block"
+          linkref={pagelink.sixteen} />
+
+        <Cards
+          title="Box - 17"
+          text="Price Card"
+          type="Block"
+          linkref={pagelink.seventeen} />
+
+        <Cards
+          title="Box - 18"
+          text="Offer Card"
+          type="Block"
+          linkref={pagelink.eighteen} />
+
+        <Cards
+          title="Box - 19"
+          text="Hero Card"
+          type="Block"
+          linkref={pagelink.nineteen} />
+
       </Row>
     </Container>
   )

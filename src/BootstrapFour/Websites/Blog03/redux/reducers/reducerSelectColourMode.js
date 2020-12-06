@@ -3,7 +3,7 @@ import { actionTypes } from '../actions/ActionTypes';
 
 const initialState = {
   colourMode: 'basetheme-black-white',
-  variant: 'dark'
+  variant: 'white'
 }
 
 export const reducerSelectColourMode = (state = initialState, action) => {

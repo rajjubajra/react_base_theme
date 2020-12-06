@@ -99,7 +99,7 @@ function BlogByTaxonomy(props) {
 
 
   return (
-    <div className="blog-one">
+    <div className="blog-three">
 
 
       <div className={className}>

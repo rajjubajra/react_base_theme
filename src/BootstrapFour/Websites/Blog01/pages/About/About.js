@@ -35,7 +35,7 @@ export const About = () => {
 
             <div className="col-lg-9 col-md-9">
 
-              <div style={textbg} className="pr-4">
+              <div style={textbg} className="pr-4 mt-3">
                 <h1>Introduction</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vel minus praesentium nihil veniam nostrum voluptatem illo? Delectus officiis laboriosam, doloremque molestias, reiciendis beatae mollitia laudantium perferendis blanditiis adipisci repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, enim eveniet pariatur voluptatum facere maiores ipsam id rerum quisquam, dolor saepe commodi sint voluptates accusantium suscipit adipisci optio, quaerat sit.</p>
 
@@ -47,7 +47,11 @@ export const About = () => {
 
           </div>
         </div>
-        <Footer />
+
+        <div className="pb-5">
+          <Footer />
+        </div>
+
         <AboutBg />
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
-import Title from '../components/header/Titlte/Title';
+//import Title from '../components/header/Titlte/Title';
 import Footer from '../components/footer/Footer';
 import HomeDesktop from './HomeDesktop';
 import HomeTablet from './HomeTablet';
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="blog-three">
-      <div className={className}>
+      <div className={`${className} pb-5`}>
         <ColourMode />
         <NavigationOne />
 

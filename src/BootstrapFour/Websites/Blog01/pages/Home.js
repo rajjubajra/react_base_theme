@@ -11,14 +11,14 @@ import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 
 export default function Home() {
 
-  const className = useSelector(state => state.reducerSelectColourMode.colourMode);
+  const colourMode = useSelector(state => state.reducerSelectColourMode.colourMode);
   //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
 
-  console.log("CSS CLASS", className);
+
 
   return (
     <div className="blog-one">
-      <div className={className}>
+      <div className={`${colourMode} pb-5`}>
         <ColourMode />
         <NavigationOne />
 
