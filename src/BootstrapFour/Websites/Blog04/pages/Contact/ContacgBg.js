@@ -1,6 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function AboutBg() {
+
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
 
   const wrapping = {
     position: "absolute",
@@ -12,7 +16,7 @@ function AboutBg() {
   const line = {
     width: "500px",
     height: "1px",
-    background: "rgba(245,241,241,0.50)",
+    background: variant === "dark" ? "#cccccc05" : "rgba(245,241,241,0.50)",
     display: "block",
     position: "absolute",
     transform: "rotate(90deg) translateY(90px) translateX(150px)"
@@ -22,7 +26,7 @@ function AboutBg() {
     position: "absolute",
     width: "300px",
     height: "300px",
-    background: "rgba(204,204,204,0.34)",
+    background: variant === "dark" ? "#cccccc05" : "rgba(204,204,204,0.34)",
     borderRadius: "55%",
     display: "flex",
     justifyContent: "center",
@@ -34,7 +38,9 @@ function AboutBg() {
   const hStyle = {
     fontSize: "5rem",
     fontWeight: "800",
-    color: "rgba(175,175,175,0.35)"
+    color: "rgba(175,175,175,0.35)",
+    fontFamily: "'Allura', cursive",
+    letterSpacing: "1.4rem"
   }
 
   return (

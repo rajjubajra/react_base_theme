@@ -15,7 +15,6 @@ export const Contact = () => {
 
   const textbg = {
     position: 'relative',
-    background: "rgba(255,255,255,0.08)",
     padding: "10 45px",
     zIndex: "10",
   }

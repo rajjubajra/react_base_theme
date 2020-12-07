@@ -18,6 +18,11 @@ function BlogDesktop(props) {
   const year = useSelector(state => state.ReducerBlogSelectedDate.year);
 
 
+  const indexing = {
+    position: "relative",
+    zIndex: 3
+
+  }
   return (
     <div className="blog-one">
 
@@ -47,7 +52,7 @@ function BlogDesktop(props) {
               </div>
             </div>
             {/** Blog sub-title and Year Month drops */}
-            <div className="row justify-content-center">
+            <div style={indexing} className="row justify-content-center">
               <div className="col-lg-11 d-flex justify-content-between">
                 <h2 className="text-uppercase">{props.title}</h2>
                 <YearMonthDrops />
@@ -55,7 +60,7 @@ function BlogDesktop(props) {
             </div>
 
             {/** BLOG LISTING */}
-            <div className="row">
+            <div style={indexing} className="row">
               {
                 props.fetched
                   ? props.slicedData.map(item => {

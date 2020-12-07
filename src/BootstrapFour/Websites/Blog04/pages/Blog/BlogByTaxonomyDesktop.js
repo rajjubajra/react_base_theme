@@ -40,7 +40,11 @@ function BlogByTaxonomyDesktop(props) {
         {/** BLOG */}
         <div className="row  mt-5 mb-5">
           {/** POPULAR BLOG */}
-          <div className="col-lg-3">
+          <div className="col-lg-3 bg-line-thick">
+            <h1 style={{
+              position: "relative",
+              top: "50px"
+            }}>Popular</h1>
             <PopularBlog />
           </div>
 
@@ -60,6 +64,7 @@ function BlogByTaxonomyDesktop(props) {
                 props.fetched
                   ? props.slicedData.map(item => {
                     return <section
+                      className="bg-line-narrow"
                       style={{ margin: "0px 50px 0px 60px" }}
                       key={item.nid}>
                       <ViewBox

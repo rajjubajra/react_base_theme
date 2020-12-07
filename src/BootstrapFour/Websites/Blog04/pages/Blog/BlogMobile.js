@@ -25,6 +25,7 @@ function BlogMobile(props) {
     <>
 
       <div className={`container-fluid mb-5`}>
+
         {/** SUB NAVIGATION */}
         <div className="row">
           <div className="col">
@@ -47,6 +48,7 @@ function BlogMobile(props) {
             >Popular</span>
           </div>
         </div>
+        {/** SUB NAVIGATION  closed */}
 
 
 
@@ -65,18 +67,20 @@ function BlogMobile(props) {
 
 
 
-        <div className={`row ${view === 2 ? 'd-block' : 'd-none'}`}>
+        <div className={`row ${view === 2 ? 'd-flex' : 'd-none'}`}>
           <Taxonomy />
         </div>
 
         {/** ALL BLOGS  LISTING */}
         {/** BLOG LISTING */}
-        <div className={`row ${view === 0 ? 'd-block' : 'd-none'}`}>
-          <div className="col">
+        <div className={`row ${view === 0 ? 'd-flex' : 'd-none'} justify-content-center`}>
+          <div className="col-sm-10">
             {
               props.fetched
                 ? props.slicedData.map(item => {
-                  return <section key={item.nid}>
+                  return <section
+                    className="border-bottom"
+                    key={item.nid}>
                     <ViewBoxMobile
                       nid={item.nid}
                       dateNonFormated={item.created}
@@ -92,9 +96,11 @@ function BlogMobile(props) {
           </div>
         </div>
 
-        <div className={`row ${view === 1 ? 'd-block' : 'd-none'}`}>
+        <div className={`row ${view === 1 ? 'd-flex' : 'd-none'} justify-content-center`}>
           <PopularBlog />
         </div>
+
+
 
 
         {/** PAGE NAVIGATIONS */}
@@ -112,6 +118,7 @@ function BlogMobile(props) {
             <span onClick={() => props.nextPage()}><BoxArrowInRight /></span>
           }
         </div>
+        {/** PAGE NAVIGATIONS CLOSED */}
 
       </div>
 

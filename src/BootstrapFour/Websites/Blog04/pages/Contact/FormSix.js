@@ -10,6 +10,11 @@ const FormSix = () => {
   /** colour variant */
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
+  const bgColour = {
+    background: variant === 'dark' ? "transparent" : '',
+    border: variant === 'dark' ? "1px solid #0000008c" : '',
+  }
+
   /** states */
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -23,7 +28,12 @@ const FormSix = () => {
   const formId = 'contact_form';
 
 
+
+
+
   function handleSubmit(e) {
+
+
     e.preventDefault();
     //console.log(name, email, message);
     axios(
@@ -108,6 +118,7 @@ const FormSix = () => {
                 <div className="form-group">
 
                   <input
+                    style={bgColour}
                     required
                     className="form-control"
                     type="text"
@@ -123,6 +134,7 @@ const FormSix = () => {
                 <div className="form-group">
 
                   <input
+                    style={bgColour}
                     required
                     className="form-control"
                     type="email"
@@ -138,6 +150,7 @@ const FormSix = () => {
 
             <div className="form-group">
               <textarea
+                style={bgColour}
                 required
                 className="form-control"
                 name="message"

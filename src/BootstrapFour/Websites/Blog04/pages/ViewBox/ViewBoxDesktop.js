@@ -1,11 +1,10 @@
 import React from 'react';
-import './ViewBox.scss';
 import { Link } from 'react-router-dom';
-import DangerouslySetInnerHtml from '../components/DangerouslySetInnterHtml';
-import { pagelink } from '../PageLink';
+import DangerouslySetInnerHtml from '../../components/DangerouslySetInnterHtml';
+import { pagelink } from '../../PageLink';
 
 
-function ViewBox(props) {
+function ViewBoxLanding(props) {
 
 
   const { nid, title, body, taxoName, dateNonFormated, dateFormated, pager } = props;
@@ -23,11 +22,17 @@ function ViewBox(props) {
   }
 
 
+  const boxStyle = {
+    height: "265px",
+    position: "relative",
+    zIndex: 10
+  }
+
 
   return (
-    <div style={{ position: "relative", height: "300px" }}>
+    <>
 
-      <div className="view-box mt-3">
+      <div style={boxStyle} className="view-box mt-3">
         {/** VIEW TEXT */}
 
         <div className="text">
@@ -53,12 +58,10 @@ function ViewBox(props) {
 
       </div>
 
-
-
       {/** view box footer */}
       <div style={{
         position: "absolute",
-        bottom: "40px",
+        bottom: "35px",
         width: "80%",
         zIndex: 10,
       }}>
@@ -73,7 +76,7 @@ function ViewBox(props) {
           {/** NAVIGATE TO READ MORE PAGE */}
           <div>
             <Link
-              className="small-font text-uppercase ml-4 mt-1 btn-read-more"
+              className="btn btn-light small-font text-uppercase"
               to={{
                 pathname: `/${pagelink.readMore}/${nid}`,
                 state: { pager: pager }
@@ -82,7 +85,7 @@ function ViewBox(props) {
         </div>
       </div>
 
-    </div>
+    </>
   )
 }
-export default ViewBox
+export default ViewBoxLanding

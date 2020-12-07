@@ -52,7 +52,7 @@ export function HomeTablet() {
         <div className={`col ${view === 1 ? 'd-block' : 'd-none'}`}>
           <PopularBlogLanding />
         </div>
-        <div className={`col ${view === 0 ? 'd-block' : 'd-none'}`}>
+        <div className={`col ${view === 0 ? 'd-flex' : 'd-none'}`}>
           <NewsLetters />
         </div>
       </div>

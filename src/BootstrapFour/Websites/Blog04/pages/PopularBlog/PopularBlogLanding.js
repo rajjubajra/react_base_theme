@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ActionFetchPopularBlog } from './Redux/ActionFetchPopularBlog';
-import ViewBox from '../ViewBox';
+import ViewBoxDesktop from './ViewBoxDesktop';
+import ViewBoxTablet from './ViewBoxTablet'
 
 
 function PopularBlogLanding(props) {
@@ -35,27 +36,44 @@ function PopularBlogLanding(props) {
           }
         </div>
       </div>
-      <div className="row">
+      <div className="row justify-content-center">
         {
           fetched
             ? data.slice(0, 4).map(item => {
-              const { nid, title, body } = item;
+              const { nid, title, body, created } = item;
               return <div key={nid} className="col-sm-10 col-lg-6 col-md-6">
                 <div style={{
-                  height: "345px"
-                }} className='border p-3 mx-1 my-3'>
-                  <ViewBox
-                    nid={nid}
-                    title={title}
-                    body={body}
-                    substr="200"
-                  />
+                  width: "100%",
+                  padding: "20px 45px",
+                  border: "1px solid #ccc",
+                  margin: "10px 0px"
+                }}>
+                  {/** DESKTOP VIEW */}
+                  <div className='d-none d-lg-block d-xl-block'>
+                    <ViewBoxDesktop
+                      nid={nid}
+                      title={title}
+                      body={body}
+                      dateNonFormated={created}
+                    />
+                  </div>
+                  {/** MOBILE VIEW */}
+                  <div className='d-block d-sm-block d-md-block d-lg-none d-xl-none'>
+                    <ViewBoxTablet
+                      nid={nid}
+                      title={title}
+                      body={body}
+                      dateNonFormated={created}
+                    />
+                  </div>
+
                 </div>
               </div>
             })
             : 'LOADING.....'
         }
       </div>
+
     </>
   )
 }

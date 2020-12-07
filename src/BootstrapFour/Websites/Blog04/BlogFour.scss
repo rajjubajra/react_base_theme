@@ -1,47 +1,38 @@
 .blog-four {
 
-  /** GOOGLE FONT League Script */
-  @import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
-  //font-family: 'League Script';
+  /** BACKGROUND COLOUR */
+  @import './components/ColourMode/BaseColour';
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
-  //font-family: 'Allura', cursive;
+
+  /** FONTS *****/
+  @import './fonts';
+
+
 
 
   .basetheme-black-white {
     @import './components/ColourMode/Basetheme-black-white';
-    background-color: #FFFFFF !important;
+    background-color: $bgWhite !important;
+
+    img {
+      filter: grayscale(100%);
+    }
+
+
+
   }
 
   .basetheme-dark {
     @import './components/ColourMode/Basetheme-dark';
-    background-color: #183450 !important;
+    background-color: $bgDark !important;
   }
 
   .basetheme-light {
     @import './components/ColourMode/Basetheme-light';
-    background-color: #E9ECEF !important;
+    background-color: $bgLight !important;
   }
 
-  /**NOTE: Responsive FONT-SIZE is defined on 'Basetheme.scss' file **/
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 200 !important;
-    letter-spacing: 0.02rem;
-  }
-
-  p,
-  a,
-  section,
-  div {
-    font-weight: 100 !important;
-    letter-spacing: 0.02rem;
-  }
 
   .button {
     font-size: 1rem;
@@ -53,19 +44,22 @@
     text-transform: uppercase;
   }
 
-  .signature {
-    font-family: 'Allura', cursive;
-    font-size: 2rem !important;
-  }
-
-  h1.title {
-    font-family: 'Allura', cursive;
-    font-size: clamp(1.2rem, 10vw, 6rem) !important;
-  }
-
   .border {
     border: 1px solid #3333332e !important
   }
+
+  .btn-light {
+    background: #3333332e !important;
+    color: #000000 !important;
+    border: 1px solid #d0d0d078 !important;
+
+
+    &:hover {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+  }
+
 
 
 }

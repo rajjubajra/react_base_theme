@@ -25,18 +25,22 @@ function NewsLetters() {
   return (
     <>
       <div className="d-none d-lg-block d-xl-block">
+
         <NewsLetterView
           title={title}
           fetched={fetched}
           news={news}
         />
+
       </div>
       <div className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+
         <NewsLetterViewTablet
           title={title}
           fetched={fetched}
           news={news}
         />
+
       </div>
     </>
   )

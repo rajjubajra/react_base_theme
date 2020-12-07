@@ -30,7 +30,7 @@ function BoxTenMobile(props) {
         <div style={boxPosition}>
           <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
             <div style={{ maxWidth: "350px", width: "90%" }}>
-              <Image width="100%" height="450px" image={props.image} />
+              <Image width="100%" height="260px" image={props.image} />
             </div>
           </div>
 

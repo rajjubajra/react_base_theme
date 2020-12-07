@@ -12,7 +12,7 @@ function NewsLetterViewTablet(props) {
       <div className="row">
         <h2 className="text-uppercase ml-4">- {props.title} -</h2>
       </div>
-      <div className="row">
+      <div className="row justify-content-center">
         {
           props.fetched
             ? props.news.map((item, index) => {

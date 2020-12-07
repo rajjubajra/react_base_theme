@@ -10,13 +10,12 @@ export const About = () => {
 
   /** dyanamic color */
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
-  //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
 
   const textbg = {
     position: 'relative',
-    background: "rgba(255,255,255,0.08)",
-    padding: "20px",
+    padding: "40px 60px",
     zIndex: "10",
   }
 
@@ -43,6 +42,7 @@ export const About = () => {
 
                 <p>Dolor sit amet, consectetur adipisicing elit. Laudantium laboriosam similique deserunt tenetur consectetur consequatur ex suscipit in sed doloribus necessitatibus cumque sit harum vitae fugiat, quisquam soluta modi ipsa?</p>
               </div>
+              <AboutBg />
             </div>
 
           </div>
@@ -52,7 +52,7 @@ export const About = () => {
           <Footer />
         </div>
 
-        <AboutBg />
+
       </div>
     </div>
   )

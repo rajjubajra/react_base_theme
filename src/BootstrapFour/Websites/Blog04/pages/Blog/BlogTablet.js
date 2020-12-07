@@ -32,16 +32,17 @@ function BlogTablet(props) {
 
         <div className="row">
 
-          {/** Taxonomy Nav */}
+          {/** Taxonomy Nav - LEFT COLUMN */}
           <div className="col-md-4">
+            <h1>Tablet view</h1>
             <Taxonomy />
           </div>
 
 
-          {/** ALL BLOGS  LISTING */}
+          {/** ALL BLOGS  LISTING - RIGHT COLUMN */}
           <div className="col-md-8">
 
-            {/** Blog sub-title and Year Month drops */}
+            {/** Blog sub-title[Sub Menu] and Year Month drops */}
             <div className="row justify-content-between">
               <div
                 style={{
@@ -73,24 +74,22 @@ function BlogTablet(props) {
                 <div className={`${view === 1 ? 'd-none' : 'd-block'}`}>
                   <YearMonthDrops />
                 </div>
-
               </div>
-
-
-
             </div>
 
 
 
 
-            {/** BLOG LISTING */}
-            {/** RECENT BLOG */}
+            {/** BLOG LISTING  OR POPULAR BLOGS */}
+            {/** RECENT BLOG View */}
             <div className={`row ${view === 0 ? 'd-block' : 'd-none'}`}>
-              <div className="col-md-11">
+              <div className="col-md-11 mt-5">
                 {
                   props.fetched
                     ? props.slicedData.map(item => {
-                      return <section key={item.nid}>
+                      return <section
+                        className="border-bottom"
+                        key={item.nid}>
                         <ViewBox
                           nid={item.nid}
                           dateNonFormated={item.created}
@@ -106,9 +105,11 @@ function BlogTablet(props) {
               </div>
             </div>
 
-            {/** POPULAR BLOG */}
-            <div className={`row ${view === 1 ? 'd-block' : 'd-none'}`}>
-              <PopularBlog hideTitle={true} />
+            {/** POPULAR BLOG view */}
+            <div className={`row ${view === 1 ? 'd-block' : 'd-none'} mt-5`}>
+              <div className="col-md-11 mt-5">
+                <PopularBlog hideTitle={true} />
+              </div>
             </div>
           </div>
         </div>

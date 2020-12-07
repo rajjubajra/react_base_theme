@@ -1,40 +1,47 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function AboutBg() {
 
+
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
+
+
+
   const wrapping = {
-    position: "absolute",
-    top: "390px",
-    left: "20%",
+    position: "fixed",
+    top: "320px",
+    right: "53%",
     zIndex: "0"
   }
 
   const line = {
     width: "500px",
     height: "1px",
-    background: "rgba(245,241,241,0.3)",
+    background: variant === 'dark' ? " " : "#e9ecefcf",
     display: "block",
     position: "absolute",
-    transform: "rotate(90deg) translateY(90px) translateX(150px)"
+    transform: "rotate(90deg) translateY(100px) translateX(150px)"
   }
 
   const bg = {
     position: "absolute",
     width: "300px",
     height: "300px",
-    background: "rgba(204,204,204,0.34)",
+    background: variant === 'dark' ? " " : "rgba(204,204,204,0.34)",
     borderRadius: "55%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    transform: "rotate(-90deg)"
   }
 
 
   const hStyle = {
     fontSize: "5rem",
     fontWeight: "800",
-    color: "rgba(175,175,175,0.35)"
+    color: variant === 'dark' ? "#afafaf1c" : "rgba(175,175,175,0.35)",
+    fontFamily: "'Allura', cursive",
+    letterSpacing: "0.7rem"
   }
 
   return (

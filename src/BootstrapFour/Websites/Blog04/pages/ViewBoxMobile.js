@@ -52,8 +52,6 @@ function ViewBox(props) {
 
 
       {/** LINK TO READ MORE PAGE */}
-
-
       <div className="small-font">
         {/** FORMATED DATE  OR NOT FORMATTED DATE */}
         {dateFormated
@@ -62,7 +60,7 @@ function ViewBox(props) {
       </div>
 
       {/** NAVIGATE TO READ MORE PAGE */}
-      <div className="mt-3 d-flex justify-content-end">
+      <div className="mt-3 d-flex justify-content-end w-100">
         <Link
           className="small-font text-uppercase btn-read-more"
           to={{

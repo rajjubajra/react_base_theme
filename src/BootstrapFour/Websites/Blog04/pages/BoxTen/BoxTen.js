@@ -6,7 +6,7 @@ import BoxTenTablet from './BoxTenTablet';
 
 function BoxTen() {
 
-  const image = "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/potery2.jpg";
+  const image = "https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/japan1.jpg";
 
   return (
     <div className='container'>
