@@ -3,17 +3,19 @@
 
   .basetheme-black-white {
     @import './components/ColourMode/Basetheme-black-white';
-    background-color: #FFFFFF !important;
+
   }
 
   .basetheme-dark {
     @import './components/ColourMode/Basetheme-dark';
     background-color: #284e73 !important;
+
   }
 
   .basetheme-light {
     @import './components/ColourMode/Basetheme-light';
     background-color: #E9ECEF !important;
+
   }
 
   /**NOTE: Responsive FONT-SIZE is defined on 'Basetheme.scss' file **/

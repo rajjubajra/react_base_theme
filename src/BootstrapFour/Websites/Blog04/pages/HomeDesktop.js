@@ -13,7 +13,11 @@ export function HomeDesktop() {
     <div className="container mt-5">
 
       <div className="row mb-5 pb-5">
-        <BoxTen />
+
+        <div className="col">
+          <BoxTen />
+        </div>
+
       </div>
       <div className="row my-5">
         <div className="col-lg-12 my-5">

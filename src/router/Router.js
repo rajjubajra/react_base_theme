@@ -11,7 +11,10 @@ import RouterApplications from './RouterApplications';
 //  import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
 import RouterComponentTest from './RouterComponentTest';
 import RouterEcommerce from './RouterEcommerce';
+
 import ForSale from '../ForSale/ForSale';
+import Clients from '../ForSale/Clients';
+
 import ComingSoonZero from '../BootstrapFour/Websites/00ComingSoonZero/ComingSoonZero';
 
 
@@ -55,6 +58,12 @@ const Router = () => {
         <Switch>
           <Route exact path="/for-sale">
             <ForSale />
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route exact path="/clients">
+            <Clients />
           </Route>
         </Switch>
 

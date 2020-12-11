@@ -9,7 +9,7 @@ const ulStyle = {
   right: "10px",
   top: "180px",
   listStyle: "none",
-  zIndex: "20"
+  zIndex: "20",
 }
 
 const blackWhiteStyle = {

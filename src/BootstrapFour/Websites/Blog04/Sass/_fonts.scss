@@ -8,7 +8,6 @@
 
 
 
-
 /**NOTE: Responsive FONT-SIZE is defined on 'Basetheme.scss' file **/
 h1,
 h2,
@@ -35,5 +34,5 @@ div {
 
 h1.title {
   font-family: 'Allura', cursive;
-  font-size: clamp(1.2rem, 10vw, 6rem) !important;
+  // font-size: clamp(1.2rem, 10vw, 6rem) !important;
 }

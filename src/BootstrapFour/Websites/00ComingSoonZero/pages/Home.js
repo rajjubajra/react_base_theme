@@ -28,8 +28,9 @@ export default function Home() {
   //const title = useSelector(state => state.reducerFetchData.title);
   return (
     <div className="coming-soon">
+      <ColourMode />
       <div className={className}>
-        <ColourMode />
+
 
         {/** desktop and tablet */}
         <div className="d-none d-md-block d-lg-block d-xl-block">

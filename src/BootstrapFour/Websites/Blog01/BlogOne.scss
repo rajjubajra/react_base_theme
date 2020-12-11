@@ -1,5 +1,7 @@
 .blog-one {
 
+  @import './Sass/fontSize';
+
 
   .basetheme-black-white {
     @import './components/ColourMode/Basetheme-black-white';

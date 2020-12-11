@@ -43,6 +43,8 @@
 
 .music-one {
 
+  @import './Sass/fontSize';
+
   /** PAGE TRANSITION ANIMATION */
   animation: fadeTransition 0.4s linear;
 

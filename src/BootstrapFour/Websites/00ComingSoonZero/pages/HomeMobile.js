@@ -44,7 +44,7 @@ export default function HomeDesktop(props) {
 
           {/** LOGO HORIZONTAL */}
           <div className="row">
-            <div className="col d-flex justify-content-center">
+            <div className="col-12 d-flex justify-content-center">
               <div className='logo-horz d-flex justify-content-center mt-3'>
                 <img style={{ width: "80%" }} src={props.logoHorz} alt={props.logoHorzAlt} />
               </div>
@@ -53,17 +53,15 @@ export default function HomeDesktop(props) {
 
           {/** BODY CONTENT */}
           <div className="row justify-content-center">
-            <div className="col-6">
+            <div className="col-12">
               <div className="main">
-                <div className="logo-square">
-                  <img src={props.logoSquare} alt={props.logoSquareAlt} />
-                </div>
                 <div className='body'>
                   <DangerouslySetInnerHtml text={props.body} />
                 </div>
               </div>
             </div>
           </div>
+
 
           {/** LINKS */}
           <div className="row">

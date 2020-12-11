@@ -37,14 +37,15 @@ function CardDesktop(props) {
               letterSpacing: "12px",
             }}
             target="_blank"
-            to={`${props.linkref}`}>Preveiw</Link>
+            to={{
+              pathname: `${props.linkref}`
+            }}>Veiw</Link>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-10s">
           <img
             style={{
               position: 'relative',
               width: "100%",
-              filter: "grayscale(100%)"
             }}
             src={props.bgImage} alt="background" />
         </div>

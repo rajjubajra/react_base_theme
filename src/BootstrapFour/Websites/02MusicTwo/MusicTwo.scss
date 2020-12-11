@@ -20,6 +20,8 @@
 
 .music-two {
 
+  @import './Sass/fontSize';
+
   /** PAGE TRANSITION ANIMATION */
   animation: fadeTransition 0.5s linear;
 

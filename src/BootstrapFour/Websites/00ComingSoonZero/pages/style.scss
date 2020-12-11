@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
 @keyframes arrows {
   0% {
     position: absolute;
@@ -65,13 +71,14 @@
         h1,
         h2 {
           font-weight: 200;
-
+          font-family: 'Open Sans Condensed', sans-serif;
         }
 
         p {
           font-weight: 100;
           text-transform: uppercase;
-
+          font-family: 'Open Sans Condensed', sans-serif;
+          line-height: 0.9rem;
         }
 
 
@@ -92,8 +99,8 @@
       }
 
       a:hover {
-        background: rgb(223, 223, 223);
-        transition: background 0.5s linear;
+        background-color: rgb(223, 223, 223);
+        transition: background-color 0.5s linear;
       }
     }
 

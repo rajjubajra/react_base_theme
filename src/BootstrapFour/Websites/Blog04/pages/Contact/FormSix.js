@@ -11,8 +11,8 @@ const FormSix = () => {
   const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   const bgColour = {
-    background: variant === 'dark' ? "transparent" : '',
-    border: variant === 'dark' ? "1px solid #0000008c" : '',
+    background: variant === 'dark' ? "rgb(0 0 0 / 63%)" : '',
+    border: variant === 'dark' ? "1px solid #dddddd" : '',
   }
 
   /** states */
@@ -93,7 +93,7 @@ const FormSix = () => {
     /** submited get closed */
   }
 
-  console.log("CNS MSG", confirmationMsg);
+  // console.log("CNS MSG", confirmationMsg);
 
   return (
     <div className="container">

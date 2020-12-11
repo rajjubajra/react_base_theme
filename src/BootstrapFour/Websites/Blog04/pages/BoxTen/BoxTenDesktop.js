@@ -1,14 +1,14 @@
 import React from 'react'
-//import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Image from './Image';
 
 
 
 function BoxTenDesktop(props) {
 
-  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
-  const variant = 'white'
+
 
   const boxPosition = {
     height: "500px",
@@ -23,7 +23,7 @@ function BoxTenDesktop(props) {
     transform: "skewX(0deg) translateX(110px)",
     zIndex: "10",
     position: "relative",
-    background: variant === 'dark' ? "#999" : "#fff",
+    background: variant === 'dark' ? "rgb(14 27 45)" : "#fff",
     borderBottom: "1px solid #ccc",
     borderRight: "1px solid #ccc",
     outline: "1px solid #ddd",

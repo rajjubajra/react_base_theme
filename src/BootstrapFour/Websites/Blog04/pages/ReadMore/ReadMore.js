@@ -51,7 +51,7 @@ function ReadMore(props) {
 
 
   return (
-    <div className="blog-blog">
+    <div className="blog-four">
       <div className={`${className} min-vh-100 pb-5`}>
         <ColourMode />
         {/** NAVIGATION */}
@@ -73,7 +73,7 @@ function ReadMore(props) {
                 <div className="col">
                   <DangerouslySetInnerHtml text={data[0].term_node_tid} substr={0} />
                 </div>
-                <div className="col">
+                <div className="col d-flex justify-content-end mr-3">
                   <span onClick={() => history.goBack()}> <IconClose /></span>
                 </div>
               </div>

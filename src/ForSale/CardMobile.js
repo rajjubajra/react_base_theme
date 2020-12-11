@@ -53,7 +53,9 @@ function CardMobile(props) {
               letterSpacing: "12px",
             }}
             target="_blank"
-            to={`${props.linkref}`}>Preveiw</Link>
+            to={{
+              pathname: `${props.linkref}`
+            }}>Veiw</Link>
         </div>
       </div>
 

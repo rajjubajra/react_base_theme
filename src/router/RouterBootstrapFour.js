@@ -25,6 +25,7 @@ import BlogFour from '../BootstrapFour/Websites/Blog04/BlogFour';
 /** BUSINESS [LOCAL BUSINESS AND PROFESSIONAL SERVICES] */
 import BusinessOne from '../BootstrapFour/Websites/Business01/BusinessOne';
 import BusinessTwo from '../BootstrapFour/Websites/Business02/BusinessTwo';
+import BusinessThree from '../BootstrapFour/Websites/Business03/BusinessThree';
 
 /** BAKERY */
 import BakeryOne from '../BootstrapFour/Websites/Bakery01/BakeryOne';
@@ -113,6 +114,7 @@ export default function RouterBootstrapFour() {
       <BlogFour />
       <BusinessOne />
       <BusinessTwo />
+      <BusinessThree />
       <BakeryOne />
       <PhotoGallery />
       <PhotographyOne />

@@ -83,7 +83,7 @@ function Tools() {
   return (
     <div ref={refTool} className="tools mt-5">
       <div className="row justify-content-center">
-        <Title title="Clients" />
+        <Title title="Tools" />
       </div>
       <div className="row justify-content-center">
         <div className="col-md-12 col-lg-12 col-xl-7">
