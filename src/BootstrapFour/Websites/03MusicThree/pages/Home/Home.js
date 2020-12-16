@@ -4,6 +4,7 @@ import ColourMode from '../../components/ColourMode/ColourMode';
 import NavigationOne from '../../components/header/NavigationOne/NavigationOne';
 import SocialMediaSticky from '../../components/socalMedia/SocialMediaSticky';
 import LandingOne from './LandingOne/LandingOne';
+import RepsNavIcon from '../ResponsiveView/RepsNavIcon';
 
 
 function Home() {
@@ -31,6 +32,7 @@ function Home() {
 
       <div className={`${className}  min-vh-100`}>
         <ColourMode />
+        <RepsNavIcon />
         <NavigationOne />
         <SocialMediaSticky />
         <LandingOne />

@@ -7,6 +7,8 @@ export const pagelink = {
   contact: "b4Blog-three-contact",
   readMore: "b4blog-three-readmore",
   search: "b4blog-three-search",
+  responsiveView: "b4blog-three-responsive-view",
+  iframeView: "b4blog-three-iframe-view",
 
   back: "websites-bootstrap"
 }

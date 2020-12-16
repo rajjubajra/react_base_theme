@@ -6,6 +6,7 @@ import Footer from '../components/footer/Footer';
 import HomeDesktop from './HomeDesktop';
 import HomeTablet from './HomeTablet';
 import NavigationOne from '../components/header/NavigationOne/NavigationOne';
+import RepsNavIcon from './ResponsiveView/RepsNavIcon';
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
     <div className="blog-one">
       <div className={`${colourMode} pb-5`}>
         <ColourMode />
+        <RepsNavIcon />
         <NavigationOne />
 
         {/** Title */}

@@ -10,6 +10,7 @@ export const pagelink = {
   contact: "b4Music-three-contact",
   newsReadMore: "b4Music-three-readmore-news",
   shop: "b4Music-three-shop",
+  responsiveView: "b4Music-three-responsive-view",
 
 
   back: "websites-bootstrap",

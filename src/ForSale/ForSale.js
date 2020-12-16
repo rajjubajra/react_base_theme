@@ -6,9 +6,11 @@ import Cards from './Cards';
 
 
 
+
 const ForSale = () => {
 
   return (
+
     <div className='container mt-5 mb-5 min-vh-100'>
       {/** PAGE TITLE AND LOGO */}
       <div className="row">
@@ -112,9 +114,18 @@ const ForSale = () => {
           bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/Business2.png"
         />
 
+        <Cards
+          title="Business Two"
+          linkref="/b4-business-two"
+          text="Local Business / Professional service"
+          type="Business"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/laptop.png"
+        />
+
 
       </div>
-    </div >
+    </div>
+
   )
 }
 

@@ -5,6 +5,8 @@ import { actionSelectColourMode } from '../../redux/actions/actionSelectColourMo
 // import IconXSquare from '../Icon/IconXSquare';
 import { cssClassName } from '../../Config/cssClassName';
 
+
+
 const ulStyle = {
   position: "fixed",
   right: "10px",
@@ -37,6 +39,17 @@ const darkStyle = {
   height: "15px",
   margin: "5px 0px",
   cursor: "pointer"
+}
+
+const circle = {
+  background: "#ff0000",
+  border: "1px solid #fff",
+  width: "15px",
+  height: "15px",
+  margin: "5px 0px",
+  cursor: "pointer",
+  borderRadius: "10px",
+  display: "block"
 }
 
 // const backIconStyle = {

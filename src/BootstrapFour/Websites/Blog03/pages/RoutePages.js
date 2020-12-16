@@ -8,6 +8,8 @@ import BlogByTaxonomy from './Blog/BlogByTaxonomy';
 import ReadMore from './ReadMore/ReadMore';
 import { pagelink } from '../PageLink';
 import BlogSearch from './Blog/BlogSearch';
+import ResponsiveView from './ResponsiveView/ResponsiveView';
+import IframeView from './ResponsiveView/IframeView';
 
 
 function RoutePages() {
@@ -21,6 +23,10 @@ function RoutePages() {
 
       <Route exact path={`/${pagelink.readMore}/:nid`} component={ReadMore} />
       <Route exact path={`/${pagelink.search}`} component={BlogSearch} />
+
+      <Route exact path={`/${pagelink.responsiveView}`} component={ResponsiveView} />
+      {/** for iframe only */}
+      <Route exact path={`/${pagelink.iframeView}`} component={IframeView} />
     </>
   )
 }

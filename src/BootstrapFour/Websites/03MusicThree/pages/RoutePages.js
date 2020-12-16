@@ -12,6 +12,8 @@ import BlogReadMore from './News/BlogSeven/BlogReadMore';
 import { pagelink } from '../PageLink';
 import Tour from './Tour/Tour';
 import Shop from './Shop/Shop';
+import ResponsiveView from './ResponsiveView/ResponsiveView';
+import IframeView from './ResponsiveView/IframeView';
 
 
 
@@ -86,6 +88,11 @@ function RoutePages() {
 
       <Route exact path={`/${pagelink.contact}`} component={Contact} />
       <Route exact path={`/${pagelink.shop}`} component={Shop} />
+      <Route exact path={`/${pagelink.responsiveView}`} component={ResponsiveView} />
+      {/** only for Iframe source view
+       * in order to disply on Responsive device view
+       */}
+      <Route exact path={`/${pagelink.iframeVeiw}`} component={IframeView} />
 
 
     </>

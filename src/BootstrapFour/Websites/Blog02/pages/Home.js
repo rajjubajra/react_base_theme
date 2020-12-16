@@ -11,6 +11,7 @@ import BoxArrowInLeft from '../components/Icon/BoxArrowInLeft';
 import BoxArrowInRight from '../components/Icon/BoxArrowInRight';
 import Circle from './Home/Circle';
 import Footer from '../components/footer/Footer';
+import RepsNavIcon from './ResponsiveView/RepsNavIcon';
 
 
 
@@ -77,6 +78,7 @@ export default function Home() {
     <div className="blog-two min-vh-100">
       <div className={className}>
         <ColourMode />
+        <RepsNavIcon />
 
         {/** NAVIGATION */}
         <NavigationOne />

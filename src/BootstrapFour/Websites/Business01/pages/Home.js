@@ -8,6 +8,7 @@ import WideImage from './WideImage/WideImage';
 import FooterTwo from '../components/footer/FooterTwo/FooterTwo';
 import HalfImageBlock from './HalfImageBlock/HalfImageBlock';
 import BoldTextBlock from './BoldTextBlock/BoldTextBlock';
+import RapsNavIcon from './ResponsiveView/RepsNavIcon';
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
 
       <div className={className}>
         <ColourMode />
+        <RapsNavIcon />
         <NavigationOne />
 
 

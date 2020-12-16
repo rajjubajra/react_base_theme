@@ -21,6 +21,13 @@ const BootsrapFour = () => {
         />
 
         <Cards
+          title="Yellow Website - 0"
+          linkref="/yellow-website-home"
+          text="Profile-site"
+          type="Business Profile"
+        />
+
+        <Cards
           title="Music Zero"
           linkref="/music-zero"
           text="Music"
@@ -93,6 +100,12 @@ const BootsrapFour = () => {
           text="Business"
           type="Local Business/Professioan Services"
           linkref="/b4-business-three" />
+
+        <Cards
+          title="Business Four"
+          text="Business"
+          type="Local Business/Professioan Services"
+          linkref="/b4-business-four" />
 
         <Cards
           title="Bakery One"

@@ -118,7 +118,7 @@ export const NavigationOne = () => {
       position: scrollDirection === -1 ? "sticky" : "relative",
       top: "0px",
       zIndex: "20",
-      background: variant === 'dark' ? " #1a2e42" : variant === 'light' ? " #E9ECEF" : "#fff",
+      background: variant === 'dark' ? " #1a2e42" : variant === 'light' ? " #E9ECEF" : " ",
     }}>
       {/** ICON FOR TABLET AND MOBILE */}
       <div

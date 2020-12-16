@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './ReadMore.scss';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ColourMode from '../../components/ColourMode/ColourMode';
@@ -31,13 +32,13 @@ function ReadMore(props) {
   const fetched = useSelector(state => state.ReducerFetchReadMore.fetched);
 
 
-  const imgStyle = {
-    width: "100%",
-    height: "300px",
-    objectFit: "cover",
-    filter: "grayscale(100%)",
-    margin: "20px 0px",
-  }
+  // const imgStyle = {
+  //   width: "100%",
+  //   height: "300px",
+  //   objectFit: "cover",
+  //   filter: "grayscale(100%)",
+  //   margin: "20px 0px",
+  // }
 
 
   /** GO BACK NAV */
@@ -62,42 +63,56 @@ function ReadMore(props) {
         {
           fetched ?
             <div className="container mt-5 pb-5">
-              {/** created date */}
+
+              {/**  close icon */}
               <div className="row">
-                <div className="col">
-                  {data[0].created}
-                </div>
-              </div>
-              {/** taxonomy name & close icon */}
-              <div className="row">
-                <div className="col">
-                  <DangerouslySetInnerHtml text={data[0].term_node_tid} substr={0} />
-                </div>
                 <div className="col d-flex justify-content-end mr-3">
                   <span onClick={() => history.goBack()}> <IconClose /></span>
                 </div>
               </div>
 
               {/** TITLE */}
-              <div className="row">
+              <div className="row mb-5">
                 <div className="col">
                   <h2>{data[0].title}</h2>
                 </div>
               </div>
 
-              {/** Image */}
-              <div className="row">
-                <div className="col">
-                  <img style={imgStyle}
-                    src={data[0].field_image}
-                    alt={data[0].title} />
-                </div>
-              </div>
 
               {/** TEXT BODY */}
               <div className="row">
-                <div className="col">
-                  <DangerouslySetInnerHtml text={data[0].body} substr={0} />
+                <div className="col-lg-9">
+                  <div className="pr-5">
+                    <DangerouslySetInnerHtml text={data[0].body} substr={0} />
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  {/** Image / Taxonomy and Date on side */}
+                  <div>
+                    <img
+                      style={{ width: "100%", height: "auto" }}
+                      src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/water-1912606_640.jpg"
+                      alt="blog" />
+                  </div>
+                  <div style={{
+                    margin: "20px",
+                    paddingLeft: "20px",
+                    minHeight: "150px",
+                    borderLeft: "5px solid #ccc",
+                    display: "flex",
+                    alignItems: "center",
+                  }}>
+                    <div className="col">
+                      {/** created date */}
+                      <div className="date">
+                        {data[0].created}
+                      </div>
+                      {/**Taxonomy */}
+                      <div className="taxonomy">
+                        <DangerouslySetInnerHtml text={data[0].term_node_tid} substr={0} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

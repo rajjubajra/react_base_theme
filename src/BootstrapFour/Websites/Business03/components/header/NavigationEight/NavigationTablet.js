@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 function NavigationTablet(props) {
 
   /** NAV DATA */
-  const { data, title, signature } = props;
+  const { data, title, signature, subTitleFontStyle } = props;
 
   return (
     <>
       <div className="row justify-content-center">
         <div>
           <h1>{title}</h1>
-          <p className="siganture-small">{signature}</p>
+          <p style={subTitleFontStyle} className="siganture-small">{signature}</p>
         </div>
       </div>
       <div className="row justify-content-between my-2 desktop">
@@ -24,7 +24,7 @@ function NavigationTablet(props) {
                 return <div key={index}
                   style={{ borderRight: index < 5 && "1px solid #ccc" }}
                   className="link-item">
-                  <Link to={`/${item.link}`}>{item.name}</Link>
+                  <a href={`/${item.link}`}>{item.name}</a>
                 </div>
               })
             }

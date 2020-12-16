@@ -9,6 +9,7 @@ import Projects from './Projects/Projects';
 import Tools from './Tools/Tools';
 //import Review from './Review/Review';
 import SocialMedia from './Socialmedia/SocialMedia';
+import RapsNavIcon from './ResponsiveView/RepsNavIcon';
 
 export default function Home() {
 
@@ -21,6 +22,7 @@ export default function Home() {
     <div className="business-two">
       <div className={className}>
         <ColourMode />
+        <RapsNavIcon />
         <NavigationOne />
 
         <div className="container-fluid">

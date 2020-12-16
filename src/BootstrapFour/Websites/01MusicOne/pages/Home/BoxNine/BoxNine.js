@@ -40,7 +40,7 @@ function BoxNine() {
             <div style={{
               display: "flex",
               alignItems: "center",
-              height: "100vh",
+              height: "80vh",
             }}>
               <Text data={data} />
             </div>

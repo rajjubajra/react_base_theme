@@ -6,7 +6,7 @@ import ColourMode from '../components/ColourMode/ColourMode';
 import Footer from '../components/footer/Footer';
 import HomeDesktop from './HomeDesktop';
 import HomeTablet from './HomeTablet';
-
+import RapsNavIcon from './ResponsiveView/RepsNavIcon';
 
 
 export default function Home() {
@@ -20,6 +20,7 @@ export default function Home() {
     <div className="blog-three">
       <div className={`${className} pb-5`}>
         <ColourMode />
+        <RapsNavIcon />
         <NavigationOne />
 
 

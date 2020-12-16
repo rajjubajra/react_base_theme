@@ -67,14 +67,10 @@ const Router = () => {
           </Route>
         </Switch>
 
-
-
         {/** RE-USABLE COMPONENTS *************************************/}
         <Switch>
           <RouterComponents />
         </Switch>
-
-
 
         {/** WEBSITES PAGE *************************************/}
         <Switch>
@@ -97,7 +93,6 @@ const Router = () => {
         <Switch>
           <RouterEcommerce />
         </Switch>
-
 
         {/** COPYRIGHT COMPONENT  *************************************/}
         <div className="App copy-right-footer">

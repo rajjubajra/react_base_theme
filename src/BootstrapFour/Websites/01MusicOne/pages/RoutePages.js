@@ -13,6 +13,8 @@ import Shop from './Shop/Shop';
 import Music from './Music/Music';
 import Album from './Music/Album';
 import TourDetails from './Tour/TourDetails';
+import ResponsiveView from './ResponsiveView/ResponsiveView';
+import IframeView from './ResponsiveView/IframeView';
 
 
 
@@ -82,6 +84,12 @@ function RoutePages() {
       <Route exact path={`/${pagelink.contact}`} component={Contact} />
       <Route exact path={`/${pagelink.shop}`} component={Shop} />
       <Route exact path={`/${pagelink.newsReadMore}/:nid`} component={BlogReadMoreOne} />
+      <Route exact path={`/${pagelink.responsiveView}`} component={ResponsiveView} />
+
+      {/**FOR  IFRAME VIEW ONLY */}
+      <Route exact
+        path={`/${pagelink.iframeVeiw}`}
+        component={IframeView} />
 
 
     </>

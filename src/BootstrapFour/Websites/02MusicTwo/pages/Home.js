@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
 import NavigationOne from '../components/header/NavigationOne/NavigationOne';
 import MusicCards from './musicCards/MusicCards';
+import RepsNavIcon from './ResponsiveView/RepsNavIcon';
 
 import Text from './text/Text'
 
@@ -17,6 +18,7 @@ export default function Home() {
 
       <div className={className}>
         <ColourMode />
+        <RepsNavIcon />
         <NavigationOne />
 
         <div className="container mt-5">
