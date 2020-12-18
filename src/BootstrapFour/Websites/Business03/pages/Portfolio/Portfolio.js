@@ -23,7 +23,7 @@ function Portfolio() {
                 <img className="img-fluid" src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/chairs-2181994_1280.jpg" alt="" />
               </a>
               <div className="portfolio-caption">
-                <div className="portfolio-caption-heading">Threads</div>
+                <div className="portfolio-caption-heading">Interior</div>
                 <div className="portfolio-caption-subheading text-muted">Illustration</div>
               </div>
             </div>
@@ -37,7 +37,7 @@ function Portfolio() {
                 <img className="img-fluid" src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/breakfast-4234067_1280.jpg" alt="" />
               </a>
               <div className="portfolio-caption">
-                <div className="portfolio-caption-heading">Explore</div>
+                <div className="portfolio-caption-heading">Food</div>
                 <div className="portfolio-caption-subheading text-muted">Graphic Design</div>
               </div>
             </div>
@@ -51,7 +51,7 @@ function Portfolio() {
                 <img className="img-fluid" src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/living-room-2155376_1280.jpg" alt="" />
               </a>
               <div className="portfolio-caption">
-                <div className="portfolio-caption-heading">Finish</div>
+                <div className="portfolio-caption-heading">Furniture</div>
                 <div className="portfolio-caption-subheading text-muted">Identity</div>
               </div>
             </div>
@@ -65,7 +65,7 @@ function Portfolio() {
                 <img className="img-fluid" src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/computer-4484282_1280.jpg" alt="" />
               </a>
               <div className="portfolio-caption">
-                <div className="portfolio-caption-heading">Lines</div>
+                <div className="portfolio-caption-heading">Table</div>
                 <div className="portfolio-caption-subheading text-muted">Branding</div>
               </div>
             </div>
@@ -79,7 +79,7 @@ function Portfolio() {
                 <img className="img-fluid" src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/office-336368_1280.jpg" alt="" />
               </a>
               <div className="portfolio-caption">
-                <div className="portfolio-caption-heading">Southwest</div>
+                <div className="portfolio-caption-heading">Meet</div>
                 <div className="portfolio-caption-subheading text-muted">Website Design</div>
               </div>
             </div>
@@ -93,7 +93,7 @@ function Portfolio() {
                 <img className="img-fluid" src="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/desk-3076954_1280.jpg" alt="" />
               </a>
               <div className="portfolio-caption">
-                <div className="portfolio-caption-heading">Window</div>
+                <div className="portfolio-caption-heading">A Desk</div>
                 <div className="portfolio-caption-subheading text-muted">Photography</div>
               </div>
             </div>

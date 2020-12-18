@@ -11,6 +11,7 @@ import About from './About/About';
 import Team from './Team/Team';
 import Clients from './Clients/Clients';
 import Contact from './Contact/Contact';
+import RepsNavIcon from './ResponsiveView/RepsNavIcon';
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
   return (
     <div className="business-four">
       <ColourMode />
+      <RepsNavIcon />
       <div className={`${className} container-fluid min-vh-100`}>
         <NavigationEight />
 

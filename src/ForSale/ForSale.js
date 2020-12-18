@@ -115,11 +115,11 @@ const ForSale = () => {
         />
 
         <Cards
-          title="Business Two"
-          linkref="/b4-business-two"
+          title="Business Three"
+          linkref="/b4-business-three"
           text="Local Business / Professional service"
           type="Business"
-          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/laptop.png"
+          bgImage="https://yellow-website.com/d8-react-base-theme-backend/sites/default/files/photo_placeholder/business-3.png"
         />
 
 

@@ -6,7 +6,7 @@ import IconLinkedIn from './Icons/IconLinkedIn';
 
 function Team() {
   return (
-    <section className="page-section" id="team">
+    <section className="page-section mt-5 pt-5" id="team">
       <div className="container">
         <div className="text-center">
           <h2 className="section-heading text-uppercase">Team Members</h2>

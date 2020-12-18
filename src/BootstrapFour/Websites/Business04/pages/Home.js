@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ColourMode from '../components/ColourMode/ColourMode';
+import PhotoPlaceholder from '../components/PhotoPlaceholder/PhotoPlaceholder';
 
 
 export default function Home() {
@@ -12,17 +13,17 @@ export default function Home() {
   return (
     <div className={className}>
       <ColourMode />
-      {/** Navigation */}
-      <div className="constier">
-        <div className="row min-vh-100">
-          <div className="col">
-            <h1>BUSINESS FOUR</h1>
+
+
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-lg-6">
+
+
+
           </div>
         </div>
       </div>
-
-
-
     </div>
   )
 }
