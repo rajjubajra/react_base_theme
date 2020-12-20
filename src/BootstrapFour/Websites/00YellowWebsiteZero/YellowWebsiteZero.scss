@@ -1,19 +1,33 @@
-.basetheme {
+.yellow-website-zero {
 
 
   .basetheme-black-white {
     @import './components/ColourMode/Basetheme-black-white';
-    background-color: #FFFFFF !important;
+
+    a {
+      text-decoration: none;
+    }
+
   }
 
   .basetheme-dark {
     @import './components/ColourMode/Basetheme-dark';
     background-color: #1c3044 !important;
+
+    a {
+      text-decoration: none;
+    }
+
   }
 
   .basetheme-light {
     @import './components/ColourMode/Basetheme-light';
     background-color: #E9ECEF !important;
+
+    a {
+      text-decoration: none;
+    }
+
   }
 
   /**NOTE: Responsive FONT-SIZE is defined on 'Basetheme.scss' file **/
@@ -32,6 +46,7 @@
     font-weight: 100 !important;
     letter-spacing: 0.02rem;
   }
+
 
   .button {
     font-size: 1rem;

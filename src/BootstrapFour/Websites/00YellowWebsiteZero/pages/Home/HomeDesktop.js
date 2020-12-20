@@ -1,8 +1,10 @@
 import React from 'react';
+import './HomeDesktop.scss';
 import DangerouslySetInnerHtml from '../DangerouslySetInnterHtml';
 //import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 //import Envelope from './Envelope';
+
 
 
 export default function HomeDesktop(props) {
@@ -15,10 +17,13 @@ export default function HomeDesktop(props) {
     body, links } = props;
 
 
+
+
+
   return (
-    <div className="container-fluid">
+    <div className="container-fluid home-desktop">
       <div className="row">
-        <div className="col-lg-6">
+        <div className="col-lg-5">
           <div style={{
             width: "100",
             display: "flex",
@@ -43,28 +48,53 @@ export default function HomeDesktop(props) {
               <section className="body mt-5">
                 <DangerouslySetInnerHtml text={body} />
               </section>
-              <section
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "auto auto",
-                  margin: "30px 0px"
-                }}
-                className="links">
-                {
-                  fetched && links.map((item, index) => {
-                    return <Link
-                      style={{
-                        padding: "10px 15px",
-                        margin: "10px",
-                        border: "1px solid #ccc",
-                        textAlign: "center"
-                      }}
+            </div>
+          </div>
+        </div>
 
-                      to={{ pathname: `${item.uri}` }}>{item.title}</Link>
-                  })
-                }
-              </section>
-
+        <div className="col-lg-7">
+          <div className='right-block'>
+            <div></div>
+            <div>
+              {
+                fetched &&
+                <Link to={{ pathname: `${links[0].uri}` }}>
+                  {links[0].title}
+                </Link>
+              }
+            </div>
+            <div>
+              <img className="img-fluid" src={logoSquare} alt={logoSquareAlt} />
+            </div>
+            <div></div>
+            <div></div>
+            <div>
+              {
+                fetched &&
+                <Link to={{ pathname: `${links[1].uri}` }}>
+                  {links[1].title}
+                </Link>
+              }
+            </div>
+            <div>
+              {
+                fetched &&
+                <Link to={{ pathname: `${links[2].uri}` }}>
+                  {links[2].title}
+                </Link>
+              }
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+              {
+                fetched &&
+                <Link to={{ pathname: `${links[3].uri}` }}>
+                  {links[3].title}
+                </Link>
+              }
             </div>
           </div>
         </div>

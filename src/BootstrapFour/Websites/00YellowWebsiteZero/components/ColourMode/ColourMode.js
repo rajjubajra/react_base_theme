@@ -9,7 +9,8 @@ const ulStyle = {
   position: "fixed",
   right: "10px",
   top: "180px",
-  listStyle: "none"
+  listStyle: "none",
+  zIndex: "50"
 }
 
 const blackWhiteStyle = {

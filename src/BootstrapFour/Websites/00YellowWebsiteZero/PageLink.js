@@ -3,5 +3,7 @@ export const pagelink = {
   about: "yellow-website-why-me",
   whatIdo: "yellow-website-what-i-do",
   contact: "yellow-website-contact",
+  themes: "yellow-website-themes",
+  clients: "yellow-website-clients",
   back: "websites-bootstrap"
 }

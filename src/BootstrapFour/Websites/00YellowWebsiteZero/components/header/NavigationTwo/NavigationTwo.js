@@ -1,63 +1,40 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Navigation from '../NavigationTwo/Navigation';
+import { useDispatch } from 'react-redux';
+import ClockKathmandu from './ClockKathmandu';
+import ClockLondon from './ClockLondon';
 import NavIconThreeLines from './NavIconThreeLines';
 import { MainMenuShowHide } from './Redux/ActionShowHide';
 
-import { pagelink } from '../../../PageLink';
 
-const data = [
-  {
-    id: "1",
-    name: "Home",
-    link: pagelink.home
-  },
-  {
-    id: 2,
-    name: "About",
-    link: pagelink.about
-  },
-  {
-    id: 3,
-    name: "Contact",
-    link: pagelink.contact
-  }
-]
+export const NavigationTwo = () => {
 
-export const NavigationTwo = (setViewHide) => {
-  //const [view, setView] = useState(true);
-  const view = useSelector(state => state.reducerShowHide.view);
   const dispatch = useDispatch();
 
 
-
   return (
-    <div>
+    <div style={{
+      display: "block",
+      position: "fixed",
+      width: "100%",
+      backgroundColor: "#ffffff",
+      zIndex: "50"
+    }}>
       <div className='container-fluid'>
-        {/** navigation icon */}
-        <div style={{ display: "block", zIndex: "10", position: "sticky" }}
-          //onClick={() => view ? setView(false) : setView(true)}
-          onClick={() => dispatch(MainMenuShowHide())}
-        >
-          <NavIconThreeLines />
-        </div>
-        <div style={{
-          position: "relative",
-          transitionProperty: "margin",
-          transitionDuration: "3s",
-          marginTop: view ? 0 : -1000,
-          width: "100%",
-          height: view ? "90vh" : "90vh",
-          justifyContent: "center",
-          display: "flex",
-          background: "#eee",
-          zIndex: "-1"
-        }}>
-          <Navigation data={data} />
+        <div className="row">
+          <div className="col d-flex justify-content-between">
 
-        </div>
-        <div className='row'>
-          <div className="col" style={{ display: "none" }}>Navigation</div>
+            <div onClick={() => dispatch(MainMenuShowHide())}>
+              {/** navigation icon */}
+              <NavIconThreeLines />
+            </div>
+
+            <div className="mt-2"><p>London: <ClockLondon /></p></div>
+
+            <div className="mt-2"><p>Kathmandu: <ClockKathmandu /></p></div>
+
+            <div className="mt-2 pr-3">[]</div>
+
+          </div>
         </div>
       </div>
     </div>
