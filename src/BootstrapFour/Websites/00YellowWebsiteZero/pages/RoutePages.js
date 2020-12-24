@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from './Home';
-import About from './About';
+import About from './About/About';
 import Contact from './Contact';
 import Themes from './GalleryHorizontal/Themes/Themes';
 import Clients from './GalleryHorizontal/Themes/Clients';

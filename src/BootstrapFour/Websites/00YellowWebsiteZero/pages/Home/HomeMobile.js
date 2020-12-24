@@ -1,110 +1,51 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
+import './HomeDesktop.scss';
 import DangerouslySetInnerHtml from '../DangerouslySetInnterHtml';
-import IconDownArrow from '../../components/Icon/IconDownArrow';
-import { useIntersection } from 'react-use';
-import FormFive from '../Form/FormFive';
+//import { Link } from 'react-router-dom';
 
 
 
-export default function HomeDesktop(props) {
 
+export default function HomeMobile(props) {
 
-  /** INTERSECTIO OBSERVER */
-  const intersectionRef = useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    root: null,
-    rootMargin: '200px 0px -250px 0px',
-    threshold: 0
-  });
-  const [view, setView] = useState(true);
+  /** colour variant */
+  //const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
-
-  useEffect(() => {
-
-    intersection && intersection.intersectionRatio < 1
-      ? setView(true)
-      : setView(false)
-
-    console.log(intersection)
-  }, [intersection])
-
-
-
-  const showHide = {
-    opacity: view ? 1 : 0,
-    transition: "opacity 0.3s linear"
-  }
+  const { title, logoHorz,
+    logoHorzAlt,
+    body } = props;
 
 
   return (
-    <>
-      <div className="align-center">
-
-        <div className="container mb-5">
-
-          {/** LOGO HORIZONTAL */}
-          <div className="row">
-            <div className="col-12 d-flex justify-content-center">
-              <div className='logo-horz d-flex justify-content-center mt-3'>
-                <img style={{ width: "80%" }} src={props.logoHorz} alt={props.logoHorzAlt} />
+    <div className="container-fluid home-desktop">
+      <div className="row">
+        <div className="col-sm-12">
+          <div style={{
+            width: "100",
+            display: "flex",
+            height: "85vh",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <div>
+              <h1 style={{
+                fontFamily: "'Mrs Saint Delafield', cursive",
+                transform: "scale(1.6) translate(46px, 10px)"
+              }}>{title}</h1>
+              <div className="logo-h">
+                <img
+                  style={{ width: "100%", maxWidth: "300px", height: "auto" }}
+                  src={logoHorz}
+                  alt={logoHorzAlt} />
               </div>
-            </div>
-          </div>
 
-          {/** BODY CONTENT */}
-          <div className="row justify-content-center">
-            <div className="col-12">
-              <div className="main">
-                <div className='body'>
-                  <DangerouslySetInnerHtml text={props.body} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          {/** LINKS */}
-          <div className="row">
-            <div className="col">
-              <div
-                style={{ marginBottom: "40px" }}
-                className="links">
-                {
-                  props.fetched && props.links.map((item, index) => {
-                    return <button
-                      style={{ width: "60%", textAlign: "center" }}
-                      key={index}
-                      onClick={() => window.open(item.uri)}>
-                      {item.title.replace(/ *\[[^\]]*]/, '')}</button>
-                  })
-                }
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-
-
-        {/** Contact form Navigation */}
-        <div ref={intersectionRef} className="d-flex justify-content-center w-100">
-          <div style={showHide} className="contact-nav">
-            <p>Please send me your enqiry</p>
-            <div
-              onClick={() => window.scrollTo({ top: 1000, behavior: 'smooth' })}
-              className="animate-arrow d-flex justify-content-center">
-              <IconDownArrow />
+              <section className="body mt-5">
+                <DangerouslySetInnerHtml text={body} />
+              </section>
             </div>
           </div>
         </div>
       </div>
-
-
-      {/** contact form */}
-      <div className='contact-form'>
-        <FormFive />
-      </div>
-    </>
-
+    </div>
   )
 }

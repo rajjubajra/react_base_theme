@@ -15,6 +15,7 @@ function Cards(props) {
           text={props.text}
           type={props.type}
           linkref={props.linkref}
+          features={props.features}
         />
       </div>
       <div className="d-block d-md-none d-lg-none d-xl-none">
@@ -24,6 +25,7 @@ function Cards(props) {
           text={props.text}
           type={props.type}
           linkref={props.linkref}
+          features={props.features}
         />
       </div>
 

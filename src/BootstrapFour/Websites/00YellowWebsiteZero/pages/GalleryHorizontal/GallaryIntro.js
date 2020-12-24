@@ -5,7 +5,7 @@ import GalleryIntroTablet from './GalleryIntroTablet';
 import GalleryIntroMobile from './GalleryIntroMobile';
 
 
-const body = "<div><h1>Yellow Website Themes</h1><div><p>I have desinged all my website themes from scratch.</p><ul><li>Please select the theme that meets your requirement.</li><li>Provide me your contents and Photographs.</li><li>Please discuss with me for further modifications.</li></ul></div></div>";
+const body = "<div><h1>Yellow Website Themes</h1><div><ul><li>Please select the theme that meets your requirement and you like.</li><li>Provide me your contents and Photographs.</li><li>Write to me for minor modification</li><li>I will deliver your live site within a week.</li></ul></div></div>";
 
 const links = [
   {
@@ -21,7 +21,7 @@ const links = [
     link: `${pagelink.themes}`
   },
   {
-    title: "Property Business",
+    title: "..more Comming Up",
     link: `${pagelink.themes}`
   },
 ]
@@ -35,6 +35,7 @@ function GalleryIntro() {
       <div className="d-none d-lg-block d-xl-block">
         <GalleryIntroDesktop body={body} links={links} />
       </div>
+
       <div className="d-none d-md-block d-lg-none d-xl-none">
         <GalleryIntroTablet body={body} links={links} />
       </div>
@@ -42,7 +43,6 @@ function GalleryIntro() {
       <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <GalleryIntroMobile body={body} links={links} />
       </div>
-
     </>
   )
 }

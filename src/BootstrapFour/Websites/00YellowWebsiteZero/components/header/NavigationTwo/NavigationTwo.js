@@ -1,7 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import ClockKathmandu from './ClockKathmandu';
-import ClockLondon from './ClockLondon';
 import NavIconThreeLines from './NavIconThreeLines';
 import { MainMenuShowHide } from './Redux/ActionShowHide';
 
@@ -28,9 +26,9 @@ export const NavigationTwo = () => {
               <NavIconThreeLines />
             </div>
 
-            <div className="mt-2"><p>London: <ClockLondon /></p></div>
+            <div className="mt-2"><p>London: 0782 899 1384</p></div>
 
-            <div className="mt-2"><p>Kathmandu: <ClockKathmandu /></p></div>
+            <div className="mt-2"><p>Kathmandu: 435 2162</p></div>
 
             <div className="mt-2 pr-3">[]</div>
 

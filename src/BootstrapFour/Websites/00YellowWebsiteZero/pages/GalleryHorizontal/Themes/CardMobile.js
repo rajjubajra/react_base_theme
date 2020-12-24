@@ -1,74 +1,116 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Radium from 'radium';
+import styled from 'styled-components';
 
-function CardMobile(props) {
+function CardDesktop(props) {
 
+  const Card = styled.div`
+    position: relative;
+    border: 1px solid #999999;
+    padding: 25px;
+  `;
+
+  const LeftBlock = styled.div`
+    position: relative;
+    margin-top: 20px;
+  `;
+
+  const Features = styled.div`
+    margin-top: 50px;
+
+    h5{
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    ul{
+      padding-inline-start: 20px;
+      li{
+        list-style: square;
+      }
+    }
+    `;
+
+  const ButtonView = styled.div`
+    margin-top: 20px;
+    a{
+        color: #ffffff;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        text-decoration: none;
+        padding: 7px 20px;
+        width: 130px;
+        background-color: #666666;
+        text-align: center;
+    }
+    a:hover{
+      background-color: #000000;
+      transition: background-color 1s;
+    }
+    `;
+
+  /** Right Column */
+  const RightBlock = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      img{
+        position: relative;
+        width: 100%;
+        box-shadow: rgb(204, 204, 204) 1px 2px 7px 0px;
+        outline: rgb(255, 255, 255) solid 1px;
+        outline-offset: -2px;
+      }
+  `;
 
   return (
-    <div
-      style={{
-        border: "1px solid #999",
-        padding: "30px",
-        fontWeight: "100"
-      }}
-      className="container mt-5">
 
-      {/** IMAGE */}
-      <div className="row">
-        <div className="col-11">
-          <img
-            style={{
-              position: 'relative',
-              width: "100%",
-              filter: "grayscale(100%)"
-            }}
-            src={props.bgImage} alt="background" />
-        </div>
-      </div>
-
-      {/** TEXT DETAIL */}
-      <div className="row mt-3">
-        <div
-          style={{
-            position: "relative",
-            minHeight: "180px",
-            borderTop: "1px solid #999",
-            paddingTop: "20px"
-          }}
-          className="col-11">
-          <h2 style={{ fontWeight: "200" }}>{props.title}</h2>
-          <div>
-            <div>
-              <p>[ {props.text} ]</p>
-            [ {props.type} ]
+    <div className="container mt-5">
+      <Card>
+        <div className="row">
+          {/** THUMBNAIL OF THE WEBSITE */}
+          <div className="col-sm-12">
+            <RightBlock>
+              <img src={props.bgImage} alt="background" />
+            </RightBlock>
           </div>
+
+          <div className="col-sm-12">
+            <LeftBlock>
+              {/** TITLE */}
+              <h2>{props.title}</h2>
+
+              {/** TYPE AND TEXT */}
+              <div>
+                [ {props.type} ]
+              </div>
+
+              {/** FEATURES */}
+              <Features>
+                <h5>Features</h5>
+                <div dangerouslySetInnerHTML={{ __html: props.features }} />
+              </Features>
+
+              {/** Theme NAVIGATION */}
+              <ButtonView>
+                <Link
+                  target="_blank"
+                  to={{
+                    pathname: `${props.linkref}`
+                  }}>Veiw</Link>
+              </ButtonView>
+
+            </LeftBlock>
           </div>
-          <Link
-            style={{
-              position: "absolute",
-              bottom: "10px",
-              color: "#333",
-              fontWeight: "200",
-              textTransform: "uppercase",
-              letterSpacing: "12px",
-              textDecoration: "none",
-              ':hover': {
-                letterSpacing: "14px",
-                transition: "letterSpacing 0.3s linear"
-              }
-            }}
-            target="_blank"
-            to={{
-              pathname: `${props.linkref}`
-            }}>Veiw</Link>
+
         </div>
-      </div>
-
-
+      </Card>
     </div>
 
   )
 }
 
-export default Radium(CardMobile)
+export default Radium(CardDesktop)

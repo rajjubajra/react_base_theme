@@ -28,7 +28,17 @@ function GalleryIntroTablet(props) {
       ul{
         padding-inline-start: 5px !important;
           li{
-          list-style: korean-hanja-informal;
+            list-style: none;
+              &::before{
+                content: '';
+                width: 25px;
+                height: 11px;
+                background: #666666;
+                display: block;
+                position: relative;
+                left: -39px;
+                top: 17px;
+              }
           }
       }
   `;

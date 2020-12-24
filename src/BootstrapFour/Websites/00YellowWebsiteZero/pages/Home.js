@@ -5,6 +5,8 @@ import NavigationTwo from '../components/header/NavigationTwo/NavigationTwo';
 import GalleryHorizontal from './GalleryHorizontal/GalleryHorizontal';
 import { actionFetchData } from './Redux/ActionFetchData';
 import HomeDesktop from './Home/HomeDesktop';
+import HomeTablet from './Home/HomeTablet';
+import HomeMobile from './Home/HomeMobile';
 
 
 export default function Home() {
@@ -12,8 +14,6 @@ export default function Home() {
   /** COLOUR MODE */
   const className = useSelector(state => state.reducerSelectColourMode.colourMode);
   //const ColourVariant = useSelector(state => state.reducerSelectColourMode.variant);
-
-
 
 
   /** VIEW AND HIDE STATE */
@@ -69,6 +69,30 @@ export default function Home() {
               }}>
                 <div className="d-none d-lg-block d-xl-block w-100 min-vh-100">
                   <HomeDesktop
+                    fetched={fetched}
+                    logoHorz={logoHorz}
+                    logoHorzAlt={logoHorzAlt}
+                    logoSquare={logoSquare}
+                    logoSquareAlt={logoSquareAlt}
+                    body={body}
+                    links={links}
+                    title={title}
+                  />
+                </div>
+                <div className="d-none d-md-block d-lg-none d-xl-none w-100 min-vh-100">
+                  <HomeTablet
+                    fetched={fetched}
+                    logoHorz={logoHorz}
+                    logoHorzAlt={logoHorzAlt}
+                    logoSquare={logoSquare}
+                    logoSquareAlt={logoSquareAlt}
+                    body={body}
+                    links={links}
+                    title={title}
+                  />
+                </div>
+                <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none w-100 min-vh-100">
+                  <HomeMobile
                     fetched={fetched}
                     logoHorz={logoHorz}
                     logoHorzAlt={logoHorzAlt}

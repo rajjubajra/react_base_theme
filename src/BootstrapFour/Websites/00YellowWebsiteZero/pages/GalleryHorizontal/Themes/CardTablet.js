@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Radium from 'radium';
 import styled from 'styled-components';
 
-function CardDesktop(props) {
+
+
+function CardTablet(props) {
 
   const Card = styled.div`
     position: relative;
@@ -12,18 +13,9 @@ function CardDesktop(props) {
     padding: 25px;
   `;
 
-  const LeftBlock = styled.div`
-    position: relative;
-    border-right: 1px solid rgb(153, 153, 153);
-    min-height: 65vh;
-  `;
-
   const Features = styled.div`
-    margin-top: 50px;
-    position: absolute;
-    bottom: 100px;
-    left: 40px;
-
+    margin: 50px 0px;
+    padding-left: 25px;
     h5{
       text-transform: uppercase;
       letter-spacing: 4px;
@@ -39,8 +31,7 @@ function CardDesktop(props) {
 
   const ButtonView = styled.div`
     a{
-        position: absolute;
-        bottom: 5px;
+        margin: 0px 25px;
         color: #ffffff;
         font-weight: 800;
         text-transform: uppercase;
@@ -59,14 +50,14 @@ function CardDesktop(props) {
 
   /** Right Column */
   const RightBlock = styled.div`
+    margin: 30px 0px;
     width: 100%;
-    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
       img{
         position: relative;
-        width: 100%;
+        width: 90%;
         box-shadow: rgb(204, 204, 204) 1px 2px 7px 0px;
         outline: rgb(255, 255, 255) solid 1px;
         outline-offset: -2px;
@@ -77,46 +68,54 @@ function CardDesktop(props) {
 
     <div className="container mt-5">
       <Card>
+
         <div className="row">
+          {/** TITLE */}
+          <div className="col"><h2>{props.title}</h2></div>
+        </div>
 
-          <div className="col-lg-6 col-md-6">
-            <LeftBlock>
-              {/** TITLE */}
-              <h2>{props.title}</h2>
-
-              {/** TYPE AND TEXT */}
-              <div>[ {props.type} ]</div>
-
-              {/** FEATURES */}
-              <Features>
-                <h5>Features</h5>
-                <div dangerouslySetInnerHTML={{ __html: props.features }} />
-              </Features>
-
-              {/** Theme NAVIGATION */}
-              <ButtonView>
-                <Link
-                  target="_blank"
-                  to={{
-                    pathname: `${props.linkref}`
-                  }}>Veiw</Link>
-              </ButtonView>
-
-            </LeftBlock>
+        {/** TYPE AND TEXT */}
+        <div className="row">
+          <div className="col">
+            [ {props.type} ]
           </div>
+        </div>
 
+        <div className="row">
           {/** THUMBNAIL OF THE WEBSITE */}
-          <div className="col-lg-6 col-md-6">
+          <div className="col">
             <RightBlock>
               <img src={props.bgImage} alt="background" />
             </RightBlock>
           </div>
-
         </div>
+
+        <div className="row">
+          {/** FEATURES */}
+          <div className="col">
+            <Features>
+              <h5>Features</h5>
+              <div dangerouslySetInnerHTML={{ __html: props.features }} />
+            </Features>
+          </div>
+        </div>
+
+        {/** Theme NAVIGATION */}
+        <div className="row">
+          <div className="col">
+            <ButtonView>
+              <Link
+                target="_blank"
+                to={{
+                  pathname: `${props.linkref}`
+                }}>Veiw</Link>
+            </ButtonView>
+          </div>
+        </div>
+
       </Card>
     </div>
-
   )
 }
 
-export default Radium(CardDesktop)
+export default CardTablet

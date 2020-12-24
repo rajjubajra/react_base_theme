@@ -24,7 +24,7 @@ function GalleryIntroDesktop(props) {
         height: 70px;
         background: #666666;
         left: 56px;
-        top: -152px;
+        top: -170px;
         float: left;
         margin: 0px;
       }
@@ -37,8 +37,19 @@ function GalleryIntroDesktop(props) {
         right: -20px;
       }
       ul{
+        position: relative;
         li{
-          list-style: korean-hanja-informal;
+          list-style: none;
+          &::before{
+            content: '';
+            width: 25px;
+            height: 11px;
+            background: #666666;
+            display: block;
+            position: relative;
+            left: -39px;
+            top: 17px;
+          }
         }
       }
   `;
@@ -95,11 +106,13 @@ function GalleryIntroDesktop(props) {
               {
                 links.length > 0
                 && links.map((item, index) => {
-                  return <Li>
-                    <Link to={item.link}>
-                      <Anc>{item.title}</Anc>
-                    </Link>
-                  </Li>
+                  return <>
+                    <Li>
+                      <Link to={item.link}>
+                        <Anc>{item.title}</Anc>
+                      </Link>
+                    </Li>
+                  </>
                 })
               }
             </Ul>

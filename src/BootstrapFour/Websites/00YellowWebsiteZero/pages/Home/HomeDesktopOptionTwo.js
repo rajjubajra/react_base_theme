@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 export default function HomeDesktop(props) {
 
 
@@ -42,6 +43,8 @@ export default function HomeDesktop(props) {
               <section className="body mt-5">
                 <DangerouslySetInnerHtml text={body} />
               </section>
+
+
 
             </div>
           </div>

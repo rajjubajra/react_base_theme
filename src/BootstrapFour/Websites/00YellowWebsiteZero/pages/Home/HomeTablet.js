@@ -1,13 +1,13 @@
 import React from 'react';
 import './HomeDesktop.scss';
 import DangerouslySetInnerHtml from '../DangerouslySetInnterHtml';
+//import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+//import Envelope from './Envelope';
 
 
 
 export default function HomeDesktop(props) {
-
 
   /** colour variant */
   //const variant = useSelector(state => state.reducerSelectColourMode.variant);
@@ -17,11 +17,13 @@ export default function HomeDesktop(props) {
     body, links } = props;
 
 
+
   return (
     <div className="container-fluid home-desktop">
       <div className="row">
-        <div className="col-lg-5">
+        <div className="col-md-4">
           <div style={{
+            width: "100",
             display: "flex",
             height: "85vh",
             justifyContent: "center",
@@ -38,17 +40,17 @@ export default function HomeDesktop(props) {
                   src={logoHorz}
                   alt={logoHorzAlt} />
               </div>
-
+              {/* <div className="logo-sqr">
+              <img src={logoSquare} alt={logoSquareAlt} />
+            </div> */}
               <section className="body mt-5">
                 <DangerouslySetInnerHtml text={body} />
               </section>
-
             </div>
           </div>
-
         </div>
 
-        <div className="col-lg-7">
+        <div className="col-md-8">
           <div className='right-block'>
             <div></div>
             <div>

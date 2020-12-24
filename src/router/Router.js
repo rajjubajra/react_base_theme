@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CopyRightFooter from '../components/CopyRightFooter/CopyRightFooter';
-import RouterComponents from './RouterComponents';
-import RouterNonCssFramworkWebsites from './RouterNonCssFrameworkWebsites';
+//import RouterComponents from './RouterComponents';
+//import RouterNonCssFramworkWebsites from './RouterNonCssFrameworkWebsites';
 import RouterBootstrapFour from './RouterBootstrapFour';
-import RouterApplications from './RouterApplications';
+//import RouterApplications from './RouterApplications';
 
 // import MeghaMenu from '../components/Navigation/MeghaMenu';
 // import ComingSoon from '../components/Websites/ComingSoon/ComingSoon';
 //  import ComingSoonB4 from '../BootstrapFour/ComingSoonB4/ComingSoonB4';
-import RouterComponentTest from './RouterComponentTest';
-import RouterEcommerce from './RouterEcommerce';
+//import RouterComponentTest from './RouterComponentTest';
+//import RouterEcommerce from './RouterEcommerce';
 
 import ForSale from '../ForSale/ForSale';
 import Clients from '../ForSale/Clients';
@@ -68,31 +68,31 @@ const Router = () => {
         </Switch>
 
         {/** RE-USABLE COMPONENTS *************************************/}
-        <Switch>
+        {/* <Switch>
           <RouterComponents />
-        </Switch>
+        </Switch> */}
 
         {/** WEBSITES PAGE *************************************/}
-        <Switch>
+        {/* <Switch>
           <RouterNonCssFramworkWebsites />
-        </Switch>
+        </Switch> */}
 
         {/** WEBSITES WITH BOOTSTRAP-4  ***************************/}
         <Switch>
           <RouterBootstrapFour />
         </Switch>
 
-        <Switch>
+        {/* <Switch>
           <RouterComponentTest />
-        </Switch>
+        </Switch> */}
 
-        <Switch>
+        {/* <Switch>
           <RouterApplications />
-        </Switch>
+        </Switch> */}
 
-        <Switch>
+        {/* <Switch>
           <RouterEcommerce />
-        </Switch>
+        </Switch> */}
 
         {/** COPYRIGHT COMPONENT  *************************************/}
         <div className="App copy-right-footer">

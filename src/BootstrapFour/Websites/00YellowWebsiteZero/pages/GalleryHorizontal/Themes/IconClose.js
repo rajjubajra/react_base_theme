@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 
 
@@ -7,17 +8,22 @@ function IconClose() {
 
   const [arrow, setArrow] = useState(false);
 
-  const IconCloseStyle = {
-    padding: "20px",
-    margin: "0px",
 
-    width: "30px",
-    height: "30px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    cursor: "pointer",
-  }
+  const IconClose = styled.div`
+    padding: 20px;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    z-index: 50;
+    right: 20px;
+    top: 20px;
+  `;
+
 
   const crossleft = {
     width: arrow ? "10px" : "20px",
@@ -51,11 +57,9 @@ function IconClose() {
 
 
   return (
-    <div
-
+    <IconClose
       onMouseEnter={() => setArrow(true)}
-      onMouseLeave={() => setArrow(false)}
-      style={IconCloseStyle}>
+      onMouseLeave={() => setArrow(false)}>
 
       <div>
         <div style={crossleft}></div>
@@ -63,7 +67,7 @@ function IconClose() {
         <div style={arrowLine}></div>
       </div>
 
-    </div>
+    </IconClose>
   )
 }
 
