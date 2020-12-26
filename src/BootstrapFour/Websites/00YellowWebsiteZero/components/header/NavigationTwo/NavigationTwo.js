@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NavIconThreeLines from './NavIconThreeLines';
 import { MainMenuShowHide } from './Redux/ActionShowHide';
 
@@ -8,13 +8,15 @@ export const NavigationTwo = () => {
 
   const dispatch = useDispatch();
 
+  /** colour variant */
+  const variant = useSelector(state => state.reducerSelectColourMode.variant);
 
   return (
     <div style={{
       display: "block",
       position: "fixed",
       width: "100%",
-      backgroundColor: "#ffffff",
+      backgroundColor: variant === 'dark' ? "#1c3044" : variant === 'light' ? "#E9ECEF" : "#ffffff",
       zIndex: "50"
     }}>
       <div className='container-fluid'>

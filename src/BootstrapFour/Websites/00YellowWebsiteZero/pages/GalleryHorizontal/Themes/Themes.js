@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import { useSelector } from 'react-redux';
 import ThemeDesktop from './ThemeDesktop';
 import ThemeMobile from './ThemeMobile';
 import ThemeTablet from './ThemeTablet';
@@ -114,18 +115,22 @@ const data = [
 
 function Themes(props) {
 
+  const className = useSelector(state => state.reducerSelectColourMode.colourMode);
+
   return (
-    <>
-      <div className="d-none d-lg-block d-xl-block">
-        <ThemeDesktop data={data} />
+    <div className='yellow-website-zero'>
+      <div className={className}>
+        <div className="d-none d-lg-block d-xl-block">
+          <ThemeDesktop data={data} />
+        </div>
+        <div className="d-none d-md-block d-lg-none d-xl-none">
+          <ThemeTablet data={data} />
+        </div>
+        <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none pb-5 mb-5">
+          <ThemeMobile data={data} />
+        </div>
       </div>
-      <div className="d-none d-md-block d-lg-none d-xl-none">
-        <ThemeTablet data={data} />
-      </div>
-      <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none pb-5 mb-5">
-        <ThemeMobile data={data} />
-      </div>
-    </>
+    </div>
   )
 }
 

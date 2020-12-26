@@ -106,13 +106,11 @@ function GalleryIntroDesktop(props) {
               {
                 links.length > 0
                 && links.map((item, index) => {
-                  return <>
-                    <Li>
-                      <Link to={item.link}>
-                        <Anc>{item.title}</Anc>
-                      </Link>
-                    </Li>
-                  </>
+                  return <Li key={index}>
+                    <Link to={item.link}>
+                      <Anc>{item.title}</Anc>
+                    </Link>
+                  </Li>
                 })
               }
             </Ul>

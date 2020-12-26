@@ -2,6 +2,7 @@ import React from 'react';
 import './HomeDesktop.scss';
 import DangerouslySetInnerHtml from '../DangerouslySetInnterHtml';
 import { Link } from 'react-router-dom';
+import { pagelink } from '../../PageLink';
 
 
 
@@ -54,7 +55,13 @@ export default function HomeDesktop(props) {
             <div>
               {
                 fetched &&
-                <Link to={{ pathname: `${links[0].uri}` }}>
+                <Link to={{
+                  pathname: `${pagelink.redirect}`,
+                  state: {
+                    link: `${links[0].uri}`,
+                    type: 'external'
+                  }
+                }}>
                   {links[0].title}
                 </Link>
               }
@@ -67,7 +74,13 @@ export default function HomeDesktop(props) {
             <div>
               {
                 fetched &&
-                <Link to={{ pathname: `${links[1].uri}` }}>
+                <Link to={{
+                  pathname: `${pagelink.redirect}`,
+                  state: {
+                    link: `${links[1].uri}`,
+                    type: 'external'
+                  }
+                }}>
                   {links[1].title}
                 </Link>
               }

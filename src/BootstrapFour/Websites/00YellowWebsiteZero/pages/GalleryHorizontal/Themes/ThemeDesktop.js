@@ -67,9 +67,6 @@ function ThemeDesktop(props) {
           viewHandler={viewHandler}
           viewCompo={viewCompo}
         />
-
-
-
       </div>
     </div>
   )

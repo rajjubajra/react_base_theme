@@ -3,9 +3,15 @@ import { pagelink } from '../../PageLink';
 import GalleryIntroDesktop from './GalleryIntroDesktop';
 import GalleryIntroTablet from './GalleryIntroTablet';
 import GalleryIntroMobile from './GalleryIntroMobile';
+import { useSelector } from 'react-redux';
 
 
-const body = "<div><h1>Yellow Website Themes</h1><div><ul><li>Please select the theme that meets your requirement and you like.</li><li>Provide me your contents and Photographs.</li><li>Write to me for minor modification</li><li>I will deliver your live site within a week.</li></ul></div></div>";
+
+
+
+// const body = "<div><h1>Yellow Website Themes</h1><div><ul><li>Please select the theme that meets your requirement and you like.</li><li>Provide me your contents and Photographs.</li><li>Write to me for minor modification</li><li>I will deliver your live site within a week.</li></ul></div></div>";
+
+
 
 const links = [
   {
@@ -28,7 +34,13 @@ const links = [
 
 
 
+
 function GalleryIntro() {
+
+
+  const body = useSelector(state => state.reducerFetchData.galleryIntro);
+
+  console.log(body);
 
   return (
     <>

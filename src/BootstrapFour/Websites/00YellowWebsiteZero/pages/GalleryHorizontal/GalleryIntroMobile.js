@@ -95,7 +95,7 @@ function GalleryIntroMobile(props) {
               {
                 links.length > 0
                 && links.map((item, index) => {
-                  return <Li>
+                  return <Li key={index}>
                     <Link to={item.link}>
                       <Anc>{item.title}</Anc>
                     </Link>

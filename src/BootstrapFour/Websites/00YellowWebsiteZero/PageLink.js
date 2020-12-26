@@ -5,5 +5,6 @@ export const pagelink = {
   contact: "yellow-website-contact",
   themes: "yellow-website-themes",
   clients: "yellow-website-clients",
+  redirect: "yellow-website-redirect",
   back: "websites-bootstrap"
 }

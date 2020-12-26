@@ -5,6 +5,7 @@ import About from './About/About';
 import Contact from './Contact';
 import Themes from './GalleryHorizontal/Themes/Themes';
 import Clients from './GalleryHorizontal/Themes/Clients';
+import Redirect from './Redirect';
 import { pagelink } from '../PageLink';
 
 
@@ -16,6 +17,7 @@ function RoutePages() {
       <Route exact path={`/${pagelink.contact}`} component={Contact} />
       <Route exact path={`/${pagelink.themes}`} component={Themes} />
       <Route exact path={`/${pagelink.clients}`} component={Clients} />
+      <Route exact path={`/${pagelink.redirect}`} component={Redirect} />
     </>
   )
 }
